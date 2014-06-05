@@ -23,7 +23,7 @@ public class UserDaoImpl extends BasicDao implements UserDao {
 	public boolean verifyUser(String username, String password) throws DatabaseErrorException {
 		
 		try {
-			String command = "verifyUser";
+			String command = "user/verifyUser";
 			JSONObject jsonObj = new JSONObject();
 			jsonObj.put("username", username);
 			jsonObj.put("password", password);
@@ -43,7 +43,7 @@ public class UserDaoImpl extends BasicDao implements UserDao {
 
 	@Override
 	public User getUserGivenUsername(String username) throws DatabaseErrorException {
-			String command = "getUserGivenUsername";
+			String command = "user/getUserGivenUsername";
 			JSONObject jsonObj = new JSONObject();
 			try {
 				jsonObj.put("username", username);
