@@ -20,9 +20,12 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User getUserGivenUsername(String username) {
-		// TODO Auto-generated method stub
-		return null;
+	public User getUserGivenUsername(String username) throws ServiceException {
+		try {
+			return userDao.getUserGivenUsername(username);
+		} catch (DatabaseErrorException e) {
+			throw new ServiceException("An error occured in the user service", e);
+		}
 	}
 
 }

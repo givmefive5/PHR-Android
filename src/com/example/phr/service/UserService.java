@@ -7,5 +7,5 @@ public interface UserService {
 	
 	public boolean verifyUser(String username, String password) throws ServiceException;
 	
-	public User getUserGivenUsername(String username);
+	public User getUserGivenUsername(String username) throws ServiceException;
 }

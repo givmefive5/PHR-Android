@@ -1,6 +1,7 @@
 package com.example.phr_android;
 
 import com.example.phr.exceptions.ServiceException;
+import com.example.phr.model.User;
 import com.example.phr.service.UserService;
 import com.example.phr.service.UserServiceImpl;
 
@@ -44,7 +45,8 @@ public class MainActivity extends Activity {
 			System.out.println(userService.verifyUser("Matthew", "Go"));
 			System.out.println(isValid);
 			TextView tvId = (TextView) findViewById(R.id.textView1);
-			tvId.setText(bool.toString());
+			User user = userService.getUserGivenUsername("admin");
+			tvId.setText(" admin admin " + bool.toString() + "  getUser " + user.getPassword());
 		} catch (ServiceException e) {
 			e.printStackTrace();
 		}
@@ -53,7 +55,6 @@ public class MainActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
