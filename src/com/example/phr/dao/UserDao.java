@@ -1,6 +1,6 @@
 package com.example.phr.dao;
 
-import com.example.exceptions.DatabaseErrorException;
+import com.example.phr.exceptions.DatabaseErrorException;
 
 public interface UserDao {
 

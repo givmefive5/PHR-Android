@@ -14,7 +14,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.example.exceptions.DatabaseErrorException;
+import com.example.phr.exceptions.DatabaseErrorException;
 
 public class UserDaoImpl extends BasicDao implements UserDao {
 

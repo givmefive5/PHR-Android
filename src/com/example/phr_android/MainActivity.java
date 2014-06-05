@@ -1,5 +1,6 @@
 package com.example.phr_android;
 
+import com.example.phr.exceptions.ServiceException;
 import com.example.phr.service.UserService;
 import com.example.phr.service.UserServiceImpl;
 
@@ -13,6 +14,8 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+	UserService userService = new UserServiceImpl();
+	
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,19 +26,29 @@ public class MainActivity extends Activity {
 		    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		    StrictMode.setThreadPolicy(policy);
 		}
-		UserService userService = new UserServiceImpl();
-		System.out.println(userService.verifyUser("Matthew", "Go"));
-		System.out.println(userService.verifyUser("admin", "admin"));
+		
+		try {
+			System.out.println(userService.verifyUser("Matthew", "Go"));
+			System.out.println(userService.verifyUser("admin", "admin"));
+		} catch (ServiceException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	public void verifyUser(View view){
-		UserService userService = new UserServiceImpl();
-		boolean isValid = userService.verifyUser("admin", "admin");
-		Boolean bool = Boolean.valueOf(isValid);
-		System.out.println(userService.verifyUser("Matthew", "Go"));
-		System.out.println(isValid);
-		TextView tvId = (TextView) findViewById(R.id.textView1);
-		tvId.setText(bool.toString());
+		boolean isValid;
+		try {
+			isValid = userService.verifyUser("admin", "admin");
+			Boolean bool = Boolean.valueOf(isValid);
+			System.out.println(userService.verifyUser("Matthew", "Go"));
+			System.out.println(isValid);
+			TextView tvId = (TextView) findViewById(R.id.textView1);
+			tvId.setText(bool.toString());
+		} catch (ServiceException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	@Override

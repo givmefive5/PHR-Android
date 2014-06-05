@@ -12,7 +12,7 @@ import org.apache.http.message.BasicHeader;
 import org.apache.http.protocol.HTTP;
 import org.json.JSONObject;
 
-import com.example.exceptions.DatabaseErrorException;
+import com.example.phr.exceptions.DatabaseErrorException;
 
 public class BasicDao {
 
