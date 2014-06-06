@@ -1,22 +1,21 @@
 package com.example.phr.service;
 
+import java.math.BigDecimal;
+import java.sql.Date;
 import java.util.List;
 
+import com.example.phr.model.User;
 import com.example.phr.model.Weight;
 
 public interface WeightService {
-
-	//no Id
-	public void addWeight(String username, Weight weight);
 	
-	//Id cannot be left blank, will update the values of old weight with that Id
-	public void updateWeight(String username, Weight weight);
+	public void addWeight(User user, BigDecimal weight, Date date, String description);
 	
-	//should never have invalid weightId
-	public void deleteWeight(String username, long weightId);
+	public void updateWeight(Weight weight);
 	
-	//get all inputted weights of user
-	public List<Weight> getWeights(String username);
+	public void deleteWeight(Weight weight);
 	
-	public Weight getWeight(String username, long weightId);
+	public List<Weight> getWeights(User user);
+	
+	public Weight getWeightGivenWeightId(long id);
 }

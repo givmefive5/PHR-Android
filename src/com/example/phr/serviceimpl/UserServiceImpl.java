@@ -1,10 +1,11 @@
-package com.example.phr.service;
+package com.example.phr.serviceimpl;
 
 import com.example.phr.dao.UserDao;
 import com.example.phr.dao.UserDaoImpl;
 import com.example.phr.exceptions.DatabaseErrorException;
 import com.example.phr.exceptions.ServiceException;
 import com.example.phr.model.User;
+import com.example.phr.service.UserService;
 
 public class UserServiceImpl implements UserService {
 

@@ -3,7 +3,7 @@ package com.example.phr_android;
 import com.example.phr.exceptions.ServiceException;
 import com.example.phr.model.User;
 import com.example.phr.service.UserService;
-import com.example.phr.service.UserServiceImpl;
+import com.example.phr.serviceimpl.UserServiceImpl;
 
 import android.os.Bundle;
 import android.os.StrictMode;

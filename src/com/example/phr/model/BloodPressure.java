@@ -1,19 +1,21 @@
 package com.example.phr.model;
 
-import java.math.BigDecimal;
 import java.sql.Date;
 
-public class Weight {
-	//in pounds
+public class BloodPressure {
+	//in millimeters of mercury
 	long id;
-	BigDecimal weight;
+	int systolic;
+	int diastolic;
 	Date date;
 	String description;
 	
-	public Weight(long id, BigDecimal weight, Date date, String description) {
+	public BloodPressure(long id, int systolic, int diastolic, Date date,
+			String description) {
 		super();
 		this.id = id;
-		this.weight = weight;
+		this.systolic = systolic;
+		this.diastolic = diastolic;
 		this.date = date;
 		this.description = description;
 	}
@@ -23,11 +25,17 @@ public class Weight {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public BigDecimal getWeight() {
-		return weight;
+	public int getSystolic() {
+		return systolic;
 	}
-	public void setWeight(BigDecimal weight) {
-		this.weight = weight;
+	public void setSystolic(int systolic) {
+		this.systolic = systolic;
+	}
+	public int getDiastolic() {
+		return diastolic;
+	}
+	public void setDiastolic(int diastolic) {
+		this.diastolic = diastolic;
 	}
 	public Date getDate() {
 		return date;
@@ -41,6 +49,7 @@ public class Weight {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
 	
 	
 }
