@@ -10,5 +10,8 @@
     <string name="journal_weight_metric">&#160;lbs</string>
     <string name="journal_calories">Calories:&#160;</string>
     <string name="journal_activities">Activities:&#160;</string>
+    
+    <!-- Status Post -->
+    <string name="status_post_button">POST</string>
 
 </resources>
