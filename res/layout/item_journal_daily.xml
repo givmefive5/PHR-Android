@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/container_dropshadow" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp" >
+
+        
+	    <LinearLayout
+	        android:id="@+id/imageHolder"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentLeft="true">
+
+	        <ImageView
+	            android:id="@+id/imgDailyGemLevel"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/level_1_diamond" />
+	
+	  	</LinearLayout>
+
+	    <TextView
+	        android:id="@+id/txtDate"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="June 6, 2014"
+	        android:textAppearance="?android:attr/textAppearanceSmall"
+	        android:layout_alignParentRight="true"
+	        android:gravity="right"        
+	        android:layout_alignTop="@id/imageHolder" />
+
+	    <RelativeLayout
+	        android:id="@+id/weightPlaceholder"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@id/imageHolder" >
+
+	        <TextView
+	            android:id="@+id/lblWeight"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:textStyle="bold"
+	            android:text="@string/journal_weight" />
+
+	        <TextView
+	            android:id="@+id/txtWeight"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_toRightOf="@id/lblWeight"
+	            android:text="100" />
+
+	        <TextView
+	            android:id="@+id/lblWeightMetric"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_toRightOf="@id/txtWeight"
+	            android:text="@string/journal_weight_metric" />
+
+	    </RelativeLayout>
+	    
+	    <RelativeLayout
+	        android:id="@+id/caloriesPlaceholder"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@id/imageHolder"
+	        android:layout_below="@id/weightPlaceholder" >
+
+	        <TextView
+	            android:id="@+id/lblCalories"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:textStyle="bold"
+	            android:text="@string/journal_calories" />
+
+	        <TextView
+	            android:id="@+id/txtCalories"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_toRightOf="@id/lblCalories"
+	            android:text="100" />>
+
+	    </RelativeLayout>
+	    
+	    <RelativeLayout
+	        android:id="@+id/activitiesPlaceholder"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@id/imageHolder"
+	        android:layout_below="@id/caloriesPlaceholder" >
+
+	        <TextView
+	            android:id="@+id/lblActivities"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:textStyle="bold"
+	            android:text="@string/journal_activities" />
+
+	        <TextView
+	            android:id="@+id/txtActivities"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@id/lblActivities"
+	            android:text="Jogging, Swimming, Bicycling" />>
+
+	    </RelativeLayout>
+        
+    </RelativeLayout>
+
+</LinearLayout>

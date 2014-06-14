@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/journalTabsPlaceholder"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#E8E8E8"
+        android:animateLayoutChanges="true"
+        android:weightSum="2" >
+        
+        <Button
+            android:id="@+id/btnStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00000000"
+            style="?android:attr/buttonStyleSmall"
+            android:text="Status" />
+        
+        <View
+		    android:layout_width="1dp"
+		    android:layout_height="match_parent"
+		    android:background="@android:color/darker_gray"/>
+
+        <Button
+            android:id="@+id/btnVitals"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#00000000"
+            style="?android:attr/buttonStyleSmall"
+            android:text="Vitals" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listView_daily_journal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/journalTabsPlaceholder"
+        android:layout_alignParentTop="true"
+        android:divider="#00000000" >
+    </ListView>
+
+</RelativeLayout>
