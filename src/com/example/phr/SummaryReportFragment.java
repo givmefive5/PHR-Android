@@ -27,6 +27,10 @@ public class SummaryReportFragment extends Fragment {
 		View rootView = inflater.inflate(R.layout.fragment_summary_report, container, false);
 		
 		
+		mProgress = (ProgressBar) rootView.findViewById(R.id.progressBar1);
+        mProgress.setProgress(mProgressStatus);
+        mProgress.setMax(100);
+		
 		GraphViewSeries exampleSeries = new GraphViewSeries(new GraphViewData[] {
 			    new GraphViewData(1, 2.0d)
 			    , new GraphViewData(2, 1.5d)
@@ -52,9 +56,7 @@ public class SummaryReportFragment extends Fragment {
        	
        	
         
-        mProgress = (ProgressBar) rootView.findViewById(R.id.progressBar1);
-        mProgress.setProgress(mProgressStatus);
-        mProgress.setMax(100);
+        
 		
 		return rootView;
 	}

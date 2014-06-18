@@ -51,7 +51,7 @@ public final class R {
         public static final int healthProblemsPlaceholder=0x7f080019;
         public static final int imageHolder=0x7f08002f;
         public static final int imgDailyGemLevel=0x7f080030;
-        public static final int imgGemLevel=0x7f08002d;
+        public static final int imgGemLevel=0x7f08002c;
         public static final int imgPerson=0x7f080006;
         public static final int journalTabsPlaceholder=0x7f080028;
         public static final int lblActivities=0x7f08003a;
@@ -75,7 +75,7 @@ public final class R {
         public static final int menu_item_status_post=0x7f08003d;
         public static final int pager=0x7f080000;
         public static final int personalInformationPlaceholder=0x7f080005;
-        public static final int progressBar1=0x7f08002c;
+        public static final int progressBar1=0x7f08002d;
         public static final int restrictedActivitiesPlaceholder=0x7f080025;
         public static final int sexPlaceholder=0x7f08000b;
         public static final int statusTabsPlaceholder=0x7f080003;
