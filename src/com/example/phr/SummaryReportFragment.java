@@ -26,7 +26,7 @@ import org.achartengine.renderer.XYSeriesRenderer;
 public class SummaryReportFragment extends Fragment {
 
 	ProgressBar mProgress;
-    int mProgressStatus = 20;
+    int mProgressStatus = 70;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
