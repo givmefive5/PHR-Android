@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
 public class SummaryReportFragment extends Fragment {
 
@@ -41,9 +42,17 @@ public class SummaryReportFragment extends Fragment {
 		graphView.getGraphViewStyle().setNumHorizontalLabels(5);
 		graphView.getGraphViewStyle().setNumVerticalLabels(4);
 		graphView.getGraphViewStyle().setVerticalLabelsWidth(300);
-       	  
+       	
+		
        	LinearLayout layout = (LinearLayout) rootView.findViewById(R.id.linearLayoutWeight);  
-       	layout.addView(graphView);  
+       	layout.addView(graphView); 
+       	
+       	ProgressBar mProgress;
+        int mProgressStatus = 20;
+        
+        mProgress = (ProgressBar) rootView.findViewById(R.id.progressBar1);
+        mProgress.setProgress(mProgressStatus);
+
 		
 		return rootView;
 	}
