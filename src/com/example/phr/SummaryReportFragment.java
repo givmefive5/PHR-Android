@@ -79,53 +79,44 @@ public class SummaryReportFragment extends Fragment {
  
         // Creating an  XYSeries for Income
         XYSeries incomeSeries = new XYSeries("Income");
-        // Creating an  XYSeries for Expense
-        XYSeries expenseSeries = new XYSeries("Expense");
-        // Adding data to <span id="ygkmw72jk6f_10" class="ygkmw72jk6f">Income and Expense</span> Series
+ 
         for(int i=0;i<x.length;i++){
             incomeSeries.add(x[i], income[i]);
-            expenseSeries.add(x[i],expense[i]);
         }
  
         // Creating a dataset to hold each series
         XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
         // Adding Income Series to the dataset
         dataset.addSeries(incomeSeries);
-        // Adding Expense Series to dataset
-        dataset.addSeries(expenseSeries);
  
         // Creating XYSeriesRenderer to customize incomeSeries
-        XYSeriesRenderer incomeRenderer = new XYSeriesRenderer();
-        incomeRenderer.setColor(Color.WHITE);
-        incomeRenderer.setPointStyle(PointStyle.CIRCLE);
-        incomeRenderer.setFillPoints(true);
-        incomeRenderer.setLineWidth(2);
-        incomeRenderer.setDisplayChartValues(true);
+        XYSeriesRenderer weightRenderer = new XYSeriesRenderer();
+        weightRenderer.setColor(Color.RED);
+        weightRenderer.setPointStyle(PointStyle.CIRCLE);
+        weightRenderer.setFillPoints(true);
+        weightRenderer.setLineWidth(4);
+        weightRenderer.setDisplayChartValues(true);
  
-        // Creating XYSeriesRenderer to customize expenseSeries
-        XYSeriesRenderer expenseRenderer = new XYSeriesRenderer();
-        expenseRenderer.setColor(Color.YELLOW);
-        expenseRenderer.setPointStyle(PointStyle.CIRCLE);
-        expenseRenderer.setFillPoints(true);
-        expenseRenderer.setLineWidth(2);
-        expenseRenderer.setDisplayChartValues(true);
+        
  
         // Creating a XYMultipleSeriesRenderer to customize the whole chart
         XYMultipleSeriesRenderer multiRenderer = new XYMultipleSeriesRenderer();
         multiRenderer.setXLabels(0);
-        multiRenderer.setChartTitle("Income vs Expense Chart");
-        multiRenderer.setXTitle("Year 2012");
-        multiRenderer.setYTitle("Amount in Dollars");
+        multiRenderer.setChartTitle("Weight Graph");
+        multiRenderer.setXTitle("Year 2014");
+        multiRenderer.setYTitle("Pound");
         multiRenderer.setZoomButtonsVisible(true);
         for(int i=0;i<x.length;i++){
             multiRenderer.addXTextLabel(i+1, mMonth[i]);
         }
  
+        multiRenderer.setApplyBackgroundColor(true);
+        multiRenderer.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+        multiRenderer.setMarginsColor(getResources().getColor(android.R.color.transparent)); 
         // Adding incomeRenderer and expenseRenderer to multipleRenderer
         // Note: The order of adding dataseries to dataset and renderers to multipleRenderer
         // should be same
-        multiRenderer.addSeriesRenderer(incomeRenderer);
-        multiRenderer.addSeriesRenderer(expenseRenderer);
+        multiRenderer.addSeriesRenderer(weightRenderer);
  
         // Getting a reference to LinearLayout of the MainActivity Layout
         LinearLayout chartContainer = (LinearLayout) rootView.findViewById(R.id.linearLayoutWeight2);
