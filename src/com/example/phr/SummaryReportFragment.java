@@ -105,7 +105,8 @@ public class SummaryReportFragment extends Fragment {
         multiRenderer.setChartTitle("Weight Graph");
         multiRenderer.setXTitle("Year 2014");
         multiRenderer.setYTitle("Pound");
-        multiRenderer.setZoomButtonsVisible(true);
+        multiRenderer.setZoomButtonsVisible(false);
+        
         for(int i=0;i<x.length;i++){
             multiRenderer.addXTextLabel(i+1, mMonth[i]);
         }
