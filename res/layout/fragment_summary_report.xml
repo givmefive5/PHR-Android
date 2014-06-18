@@ -34,7 +34,7 @@
                 android:layout_marginTop="25dp"
                 android:paddingLeft="25dp"
                 android:layout_marginLeft="25dp"
-                android:layout_marginRight="300dp"
+                android:layout_marginRight="30dp"
                 android:minWidth="25dip"
                 android:progressDrawable="@drawable/customprogressbar" />
 
