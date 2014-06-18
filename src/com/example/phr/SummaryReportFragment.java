@@ -77,19 +77,16 @@ public class SummaryReportFragment extends Fragment {
         int[] income = { 2000,2500,2700,3000,2800,3500,3700,3800};
         int[] expense = {2200, 2700, 2900, 2800, 2600, 3000, 3300, 3400 };
  
-        // Creating an  XYSeries for Income
-        XYSeries incomeSeries = new XYSeries("Income");
+        XYSeries incomeSeries = new XYSeries("Weight Per Day");
  
         for(int i=0;i<x.length;i++){
             incomeSeries.add(x[i], income[i]);
         }
- 
-        // Creating a dataset to hold each series
+
         XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
-        // Adding Income Series to the dataset
+
         dataset.addSeries(incomeSeries);
  
-        // Creating XYSeriesRenderer to customize incomeSeries
         XYSeriesRenderer weightRenderer = new XYSeriesRenderer();
         weightRenderer.setColor(Color.RED);
         weightRenderer.setPointStyle(PointStyle.CIRCLE);
@@ -97,9 +94,7 @@ public class SummaryReportFragment extends Fragment {
         weightRenderer.setLineWidth(4);
         weightRenderer.setDisplayChartValues(true);
  
-        
- 
-        // Creating a XYMultipleSeriesRenderer to customize the whole chart
+      
         XYMultipleSeriesRenderer multiRenderer = new XYMultipleSeriesRenderer();
         multiRenderer.setXLabels(0);
         multiRenderer.setChartTitle("Weight Graph");
@@ -114,18 +109,13 @@ public class SummaryReportFragment extends Fragment {
         multiRenderer.setApplyBackgroundColor(true);
         multiRenderer.setBackgroundColor(Color.WHITE);
         multiRenderer.setMarginsColor(Color.WHITE);
-        // Adding incomeRenderer and expenseRenderer to multipleRenderer
-        // Note: The order of adding dataseries to dataset and renderers to multipleRenderer
-        // should be same
+
         multiRenderer.addSeriesRenderer(weightRenderer);
- 
-        // Getting a reference to LinearLayout of the MainActivity Layout
+
         LinearLayout chartContainer = (LinearLayout) rootView.findViewById(R.id.linearLayoutWeight2);
- 
-        // Creating a Line Chart
+
         mChart = ChartFactory.getLineChartView(getActivity().getBaseContext(), dataset, multiRenderer);
  
-        // Adding the Line Chart to the LinearLayout
         chartContainer.addView(mChart);
         
         
