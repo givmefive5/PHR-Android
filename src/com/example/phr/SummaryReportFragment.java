@@ -7,6 +7,7 @@ import com.jjoe64.graphview.GraphViewSeries;
 import com.jjoe64.graphview.LineGraphView;
 
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -26,8 +27,9 @@ public class SummaryReportFragment extends Fragment {
 
 		View rootView = inflater.inflate(R.layout.fragment_summary_report, container, false);
 		
-		
-		mProgress = (ProgressBar) rootView.findViewById(R.id.progressBar1);
+		mProgress = (ProgressBar) rootView.findViewById(R.id.progressBar1);                   
+	    Drawable draw = getResources().getDrawable(R.drawable.customprogressbar);
+	    mProgress.setProgressDrawable(draw);
         mProgress.setProgress(mProgressStatus);
         mProgress.setMax(100);
 		

@@ -22,27 +22,29 @@
                 android:layout_height="52dp"
                 android:layout_marginLeft="0dp"
                 android:adjustViewBounds="true"
-                android:paddingLeft="10dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
                 android:src="@drawable/level_1_diamond" />
 
             <ProgressBar
                 android:id="@+id/progressBar1"
                 style="?android:attr/progressBarStyleHorizontal"
+                android:progressDrawable="@drawable/customprogressbar"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:paddingLeft="10dp"
-                android:paddingRight="10dp" />
+                android:paddingRight="15dp"
+                android:paddingTop="15dp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayoutWeight"
             android:layout_width="match_parent"
-            android:layout_height="86dp"
+            android:layout_height="166dp"
             android:background="#E0E0E0"
             android:orientation="vertical"
-            android:paddingTop="20dp" >
-
+            android:paddingTop="100dp" >
         </LinearLayout>
 
     </LinearLayout>
