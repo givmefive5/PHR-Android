@@ -17,6 +17,9 @@ import android.widget.ProgressBar;
 
 public class SummaryReportFragment extends Fragment {
 
+	ProgressBar mProgress;
+    int mProgressStatus = 20;
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -47,8 +50,7 @@ public class SummaryReportFragment extends Fragment {
        	LinearLayout layout = (LinearLayout) rootView.findViewById(R.id.linearLayoutWeight);  
        	layout.addView(graphView); 
        	
-       	ProgressBar mProgress = null;
-        int mProgressStatus = 20;
+       	
         
         mProgress = (ProgressBar) rootView.findViewById(R.id.progressBar1);
         mProgress.setProgress(mProgressStatus);
