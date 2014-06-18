@@ -47,12 +47,12 @@ public class SummaryReportFragment extends Fragment {
        	LinearLayout layout = (LinearLayout) rootView.findViewById(R.id.linearLayoutWeight);  
        	layout.addView(graphView); 
        	
-       	ProgressBar mProgress;
+       	ProgressBar mProgress = null;
         int mProgressStatus = 20;
         
         mProgress = (ProgressBar) rootView.findViewById(R.id.progressBar1);
         mProgress.setProgress(mProgressStatus);
-
+        mProgress.setMax(100);
 		
 		return rootView;
 	}
