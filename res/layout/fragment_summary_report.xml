@@ -50,6 +50,15 @@
             android:paddingTop="10dp" >
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/linearLayoutWeight2"
+            android:layout_width="match_parent"
+            android:layout_height="166dp"
+            android:background="#E0E0E0"
+            android:orientation="vertical"
+             android:layout_marginTop="50dp"
+            android:paddingTop="10dp" >
+        </LinearLayout>
     </LinearLayout>
     
 
