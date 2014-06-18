@@ -111,8 +111,8 @@ public class SummaryReportFragment extends Fragment {
         }
  
         multiRenderer.setApplyBackgroundColor(true);
-        multiRenderer.setBackgroundColor(getResources().getColor(android.R.color.transparent));
-        multiRenderer.setMarginsColor(getResources().getColor(android.R.color.transparent)); 
+        multiRenderer.setBackgroundColor(Color.WHITE);
+        multiRenderer.setMarginsColor(Color.WHITE);
         // Adding incomeRenderer and expenseRenderer to multipleRenderer
         // Note: The order of adding dataseries to dataset and renderers to multipleRenderer
         // should be same
