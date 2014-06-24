@@ -1,17 +1,11 @@
 package com.example.phr;
 
 import com.example.phr.R;
-import com.example.phr.graphs.GraphViewData;
-import com.jjoe64.graphview.GraphView;
-import com.jjoe64.graphview.GraphViewSeries;
-import com.jjoe64.graphview.LineGraphView;
-
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
