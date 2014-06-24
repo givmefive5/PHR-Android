@@ -13,8 +13,9 @@ public class MedicineFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		View rootView = inflater.inflate(R.layout.fragment_medicine, container, false);
-		
+		View rootView = inflater.inflate(R.layout.fragment_medicine, container,
+				false);
+
 		return rootView;
 	}
 

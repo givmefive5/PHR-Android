@@ -10,13 +10,15 @@ import com.example.phr.service.UserService;
 public class UserServiceImpl implements UserService {
 
 	UserDao userDao = new UserDaoImpl();
-	
+
 	@Override
-	public boolean verifyUser(String username, String password) throws ServiceException {
+	public boolean verifyUser(String username, String password)
+			throws ServiceException {
 		try {
 			return userDao.verifyUser(username, password);
 		} catch (DatabaseErrorException e) {
-			throw new ServiceException("An error occured in the user service", e);
+			throw new ServiceException("An error occured in the user service",
+					e);
 		}
 	}
 
@@ -25,7 +27,8 @@ public class UserServiceImpl implements UserService {
 		try {
 			return userDao.getUserGivenUsername(username);
 		} catch (DatabaseErrorException e) {
-			throw new ServiceException("An error occured in the user service", e);
+			throw new ServiceException("An error occured in the user service",
+					e);
 		}
 	}
 

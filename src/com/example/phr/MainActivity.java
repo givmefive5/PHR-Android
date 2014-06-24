@@ -1,7 +1,5 @@
 package com.example.phr;
 
-
-
 import com.example.phr.R;
 import com.example.phr.adapter.TabsPagerAdapter;
 
@@ -21,7 +19,8 @@ public class MainActivity extends FragmentActivity implements
 	private TabsPagerAdapter mAdapter;
 	private ActionBar actionBar;
 	// Tab titles
-	private String[] tabs = { "Summary Report", "Journal", "Medicine", "About Me" };
+	private String[] tabs = { "Summary Report", "Journal", "Medicine",
+			"About Me" };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,29 +34,38 @@ public class MainActivity extends FragmentActivity implements
 
 		viewPager.setAdapter(mAdapter);
 		actionBar.setHomeButtonEnabled(false);
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);		
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 		// Adding Tabs
-		/*for (String tab_name : tabs) {
-			actionBar.addTab(actionBar.newTab().setText(tab_name)
-					.setTabListener(this));
-		}*/
-		for(int x = 0; x < tabs.length; x++){
-			switch(x){
-				case 0: actionBar.addTab(actionBar.newTab().setIcon(R.drawable.selector_summary_report)
+		/*
+		 * for (String tab_name : tabs) {
+		 * actionBar.addTab(actionBar.newTab().setText(tab_name)
+		 * .setTabListener(this)); }
+		 */
+		for (int x = 0; x < tabs.length; x++) {
+			switch (x) {
+			case 0:
+				actionBar.addTab(actionBar.newTab()
+						.setIcon(R.drawable.selector_summary_report)
 						.setTabListener(this));
-						break;
-				case 1: actionBar.addTab(actionBar.newTab().setIcon(R.drawable.selector_journal)
+				break;
+			case 1:
+				actionBar.addTab(actionBar.newTab()
+						.setIcon(R.drawable.selector_journal)
 						.setTabListener(this));
-						break;
-				case 2: actionBar.addTab(actionBar.newTab().setIcon(R.drawable.selector_medicine)
+				break;
+			case 2:
+				actionBar.addTab(actionBar.newTab()
+						.setIcon(R.drawable.selector_medicine)
 						.setTabListener(this));
-						break;
-				case 3: actionBar.addTab(actionBar.newTab().setIcon(R.drawable.selector_about_me)
+				break;
+			case 3:
+				actionBar.addTab(actionBar.newTab()
+						.setIcon(R.drawable.selector_about_me)
 						.setTabListener(this));
-						break;
+				break;
 			}
-			
+
 		}
 
 		/**

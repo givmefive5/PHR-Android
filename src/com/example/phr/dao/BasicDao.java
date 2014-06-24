@@ -18,14 +18,17 @@ import com.google.gson.JsonSyntaxException;
 
 public abstract class BasicDao {
 
-	protected String performHttpRequest(String command, JSONObject params) throws DatabaseErrorException{
+	protected String performHttpRequest(String command, JSONObject params)
+			throws DatabaseErrorException {
 		String address = "http://10.0.2.2:8080/PHR-WebServer/" + command;
 		try {
 			HttpClient client = new DefaultHttpClient();
 			HttpPost post = new HttpPost(address);
-			StringEntity se = new StringEntity( params.toString());  
-            se.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
-            post.setEntity(se);;
+			StringEntity se = new StringEntity(params.toString());
+			se.setContentType(new BasicHeader(HTTP.CONTENT_TYPE,
+					"application/json"));
+			post.setEntity(se);
+			;
 			HttpResponse response = client.execute(post);
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
 			out.close();
@@ -35,14 +38,15 @@ public abstract class BasicDao {
 			throw new DatabaseErrorException("Error in HTTP", e);
 		}
 	}
-	
-	protected <T> T getGSONObject(String response, Class<T> cls) throws DatabaseErrorException{
+
+	protected <T> T getGSONObject(String response, Class<T> cls)
+			throws DatabaseErrorException {
 		try {
 			Gson gson = new Gson();
-			return 	gson.fromJson(response, cls);
+			return gson.fromJson(response, cls);
 		} catch (JsonSyntaxException e) {
 			throw new DatabaseErrorException("Error in GSON", e);
 		}
 	}
-	
+
 }

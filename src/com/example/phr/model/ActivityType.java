@@ -4,5 +4,5 @@ public class ActivityType {
 
 	long id;
 	String activityType;
-	
+
 }

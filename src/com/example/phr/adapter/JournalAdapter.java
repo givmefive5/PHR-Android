@@ -19,7 +19,7 @@ public class JournalAdapter extends BaseAdapter {
 	private Context mContext;
 	private List<DailyJournal> mListOfJournals;
 	private int positionSelected;
-	
+
 	private static class ViewHolder {
 		TextView weight;
 		TextView calories;
@@ -51,10 +51,11 @@ public class JournalAdapter extends BaseAdapter {
 	@Override
 	public View getView(final int position, View convertView, ViewGroup parent) {
 		ViewHolder viewHolder;
-		
+
 		if (convertView == null) {
 			LayoutInflater inflater = LayoutInflater.from(mContext);
-			convertView = inflater.inflate(R.layout.item_journal_daily, parent, false);
+			convertView = inflater.inflate(R.layout.item_journal_daily, parent,
+					false);
 
 			viewHolder = new ViewHolder();
 			viewHolder.weight = (TextView) convertView
@@ -63,8 +64,7 @@ public class JournalAdapter extends BaseAdapter {
 					.findViewById(R.id.txtCalories);
 			viewHolder.activities = (TextView) convertView
 					.findViewById(R.id.txtActivities);
-			viewHolder.date = (TextView) convertView
-					.findViewById(R.id.txtDate);
+			viewHolder.date = (TextView) convertView.findViewById(R.id.txtDate);
 			viewHolder.img = (ImageView) convertView
 					.findViewById(R.id.imgDailyGemLevel);
 
@@ -74,21 +74,19 @@ public class JournalAdapter extends BaseAdapter {
 		viewHolder = (ViewHolder) convertView.getTag();
 		viewHolder.weight.setText(mListOfJournals.get(position).getWeight()
 				.toString());
-		viewHolder.calories.setText(mListOfJournals.get(position)
-				.getCalories().toString());
+		viewHolder.calories.setText(mListOfJournals.get(position).getCalories()
+				.toString());
 		viewHolder.activities.setText(String.valueOf(mListOfJournals.get(
 				position).getActivities()));
-		viewHolder.date.setText(mListOfJournals.get(position)
-				.getDate().toString());
+		viewHolder.date.setText(mListOfJournals.get(position).getDate()
+				.toString());
 		viewHolder.img.setImageDrawable(mListOfJournals.get(position)
 				.getImgUrl());
 
-		
 		convertView.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				
 
 			}
 		});

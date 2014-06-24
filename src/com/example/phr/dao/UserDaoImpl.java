@@ -9,8 +9,9 @@ import com.example.phr.model.User;
 public class UserDaoImpl extends BasicDao implements UserDao {
 
 	@Override
-	public boolean verifyUser(String username, String password) throws DatabaseErrorException {
-		
+	public boolean verifyUser(String username, String password)
+			throws DatabaseErrorException {
+
 		try {
 			String command = "user/verifyUser";
 			JSONObject jsonObj = new JSONObject();
@@ -18,10 +19,10 @@ public class UserDaoImpl extends BasicDao implements UserDao {
 			jsonObj.put("password", password);
 			String response = performHttpRequest(command, jsonObj);
 			JSONObject responseObj = new JSONObject(response);
-			
-			if(responseObj.getString("isValid").equals("true"))
+
+			if (responseObj.getString("isValid").equals("true"))
 				return true;
-			else if(responseObj.getString("isValid").equals("false"))
+			else if (responseObj.getString("isValid").equals("false"))
 				return false;
 			else
 				throw new DatabaseErrorException("Cannot perform action");
@@ -31,18 +32,18 @@ public class UserDaoImpl extends BasicDao implements UserDao {
 	}
 
 	@Override
-	public User getUserGivenUsername(String username) throws DatabaseErrorException {
-			String command = "user/getUserGivenUsername";
-			JSONObject jsonObj = new JSONObject();
-			try {
-				jsonObj.put("username", username);
-				String response = performHttpRequest(command, jsonObj);
-				return getGSONObject(response, User.class);
-			} catch (JSONException e) {
-				throw new DatabaseErrorException("Error in JSON", e);
-			}
-			
-			
+	public User getUserGivenUsername(String username)
+			throws DatabaseErrorException {
+		String command = "user/getUserGivenUsername";
+		JSONObject jsonObj = new JSONObject();
+		try {
+			jsonObj.put("username", username);
+			String response = performHttpRequest(command, jsonObj);
+			return getGSONObject(response, User.class);
+		} catch (JSONException e) {
+			throw new DatabaseErrorException("Error in JSON", e);
+		}
+
 	}
 
 }

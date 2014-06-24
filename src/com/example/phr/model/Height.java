@@ -9,8 +9,9 @@ public class Height {
 	BigDecimal heightInInches;
 	Date date;
 	String description;
-	
-	public Height(long id, BigDecimal heightInInches, Date date, String description) {
+
+	public Height(long id, BigDecimal heightInInches, Date date,
+			String description) {
 		super();
 		this.id = id;
 		this.heightInInches = heightInInches;
@@ -49,6 +50,5 @@ public class Height {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
+
 }

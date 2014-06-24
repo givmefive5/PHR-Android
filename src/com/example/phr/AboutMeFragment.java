@@ -1,6 +1,5 @@
 package com.example.phr;
 
-
 import com.example.phr.R;
 
 import android.os.Bundle;
@@ -15,8 +14,9 @@ public class AboutMeFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		View rootView = inflater.inflate(R.layout.fragment_about_me, container, false);
-		
+		View rootView = inflater.inflate(R.layout.fragment_about_me, container,
+				false);
+
 		return rootView;
 	}
 }

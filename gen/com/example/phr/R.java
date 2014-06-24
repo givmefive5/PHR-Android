@@ -51,7 +51,7 @@ public final class R {
         public static final int contactPlaceholder=0x7f08000e;
         public static final int dateRecentExamPlaceholder=0x7f080016;
         public static final int dietaryNeedsPlaceholder=0x7f080022;
-        public static final int graph1=0x7f080031;
+        public static final int graph1=0x7f080030;
         public static final int healthProblemsPlaceholder=0x7f080019;
         public static final int imageHolder=0x7f080032;
         public static final int imgDailyGemLevel=0x7f080033;
@@ -84,7 +84,7 @@ public final class R {
         public static final int restrictedActivitiesPlaceholder=0x7f080025;
         public static final int sexPlaceholder=0x7f08000b;
         public static final int statusTabsPlaceholder=0x7f080003;
-        public static final int textView1=0x7f080030;
+        public static final int textView1=0x7f080031;
         public static final int txtActivities=0x7f08003e;
         public static final int txtAddress=0x7f080013;
         public static final int txtAllergies=0x7f08001e;

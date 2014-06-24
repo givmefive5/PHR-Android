@@ -7,5 +7,5 @@ public class PlacesGoneTo {
 	long id;
 	Place place;
 	Date date;
-	
+
 }
