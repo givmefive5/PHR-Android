@@ -69,8 +69,8 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:background="#00ffffff"
                 android:layout_weight="1" >
@@ -79,10 +79,25 @@
                     android:id="@+id/textView1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginLeft="10dp"
                     android:gravity="center"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
+        			android:background="@drawable/customtextview"
+        			android:textStyle="bold" 
+                    android:text="BMI" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:textSize="25sp"
         			android:background="@drawable/customtextview" 
-                    android:text="box11" />
+        			android:textStyle="bold"
+        			android:textColor ="#FF0000"
+                    android:text="AVE" />
 
             </LinearLayout>
             
