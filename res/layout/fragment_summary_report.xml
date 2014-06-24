@@ -10,7 +10,8 @@
         android:gravity="center"
         android:orientation="vertical"
         android:padding="10dp"
-        android:paddingLeft="0dp" >
+        android:paddingLeft="0dp"
+        android:background="#00ffffff" >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,7 +55,7 @@
             android:id="@+id/linearLayoutWeight2"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:background="#E0E0E0"
+            android:background="#00ffffff"
             android:orientation="vertical"
             android:layout_marginTop="30dp"
            >
