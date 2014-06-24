@@ -84,8 +84,8 @@ public class SummaryReportFragment extends Fragment {
         }
  
         multiRenderer.setApplyBackgroundColor(true);
-        multiRenderer.setBackgroundColor(Color.TRANSPARENT);
-        multiRenderer.setMarginsColor(Color.TRANSPARENT);
+        multiRenderer.setBackgroundColor(Color.argb(0x00, 0x01, 0x01, 0x01));
+        multiRenderer.setMarginsColor(Color.argb(0x00, 0x01, 0x01, 0x01));
 
         multiRenderer.addSeriesRenderer(weightRenderer);
 
