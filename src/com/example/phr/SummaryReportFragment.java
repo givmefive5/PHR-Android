@@ -96,7 +96,7 @@ public class SummaryReportFragment extends Fragment {
 
         multiRenderer.addSeriesRenderer(weightRenderer);
 
-        LinearLayout chartContainer = (LinearLayout) rootView.findViewById(R.id.View2);
+        LinearLayout chartContainer = (LinearLayout) rootView.findViewById(R.id.graph1);
 
         mChart = ChartFactory.getLineChartView(getActivity().getBaseContext(), dataset, multiRenderer);
  

@@ -39,7 +39,6 @@ public final class R {
     }
     public static final class id {
         public static final int ScrollView_status=0x7f080001;
-        public static final int View2=0x7f080031;
         public static final int action_settings=0x7f08003f;
         public static final int activitiesPlaceholder=0x7f08003c;
         public static final int addressPlaceholder=0x7f080011;
@@ -52,6 +51,7 @@ public final class R {
         public static final int contactPlaceholder=0x7f08000e;
         public static final int dateRecentExamPlaceholder=0x7f080016;
         public static final int dietaryNeedsPlaceholder=0x7f080022;
+        public static final int graph1=0x7f080031;
         public static final int healthProblemsPlaceholder=0x7f080019;
         public static final int imageHolder=0x7f080032;
         public static final int imgDailyGemLevel=0x7f080033;
