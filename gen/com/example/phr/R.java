@@ -40,30 +40,30 @@ public final class R {
     }
     public static final class id {
         public static final int ScrollView_status=0x7f080001;
-        public static final int action_settings=0x7f080040;
-        public static final int activitiesPlaceholder=0x7f08003d;
+        public static final int action_settings=0x7f080041;
+        public static final int activitiesPlaceholder=0x7f08003e;
         public static final int addressPlaceholder=0x7f080011;
         public static final int allergiesPlaceholder=0x7f08001c;
         public static final int birthdatePlaceholder=0x7f080008;
         public static final int btnStatus=0x7f080029;
         public static final int btnVitals=0x7f08002a;
         public static final int button1=0x7f080004;
-        public static final int caloriesPlaceholder=0x7f08003a;
+        public static final int caloriesPlaceholder=0x7f08003b;
         public static final int contactPlaceholder=0x7f08000e;
         public static final int dateRecentExamPlaceholder=0x7f080016;
         public static final int dietaryNeedsPlaceholder=0x7f080022;
         public static final int graph1=0x7f080030;
         public static final int healthProblemsPlaceholder=0x7f080019;
-        public static final int imageHolder=0x7f080033;
-        public static final int imgDailyGemLevel=0x7f080034;
+        public static final int imageHolder=0x7f080034;
+        public static final int imgDailyGemLevel=0x7f080035;
         public static final int imgGemLevel=0x7f08002c;
         public static final int imgPerson=0x7f080006;
         public static final int journalTabsPlaceholder=0x7f080028;
-        public static final int lblActivities=0x7f08003e;
+        public static final int lblActivities=0x7f08003f;
         public static final int lblAddress=0x7f080012;
         public static final int lblAllergies=0x7f08001d;
         public static final int lblBirthdate=0x7f080009;
-        public static final int lblCalories=0x7f08003b;
+        public static final int lblCalories=0x7f08003c;
         public static final int lblContact=0x7f08000f;
         public static final int lblDateRecentExam=0x7f080017;
         public static final int lblDietaryNeeds=0x7f080023;
@@ -71,14 +71,14 @@ public final class R {
         public static final int lblMedications=0x7f080020;
         public static final int lblRestrictedActivities=0x7f080026;
         public static final int lblSex=0x7f08000c;
-        public static final int lblWeight=0x7f080037;
-        public static final int lblWeightMetric=0x7f080039;
+        public static final int lblWeight=0x7f080038;
+        public static final int lblWeightMetric=0x7f08003a;
         public static final int linearLayoutWeight=0x7f08002e;
         public static final int linearLayoutWeight2=0x7f08002f;
         public static final int listView_daily_journal=0x7f08002b;
         public static final int medicalInformationPlaceholder=0x7f080014;
         public static final int medicationsPlaceholder=0x7f08001f;
-        public static final int menu_item_status_post=0x7f080041;
+        public static final int menu_item_status_post=0x7f080042;
         public static final int pager=0x7f080000;
         public static final int personalInformationPlaceholder=0x7f080005;
         public static final int progressBar1=0x7f08002d;
@@ -86,14 +86,15 @@ public final class R {
         public static final int sexPlaceholder=0x7f08000b;
         public static final int statusTabsPlaceholder=0x7f080003;
         public static final int textView1=0x7f080031;
-        public static final int textView2=0x7f080032;
-        public static final int txtActivities=0x7f08003f;
+        public static final int textView2=0x7f080033;
+        public static final int textView3=0x7f080032;
+        public static final int txtActivities=0x7f080040;
         public static final int txtAddress=0x7f080013;
         public static final int txtAllergies=0x7f08001e;
         public static final int txtBirthdate=0x7f08000a;
-        public static final int txtCalories=0x7f08003c;
+        public static final int txtCalories=0x7f08003d;
         public static final int txtContact=0x7f080010;
-        public static final int txtDate=0x7f080035;
+        public static final int txtDate=0x7f080036;
         public static final int txtDateRecentExam=0x7f080018;
         public static final int txtDietaryNeeds=0x7f080024;
         public static final int txtHealthProblems=0x7f08001b;
@@ -103,8 +104,8 @@ public final class R {
         public static final int txtRestrictedActivities=0x7f080027;
         public static final int txtSex=0x7f08000d;
         public static final int txtStatus=0x7f080002;
-        public static final int txtWeight=0x7f080038;
-        public static final int weightPlaceholder=0x7f080036;
+        public static final int txtWeight=0x7f080039;
+        public static final int weightPlaceholder=0x7f080037;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
