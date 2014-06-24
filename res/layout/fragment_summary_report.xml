@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5" >
+    android:background="@drawable/green" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
                 android:adjustViewBounds="true"
                 android:paddingLeft="15dp"
                 android:paddingTop="15dp"
-                android:src="@drawable/level_1_diamond" />
+                android:src="@drawable/char_1" />
 
             <ProgressBar
                 android:id="@+id/progressBar1"

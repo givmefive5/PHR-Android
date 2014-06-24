@@ -40,29 +40,6 @@ public class SummaryReportFragment extends Fragment {
         mProgress.setProgress(mProgressStatus);
         mProgress.setMax(100);
 		
-		GraphViewSeries exampleSeries = new GraphViewSeries(new GraphViewData[] {
-			    new GraphViewData(1, 2.0d)
-			    , new GraphViewData(2, 1.5d)
-			    , new GraphViewData(3, 2.5d)
-			    , new GraphViewData(4, 1.0d)
-			});
-			 
-		GraphView graphView = new LineGraphView(
-		    this.getActivity().getApplicationContext() // context
-		    , "GraphViewDemo" // heading
-		);
-		graphView.addSeries(exampleSeries); // data
-		graphView.getGraphViewStyle().setGridColor(Color.GREEN);
-		graphView.getGraphViewStyle().setHorizontalLabelsColor(Color.YELLOW);
-		graphView.getGraphViewStyle().setVerticalLabelsColor(Color.RED);
-		graphView.getGraphViewStyle().setNumHorizontalLabels(5);
-		graphView.getGraphViewStyle().setNumVerticalLabels(4);
-		graphView.getGraphViewStyle().setVerticalLabelsWidth(300);
-       	
-		
-       	LinearLayout layout = (LinearLayout) rootView.findViewById(R.id.linearLayoutWeight);  
-       	layout.addView(graphView); 
-       	
        	
        	//-------------------------------------------------------------------
        	
@@ -107,8 +84,8 @@ public class SummaryReportFragment extends Fragment {
         }
  
         multiRenderer.setApplyBackgroundColor(true);
-        multiRenderer.setBackgroundColor(Color.WHITE);
-        multiRenderer.setMarginsColor(Color.WHITE);
+        multiRenderer.setBackgroundColor(Color.TRANSPARENT);
+        multiRenderer.setMarginsColor(Color.TRANSPARENT);
 
         multiRenderer.addSeriesRenderer(weightRenderer);
 
