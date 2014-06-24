@@ -86,6 +86,14 @@ public class SummaryReportFragment extends Fragment {
         multiRenderer.setApplyBackgroundColor(true);
         multiRenderer.setBackgroundColor(Color.argb(0x00, 0x01, 0x01, 0x01));
         multiRenderer.setMarginsColor(Color.argb(0x00, 0x01, 0x01, 0x01));
+        multiRenderer.setAxesColor(Color.BLACK);
+        multiRenderer.setLabelsColor(Color.BLACK);
+        multiRenderer.setXLabelsColor(Color.BLACK);
+        multiRenderer.setYLabelsColor(0, Color.BLACK);
+        multiRenderer.setAxisTitleTextSize(16);
+        multiRenderer.setLabelsTextSize(15);
+        
+        
 
         multiRenderer.addSeriesRenderer(weightRenderer);
 
