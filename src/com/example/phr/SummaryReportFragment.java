@@ -51,21 +51,20 @@ public class SummaryReportFragment extends Fragment {
         };
         
         int[] x = { 1,2,3,4,5,6,7,8 };
-        int[] income = { 2000,2500,2700,3000,2800,3500,3700,3800};
-        int[] expense = {2200, 2700, 2900, 2800, 2600, 3000, 3300, 3400 };
+        int[] pound = { 80,100,90,110,150,120,110,120};
  
-        XYSeries incomeSeries = new XYSeries("Weight Per Day");
+        XYSeries poundSeries = new XYSeries("Weight Per Day");
  
         for(int i=0;i<x.length;i++){
-            incomeSeries.add(x[i], income[i]);
+            poundSeries.add(x[i], pound[i]);
         }
 
         XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
 
-        dataset.addSeries(incomeSeries);
+        dataset.addSeries(poundSeries);
  
         XYSeriesRenderer weightRenderer = new XYSeriesRenderer();
-        weightRenderer.setColor(Color.RED);
+        weightRenderer.setColor(Color.GREEN);
         weightRenderer.setPointStyle(PointStyle.CIRCLE);
         weightRenderer.setFillPoints(true);
         weightRenderer.setLineWidth(4);
@@ -97,7 +96,7 @@ public class SummaryReportFragment extends Fragment {
 
         multiRenderer.addSeriesRenderer(weightRenderer);
 
-        LinearLayout chartContainer = (LinearLayout) rootView.findViewById(R.id.linearLayoutWeight2);
+        LinearLayout chartContainer = (LinearLayout) rootView.findViewById(R.id.View2);
 
         mChart = ChartFactory.getLineChartView(getActivity().getBaseContext(), dataset, multiRenderer);
  
