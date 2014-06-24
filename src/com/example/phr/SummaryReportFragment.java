@@ -20,8 +20,11 @@ import org.achartengine.renderer.XYSeriesRenderer;
 public class SummaryReportFragment extends Fragment {
 
 	ProgressBar mProgress;
+	ProgressBar cProgress;
 	int mProgressStatus = 70;
-
+	int cProgressStatus = 500;
+	
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -38,6 +41,13 @@ public class SummaryReportFragment extends Fragment {
 
 		// -------------------------------------------------------------------
 
+		cProgress = (ProgressBar) rootView.findViewById(R.id.progressBar2);
+		
+		cProgress.setProgress(cProgressStatus);
+		cProgress.setMax(1865);
+		
+		
+		//-------------------------------------------------------------------
 		View mChart;
 
 		String[] mMonth = new String[] { "Jan", "Feb", "Mar", "Apr", "May",
