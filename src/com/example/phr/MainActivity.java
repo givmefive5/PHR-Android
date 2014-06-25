@@ -35,7 +35,8 @@ public class MainActivity extends FragmentActivity implements
 		viewPager.setAdapter(mAdapter);
 		actionBar.setHomeButtonEnabled(false);
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
+		actionBar.setDisplayShowTitleEnabled(false);
+		actionBar.setDisplayShowHomeEnabled(false);
 		// Adding Tabs
 		/*
 		 * for (String tab_name : tabs) {
@@ -80,8 +81,7 @@ public class MainActivity extends FragmentActivity implements
 				// make respected tab selected
 				actionBar.setSelectedNavigationItem(position);
 				setTitle(tabs[position]);
-				actionBar.setDisplayShowTitleEnabled(false);
-				actionBar.setDisplayShowHomeEnabled(false);
+				
 			}
 
 			@Override

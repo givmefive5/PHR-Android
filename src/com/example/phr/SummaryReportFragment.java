@@ -69,8 +69,10 @@ public class SummaryReportFragment extends Fragment {
 	    renderer.setZoomEnabled(false);
 	    renderer.setZoomRate(1.1f);
 	    renderer.setBarSpacing(100);
-	    renderer.setBarWidth(50);
+	    renderer.setBarWidth(10);
+	    renderer.setMargins(new int[] {20, 30, 15, 0});
         renderer.setXAxisMin(-1);
+        renderer.setXAxisMax(5);
         renderer.setYAxisMin(0);
         renderer.setChartValuesTextSize(20);
 	    renderer.setApplyBackgroundColor(true);
