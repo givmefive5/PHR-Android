@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/thesis_background"
+    android:clickable="false"
+    android:gravity="center_vertical"
+    android:longClickable="false"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.accenture.webservice.Start_Login$PlaceholderFragment" >
+
+    <EditText
+        android:id="@+id/txtUsername"
+        android:layout_width="396dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="250dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="User ID"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="#FFFFFF"
+        android:background="@drawable/username_text_background"
+         >
+
+	</EditText>
+    
+     <EditText
+         android:id="@+id/txtPassword"
+         android:layout_width="396dp"
+         android:layout_height="35dp"
+         android:layout_gravity="center"
+         android:layout_marginTop="30dp"
+         android:gravity="center_vertical|center_horizontal"
+         android:text="Password"
+         android:inputType="text|textPassword"
+         android:textAlignment="center"
+         android:textColor="#FFFFFF"
+         android:textColorHint="#FFFFFF"
+         android:textColorLink="#FFFFFF" 
+         android:background="@drawable/username_text_background"
+         >
+         
+
+	</EditText>
+
+     <ImageButton
+         android:id="@+id/btnLogin"
+         android:layout_width="110dp"
+         android:layout_height="30dp"
+         android:layout_gravity="center"
+         android:layout_marginTop="30dp"
+         android:background="#00000000"
+         android:contentDescription="login"
+         android:padding="1dp"
+         android:scaleType="fitXY"
+         android:src="@drawable/loginbutton_transition" />
+
+     <ImageButton
+         android:id="@+id/btnRegister"
+         android:layout_width="110dp"
+         android:layout_height="30dp"
+         android:layout_gravity="center"
+         android:layout_marginTop="30dp"
+          android:background="#00000000"
+         android:padding="1dp"
+         android:scaleType="fitXY"
+         android:src="@drawable/register" />
+    
+</LinearLayout>
