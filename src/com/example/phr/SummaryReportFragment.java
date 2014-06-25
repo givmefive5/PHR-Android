@@ -57,7 +57,7 @@ public class SummaryReportFragment extends Fragment {
 	    List<double[]> values = new ArrayList<double[]>();
 	    values.add(new double[] { 14230, 12300, 14240, 15244, 15900});
 	    values.add(new double[] { 5230, 7300, 9240, 10540, 7900});
-	    int[] colors = new int[] { Color.WHITE, Color.BLUE };
+	    int[] colors = new int[] { Color.rgb(204, 85, 0), Color.WHITE };
 	    XYMultipleSeriesRenderer renderer = buildBarRenderer(colors);
 	    setChartSettings(renderer, "Daily Consume", "Kind", "Measure", 0.5,
 	        12.5, 0, 24000, Color.WHITE, Color.LTGRAY);
@@ -68,7 +68,7 @@ public class SummaryReportFragment extends Fragment {
 	    renderer.setPanEnabled(true, false);
 	    renderer.setZoomEnabled(false);
 	    renderer.setZoomRate(1.1f);
-	    renderer.setBarSpacing(30);
+	    renderer.setBarSpacing(100);
 	    renderer.setBarWidth(50);
         renderer.setXAxisMin(-1);
         renderer.setYAxisMin(0);
@@ -135,6 +135,7 @@ public class SummaryReportFragment extends Fragment {
 		multiRenderer.setYLabelsColor(0, Color.WHITE);
 		multiRenderer.setAxisTitleTextSize(16);
 		multiRenderer.setLabelsTextSize(15);
+		multiRenderer.setChartValuesTextSize(20);
 
 		multiRenderer.addSeriesRenderer(weightRenderer);
 
