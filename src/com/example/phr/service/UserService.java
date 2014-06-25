@@ -6,8 +6,9 @@ import com.example.phr.model.User;
 
 public interface UserService {
 
-	public void registerUser(User user) throws DuplicateUserException;
-	
+	public void registerUser(User user) throws DuplicateUserException,
+			ServiceException;
+
 	public boolean validateUser(String username, String password)
 			throws ServiceException;
 

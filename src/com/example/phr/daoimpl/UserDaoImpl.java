@@ -48,7 +48,8 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 		JSONObject jsonObj = new JSONObject();
 		try {
 			jsonObj.put("username", username);
-			String response = performHttpRequest_String(command, jsonObj);
+			String response = performHttpRequest_String(command,
+					jsonObj.toString());
 			return getGSONObject(response, User.class);
 		} catch (JSONException e) {
 			throw new DatabaseErrorException("Error in JSON", e);

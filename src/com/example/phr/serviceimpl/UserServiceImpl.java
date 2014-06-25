@@ -13,10 +13,15 @@ public class UserServiceImpl implements UserService {
 	UserDao userDao = new UserDaoImpl();
 
 	@Override
-	public void registerUser(User user) throws DuplicateUserException {
-		userDao.registerUser(user);
+	public void registerUser(User user) throws DuplicateUserException,
+			ServiceException {
+		try {
+			userDao.registerUser(user);
+		} catch (DatabaseErrorException e) {
+			throw new ServiceException("Error in registration", e);
+		}
 	}
-	
+
 	@Override
 	public boolean validateUser(String username, String password)
 			throws ServiceException {

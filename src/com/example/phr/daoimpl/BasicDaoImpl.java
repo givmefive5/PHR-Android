@@ -19,13 +19,13 @@ import com.google.gson.JsonSyntaxException;
 
 public abstract class BasicDaoImpl {
 
-	protected String performHttpRequest_String(String command, String jsonString)
-			throws DatabaseErrorException {
+	protected String performHttpRequest_String(String command,
+			String jsonStringParams) throws DatabaseErrorException {
 		String address = "http://10.0.2.2:8080/PHR-WebServer/" + command;
 		try {
 			HttpClient client = new DefaultHttpClient();
 			HttpPost post = new HttpPost(address);
-			StringEntity se = new StringEntity(jsonString);
+			StringEntity se = new StringEntity(jsonStringParams);
 			se.setContentType(new BasicHeader(HTTP.CONTENT_TYPE,
 					"application/json"));
 			post.setEntity(se);
@@ -39,11 +39,11 @@ public abstract class BasicDaoImpl {
 		}
 	}
 
-	protected JSONObject performHttpRequest_JSON(String command, String params)
-			throws DatabaseErrorException {
+	protected JSONObject performHttpRequest_JSON(String command,
+			String jsonStringParams) throws DatabaseErrorException {
 		try {
 			JSONObject response = new JSONObject(performHttpRequest_String(
-					command, params));
+					command, jsonStringParams));
 			return response;
 		} catch (JSONException e) {
 			throw new DatabaseErrorException("Cannot convert JSON object", e);
