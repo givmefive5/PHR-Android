@@ -63,8 +63,8 @@ public class SummaryReportFragment extends Fragment {
 	        12.5, 0, 24000, Color.GRAY, Color.LTGRAY);
 	    renderer.getSeriesRendererAt(0).setDisplayChartValues(true);
 	    renderer.getSeriesRendererAt(1).setDisplayChartValues(true);
-	    renderer.setXLabels(12);
-	    renderer.setYLabels(10);
+	   // renderer.setXLabels(12);
+	    //renderer.setYLabels(10);
 	    renderer.setXLabelsAlign(Align.LEFT);
 	    renderer.setYLabelsAlign(Align.LEFT);
 	    renderer.setPanEnabled(true, false);
