@@ -22,9 +22,7 @@
                 android:id="@+id/imgGemLevel"
                 android:layout_width="0dp"
                 android:layout_height="170dp"
-                android:layout_marginLeft="0dp"
                 android:adjustViewBounds="true"
-                android:paddingLeft="15dp"
                 android:paddingTop="15dp"
                 android:src="@drawable/greengem"
                 android:layout_weight="2" />

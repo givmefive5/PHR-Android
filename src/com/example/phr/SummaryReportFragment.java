@@ -57,10 +57,10 @@ public class SummaryReportFragment extends Fragment {
 	    List<double[]> values = new ArrayList<double[]>();
 	    values.add(new double[] { 14230, 12300, 14240, 15244, 15900});
 	    values.add(new double[] { 5230, 7300, 9240, 10540, 7900});
-	    int[] colors = new int[] { Color.BLUE, Color.CYAN };
+	    int[] colors = new int[] { Color.WHITE, Color.GRAY };
 	    XYMultipleSeriesRenderer renderer = buildBarRenderer(colors);
 	    setChartSettings(renderer, "Daily Consume", "Kind", "Measure", 0.5,
-	        12.5, 0, 24000, Color.GRAY, Color.LTGRAY);
+	        12.5, 0, 24000, Color.WHITE, Color.LTGRAY);
 	    renderer.getSeriesRendererAt(0).setDisplayChartValues(true);
 	    renderer.getSeriesRendererAt(1).setDisplayChartValues(true);
 	    renderer.setXLabelsAlign(Align.LEFT);
