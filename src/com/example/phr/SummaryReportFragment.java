@@ -54,7 +54,7 @@ public class SummaryReportFragment extends Fragment {
 				"Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
 
 		int[] x = { 1, 2, 3, 4, 5, 6, 7, 8 };
-		int[] pound = { 80, 100, 90, 110, 150, 120, 110, 120 };
+		int[] pound = { 80, 100, 90, 110, 130, 120, 110, 120 };
 
 		XYSeries poundSeries = new XYSeries("Weight Per Day");
 
