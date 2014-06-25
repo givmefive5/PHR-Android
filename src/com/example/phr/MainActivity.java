@@ -80,6 +80,8 @@ public class MainActivity extends FragmentActivity implements
 				// make respected tab selected
 				actionBar.setSelectedNavigationItem(position);
 				setTitle(tabs[position]);
+				actionBar.setDisplayShowTitleEnabled(false);
+				actionBar.setDisplayShowHomeEnabled(false);
 			}
 
 			@Override
