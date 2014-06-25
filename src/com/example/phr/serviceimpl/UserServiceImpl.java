@@ -1,8 +1,9 @@
 package com.example.phr.serviceimpl;
 
 import com.example.phr.dao.UserDao;
-import com.example.phr.dao.UserDaoImpl;
+import com.example.phr.daoimpl.UserDaoImpl;
 import com.example.phr.exceptions.DatabaseErrorException;
+import com.example.phr.exceptions.DuplicateUserException;
 import com.example.phr.exceptions.ServiceException;
 import com.example.phr.model.User;
 import com.example.phr.service.UserService;
@@ -12,10 +13,15 @@ public class UserServiceImpl implements UserService {
 	UserDao userDao = new UserDaoImpl();
 
 	@Override
-	public boolean verifyUser(String username, String password)
+	public void registerUser(User user) throws DuplicateUserException {
+		userDao.registerUser(user);
+	}
+	
+	@Override
+	public boolean validateUser(String username, String password)
 			throws ServiceException {
 		try {
-			return userDao.verifyUser(username, password);
+			return userDao.validateUser(username, password);
 		} catch (DatabaseErrorException e) {
 			throw new ServiceException("An error occured in the user service",
 					e);
@@ -31,5 +37,4 @@ public class UserServiceImpl implements UserService {
 					e);
 		}
 	}
-
 }

@@ -1,28 +1,38 @@
-package com.example.phr.dao;
+package com.example.phr.daoimpl;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.example.phr.dao.UserDao;
 import com.example.phr.exceptions.DatabaseErrorException;
 import com.example.phr.model.User;
+import com.example.tools.GSONConverter;
 
-public class UserDaoImpl extends BasicDao implements UserDao {
+public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 
 	@Override
-	public boolean verifyUser(String username, String password)
+	public void registerUser(User user) throws DatabaseErrorException {
+		String command = "user/register";
+		String jsonParams = GSONConverter.convertObjectToJSON(user);
+		JSONObject response = performHttpRequest_JSON(command, jsonParams);
+		// TODO
+	}
+
+	@Override
+	public boolean validateUser(String username, String password)
 			throws DatabaseErrorException {
 
 		try {
-			String command = "user/verifyUser";
+			String command = "user/validate";
 			JSONObject jsonObj = new JSONObject();
 			jsonObj.put("username", username);
 			jsonObj.put("password", password);
-			String response = performHttpRequest(command, jsonObj);
-			JSONObject responseObj = new JSONObject(response);
+			JSONObject response = performHttpRequest_JSON(command,
+					jsonObj.toString());
 
-			if (responseObj.getString("isValid").equals("true"))
+			if (response.getString("isValid").equals("true"))
 				return true;
-			else if (responseObj.getString("isValid").equals("false"))
+			else if (response.getString("isValid").equals("false"))
 				return false;
 			else
 				throw new DatabaseErrorException("Cannot perform action");
@@ -38,12 +48,11 @@ public class UserDaoImpl extends BasicDao implements UserDao {
 		JSONObject jsonObj = new JSONObject();
 		try {
 			jsonObj.put("username", username);
-			String response = performHttpRequest(command, jsonObj);
+			String response = performHttpRequest_String(command, jsonObj);
 			return getGSONObject(response, User.class);
 		} catch (JSONException e) {
 			throw new DatabaseErrorException("Error in JSON", e);
 		}
 
 	}
-
 }

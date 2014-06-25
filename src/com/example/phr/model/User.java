@@ -1,26 +1,49 @@
 package com.example.phr.model;
 
+import java.util.Date;
+
 public class User {
 
-	private long userId;
+	private long id;
 	private String username;
 	private String password;
-	private String role;
+	private String name;
+	private Date dateOfBirth;
 
-	public User(long userId, String username, String password, String role) {
+	public User() {
 		super();
-		this.userId = userId;
+	}
+
+	public User(String username, String password) {
+		super();
 		this.username = username;
 		this.password = password;
-		this.role = role;
 	}
 
-	public long getUserId() {
-		return userId;
+	public User(String username, String password, String name, Date dateOfBirth) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.name = name;
+		this.dateOfBirth = dateOfBirth;
 	}
 
-	public void setUserId(long userId) {
-		this.userId = userId;
+	public User(long id, String username, String password, String name,
+			Date dateOfBirth) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.name = name;
+		this.dateOfBirth = dateOfBirth;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getUsername() {
@@ -39,12 +62,20 @@ public class User {
 		this.password = password;
 	}
 
-	public String getRole() {
-		return role;
+	public String getName() {
+		return name;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
 	}
 
 }
