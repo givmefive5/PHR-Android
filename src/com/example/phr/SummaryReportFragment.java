@@ -70,7 +70,7 @@ public class SummaryReportFragment extends Fragment {
 	    renderer.setPanEnabled(true, false);
 	    renderer.setZoomEnabled(false);
 	    renderer.setZoomRate(1.1f);
-	    renderer.setBarSpacing(0.5f);
+	    renderer.setBarSpacing(3f);
 	    renderer.setApplyBackgroundColor(true);
 		renderer.setBackgroundColor(Color.argb(0x00, 0x01, 0x01, 0x01));
 		renderer.setMarginsColor(Color.argb(0x00, 0x01, 0x01, 0x01));
