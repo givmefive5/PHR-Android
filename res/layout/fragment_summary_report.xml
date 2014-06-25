@@ -75,9 +75,9 @@
                 android:id="@+id/progressBar2"
                 style="?android:attr/progressBarStyleLarge"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content" 
+                android:layout_height="109dp"
                 android:layout_weight="2"
-                android:indeterminateDrawable="@drawable/customcalorieprogress"/>
+                android:indeterminateDrawable="@drawable/customcalorieprogress" />
 
             <LinearLayout
                 android:layout_width="0dp"
