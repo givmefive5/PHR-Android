@@ -49,12 +49,6 @@ public class SummaryReportFragment extends Fragment {
 
 		// -------------------------------------------------------------------
 
-		//cProgress = (ProgressBar) rootView.findViewById(R.id.progressBar2);
-		
-		//cProgress.setProgress(cProgressStatus);
-		//cProgress.setMax(1865);
-		
-		//---------------------------------------------------------------------
 		View dailyChart;
 		
 		
@@ -78,6 +72,9 @@ public class SummaryReportFragment extends Fragment {
 	    renderer.setZoomEnabled(false);
 	    renderer.setZoomRate(1.1f);
 	    renderer.setBarSpacing(0.5f);
+	    renderer.setApplyBackgroundColor(true);
+		renderer.setBackgroundColor(Color.argb(0x00, 0x01, 0x01, 0x01));
+		renderer.setMarginsColor(Color.argb(0x00, 0x01, 0x01, 0x01));
 		
 	    dailyChart = ChartFactory.getBarChartView(getActivity().getBaseContext(), buildBarDataset(titles, values), renderer,
 	            Type.STACKED);
