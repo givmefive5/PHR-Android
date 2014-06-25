@@ -21,8 +21,10 @@
             <ImageView
                 android:id="@+id/imgGemLevel"
                 android:layout_width="0dp"
-                android:layout_height="170dp"
+                android:layout_height="140dp"
+                android:layout_marginLeft="0dp"
                 android:adjustViewBounds="true"
+                android:paddingLeft="15dp"
                 android:paddingTop="15dp"
                 android:src="@drawable/greengem"
                 android:layout_weight="2" />
@@ -39,7 +41,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_marginRight="5dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="60dp"
                     android:minWidth="25dip"
                     android:progressDrawable="@drawable/customprogressbar" />
 
@@ -53,7 +55,7 @@
                     android:text="500/1000"
                     android:textSize="20sp"
                     android:textStyle="bold" 
-                    android:textColor="#f5f7fa"/>
+                    android:textColor="#3ac968"/>
 
             </LinearLayout>
 
@@ -63,9 +65,9 @@
             android:id="@+id/linearLayoutWeight"
             android:layout_width="match_parent"
             android:layout_height="300dp"
- 			android:background="#80FFFFFF"
+ 			android:background="#00ffffff"
             android:orientation="horizontal"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="70dp"
             
             >
 
@@ -76,7 +78,7 @@
             android:layout_width="fill_parent"
             android:layout_height="270dp"
             android:layout_marginTop="80dp"
-            android:background="#80FFFFFF"
+            android:background="#00ffffff"
             android:weightSum="5" >
 
             <LinearLayout
@@ -84,7 +86,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
-                android:background="#80FFFFFF"
+                android:background="#00ffffff"
                 android:orientation="vertical" >
             </LinearLayout>
 
@@ -92,7 +94,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="#80FFFFFF"
+                android:background="#00ffffff"
                 android:layout_weight="1" >
 
                 <TextView
@@ -139,7 +141,7 @@
             android:layout_width="fill_parent"
             android:layout_height="270dp"
             android:layout_marginTop="80dp"
-            android:background="#80FFFFFF"
+            android:background="#00ffffff"
             android:weightSum="5" >
 
             <LinearLayout
@@ -147,7 +149,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
-                android:background="#80FFFFFF"
+                android:background="#00ffffff"
                 android:orientation="vertical">
             </LinearLayout>
 
@@ -155,7 +157,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="#80FFFFFF"
+                android:background="#00ffffff"
                 android:layout_weight="1" >
 
                 <TextView
