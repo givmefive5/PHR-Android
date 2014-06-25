@@ -20,6 +20,8 @@ public class GSONConverter {
 	}
 
 	public static String convertObjectToJSON(Object objectToBeConverted) {
+		if (objectToBeConverted.getClass().equals(JSONObject.class))
+			return objectToBeConverted.toString();
 		Gson gson = new Gson();
 		return gson.toJson(objectToBeConverted);
 	}
