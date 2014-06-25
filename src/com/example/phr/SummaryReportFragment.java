@@ -153,10 +153,7 @@ public class SummaryReportFragment extends Fragment {
 		//--------------------------------------------------------------------
 		View bloodPressureChart;
 
-		String[] bloodPressureMonth = new String[] { "Jan", "Feb", "Mar", 
-
-"Apr", "May",
-				"Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+		String[] bloodPressureMonth = new String[] { "Jan", "Feb", "Mar", "Apr", "May","Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
 
 		int[] bloodPressurex = { 1, 2, 3, 4, 5, 6, 7, 8 };
 		int[] systolic = { 100, 90, 110, 120, 100, 90, 100, 110 };
