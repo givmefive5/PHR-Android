@@ -65,9 +65,9 @@
             android:id="@+id/linearLayoutWeight"
             android:layout_width="match_parent"
             android:layout_height="300dp"
- 			android:background="#00ffffff"
+ 			android:background="#80FFFFFF"
             android:orientation="horizontal"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="60dp"
             
             >
 
@@ -77,8 +77,8 @@
             android:id="@+id/linearLayoutWeight2"
             android:layout_width="fill_parent"
             android:layout_height="270dp"
-            android:layout_marginTop="50dp"
-            android:background="#00ffffff"
+            android:layout_marginTop="80dp"
+            android:background="#80FFFFFF"
             android:weightSum="5" >
 
             <LinearLayout
@@ -86,7 +86,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
-                android:background="#00ffffff"
+                android:background="#80FFFFFF"
                 android:orientation="vertical" >
             </LinearLayout>
 
@@ -94,7 +94,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="#00ffffff"
+                android:background="#80FFFFFF"
                 android:layout_weight="1" >
 
                 <TextView
@@ -140,8 +140,8 @@
             android:id="@+id/linearLayout3"
             android:layout_width="fill_parent"
             android:layout_height="270dp"
-            android:layout_marginTop="50dp"
-            android:background="#00ffffff"
+            android:layout_marginTop="80dp"
+            android:background="#80FFFFFF"
             android:weightSum="5" >
 
             <LinearLayout
@@ -149,7 +149,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
-                android:background="#00ffffff"
+                android:background="#80FFFFFF"
                 android:orientation="vertical">
             </LinearLayout>
 
@@ -157,7 +157,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="#00ffffff"
+                android:background="#80FFFFFF"
                 android:layout_weight="1" >
 
                 <TextView
