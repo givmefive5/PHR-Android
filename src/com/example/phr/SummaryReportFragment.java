@@ -30,7 +30,7 @@ public class SummaryReportFragment extends Fragment {
 	ProgressBar mProgress;
 	ProgressBar cProgress;
 	int mProgressStatus = 70;
-	int cProgressStatus = 500;
+	
 	
 	
 	@Override
@@ -51,16 +51,15 @@ public class SummaryReportFragment extends Fragment {
 
 		View dailyChart;
 		
+		String[] kind = new String[] { "Calorie", "Sugar", "Sodium", "Cholesterol", "Carbohydrade"};
 		
-		String[] titles = new String[] { "2008", "2007" };
+		String[] titles = new String[] { "Max", "Current" };
 	    List<double[]> values = new ArrayList<double[]>();
-	    values.add(new double[] { 14230, 12300, 14240, 15244, 15900, 19200, 22030, 21200, 19500, 15500,
-	        12600, 14000 });
-	    values.add(new double[] { 5230, 7300, 9240, 10540, 7900, 9200, 12030, 11200, 9500, 10500,
-	        11600, 13500 });
+	    values.add(new double[] { 14230, 12300, 14240, 15244, 15900});
+	    values.add(new double[] { 5230, 7300, 9240, 10540, 7900});
 	    int[] colors = new int[] { Color.BLUE, Color.CYAN };
 	    XYMultipleSeriesRenderer renderer = buildBarRenderer(colors);
-	    setChartSettings(renderer, "Monthly sales in the last 2 years", "Month", "Units sold", 0.5,
+	    setChartSettings(renderer, "Daily Consume", "Kind", "Measure", 0.5,
 	        12.5, 0, 24000, Color.GRAY, Color.LTGRAY);
 	    renderer.getSeriesRendererAt(0).setDisplayChartValues(true);
 	    renderer.getSeriesRendererAt(1).setDisplayChartValues(true);
@@ -75,6 +74,10 @@ public class SummaryReportFragment extends Fragment {
 	    renderer.setApplyBackgroundColor(true);
 		renderer.setBackgroundColor(Color.argb(0x00, 0x01, 0x01, 0x01));
 		renderer.setMarginsColor(Color.argb(0x00, 0x01, 0x01, 0x01));
+		
+		for (int i = 0; i < kind.length; i++) {
+			renderer.addXTextLabel(i + 1, kind[i]);
+		}
 		
 	    dailyChart = ChartFactory.getBarChartView(getActivity().getBaseContext(), buildBarDataset(titles, values), renderer,
 	            Type.STACKED);
@@ -104,7 +107,7 @@ public class SummaryReportFragment extends Fragment {
 		dataset.addSeries(poundSeries);
 
 		XYSeriesRenderer weightRenderer = new XYSeriesRenderer();
-		weightRenderer.setColor(Color.GREEN);
+		weightRenderer.setColor(Color.WHITE);
 		weightRenderer.setPointStyle(PointStyle.CIRCLE);
 		weightRenderer.setFillPoints(true);
 		weightRenderer.setLineWidth(4);
@@ -124,10 +127,10 @@ public class SummaryReportFragment extends Fragment {
 		multiRenderer.setApplyBackgroundColor(true);
 		multiRenderer.setBackgroundColor(Color.argb(0x00, 0x01, 0x01, 0x01));
 		multiRenderer.setMarginsColor(Color.argb(0x00, 0x01, 0x01, 0x01));
-		multiRenderer.setAxesColor(Color.BLACK);
-		multiRenderer.setLabelsColor(Color.BLACK);
-		multiRenderer.setXLabelsColor(Color.BLACK);
-		multiRenderer.setYLabelsColor(0, Color.BLACK);
+		multiRenderer.setAxesColor(Color.WHITE);
+		multiRenderer.setLabelsColor(Color.WHITE);
+		multiRenderer.setXLabelsColor(Color.WHITE);
+		multiRenderer.setYLabelsColor(0, Color.WHITE);
 		multiRenderer.setAxisTitleTextSize(16);
 		multiRenderer.setLabelsTextSize(15);
 
@@ -168,7 +171,7 @@ public class SummaryReportFragment extends Fragment {
 		systolicDataset.addSeries(diastolicSeries);
 		
 		XYSeriesRenderer systolicRenderer = new XYSeriesRenderer();
-		systolicRenderer.setColor(Color.GREEN);
+		systolicRenderer.setColor(Color.WHITE);
 		systolicRenderer.setPointStyle(PointStyle.CIRCLE);
 		systolicRenderer.setFillPoints(true);
 		systolicRenderer.setLineWidth(4);
@@ -199,10 +202,10 @@ public class SummaryReportFragment extends Fragment {
 		bloodPressureMultiRenderer.setApplyBackgroundColor(true);
 		bloodPressureMultiRenderer.setBackgroundColor(Color.argb(0x00, 0x01, 0x01, 0x01));
 		bloodPressureMultiRenderer.setMarginsColor(Color.argb(0x00, 0x01, 0x01, 0x01));
-		bloodPressureMultiRenderer.setAxesColor(Color.BLACK);
-		bloodPressureMultiRenderer.setLabelsColor(Color.BLACK);
-		bloodPressureMultiRenderer.setXLabelsColor(Color.BLACK);
-		bloodPressureMultiRenderer.setYLabelsColor(0, Color.BLACK);
+		bloodPressureMultiRenderer.setAxesColor(Color.WHITE);
+		bloodPressureMultiRenderer.setLabelsColor(Color.WHITE);
+		bloodPressureMultiRenderer.setXLabelsColor(Color.WHITE);
+		bloodPressureMultiRenderer.setYLabelsColor(0, Color.WHITE);
 		bloodPressureMultiRenderer.setAxisTitleTextSize(16);
 		bloodPressureMultiRenderer.setLabelsTextSize(15);
 

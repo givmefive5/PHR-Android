@@ -5,9 +5,9 @@
     <shape>
         <gradient
                 android:startColor="#858585"
-                android:centerColor="#0b131e"
+                android:centerColor="#858585"
                 android:centerY="1.0"
-                android:endColor="#0d1522"
+                android:endColor="#858585"
                 android:angle="270"
         />
     </shape>
@@ -19,9 +19,9 @@
         <shape>
             <gradient
                 android:startColor="#1d853e"
-                android:centerColor="#0b131e"
+                android:centerColor="#1d853e"
                 android:centerY="1.0"
-                android:endColor="#0d1522"
+                android:endColor="#1d853e"
                 android:angle="270"
             />
         </shape>
