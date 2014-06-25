@@ -63,14 +63,12 @@ public class SummaryReportFragment extends Fragment {
 	        12.5, 0, 24000, Color.GRAY, Color.LTGRAY);
 	    renderer.getSeriesRendererAt(0).setDisplayChartValues(true);
 	    renderer.getSeriesRendererAt(1).setDisplayChartValues(true);
-	   // renderer.setXLabels(12);
-	    //renderer.setYLabels(10);
 	    renderer.setXLabelsAlign(Align.LEFT);
 	    renderer.setYLabelsAlign(Align.LEFT);
 	    renderer.setPanEnabled(true, false);
 	    renderer.setZoomEnabled(false);
 	    renderer.setZoomRate(1.1f);
-	    renderer.setBarSpacing(3f);
+	    renderer.setBarSpacing(50f);
 	    renderer.setApplyBackgroundColor(true);
 		renderer.setBackgroundColor(Color.argb(0x00, 0x01, 0x01, 0x01));
 		renderer.setMarginsColor(Color.argb(0x00, 0x01, 0x01, 0x01));
