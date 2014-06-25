@@ -57,7 +57,7 @@ public class SummaryReportFragment extends Fragment {
 	    List<double[]> values = new ArrayList<double[]>();
 	    values.add(new double[] { 14230, 12300, 14240, 15244, 15900});
 	    values.add(new double[] { 5230, 7300, 9240, 10540, 7900});
-	    int[] colors = new int[] { Color.WHITE, Color.GRAY };
+	    int[] colors = new int[] { Color.WHITE, Color.BLUE };
 	    XYMultipleSeriesRenderer renderer = buildBarRenderer(colors);
 	    setChartSettings(renderer, "Daily Consume", "Kind", "Measure", 0.5,
 	        12.5, 0, 24000, Color.WHITE, Color.LTGRAY);
@@ -68,12 +68,10 @@ public class SummaryReportFragment extends Fragment {
 	    renderer.setPanEnabled(true, false);
 	    renderer.setZoomEnabled(false);
 	    renderer.setZoomRate(1.1f);
-	    renderer.setBarSpacing(10);
+	    renderer.setBarSpacing(30);
 	    renderer.setBarWidth(50);
-        renderer.setXAxisMin(-2);
-        renderer.setXAxisMax(11);
+        renderer.setXAxisMin(-1);
         renderer.setYAxisMin(0);
-        renderer.setYAxisMax(300);
         renderer.setChartValuesTextSize(20);
 	    renderer.setApplyBackgroundColor(true);
 		renderer.setBackgroundColor(Color.argb(0x00, 0x01, 0x01, 0x01));
@@ -111,7 +109,7 @@ public class SummaryReportFragment extends Fragment {
 		dataset.addSeries(poundSeries);
 
 		XYSeriesRenderer weightRenderer = new XYSeriesRenderer();
-		weightRenderer.setColor(Color.WHITE);
+		weightRenderer.setColor(Color.BLUE);
 		weightRenderer.setPointStyle(PointStyle.CIRCLE);
 		weightRenderer.setFillPoints(true);
 		weightRenderer.setLineWidth(4);
@@ -175,7 +173,7 @@ public class SummaryReportFragment extends Fragment {
 		systolicDataset.addSeries(diastolicSeries);
 		
 		XYSeriesRenderer systolicRenderer = new XYSeriesRenderer();
-		systolicRenderer.setColor(Color.WHITE);
+		systolicRenderer.setColor(Color.BLUE);
 		systolicRenderer.setPointStyle(PointStyle.CIRCLE);
 		systolicRenderer.setFillPoints(true);
 		systolicRenderer.setLineWidth(4);
