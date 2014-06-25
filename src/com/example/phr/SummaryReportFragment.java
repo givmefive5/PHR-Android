@@ -106,7 +106,79 @@ public class SummaryReportFragment extends Fragment {
 
 		
 		//--------------------------------------------------------------------
+		View bloodPressureChart;
+
+		String[] bloodPressureMonth = new String[] { "Jan", "Feb", "Mar", 
+
+"Apr", "May",
+				"Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+
+		int[] bloodPressurex = { 1, 2, 3, 4, 5, 6, 7, 8 };
+		int[] systolic = { 100, 90, 110, 120, 100, 90, 100, 110 };
+		int[] diastolic = { 80, 70, 80, 60, 70, 90, 80, 70 };
+
+		XYSeries systolicSeries = new XYSeries("Systolic");
+		XYSeries diastolicSeries = new XYSeries("Diastolic");
+
+		for (int i = 0; i < bloodPressurex.length; i++) {
+			systolicSeries.add(bloodPressurex[i], systolic[i]);
+			diastolicSeries.add(bloodPressurex[i], diastolic[i]);
+		}
+
+		XYMultipleSeriesDataset systolicDataset = new XYMultipleSeriesDataset();
 		
+		systolicDataset.addSeries(systolicSeries);
+		systolicDataset.addSeries(diastolicSeries);
+		
+		XYSeriesRenderer systolicRenderer = new XYSeriesRenderer();
+		systolicRenderer.setColor(Color.GREEN);
+		systolicRenderer.setPointStyle(PointStyle.CIRCLE);
+		systolicRenderer.setFillPoints(true);
+		systolicRenderer.setLineWidth(4);
+		systolicRenderer.setDisplayChartValues(true);
+		
+		XYSeriesRenderer diastolicRenderer = new XYSeriesRenderer();
+		diastolicRenderer.setColor(Color.RED);
+		diastolicRenderer.setPointStyle(PointStyle.CIRCLE);
+		diastolicRenderer.setFillPoints(true);
+		diastolicRenderer.setLineWidth(4);
+		diastolicRenderer.setDisplayChartValues(true);
+
+		XYMultipleSeriesRenderer bloodPressureMultiRenderer = new 
+
+		XYMultipleSeriesRenderer();
+		bloodPressureMultiRenderer.setXLabels(0);
+		bloodPressureMultiRenderer.setChartTitle("Blood Pressure Graph");
+		bloodPressureMultiRenderer.setXTitle("Year 2014");
+		bloodPressureMultiRenderer.setYTitle("Systolic/Diastolic Pressure (mm hg)");
+		bloodPressureMultiRenderer.setZoomButtonsVisible(false);
+		
+		
+
+		for (int i = 0; i < bloodPressurex.length; i++) {
+			bloodPressureMultiRenderer.addXTextLabel(i + 1, bloodPressureMonth[i]);
+		}
+
+		bloodPressureMultiRenderer.setApplyBackgroundColor(true);
+		bloodPressureMultiRenderer.setBackgroundColor(Color.argb(0x00, 0x01, 0x01, 0x01));
+		bloodPressureMultiRenderer.setMarginsColor(Color.argb(0x00, 0x01, 0x01, 0x01));
+		bloodPressureMultiRenderer.setAxesColor(Color.BLACK);
+		bloodPressureMultiRenderer.setLabelsColor(Color.BLACK);
+		bloodPressureMultiRenderer.setXLabelsColor(Color.BLACK);
+		bloodPressureMultiRenderer.setYLabelsColor(0, Color.BLACK);
+		bloodPressureMultiRenderer.setAxisTitleTextSize(16);
+		bloodPressureMultiRenderer.setLabelsTextSize(15);
+
+		bloodPressureMultiRenderer.addSeriesRenderer(systolicRenderer);
+		bloodPressureMultiRenderer.addSeriesRenderer(diastolicRenderer);
+
+		LinearLayout bloodPressureContainer = (LinearLayout) rootView
+				.findViewById(R.id.graph2);
+
+		bloodPressureChart = ChartFactory.getLineChartView(getActivity().getBaseContext(),
+				systolicDataset, bloodPressureMultiRenderer);
+
+		bloodPressureContainer.addView(bloodPressureChart);
 		
 
 		
