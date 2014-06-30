@@ -112,11 +112,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_weight="0.1" 
-             android:layout_marginLeft="15dp"  >
+             android:layout_marginLeft="5dp"  >
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="30dp"
+                android:layout_width="25dp"
                 android:layout_height="100dp"
                 android:src="@drawable/line"
                 android:layout_marginTop="10dp" 
@@ -130,7 +130,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginLeft="5dp" 
-            android:layout_weight="3" >
+            android:layout_weight="2.5" >
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -142,7 +142,7 @@
                     android:layout_height="wrap_content"
                     android:text="06 20 2014" 
                     android:layout_alignParentLeft="true"
-                    android:textSize="10sp"
+                    android:textSize="20sp"
                     android:textColor="#9e9898"/>
 
                 <TextView
@@ -181,7 +181,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical" 
-            android:layout_weight="1" 
+            android:layout_weight="1.5" 
             android:layout_marginLeft="2dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="5dp">
