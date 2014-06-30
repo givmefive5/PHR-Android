@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8E8E8" >
+<LinearLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" 
@@ -72,7 +76,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp" 
+        android:layout_marginTop="6dp" 
         android:background="@drawable/container_dropshadow"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -92,7 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SYS" 
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="25dp"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
@@ -200,14 +204,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content" 
-        android:weightSum="5"
-        android:layout_marginTop="20dp" >
+        android:weightSum="6"
+        android:layout_marginTop="5dp" >
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical" 
-            android:layout_weight="3"
+            android:layout_weight="4"
             android:background="@drawable/container_dropshadow"
             android:layout_marginLeft="10dp">
 
@@ -259,16 +263,15 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="5dp">
 
-                    <TextView
-                        android:id="@+id/textView10"
+                    <ImageView
+                        android:id="@+id/imageView6"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="FOOD" 
-                        android:textSize="18sp"
-		                android:gravity="center"
-		                android:textColor="#292a2e"
-		                android:textStyle="bold"
-		                android:layout_marginTop="15dp"/>
+                        android:src="@drawable/food"
+                        android:gravity="center" 
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"/>
 
                     <TextView
                         android:id="@+id/textView12"
@@ -279,7 +282,7 @@
 		                android:gravity="center"
 		                android:textColor="#2b47b8"
 		                android:textStyle="bold"
-		                android:layout_marginTop="10dp"
+		                android:layout_marginTop="2dp"
 		                android:layout_marginBottom="15dp"/>
 
                 </LinearLayout>
@@ -293,16 +296,15 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="10dp">
 
-                    <TextView
-                        android:id="@+id/textView11"
-                       android:layout_width="fill_parent"
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="EXCERCISE" 
-                        android:textSize="18sp"
-		                android:gravity="center"
-		                android:textColor="#292a2e"
-		                android:textStyle="bold"
-		                android:layout_marginTop="15dp" />
+                        android:src="@drawable/exercise"
+                        android:gravity="center"  
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"/>
 
                     <TextView
                         android:id="@+id/textView13"
@@ -313,7 +315,7 @@
 		                android:gravity="center"
 		                android:textColor="#f50c20"
 		                android:textStyle="bold"
-		                android:layout_marginTop="15dp"
+		                android:layout_marginTop="2dp"
 		                android:layout_marginBottom="15dp" />
 
                 </LinearLayout>
@@ -323,15 +325,95 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_weight="2" 
-            android:layout_marginLeft="15dp"
+            android:layout_weight="2"   
+            android:layout_marginLeft="5dp"
             android:background="@drawable/container_dropshadow"
-            android:layout_marginRight="10dp">
+            android:layout_marginRight="10dp"
+            android:weightSum="4.5"
+            >
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="BMI"
+                android:layout_weight="0.5" 
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical" 
+                android:layout_weight="0.1">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/horiline" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="170dp"
+                    android:src="@drawable/fat" 
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:text="40" 
+                android:layout_weight="0.5"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical" 
+                android:layout_weight="0.1">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/horiline" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:text="OVERWEIGHT"
+                android:layout_weight="0.5"
+                android:textSize="15sp"
+                android:gravity="center"
+                android:textColor="#f50c20"
+                android:textStyle="bold"
+                android:layout_marginBottom="15dp" />
+
         </LinearLayout>
 
     </LinearLayout>
     
 </LinearLayout>
+    
+</ScrollView>
