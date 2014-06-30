@@ -3,12 +3,16 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" 
+    android:background="#E8E8E8"
     >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp" >
+        android:padding="5dp" 
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp">
 
         <LinearLayout
             android:id="@+id/imageHolder"
@@ -69,7 +73,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp" 
-        android:background="@drawable/container_dropshadow">
+        android:background="@drawable/container_dropshadow"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
 
         <LinearLayout
             android:id="@+id/titleHolder"
@@ -109,8 +115,9 @@
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="30dp"
-                android:layout_height="120dp"
-                android:src="@drawable/line" />
+                android:layout_height="110dp"
+                android:src="@drawable/line"
+                android:layout_marginTop="10dp" />
 
         </LinearLayout>
 
@@ -132,7 +139,8 @@
                     android:layout_height="wrap_content"
                     android:text="06 20 2014" 
                     android:layout_alignParentLeft="true"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp"
+                    android:textColor="#9e9898"/>
 
                 <TextView
                     android:id="@+id/textView5"
@@ -141,7 +149,8 @@
                     android:text="2:40 pm" 
                     android:layout_toRightOf="@id/textView4"
                     android:textSize="20sp"
-                    android:layout_marginLeft="20dp"/>
+                    android:layout_marginLeft="20dp"
+                    android:textColor="#9e9898"/>
 
             </RelativeLayout>
 
@@ -170,7 +179,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" 
             android:layout_toRightOf="@id/recordHolder"
-            android:layout_marginLeft="20dp">
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp">
 
             <ImageView
                 android:id="@+id/imageView1"
