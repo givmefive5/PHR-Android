@@ -10,9 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp" 
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginRight="5dp">
 
         <LinearLayout
             android:id="@+id/imageHolder"
@@ -74,8 +74,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp" 
         android:background="@drawable/container_dropshadow"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:weightSum="5" 
         android:orientation="horizontal">
 
@@ -142,7 +142,7 @@
                     android:layout_height="wrap_content"
                     android:text="06 20 2014" 
                     android:layout_alignParentLeft="true"
-                    android:textSize="20sp"
+                    android:textSize="10sp"
                     android:textColor="#9e9898"/>
 
                 <TextView
@@ -152,7 +152,7 @@
                     android:text="2:40 pm" 
                     android:layout_toRightOf="@id/textView4"
                     android:textSize="20sp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:textColor="#9e9898"/>
 
             </RelativeLayout>
