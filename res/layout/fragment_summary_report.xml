@@ -72,7 +72,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp" 
+        android:layout_marginTop="20dp" 
         android:background="@drawable/container_dropshadow"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
@@ -133,7 +133,8 @@
 
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"  >
 
                 <TextView
                     android:id="@+id/textView4"
@@ -189,8 +190,146 @@
                 android:id="@+id/imageView1"
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
-                android:src="@drawable/heart" />
+                android:src="@drawable/heart" 
+                android:layout_marginRight="5dp" />
 
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:weightSum="5"
+        android:layout_marginTop="20dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" 
+            android:layout_weight="3"
+            android:background="@drawable/container_dropshadow"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="MY CALORIE GOAL IS" 
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="1,565" 
+                android:textSize="30sp"
+                android:gravity="center"
+                android:textColor="#d9581c"
+                android:textStyle="bold"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="10dp"
+                android:progressDrawable="@drawable/customprogressbar" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" 
+                android:weightSum="6"
+                 android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" 
+                    android:layout_weight="3"
+                    android:background="@drawable/circle"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp">
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="FOOD" 
+                        android:textSize="18sp"
+		                android:gravity="center"
+		                android:textColor="#292a2e"
+		                android:textStyle="bold"
+		                android:layout_marginTop="15dp"/>
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="+800" 
+                        android:textSize="25sp"
+		                android:gravity="center"
+		                android:textColor="#2b47b8"
+		                android:textStyle="bold"
+		                android:layout_marginTop="10dp"
+		                android:layout_marginBottom="15dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" 
+                    android:layout_weight="3"
+                    android:background="@drawable/pinkcircle"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp">
+
+                    <TextView
+                        android:id="@+id/textView11"
+                       android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="EXCERCISE" 
+                        android:textSize="18sp"
+		                android:gravity="center"
+		                android:textColor="#292a2e"
+		                android:textStyle="bold"
+		                android:layout_marginTop="15dp" />
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="-80" 
+                        android:textSize="25sp"
+		                android:gravity="center"
+		                android:textColor="#f50c20"
+		                android:textStyle="bold"
+		                android:layout_marginTop="15dp"
+		                android:layout_marginBottom="15dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="2" 
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/container_dropshadow"
+            android:layout_marginRight="10dp">
         </LinearLayout>
 
     </LinearLayout>
