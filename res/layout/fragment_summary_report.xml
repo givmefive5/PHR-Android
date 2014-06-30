@@ -38,7 +38,7 @@
                 android:id="@+id/progressBar1"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_height="25dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:minWidth="25dip"
@@ -117,7 +117,7 @@
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="30dp"
-                android:layout_height="110dp"
+                android:layout_height="100dp"
                 android:src="@drawable/line"
                 android:layout_marginTop="10dp" 
                 android:layout_marginBottom="3dp"/>
