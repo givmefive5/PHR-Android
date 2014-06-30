@@ -10,12 +10,15 @@ import com.example.phr.R;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -99,6 +102,13 @@ public class JournalFragment extends Fragment {
 		journalAdapter = new JournalAdapter(this.getActivity()
 				.getApplicationContext(), list);
 		mDailyJournalList.setAdapter(journalAdapter);
+		mDailyJournalList.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				Log.e("JOURNAL", "CLICKED!");
+			}
+		});
 
 		mBtnStatus = (Button) rootView.findViewById(R.id.btnStatus);
 		mBtnStatus.setOnClickListener(new OnClickListener() {

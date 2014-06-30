@@ -34,11 +34,37 @@
         android:layout_alignBottom="@id/ScrollView_status"
         android:background="#E8E8E8" >
 
-        <Button
-            android:id="@+id/button1"
+        <ImageButton
+            android:id="@+id/btnTagFriend"
+            android:background="@null"
+            android:padding="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:src="@drawable/icon_small_tag_friend" />
+
+        <ImageButton
+            android:id="@+id/btnCheckinLocation"
+            android:background="@null"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_small_location" />
+
+        <ImageButton
+            android:id="@+id/btnAddPhoto"
+            android:layout_width="wrap_content"
+            android:background="@null"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_small_photo" />
+
+        <ImageButton
+            android:id="@+id/btnAddActions"
+            android:background="@null"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_small_emotion" />
 
     </LinearLayout>
 

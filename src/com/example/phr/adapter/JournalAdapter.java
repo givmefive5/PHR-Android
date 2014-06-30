@@ -3,9 +3,12 @@ package com.example.phr.adapter;
 import java.util.List;
 
 import com.example.phr.R;
+import com.example.phr.StatusFeedActivity;
 import com.example.phr.model.DailyJournal;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,7 +90,9 @@ public class JournalAdapter extends BaseAdapter {
 
 			@Override
 			public void onClick(View v) {
-
+				Intent intent = new Intent(mContext,
+						StatusFeedActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);;
+				v.getContext().startActivity(intent);
 			}
 		});
 		return convertView;
