@@ -7,13 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class MedicineFragment extends Fragment {
+public class HealthTrackerFragment extends Fragment {
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		View rootView = inflater.inflate(R.layout.fragment_medicine, container,
+		View rootView = inflater.inflate(R.layout.fragment_health_tracker, container,
 				false);
 
 		return rootView;

@@ -19,7 +19,7 @@ public class MainActivity extends FragmentActivity implements
 	private TabsPagerAdapter mAdapter;
 	private ActionBar actionBar;
 	// Tab titles
-	private String[] tabs = { "Summary Report", "Journal", "Medicine",
+	private String[] tabs = { "Summary Report", "Journal", "Tracker",
 			"About Me" };
 
 	@Override
