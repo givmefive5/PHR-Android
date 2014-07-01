@@ -5,6 +5,7 @@
 
     <LinearLayout
         android:id="@+id/journalTabsPlaceholder"
+        android:visibility="gone"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

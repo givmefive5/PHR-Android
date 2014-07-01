@@ -57,7 +57,7 @@ public class MainActivity extends FragmentActivity implements
 				break;
 			case 2:
 				actionBar.addTab(actionBar.newTab()
-						.setIcon(R.drawable.selector_medicine)
+						.setIcon(R.drawable.selector_health_tracker)
 						.setTabListener(this));
 				break;
 			case 3:

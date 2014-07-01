@@ -42,6 +42,7 @@ public class JournalFragment extends Fragment {
 		mJournalTabsPlaceholder = (LinearLayout) rootView
 				.findViewById(R.id.journalTabsPlaceholder);
 
+		/*-----------------------OLD POST STATUS BUTTONS------------------
 		mDailyJournalList.setOnScrollListener(new OnScrollListener() {
 			int prevVisibleItem = 0;
 
@@ -65,9 +66,10 @@ public class JournalFragment extends Fragment {
 				 * if(scrollState == OnScrollListener.SCROLL_STATE_IDLE)
 				 * mJournalTabsPlaceholder.setVisibility(View.VISIBLE); else
 				 * mJournalTabsPlaceholder.setVisibility(View.GONE);
-				 */
+				 /
 			}
 		});
+		*/
 
 		// FAKE DATA
 		List<DailyJournal> list = new ArrayList<DailyJournal>();

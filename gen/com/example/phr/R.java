@@ -75,8 +75,8 @@ public final class R {
         public static final int registerbutton=0x7f020033;
         public static final int registerbutton_transition=0x7f020034;
         public static final int selector_about_me=0x7f020035;
-        public static final int selector_journal=0x7f020036;
-        public static final int selector_medicine=0x7f020037;
+        public static final int selector_health_tracker=0x7f020036;
+        public static final int selector_journal=0x7f020037;
         public static final int selector_summary_report=0x7f020038;
         public static final int thesis_background=0x7f020039;
         public static final int username_text_background=0x7f02003a;
