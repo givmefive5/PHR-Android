@@ -30,7 +30,7 @@ public class SummaryReportFragment extends Fragment {
 	ProgressBar mProgress;
 	ProgressBar cProgress;
 	int mProgressStatus = 70;
-	int cProgressStatus = 720;
+	int cProgressStatus = 80;
 	
 	
 	@Override
@@ -54,7 +54,7 @@ public class SummaryReportFragment extends Fragment {
 				.getDrawable(R.drawable.customprogressbar);
 		cProgress.setProgressDrawable(draw);
 		cProgress.setProgress(cProgressStatus);
-		cProgress.setMax(1565);
+		cProgress.setMax(100);
 		
 		return rootView;
 	}

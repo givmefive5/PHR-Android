@@ -7,8 +7,9 @@ public class DailyJournal {
 	private String weight;
 	private String calories;
 	private String activities;
-	private String date;
-	private Drawable imgUrl;
+	private String month;
+	//private Drawable imgUrl;
+	private String day;
 
 	public String getWeight() {
 		return weight;
@@ -34,7 +35,7 @@ public class DailyJournal {
 		this.activities = activities;
 	}
 
-	public String getDate() {
+	/*public String getDate() {
 		return date;
 	}
 
@@ -48,6 +49,21 @@ public class DailyJournal {
 
 	public void setImgUrl(Drawable imgUrl) {
 		this.imgUrl = imgUrl;
+	}*/
+	
+	public String getDay() {
+		return day;
+	}
+
+	public void setDay(String day) {
+		this.day = day;
+	}
+	public String getMonth() {
+		return month;
+	}
+
+	public void setMonth(String month) {
+		this.month = month;
 	}
 
 }

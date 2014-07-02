@@ -27,8 +27,8 @@ public class JournalAdapter extends BaseAdapter {
 		TextView weight;
 		TextView calories;
 		TextView activities;
-		TextView date;
-		ImageView img;
+		TextView month;
+		TextView day;
 	}
 
 	public JournalAdapter(Context aContext, List<DailyJournal> aListOfJournals) {
@@ -57,7 +57,7 @@ public class JournalAdapter extends BaseAdapter {
 
 		if (convertView == null) {
 			LayoutInflater inflater = LayoutInflater.from(mContext);
-			convertView = inflater.inflate(R.layout.item_journal_daily, parent,
+			convertView = inflater.inflate(R.layout.item_journal_daily2, parent,
 					false);
 
 			viewHolder = new ViewHolder();
@@ -67,9 +67,10 @@ public class JournalAdapter extends BaseAdapter {
 					.findViewById(R.id.txtCalories);
 			viewHolder.activities = (TextView) convertView
 					.findViewById(R.id.txtActivities);
-			viewHolder.date = (TextView) convertView.findViewById(R.id.txtDate);
-			viewHolder.img = (ImageView) convertView
-					.findViewById(R.id.imgDailyGemLevel);
+			viewHolder.day = (TextView) convertView.findViewById(R.id.txtDay);
+			viewHolder.month = (TextView) convertView.findViewById(R.id.txtMonth);
+		//	viewHolder.img = (ImageView) convertView
+			//		.findViewById(R.id.imgDailyGemLevel);
 
 			convertView.setTag(viewHolder);
 		}
@@ -81,10 +82,12 @@ public class JournalAdapter extends BaseAdapter {
 				.toString());
 		viewHolder.activities.setText(String.valueOf(mListOfJournals.get(
 				position).getActivities()));
-		viewHolder.date.setText(mListOfJournals.get(position).getDate()
+		viewHolder.day.setText(mListOfJournals.get(position).getDay()
 				.toString());
-		viewHolder.img.setImageDrawable(mListOfJournals.get(position)
-				.getImgUrl());
+		viewHolder.month.setText(mListOfJournals.get(position).getMonth()
+				.toString());
+		//viewHolder.img.setImageDrawable(mListOfJournals.get(position)
+			//	.getImgUrl());
 
 		convertView.setOnClickListener(new OnClickListener() {
 
