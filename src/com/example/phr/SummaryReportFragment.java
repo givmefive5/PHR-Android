@@ -29,7 +29,7 @@ public class SummaryReportFragment extends Fragment {
 
 	ProgressBar mProgress;
 	ProgressBar cProgress;
-	int mProgressStatus = 70;
+	int mProgressStatus = 50;
 	int cProgressStatus = 80;
 	
 	

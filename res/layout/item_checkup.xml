@@ -26,7 +26,7 @@
             android:textSize="15sp"
             android:textStyle="bold" 
             android:gravity="center"
-            android:background="#EC7703"
+            android:background="#6F9CF5"
             android:textColor="#0A090A"/>
 
         <TextView
@@ -49,75 +49,70 @@
         android:layout_marginLeft="5dp" 
         android:layout_marginTop="5dp">
 
-        <RelativeLayout
-            android:id="@+id/weightPlaceholder"
+       <RelativeLayout
+            android:id="@+id/ailmentPlaceholder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/lblWeight"
+                android:id="@+id/lblAilment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:text="@string/journal_weight"
+                android:text="Ailment : "
                 android:textStyle="bold" 
                 android:textColor="#0A090A"/>
 
             <TextView
-                android:id="@+id/txtWeight"
+                android:id="@+id/txtAilment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/lblWeight"
-                android:text="100" />
+                android:layout_toRightOf="@id/lblAilment"
+                android:text="Cough" />
 
-            <TextView
-                android:id="@+id/lblWeightMetric"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/txtWeight"
-                android:text="@string/journal_weight_metric" />
+ 
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/caloriesPlaceholder"
+            android:id="@+id/doctorPlaceholder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/lblCalories"
+                android:id="@+id/lblDoctor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/journal_calories"
+                android:text="Doctor : "
                 android:textStyle="bold" 
                 android:textColor="#0A090A"/>
 
             <TextView
-                android:id="@+id/txtCalories"
+                android:id="@+id/txtDoctor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/lblCalories"
-                android:text="100" />
+                android:layout_toRightOf="@id/lblDoctor"
+                android:text="Dr. Jose Tan" />
         </RelativeLayout>
-
+        
         <RelativeLayout
-            android:id="@+id/activitiesPlaceholder"
+            android:id="@+id/placePlaceholder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/lblActivities"
+                android:id="@+id/lblPlace"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/journal_activities"
+                android:text="Clinic : "
                 android:textStyle="bold" 
                 android:textColor="#0A090A"/>
 
             <TextView
-                android:id="@+id/txtActivities"
+                android:id="@+id/txtPlace"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/lblActivities"
-                android:text="Jogging, Bicycling" />
+                android:layout_toRightOf="@id/lblPlace"
+                android:text="Metropolitan" />
         </RelativeLayout>
     </LinearLayout>
 
@@ -131,7 +126,7 @@
             android:id="@+id/imageView1"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:src="@drawable/icon_next_orange" 
+            android:src="@drawable/icon_next_blue" 
             android:gravity="center"/>
 
     </LinearLayout>
