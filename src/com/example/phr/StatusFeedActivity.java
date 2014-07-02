@@ -27,6 +27,7 @@ public class StatusFeedActivity extends ListActivity {
 		setContentView(R.layout.activity_status_feed);
 		statusAdapter = new StatusAdapter(getApplicationContext(), generateData());
 		setListAdapter(statusAdapter);
+		
 	}
 	
 	@Override

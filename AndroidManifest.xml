@@ -25,14 +25,13 @@
         </activity>
         
         <activity
-            android:name="com.example.phr.LoginActivity" >
+			android:name="com.example.phr.LoginActivity" >
             
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            
         </activity>
         
         <activity
@@ -53,6 +52,22 @@
         
         <activity
             android:name="com.example.phr.RegisterActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.FoodTrackerActivity"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.FoodTrackerPostActivity" >
+            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
         </activity>
     </application>
 
