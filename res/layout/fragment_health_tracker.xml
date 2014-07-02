@@ -25,13 +25,15 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-    				android:background="@drawable/container_dropshadow" >
+    				android:background="@drawable/container_dropshadow" 
+    				>
 
                     <ImageView
                         android:id="@+id/imageViewFoodTracker"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/icon_food" />
+                        android:src="@drawable/icon_food" 
+                        android:padding="5dp"/>
 
                     <TextView
                         android:id="@+id/textViewFoodTracker"
@@ -54,7 +56,8 @@
                         android:id="@+id/imageViewBloodPressureTracker"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/icon_blood_pressure" />
+                        android:src="@drawable/icon_blood_pressure" 
+                        android:padding="5dp"/>
 
                     <TextView
                         android:id="@+id/textViewBloodPressureTracker"
@@ -85,7 +88,8 @@
                         android:id="@+id/ImageViewActivitiesTracker"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/icon_activity" />
+                        android:src="@drawable/icon_activity"
+                        android:padding="5dp" />
 
                     <TextView
                         android:id="@+id/TextViewActivitiesTracker"
@@ -107,7 +111,8 @@
                         android:id="@+id/ImageViewBloodSugar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/icon_blood_sugar" />
+                        android:src="@drawable/icon_blood_sugar" 
+                        android:padding="5dp"/>
 
                     <TextView
                         android:id="@+id/TextViewBloodSugar"
@@ -137,7 +142,8 @@
                         android:id="@+id/ImageViewHeightTracker"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/icon_height" />
+                        android:src="@drawable/icon_height" 
+                        android:padding="5dp"/>
 
                     <TextView
                         android:id="@+id/TextViewHeightTracker"
@@ -159,7 +165,8 @@
                         android:id="@+id/ImageViewFeelingTracker"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/icon_emotion" />
+                        android:src="@drawable/icon_emotion"
+                        android:padding="5dp" />
 
                     <TextView
                         android:id="@+id/TextViewFeelingTracker"
@@ -189,7 +196,8 @@
                         android:id="@+id/ImageViewWeightTracker"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/icon_weight" />
+                        android:src="@drawable/icon_weight" 
+                        android:padding="5dp"/>
 
                     <TextView
                         android:id="@+id/TextViewWeightTracker"
@@ -211,7 +219,8 @@
                         android:id="@+id/ImageViewMedicineTracker"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/icon_medicine" />
+                        android:src="@drawable/icon_medicine" 
+                        android:padding="5dp"/>
 
                     <TextView
                         android:id="@+id/TextViewMedicineTracker"
@@ -241,7 +250,8 @@
                         android:id="@+id/ImageViewNotesTracker"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/icon_note" />
+                        android:src="@drawable/icon_note"
+                        android:padding="5dp" />
 
                     <TextView
                         android:id="@+id/TextViewNotesTracker"
@@ -263,7 +273,8 @@
                         android:id="@+id/ImageViewCheckupTracker"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/icon_checkup" />
+                        android:src="@drawable/icon_checkup"
+                        android:padding="5dp" />
 
                     <TextView
                         android:id="@+id/TextViewCheckupTracker"
