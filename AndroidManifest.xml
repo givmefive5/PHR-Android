@@ -26,12 +26,6 @@
         
         <activity
 			android:name="com.example.phr.LoginActivity" >
-            
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         
         <activity
@@ -60,7 +54,7 @@
         </activity>
         
         <activity
-            android:name="com.example.phr.FoodTrackerPostActivity" >
+            android:name="com.example.phr.WeightTrackerActivity" >
             
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -68,6 +62,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.FoodTrackerPostActivity" >
         </activity>
     </application>
 

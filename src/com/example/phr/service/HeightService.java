@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.List;
 
-import com.example.phr.model.Height;
+import com.example.models_check.Height;
 import com.example.phr.model.User;
 
 public interface HeightService {

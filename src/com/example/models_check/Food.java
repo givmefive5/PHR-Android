@@ -1,4 +1,4 @@
-package com.example.phr.model;
+package com.example.models_check;
 
 public class Food {
 
