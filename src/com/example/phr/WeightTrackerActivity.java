@@ -3,8 +3,8 @@ package com.example.phr;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.phr.adapter.WeightTrackerAdapter;
-import com.example.phr.model.GroupedWeightStatus;
+import com.example.phr.adapter.GroupedStatusAdapter;
+import com.example.phr.model.GroupedStatus;
 import com.example.phr.model.Status;
 
 import android.annotation.SuppressLint;
@@ -15,7 +15,7 @@ import android.widget.ListView;
 
 public class WeightTrackerActivity extends Activity {
 	
-	WeightTrackerAdapter weightAdapter;
+	GroupedStatusAdapter weightAdapter;
 	ListView mWeightList;
 	
 	@SuppressLint("NewApi")
@@ -25,14 +25,14 @@ public class WeightTrackerActivity extends Activity {
 		setContentView(R.layout.activity_weight_tracker);
 		mWeightList = (ListView) findViewById(R.id.listViewWeightTracker);
         getActionBar().setDisplayHomeAsUpEnabled(true);
-		weightAdapter = new WeightTrackerAdapter(getApplicationContext(), generateData());
+		weightAdapter = new GroupedStatusAdapter(getApplicationContext(), generateData());
 		mWeightList.setAdapter(weightAdapter);
 	}
 
-	private List<GroupedWeightStatus> generateData() {
-		List<GroupedWeightStatus> list = new ArrayList<GroupedWeightStatus>();
+	private List<GroupedStatus> generateData() {
+		List<GroupedStatus> list = new ArrayList<GroupedStatus>();
 		
-		GroupedWeightStatus day1 = new GroupedWeightStatus();
+		GroupedStatus day1 = new GroupedStatus();
 		day1.setMonth("May");
 		day1.setDay("2");
 		day1.setAverage("120 lbs");
@@ -54,7 +54,7 @@ public class WeightTrackerActivity extends Activity {
 		//----------------------
 		
 
-		GroupedWeightStatus day2 = new GroupedWeightStatus();
+		GroupedStatus day2 = new GroupedStatus();
 		day2.setMonth("May");
 		day2.setDay("13");
 		day2.setAverage("140 lbs");
@@ -81,7 +81,7 @@ public class WeightTrackerActivity extends Activity {
 		//----------------------
 		
 
-		GroupedWeightStatus day3 = new GroupedWeightStatus();
+		GroupedStatus day3 = new GroupedStatus();
 		day3.setMonth("May");
 		day3.setDay("22");
 		day3.setAverage("70 lbs");

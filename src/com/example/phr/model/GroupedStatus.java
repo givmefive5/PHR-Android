@@ -2,7 +2,7 @@ package com.example.phr.model;
 
 import java.util.ArrayList;
 
-public class GroupedWeightStatus {
+public class GroupedStatus {
 
 	private String month;
 	private String day;

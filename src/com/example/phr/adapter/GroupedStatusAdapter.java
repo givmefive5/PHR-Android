@@ -3,7 +3,7 @@ package com.example.phr.adapter;
 import java.util.List;
 
 import com.example.phr.R;
-import com.example.phr.model.GroupedWeightStatus;
+import com.example.phr.model.GroupedStatus;
 import com.example.phr.model.Status;
 
 import android.content.Context;
@@ -18,20 +18,20 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class WeightTrackerAdapter extends BaseAdapter {
+public class GroupedStatusAdapter extends BaseAdapter {
 
 	private Context mContext;
-	private List<GroupedWeightStatus> mListOfGroupedStatus;
+	private List<GroupedStatus> mListOfGroupedStatus;
 	private int positionSelected;
 
 	private static class ViewHolder {
 		TextView month;
 		TextView day;
 		TextView average;
-		LinearLayout weightListForDay;
+		LinearLayout trackerListForDay;
 	}
 
-	public WeightTrackerAdapter(Context aContext, List<GroupedWeightStatus> aListOfStatus) {
+	public GroupedStatusAdapter(Context aContext, List<GroupedStatus> aListOfStatus) {
 		mListOfGroupedStatus = aListOfStatus;
 		mContext = aContext;
 	}
@@ -57,14 +57,14 @@ public class WeightTrackerAdapter extends BaseAdapter {
 
 		if (convertView == null) {
 			LayoutInflater inflater = LayoutInflater.from(mContext);
-			convertView = inflater.inflate(R.layout.item_weight_tracker, parent,
+			convertView = inflater.inflate(R.layout.item_status_grouped, parent,
 					false);
 
 			viewHolder = new ViewHolder();
-			viewHolder.month = (TextView) convertView.findViewById(R.id.txtWeightTrackerMonth);
-			viewHolder.day = (TextView) convertView.findViewById(R.id.txtWeightTrackerDay);
-			viewHolder.average = (TextView) convertView.findViewById(R.id.txtWeightTrackerAverage);
-			viewHolder.weightListForDay = (LinearLayout) convertView.findViewById(R.id.weightListForDay);
+			viewHolder.month = (TextView) convertView.findViewById(R.id.txtTrackerMonth);
+			viewHolder.day = (TextView) convertView.findViewById(R.id.txtTrackerDay);
+			viewHolder.average = (TextView) convertView.findViewById(R.id.txtTrackerAverage);
+			viewHolder.trackerListForDay = (LinearLayout) convertView.findViewById(R.id.trackerListForDay);
 			
 			convertView.setTag(viewHolder);
 		}
@@ -77,7 +77,7 @@ public class WeightTrackerAdapter extends BaseAdapter {
 		viewHolder.average.setText(mListOfGroupedStatus.get(position).getAverage()
 				.toString());
 
-		viewHolder.weightListForDay.removeAllViews();
+		viewHolder.trackerListForDay.removeAllViews();
 		
 		for(Status s : mListOfGroupedStatus.get(position).getWeightStatusList()){
 			RelativeLayout row = new RelativeLayout(mContext);
@@ -101,7 +101,7 @@ public class WeightTrackerAdapter extends BaseAdapter {
 			txtWeight.setLayoutParams(w);
 			row.addView(txtWeight);
 			
-			viewHolder.weightListForDay.addView(row);
+			viewHolder.trackerListForDay.addView(row);
 		}
 		
 

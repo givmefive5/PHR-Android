@@ -185,9 +185,9 @@ public final class R {
         public static final int lblPlace=0x7f080098;
         public static final int lblRestrictedActivities=0x7f080047;
         public static final int lblSex=0x7f08002d;
+        public static final int lblTrackerAverage=0x7f0800b1;
         public static final int lblWeight=0x7f08009d;
         public static final int lblWeightMetric=0x7f08009f;
-        public static final int lblWeightTrackerAverage=0x7f0800b1;
         public static final int lineHolder=0x7f08007a;
         public static final int listViewFood=0x7f080014;
         public static final int listViewFoodStatusFeed=0x7f080003;
@@ -242,6 +242,8 @@ public final class R {
         public static final int textViewStatusTitle=0x7f08000c;
         public static final int thirdRowHolder=0x7f08005a;
         public static final int titleHolder=0x7f080078;
+        public static final int trackerAveragePlaceholder=0x7f0800b0;
+        public static final int trackerListForDay=0x7f0800b3;
         public static final int txt=0x7f080005;
         public static final int txtActivities=0x7f0800a5;
         public static final int txtAddress=0x7f080034;
@@ -270,14 +272,12 @@ public final class R {
         public static final int txtSex=0x7f08002e;
         public static final int txtStatus=0x7f08001c;
         public static final int txtStatusAction=0x7f08009b;
+        public static final int txtTrackerAverage=0x7f0800b2;
+        public static final int txtTrackerDay=0x7f0800af;
+        public static final int txtTrackerMonth=0x7f0800ae;
         public static final int txtUsername=0x7f080016;
         public static final int txtWeight=0x7f08009e;
-        public static final int txtWeightTrackerAverage=0x7f0800b2;
-        public static final int txtWeightTrackerDay=0x7f0800af;
-        public static final int txtWeightTrackerMonth=0x7f0800ae;
-        public static final int weightListForDay=0x7f0800b3;
         public static final int weightPlaceholder=0x7f08009c;
-        public static final int weightTrackerAveragePlaceholder=0x7f0800b0;
     }
     public static final class layout {
         public static final int activity_add_actions=0x7f030000;
@@ -302,7 +302,7 @@ public final class R {
         public static final int item_journal_by_date=0x7f030013;
         public static final int item_journal_daily=0x7f030014;
         public static final int item_status=0x7f030015;
-        public static final int item_weight_tracker=0x7f030016;
+        public static final int item_status_grouped=0x7f030016;
     }
     public static final class menu {
         public static final int main=0x7f070000;
