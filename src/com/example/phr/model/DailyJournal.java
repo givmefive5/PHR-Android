@@ -1,7 +1,5 @@
 package com.example.phr.model;
 
-import android.graphics.drawable.Drawable;
-
 public class DailyJournal {
 
 	private String weight;

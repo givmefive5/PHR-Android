@@ -2,26 +2,23 @@ package com.example.phr.adapter;
 
 import java.util.List;
 
+import com.example.phr.CheckupTrackerActivity;
 import com.example.phr.R;
-import com.example.phr.StatusFeedActivity;
 import com.example.phr.model.Checkup;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class CheckupAdapter extends BaseAdapter {
 
 	private Context mContext;
 	private List<Checkup> mListOfCheckup;
-	private int positionSelected;
 
 	private static class ViewHolder {
 		TextView ailment;
@@ -95,8 +92,10 @@ public class CheckupAdapter extends BaseAdapter {
 
 			@Override
 			public void onClick(View v) {
+				
+				// FOR STATUS ON CLICK
 				Intent intent = new Intent(mContext,
-						StatusFeedActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);;
+						CheckupTrackerActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);;
 				v.getContext().startActivity(intent);
 			}
 		});
