@@ -12,7 +12,7 @@
         android:layout_marginBottom="12dp">
 
         <ImageView
-            android:id="@+id/bloodpressureBanner"
+            android:id="@+id/bloodsugarBanner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/icon_plus_blue" />
@@ -20,7 +20,7 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/bloopressureGraph"
+        android:id="@+id/bloodsugarGraph"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:orientation="vertical"
@@ -31,7 +31,7 @@
     </LinearLayout>
 
     <ListView
-        android:id="@+id/listView_bloodpressure"
+        android:id="@+id/listView_bloodsugar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
     </ListView>

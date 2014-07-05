@@ -11,12 +11,11 @@ public class BloodPressure {
 	int diastolic;
 	String date;
 	String time;
-	String note;
 	Drawable image;
 	String description;
 
 	public BloodPressure(long id, int systolic, int diastolic, String date,String time,
-			String description, String note, Drawable image) {
+			String description,  Drawable image) {
 		super();
 		this.id = id;
 		this.systolic = systolic;
@@ -24,7 +23,6 @@ public class BloodPressure {
 		this.date = date;
 		this.description = description;
 		this.time = time;
-		this.note = note;
 		this.image = image;
 	}
 
@@ -34,14 +32,6 @@ public class BloodPressure {
 
 	public void setImage(Drawable image) {
 		this.image = image;
-	}
-	
-	public String getNote() {
-		return note;
-	}
-
-	public void setNote(String note) {
-		this.note = note;
 	}
 	
 	public String getTime() {
