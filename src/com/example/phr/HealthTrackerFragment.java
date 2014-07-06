@@ -17,7 +17,7 @@ public class HealthTrackerFragment extends Fragment {
 	private LinearLayout mBtnCheckupTracker;
 	private LinearLayout mBtnBloodPressureTracker;
 	private LinearLayout mBtnBloodSugarTracker;
-	
+	private LinearLayout mBtnNoteTracker;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -67,6 +67,15 @@ public class HealthTrackerFragment extends Fragment {
 			}
 		});
 		
+		mBtnNoteTracker = (LinearLayout)rootView.findViewById(R.id.btnNotesTracker);
+		mBtnNoteTracker.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getActivity(),
+						NoteTrackerActivity.class);
+				startActivity(intent);
+			}
+		});
 		
 		return rootView;
 	}

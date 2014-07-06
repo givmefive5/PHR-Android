@@ -38,13 +38,13 @@ public class BloodSugarTrackerActivity extends Activity{
 				
 		// FAKE DATA
 		List<BloodSugar> list = new ArrayList<BloodSugar>();
-		BloodSugar data1 = new BloodSugar(1, 4.5, "after meal" ,"" ,"06 18 14", "3:40pm", getResources().getDrawable(R.drawable.smileygood));
+		BloodSugar data1 = new BloodSugar(1, 4.5, "after meal" ,"" ,"Jun 10, 2014", "3:40pm", getResources().getDrawable(R.drawable.smileygood));
 		
-		BloodSugar data2 = new BloodSugar(2, 9.5, "before meal" ,"" ,"06 19 14", "5:40pm", getResources().getDrawable(R.drawable.bloodsugarbad));
+		BloodSugar data2 = new BloodSugar(2, 9.5, "before meal" ,"" ,"Jun 09, 2014", "5:40pm", getResources().getDrawable(R.drawable.bloodsugarbad));
 
-		BloodSugar data3 = new BloodSugar(3, 11, "after meal" ,"" ,"06 20 14", "8:40pm", getResources().getDrawable(R.drawable.bloodsugarbad));
+		BloodSugar data3 = new BloodSugar(3, 11, "after meal" ,"" ,"Jun 08, 2014", "8:40pm", getResources().getDrawable(R.drawable.bloodsugarbad));
 		
-		BloodSugar data4 = new BloodSugar(4, 12.3, "before meal" ,"" ,"06 21 14", "3:40pm", getResources().getDrawable(R.drawable.bloodsugarbad));
+		BloodSugar data4 = new BloodSugar(4, 12.3, "before meal" ,"" ,"Jun 07, 2014", "3:40pm", getResources().getDrawable(R.drawable.bloodsugarbad));
 
 		list.add(data3);
 		list.add(data2);

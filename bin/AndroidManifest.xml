@@ -80,6 +80,15 @@
          <activity
             android:name="com.example.phr.BloodSugarTrackerActivity" >
         </activity>
+        
+         <activity
+            android:name="com.example.phr.NoteTrackerActivity" >
+        </activity>
+        
+         <activity
+            android:name="com.example.phr.BloodPressurePostActivity">
+
+        </activity>
     </application>
 
 </manifest>

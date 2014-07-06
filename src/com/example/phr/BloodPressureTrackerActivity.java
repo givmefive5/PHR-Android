@@ -11,10 +11,12 @@ import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -28,6 +30,7 @@ public class BloodPressureTrackerActivity extends Activity{
 	
 	ListView mBloodPressureList;
 	BloodPressureAdapter bloodPressureAdapter;
+	LinearLayout mBtnBloodPressurePost;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +41,13 @@ public class BloodPressureTrackerActivity extends Activity{
 				
 		// FAKE DATA
 		List<BloodPressure> list = new ArrayList<BloodPressure>();
-		BloodPressure data1 = new BloodPressure(1,170,80,"06 18 14","3:40pm",null,getResources().getDrawable(R.drawable.heart));
+		BloodPressure data1 = new BloodPressure(1,170,80,"Jun 18, 2014","3:40pm",null,getResources().getDrawable(R.drawable.heart));
 		
-		BloodPressure data2 = new BloodPressure(2,180,70,"06 19 14","1:40pm",null,getResources().getDrawable(R.drawable.sick_heart));
+		BloodPressure data2 = new BloodPressure(2,180,70,"Jun 19, 2014","1:40pm",null,getResources().getDrawable(R.drawable.sick_heart));
 
-		BloodPressure data3 = new BloodPressure(3,160,75,"06 20 14","2:40pm",null,getResources().getDrawable(R.drawable.heart));
+		BloodPressure data3 = new BloodPressure(3,160,75,"Jun 20, 2014","2:40pm",null,getResources().getDrawable(R.drawable.heart));
 		
-		BloodPressure data4 = new BloodPressure(4,170,75,"06 21 14","2:50pm",null,getResources().getDrawable(R.drawable.heart));
+		BloodPressure data4 = new BloodPressure(4,170,75,"Jun 21, 2014","2:50pm",null,getResources().getDrawable(R.drawable.heart));
 
 		list.add(data3);
 		list.add(data2);
@@ -62,6 +65,17 @@ public class BloodPressureTrackerActivity extends Activity{
 				Log.e("bloodpressure", "CLICKED!");
 			}
 		});
+		
+		mBtnBloodPressurePost = (LinearLayout) findViewById(R.id.bloodpressurePost);
+		mBtnBloodPressurePost.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getApplicationContext(),
+						BloodPressurePostActivity.class);
+				startActivity(intent);
+			}
+		});
+		
 		
 		//Graph	
 	//------------------------------
