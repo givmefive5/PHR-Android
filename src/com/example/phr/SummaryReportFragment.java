@@ -1,28 +1,19 @@
 package com.example.phr;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.example.phr.R;
-import android.graphics.Color;
-import android.graphics.Paint.Align;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import org.achartengine.ChartFactory;
-import org.achartengine.chart.PointStyle;
-import org.achartengine.chart.BarChart.Type;
 import org.achartengine.model.CategorySeries;
 import org.achartengine.model.XYMultipleSeriesDataset;
-import org.achartengine.model.XYSeries;
 import org.achartengine.renderer.SimpleSeriesRenderer;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
-import org.achartengine.renderer.XYSeriesRenderer;
 
 
 public class SummaryReportFragment extends Fragment {

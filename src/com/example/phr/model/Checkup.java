@@ -7,7 +7,19 @@ public class Checkup {
 	private String clinic;
 	private String day;
 	private String month;
+	private String note;
 	
+	
+	public Checkup(String ailment, String doctor, String clinic, String day,
+			String month,String note) {
+		super();
+		this.ailment = ailment;
+		this.doctor = doctor;
+		this.clinic = clinic;
+		this.day = day;
+		this.month = month;
+		this.note = note;
+	}
 	public String getAilment() {
 		return ailment;
 	}
@@ -37,6 +49,12 @@ public class Checkup {
 	}
 	public void setMonth(String month) {
 		this.month = month;
+	}
+	public String getNote() {
+		return note;
+	}
+	public void setNote(String note) {
+		this.note = note;
 	}
 	
 	
