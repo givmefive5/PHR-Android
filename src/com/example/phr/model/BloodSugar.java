@@ -1,4 +1,4 @@
-package com.example.models_check;
+package com.example.phr.model;
 
 import java.math.BigDecimal;
 

@@ -3,7 +3,7 @@ package com.example.phr.service;
 import java.sql.Date;
 import java.util.List;
 
-import com.example.models_check.BloodPressure;
+import com.example.phr.model.BloodPressure;
 import com.example.phr.model.User;
 
 public interface BloodPressureService {
