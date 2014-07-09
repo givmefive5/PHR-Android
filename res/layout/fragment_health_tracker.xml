@@ -4,21 +4,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ScrollView
-        android:id="@+id/scrollViewHealthTracker"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+   
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:orientation="vertical" 
+            android:weightSum ="5">
 
             <LinearLayout
         		android:id="@+id/firstRowHolder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="2" >
+                android:weightSum="2"
+                android:layout_weight="1" >
 
                 <LinearLayout
         			android:id="@+id/btnFoodTracker"
@@ -31,7 +30,8 @@
                     <ImageView
                         android:id="@+id/imageViewFoodTracker"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
                         android:src="@drawable/icon_food" 
                         android:padding="5dp"/>
 
@@ -56,7 +56,8 @@
                     <ImageView
                         android:id="@+id/imageViewBloodPressureTracker"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
                         android:src="@drawable/icon_blood_pressure" 
                         android:padding="5dp"/>
 
@@ -76,7 +77,8 @@
                 android:id="@+id/secondRowHolder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="2" >
+                android:weightSum="2" 
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:id="@+id/btnActivitiesTracker"
@@ -88,7 +90,8 @@
                     <ImageView
                         android:id="@+id/ImageViewActivitiesTracker"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
                         android:src="@drawable/icon_activity"
                         android:padding="5dp" />
 
@@ -111,7 +114,8 @@
                     <ImageView
                         android:id="@+id/ImageViewBloodSugar"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
                         android:src="@drawable/icon_blood_sugar" 
                         android:padding="5dp"/>
 
@@ -130,7 +134,8 @@
                 android:id="@+id/thirdRowHolder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="2" >
+                android:weightSum="2" 
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:id="@+id/btnHeightTracker"
@@ -142,7 +147,8 @@
                     <ImageView
                         android:id="@+id/ImageViewHeightTracker"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
                         android:src="@drawable/icon_height" 
                         android:padding="5dp"/>
 
@@ -165,7 +171,8 @@
                     <ImageView
                         android:id="@+id/ImageViewFeelingTracker"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
                         android:src="@drawable/icon_emotion"
                         android:padding="5dp" />
 
@@ -184,7 +191,8 @@
                 android:id="@+id/fourthRowHolder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="2" >
+                android:weightSum="2" 
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:id="@+id/btnWeightTracker"
@@ -196,7 +204,8 @@
                     <ImageView
                         android:id="@+id/ImageViewWeightTracker"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
                         android:src="@drawable/icon_weight" 
                         android:padding="5dp"/>
 
@@ -219,7 +228,8 @@
                     <ImageView
                         android:id="@+id/ImageViewMedicineTracker"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
                         android:src="@drawable/icon_medicine" 
                         android:padding="5dp"/>
 
@@ -238,7 +248,8 @@
                 android:id="@+id/fifthRowHolder"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="2" >
+                android:weightSum="2" 
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:id="@+id/btnNotesTracker"
@@ -250,7 +261,8 @@
                     <ImageView
                         android:id="@+id/ImageViewNotesTracker"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
                         android:src="@drawable/icon_note"
                         android:padding="5dp" />
 
@@ -274,7 +286,8 @@
                     <ImageView
                         android:id="@+id/ImageViewCheckupTracker"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center"
                         android:src="@drawable/icon_checkup"
                         android:padding="5dp" />
 
@@ -290,6 +303,5 @@
             
         </LinearLayout>
         
-    </ScrollView>
 
 </LinearLayout>

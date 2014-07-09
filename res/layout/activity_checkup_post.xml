@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp" >
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Date"
+            android:inputType="date"
+            android:text="Jun 23, 2014" />
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Time"
+            android:inputType="time"
+            android:text="10:20 am" >
+
+            <requestFocus />
+        </EditText>
+    </LinearLayout>
+    
+        
+         <RelativeLayout
+            android:id="@+id/noteTitleHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Title"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/noteStatusDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewTitle"
+	            android:background="#000000" />
+
+	        <EditText
+	            android:id="@+id/textViewnoteStatus"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:hint="What is it?"
+	            android:layout_below="@id/noteStatusDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp"
+	            android:ems="10"
+	            android:inputType="textMultiLine"
+	            android:textStyle="bold" >
+	        </EditText>
+	        
+        </RelativeLayout>
+        
+    </LinearLayout>
+    
+
+</ScrollView>

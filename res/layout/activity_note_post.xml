@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F9FCDC" >
+    
+<LinearLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
@@ -108,11 +114,47 @@
 	                    android:layout_height="wrap_content"
 	                    android:background="@drawable/underline_background"
 	                    android:padding="5dp"
-	                    android:hint="Describe it \n\n\n\n\n\n\n\n\n\n\n\n\n\n" />
+	                    android:hint="Describe it \n\n\n\n\n\n\n\n\n" />
 
 	            </LinearLayout>
 	        </ScrollView>
 	        
         </RelativeLayout>
     
+        <RelativeLayout
+            android:id="@+id/bloddpressureLocationHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewLocationTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Checkin Location"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/bloddpressureLocationDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewLocationTitle"
+	            android:background="#000000" />
+
+	        <TextView
+	            android:id="@+id/textViewbloddpressureLocation"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@id/bloddpressureLocationDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp"
+	            android:text="Set your Location"
+	            android:drawableLeft="@drawable/icon_location_small"
+        		android:drawablePadding="5dp"
+	            android:textStyle="bold" />
+	        
+        </RelativeLayout>
 </LinearLayout>
+
+
+</ScrollView>

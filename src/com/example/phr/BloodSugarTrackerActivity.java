@@ -11,11 +11,14 @@ import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -28,6 +31,7 @@ public class BloodSugarTrackerActivity extends Activity{
 	
 	ListView mBloodSugarList;
 	BloodSugarAdapter bloodSugarAdapter;
+	ImageView mBtnBloodsugarPost;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -135,5 +139,14 @@ public class BloodSugarTrackerActivity extends Activity{
 		bloodSugarContainer.addView(bloodSugarChart);
 		
 		
+		mBtnBloodsugarPost = (ImageView) findViewById(R.id.bloodsugarBanner);
+		mBtnBloodsugarPost.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getApplicationContext(),
+						BloodsugarPostActivity.class);
+				startActivity(intent);
+			}
+		});
 	}
 }

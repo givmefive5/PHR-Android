@@ -98,8 +98,16 @@
 
         </activity>
         
-         <activity
+        <activity
             android:name="com.example.phr.NotePostActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.CheckupPostActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.BloodsugarPostActivity" >
         </activity>
     </application>
 
