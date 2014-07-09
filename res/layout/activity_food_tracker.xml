@@ -4,14 +4,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/txtSearchFoodHolder"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint=" Search Food"
-        android:drawablePadding="10dp"
-        android:drawableLeft="@drawable/icon_small_search"
-        android:ems="10" />
+        android:layout_height="80dp"
+        android:gravity="center" 
+        android:layout_marginBottom="8dp">
+
+        <ImageButton
+            android:id="@+id/btnAddFood"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/checkup_banner" />
+
+    </RelativeLayout>
 
     <ListView
         android:id="@+id/listViewFoodStatusFeed"

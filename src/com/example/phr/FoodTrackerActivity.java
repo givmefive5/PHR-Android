@@ -2,10 +2,16 @@ package com.example.phr;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageButton;
 import android.widget.ListView;
+
 import com.example.phr.adapter.StatusAdapter;
 import com.example.phr.model.Status;
 
@@ -13,6 +19,7 @@ public class FoodTrackerActivity extends Activity {
 	
 	StatusAdapter statusAdapter;
 	ListView mFoodList;
+	ImageButton mBtnAddFood;
 	
 	@SuppressLint("NewApi")
 	@Override
@@ -23,6 +30,17 @@ public class FoodTrackerActivity extends Activity {
         getActionBar().setDisplayHomeAsUpEnabled(true);
 		statusAdapter = new StatusAdapter(getApplicationContext(), generateData());
 		mFoodList.setAdapter(statusAdapter);
+		
+		mBtnAddFood = (ImageButton) findViewById(R.id.btnAddFood);
+		mBtnAddFood.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(getApplicationContext(),
+						FoodTrackerPostActivity.class);
+				startActivity(intent);
+			}
+		});
 	}
 
 	private List<Status> generateData() {

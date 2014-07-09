@@ -57,8 +57,16 @@
         </activity>
         
         <activity
-            android:name="com.example.phr.FoodTrackerActivity"
-            android:windowSoftInputMode="stateHidden" >
+            android:name="com.example.phr.FoodTrackerActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.FoodTrackerPostActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.FoodTrackerSearchActivity" >
         </activity>
         
         <activity
@@ -83,10 +91,6 @@
         
          <activity
             android:name="com.example.phr.BloodPressurePostActivity">
-        </activity>
-        
-        <activity
-            android:name="com.example.phr.FoodTrackerPostActivity" >
         </activity>
         
         <activity
