@@ -4,6 +4,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <LinearLayout
+        android:id="@+id/weightPost"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center" 
+        android:layout_marginBottom="8dp">
+
+        <ImageButton
+            android:id="@+id/btnAddWeight"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/weight_banner" />
+
+    </LinearLayout>
+
     <ListView
         android:id="@+id/listViewWeightTracker"
         android:layout_width="match_parent"

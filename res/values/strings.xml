@@ -18,5 +18,10 @@
         <item>ft</item>
         <item>cm</item>
     </string-array>
+ 
+    <string-array name="weight_metrics">
+        <item>kg</item>
+        <item>lbs</item>
+    </string-array>
 
 </resources>

@@ -78,6 +78,10 @@
         </activity>
         
         <activity
+            android:name="com.example.phr.WeightTrackerPostActivity" >
+        </activity>
+        
+        <activity
             android:name="com.example.phr.BloodPressureTrackerActivity" >
         </activity>
         
