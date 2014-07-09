@@ -7,10 +7,14 @@ import com.example.phr.adapter.NoteAdapter;
 import com.example.phr.model.Note;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
@@ -19,6 +23,7 @@ public class NoteTrackerActivity extends Activity{
 
 	ListView mNoteList;
 	NoteAdapter noteAdapter;
+	ImageView mBtnNotePost;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +60,16 @@ public class NoteTrackerActivity extends Activity{
 			}
 		});
 		
+		
+		mBtnNotePost = (ImageView) findViewById(R.id.noteBanner);
+		mBtnNotePost.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getApplicationContext(),
+						NotePostActivity.class);
+				startActivity(intent);
+			}
+		});
 	}
 
 }

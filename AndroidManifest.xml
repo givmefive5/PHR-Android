@@ -97,6 +97,10 @@
             android:name="com.example.phr.HeightTrackerActivity">
 
         </activity>
+        
+         <activity
+            android:name="com.example.phr.NotePostActivity" >
+        </activity>
     </application>
 
 </manifest>
