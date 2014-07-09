@@ -458,10 +458,14 @@
 
     <LinearLayout
         android:id="@+id/piegraph"
-        android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
         android:orientation="vertical"
-        android:layout_marginTop="10dp" >
+        android:layout_marginTop="10dp" 
+        android:padding="15dp" 
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/container_dropshadow">
     </LinearLayout>
     
 </LinearLayout>

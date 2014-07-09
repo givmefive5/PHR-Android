@@ -3,15 +3,21 @@ package com.example.phr;
 import java.util.List;
 
 import com.example.phr.R;
+
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+
+import org.achartengine.ChartFactory;
 import org.achartengine.model.CategorySeries;
 import org.achartengine.model.XYMultipleSeriesDataset;
+import org.achartengine.renderer.DefaultRenderer;
 import org.achartengine.renderer.SimpleSeriesRenderer;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 
@@ -46,6 +52,56 @@ public class SummaryReportFragment extends Fragment {
 		cProgress.setProgressDrawable(draw);
 		cProgress.setProgress(cProgressStatus);
 		cProgress.setMax(100);
+		
+		
+		//-----chart
+		View categoryChart;
+
+		
+		   String[] code = new String[] {
+		            "Sodium", "Carbohydrate", "Sugar", "Cholesterol"};
+		 
+		        // Pie Chart Section Value
+		        double[] distribution = { 270, 300, 230, 320} ;
+		 
+		        // Color of each Pie Chart Sections
+		        int[] colors = { Color.parseColor("#5C77D1"),Color.parseColor("#C177C9"), Color.parseColor("#E8BB6D"), Color.parseColor("#6D9AE8")};
+		 
+		        // Instantiating CategorySeries to plot Pie Chart
+		        CategorySeries distributionSeries = new CategorySeries(" Calorie Subcategory");
+		        for(int i=0 ;i < distribution.length;i++){
+		            // Adding a slice with its values and name to the Pie Chart
+		            distributionSeries.add(code[i], distribution[i]);
+		        }
+		 
+		        // Instantiating a renderer for the Pie Chart
+		        DefaultRenderer defaultRenderer  = new DefaultRenderer();
+		        for(int i = 0 ;i<distribution.length;i++){
+		            SimpleSeriesRenderer seriesRenderer = new SimpleSeriesRenderer();
+		            seriesRenderer.setColor(colors[i]);
+		            seriesRenderer.setDisplayBoundingPoints(true);
+		            seriesRenderer.setDisplayChartValuesDistance(30);
+		            seriesRenderer.setChartValuesTextSize(40);
+		          
+		            seriesRenderer.setDisplayChartValues(true);
+		            defaultRenderer.addSeriesRenderer(seriesRenderer);
+		        }
+		 
+		        defaultRenderer.setChartTitle("Calorie Subcategory \n\n\n\n");
+		        defaultRenderer.setChartTitleTextSize(40);
+		        defaultRenderer.setLabelsTextSize(50);
+		        defaultRenderer.setLegendTextSize(50);
+		        defaultRenderer.setZoomButtonsVisible(false);
+		        defaultRenderer.setShowLabels(true);  
+		        defaultRenderer.isInScroll();
+		        
+		
+		 
+		        LinearLayout bloodPressureContainer = (LinearLayout) rootView.findViewById(R.id.piegraph);
+
+				categoryChart = ChartFactory.getPieChartView(getActivity().getBaseContext(), distributionSeries , defaultRenderer);
+
+				bloodPressureContainer.addView(categoryChart);
 		
 		return rootView;
 	}
