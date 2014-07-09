@@ -55,7 +55,7 @@ public class JournalAdapter extends BaseAdapter {
 
 		if (convertView == null) {
 			LayoutInflater inflater = LayoutInflater.from(mContext);
-			convertView = inflater.inflate(R.layout.item_journal_daily2, parent,
+			convertView = inflater.inflate(R.layout.item_journal_by_date, parent,
 					false);
 
 			viewHolder = new ViewHolder();

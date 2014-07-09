@@ -1,46 +1,32 @@
 package com.example.phr.model;
 
-import java.math.BigDecimal;
 import java.sql.Date;
 
 public class Height {
-
+	
 	long id;
 	double heightInCm;
 	String heightInInch;
-	String heightDate;
-	String heightDay;
+	Date date;
 	String heightMonth;
-	String heightDescription;
+	String heightDay;
+	String description;
 	String heightTime;
 	
 	
 	
-	
-	public Height(long id, double heightInCm, String heightInInch,
-			String heightDate, String heightDay, String heightMonth,
-			String heightDescription, String heightTime) {
+	public Height(long id, double heightInCm, String heightInInch, Date date,
+			String heightMonth, String heightDay, String description,
+			String heightTime) {
 		super();
 		this.id = id;
 		this.heightInCm = heightInCm;
 		this.heightInInch = heightInInch;
-		this.heightDate = heightDate;
-		this.heightDay = heightDay;
+		this.date = date;
 		this.heightMonth = heightMonth;
-		this.heightDescription = heightDescription;
+		this.heightDay = heightDay;
+		this.description = description;
 		this.heightTime = heightTime;
-	}
-	public String getHeightDay() {
-		return heightDay;
-	}
-	public void setHeightDay(String heightDay) {
-		this.heightDay = heightDay;
-	}
-	public String getHeightMonth() {
-		return heightMonth;
-	}
-	public void setHeightMonth(String heightMonth) {
-		this.heightMonth = heightMonth;
 	}
 	public long getId() {
 		return id;
@@ -60,17 +46,29 @@ public class Height {
 	public void setHeightInInch(String heightInInch) {
 		this.heightInInch = heightInInch;
 	}
-	public String getHeightDate() {
-		return heightDate;
+	public Date getDate() {
+		return date;
 	}
-	public void setHeightDate(String heightDate) {
-		this.heightDate = heightDate;
+	public void setDate(Date date) {
+		this.date = date;
 	}
-	public String getHeightDescription() {
-		return heightDescription;
+	public String getHeightMonth() {
+		return heightMonth;
 	}
-	public void setHeightDescription(String heightDescription) {
-		this.heightDescription = heightDescription;
+	public void setHeightMonth(String heightMonth) {
+		this.heightMonth = heightMonth;
+	}
+	public String getHeightDay() {
+		return heightDay;
+	}
+	public void setHeightDay(String heightDay) {
+		this.heightDay = heightDay;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	public String getHeightTime() {
 		return heightTime;

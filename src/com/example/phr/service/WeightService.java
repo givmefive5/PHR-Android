@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.List;
 
+import com.example.models_check.Weight;
 import com.example.phr.model.User;
-import com.example.phr.model.Weight;
 
 public interface WeightService {
 

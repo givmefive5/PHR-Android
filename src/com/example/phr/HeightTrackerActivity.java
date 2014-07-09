@@ -37,19 +37,19 @@ public class HeightTrackerActivity extends Activity{
 				
 		// FAKE DATA
 		List<Height> list = new ArrayList<Height>();
-		Height data1 = new Height(1,160,"5'8","","Jun","5","", "7:30 pm");
+		Height data1 = new Height(1,160,"5'8",null,"Jun","5","", "7:30 pm");
 		
-		Height data2 = new Height(1,165,"6'1","","Jun","20","", "5:30 am");
+		Height data2 = new Height(1,165,"6'1",null,"Jun","20","", "5:30 am");
 
-		Height data3 = new Height(1,167,"6'2","","Jun","30","", "8:30 pm");
-		Height data4 = new Height(1,167,"6'2","","Jul","01","", "10:30 pm");
-		Height data5 = new Height(1,167,"6'2","","Juy","03","", "11:30 pm");
+		Height data3 = new Height(1,167,"6'2",null,"Jun","30","", "8:30 pm");
+		Height data4 = new Height(1,167,"6'2",null,"Jul","01","", "10:30 pm");
+		Height data5 = new Height(1,167,"6'2",null,"Jul","03","", "11:30 pm");
 
-		list.add(data1);
-		list.add(data2);
-		list.add(data3);
-		list.add(data4);
 		list.add(data5);
+		list.add(data4);
+		list.add(data3);
+		list.add(data2);
+		list.add(data1);
 		
 
 		heightAdapter = new HeightAdapter(getApplicationContext(), list);
