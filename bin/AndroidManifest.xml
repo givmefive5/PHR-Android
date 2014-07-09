@@ -89,6 +89,11 @@
             android:name="com.example.phr.BloodPressurePostActivity">
 
         </activity>
+        
+          <activity
+            android:name="com.example.phr.HeightTrackerActivity">
+
+        </activity>
     </application>
 
 </manifest>

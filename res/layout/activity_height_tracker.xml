@@ -4,22 +4,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/heightPost"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:gravity="center" 
         android:layout_marginBottom="8dp">
 
         <ImageView
-            android:id="@+id/bloodsugarBanner"
+            android:id="@+id/heightBanner"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:src="@drawable/bloodsugar_banner" />
+            android:src="@drawable/bloodpressure_banner" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/bloodsugarGraph"
+        android:id="@+id/heightGraph"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:orientation="vertical"
@@ -30,7 +31,7 @@
     </LinearLayout>
 
     <ListView
-        android:id="@+id/listView_bloodsugar"
+        android:id="@+id/listView_height"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
     </ListView>

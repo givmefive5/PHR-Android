@@ -82,14 +82,14 @@ public class BloodSugarTrackerActivity extends Activity{
 		
 		bloodsugarDataset.addSeries(bloodSugarSeries);
 		
-		XYSeriesRenderer systolicRenderer = new XYSeriesRenderer();
-		systolicRenderer.setColor(Color.parseColor("#B559BA"));
-		systolicRenderer.setPointStyle(PointStyle.CIRCLE);
-		systolicRenderer.setFillPoints(true);
-		systolicRenderer.setLineWidth(10);
-		systolicRenderer.setDisplayChartValues(true);
-		systolicRenderer.setChartValuesTextSize(25);
-		systolicRenderer.setChartValuesSpacing(20);
+		XYSeriesRenderer mmolRenderer = new XYSeriesRenderer();
+		mmolRenderer.setColor(Color.parseColor("#B559BA"));
+		mmolRenderer.setPointStyle(PointStyle.CIRCLE);
+		mmolRenderer.setFillPoints(true);
+		mmolRenderer.setLineWidth(10);
+		mmolRenderer.setDisplayChartValues(true);
+		mmolRenderer.setChartValuesTextSize(25);
+		mmolRenderer.setChartValuesSpacing(20);
 
 
 		XYMultipleSeriesRenderer bloodSugarMultiRenderer = new 
@@ -125,7 +125,7 @@ public class BloodSugarTrackerActivity extends Activity{
 		bloodSugarMultiRenderer.setAxisTitleTextSize(30);
 		bloodSugarMultiRenderer.setLabelsTextSize(30);
 
-		bloodSugarMultiRenderer.addSeriesRenderer(systolicRenderer);
+		bloodSugarMultiRenderer.addSeriesRenderer(mmolRenderer);
 
 		LinearLayout bloodSugarContainer = (LinearLayout) findViewById(R.id.bloodsugarGraph);
 
