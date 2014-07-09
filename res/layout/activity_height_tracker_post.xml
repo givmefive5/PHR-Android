@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView_Height_Tracker"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/HeightTimeDateHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <LinearLayout
+                android:id="@+id/btnHeightDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true" >
+
+                <ImageView
+                    android:id="@+id/imageViewHeightCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_small_calendar" />
+
+                <TextView
+                    android:id="@+id/textViewHeightCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="June 10, 2014"
+                    android:paddingLeft="5dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnHeightTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true" >
+
+                <ImageView
+                    android:id="@+id/imageViewHeightClock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_small_clock" />
+
+                <TextView
+                    android:id="@+id/textViewHeightClock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12:55PM"
+                    android:paddingLeft="5dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/HeightHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/textViewHeightTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:text="Height" />
+
+            <View
+                android:id="@+id/HeightDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textViewHeightTitle"
+                android:background="#000000" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/HeightDivider"
+                android:background="@drawable/underline_background"
+                android:padding="5dp" >
+                
+                <EditText
+                    android:id="@+id/txtHeightInput"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+	            	android:ems="10"
+                    android:inputType="numberDecimal"
+                    android:layout_alignParentLeft="true" >
+                </EditText>
+                
+			    <Spinner
+			        android:id="@+id/dropdownHeight"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_alignParentRight="true"
+			        android:entries="@array/height_metrics" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/HeightStatusHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewStatusTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Status"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/HeightStatusDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewStatusTitle"
+	            android:background="#000000" />
+
+	        <EditText
+	            android:id="@+id/textViewHeightStatus"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:hint="Are you getting taller?"
+	            android:layout_below="@id/HeightStatusDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp"
+	            android:ems="10"
+	            android:isScrollContainer="true"
+	            android:inputType="textMultiLine"
+	            android:textStyle="bold" >
+	        </EditText>
+	        
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/HeightLocationHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewHeightLocationTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Check-in Location"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/HeightLocationDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewHeightLocationTitle"
+	            android:background="#000000" />
+
+	        <TextView
+	            android:id="@+id/textViewHeightLocation"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@id/HeightLocationDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp"
+	            android:text="Set your Location"
+	            android:drawableLeft="@drawable/icon_location_small"
+        		android:drawablePadding="5dp"
+	            android:textStyle="bold" />
+	        
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/HeightPhotoHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewHeightPhotoTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Attach a Photo"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/HeightPhotoDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewHeightPhotoTitle"
+	            android:background="#000000" />
+
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical"
+	            android:layout_below="@id/HeightPhotoDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp" >
+
+	            <ImageButton
+	                android:id="@+id/imageButton1"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:src="@drawable/icon_add_photo"
+                    android:layout_gravity="center"
+	                android:background="@null" />
+
+	        </LinearLayout>
+	        
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -14,7 +14,7 @@
             android:id="@+id/btnAddFood"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:src="@drawable/checkup_banner" />
+            android:src="@drawable/food_banner" />
 
     </RelativeLayout>
 

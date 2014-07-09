@@ -13,5 +13,10 @@
     
     <!-- Status Post -->
     <string name="status_post_button">POST</string>
+ 
+    <string-array name="height_metrics">
+        <item>ft</item>
+        <item>cm</item>
+    </string-array>
 
 </resources>

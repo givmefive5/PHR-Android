@@ -11,11 +11,11 @@
         android:gravity="center" 
         android:layout_marginBottom="8dp">
 
-        <ImageView
-            android:id="@+id/heightBanner"
+        <ImageButton
+            android:id="@+id/btnAddHeight"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:src="@drawable/bloodpressure_banner" />
+            android:src="@drawable/height_banner" />
 
     </LinearLayout>
 
