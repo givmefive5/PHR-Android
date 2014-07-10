@@ -118,7 +118,7 @@
         </activity>
         
         <activity
-            android:name="com.example.phr.BloodsugarPostActivity" >
+            android:name="com.example.phr.BloodSugarPostActivity" >
         </activity>
         
         <activity

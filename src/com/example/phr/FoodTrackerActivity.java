@@ -26,6 +26,7 @@ public class FoodTrackerActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_food_tracker);
+		setTitle("Food Tracker");
 		mFoodList = (ListView) findViewById(R.id.listViewFoodStatusFeed);
         getActionBar().setDisplayHomeAsUpEnabled(true);
 		statusAdapter = new StatusAdapter(getApplicationContext(), generateData());

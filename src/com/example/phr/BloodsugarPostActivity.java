@@ -3,7 +3,7 @@ package com.example.phr;
 import android.app.Activity;
 import android.os.Bundle;
 
-public class BloodsugarPostActivity extends Activity{
+public class BloodSugarPostActivity extends Activity{
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

@@ -26,7 +26,7 @@ public class CheckupTrackerActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_checkup_tracker);
-		
+		setTitle("Checkup Tracker");
 		mCheckupList = (ListView) findViewById(R.id.listView_checkup);
 				
 		// FAKE DATA

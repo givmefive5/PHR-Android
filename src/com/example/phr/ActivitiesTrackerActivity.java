@@ -26,6 +26,7 @@ public class ActivitiesTrackerActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_activities_tracker);
+		setTitle("Activity Tracker");
 		mActivityList = (ListView) findViewById(R.id.listViewActivityTracker);
         getActionBar().setDisplayHomeAsUpEnabled(true);
 		statusAdapter = new StatusAdapter(getApplicationContext(), generateData());

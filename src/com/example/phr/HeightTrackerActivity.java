@@ -36,7 +36,7 @@ public class HeightTrackerActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_height_tracker);
-		
+		setTitle("Height Tracker");
 		mHeightList = (ListView) findViewById(R.id.listView_height);
 				
 		// FAKE DATA

@@ -28,6 +28,7 @@ public class WeightTrackerActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_weight_tracker);
+		setTitle("Weight Tracker");
 		mWeightList = (ListView) findViewById(R.id.listViewWeightTracker);
         getActionBar().setDisplayHomeAsUpEnabled(true);
 		weightAdapter = new GroupedStatusAdapter(getApplicationContext(), generateData());
