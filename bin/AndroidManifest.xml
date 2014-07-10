@@ -124,6 +124,10 @@
         <activity
             android:name="com.example.phr.SettingsActivity" >
         </activity>
+        
+        <activity
+            android:name="com.example.phr.ActivitiesTrackerActivity" >
+        </activity>
     </application>
 
 </manifest>

@@ -36,9 +36,9 @@ public class ActivitiesTrackerActivity extends Activity {
 			
 			@Override
 			public void onClick(View arg0) {
-				Intent intent = new Intent(getApplicationContext(),
+				/*Intent intent = new Intent(getApplicationContext(),
 						ActivitiesTrackerPostActivity.class);
-				startActivity(intent);
+				startActivity(intent);*/
 			}
 		});
 	}
