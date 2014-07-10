@@ -15,7 +15,7 @@ public class SettingsActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_settings);
-		
+		setTitle("Settings");
 		radioGroupHeight = (RadioGroup) findViewById(R.id.radioGroupSettingHeight);
 		radioGroupWeight = (RadioGroup) findViewById(R.id.radioGroupSettingWeight);
 		setTitle("Settings");

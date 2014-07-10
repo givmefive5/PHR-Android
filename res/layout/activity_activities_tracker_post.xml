@@ -281,6 +281,55 @@
 	        
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/ActivitySharingHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/textViewActivitySharingTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:text="Post Sharing Options" />
+
+            <View
+                android:id="@+id/ActivitySharingDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textViewActivitySharingTitle"
+                android:background="#000000" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ActivitySharingDivider"
+                android:background="@drawable/underline_background"
+                android:orientation="horizontal"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/textViewActivitySharing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="Share Post on Facebook" />
+	            
+                <ToggleButton 
+				    android:id="@+id/togglebuttonActivitySharing"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:textOn="ON"
+				    android:textOff="OFF"
+				    android:layout_alignParentRight="true"
+				    android:onClick="onToggleClicked"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
     </LinearLayout>
 
 </ScrollView>
