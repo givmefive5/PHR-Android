@@ -120,6 +120,10 @@
         <activity
             android:name="com.example.phr.BloodsugarPostActivity" >
         </activity>
+        
+        <activity
+            android:name="com.example.phr.SettingsActivity" >
+        </activity>
     </application>
 
 </manifest>
