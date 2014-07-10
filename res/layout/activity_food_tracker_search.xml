@@ -8,7 +8,7 @@
         android:id="@+id/txtSearchFood"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint=" Search Friends"
+        android:hint=" Search Food"
         android:drawablePadding="10dp"
         android:drawableLeft="@drawable/icon_small_search"
         android:ems="10" >

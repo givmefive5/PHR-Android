@@ -18,10 +18,8 @@ public class HealthTrackerFragment extends Fragment {
 	private LinearLayout mBtnBloodPressureTracker;
 	private LinearLayout mBtnBloodSugarTracker;
 	private LinearLayout mBtnNoteTracker;
-	private LinearLayout mBtnHeightTracker;
-	
+	private LinearLayout mBtnActivityTracker;
 	private LinearLayout mBtnWeightTracker;
-	private LinearLayout mBtnMedicineTracker;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -81,16 +79,7 @@ public class HealthTrackerFragment extends Fragment {
 			}
 		});
 		
-		mBtnHeightTracker = (LinearLayout)rootView.findViewById(R.id.btnHeightTracker);
-		mBtnHeightTracker.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(getActivity(),
-						HeightTrackerActivity.class);
-				startActivity(intent);
-			}
-		});
-		
+	
 		mBtnWeightTracker = (LinearLayout)rootView.findViewById(R.id.btnWeightTracker);
 		mBtnWeightTracker.setOnClickListener(new OnClickListener() {
 			@Override
@@ -101,12 +90,14 @@ public class HealthTrackerFragment extends Fragment {
 			}
 		});
 		
-		mBtnMedicineTracker = (LinearLayout)rootView.findViewById(R.id.btnMedicineTracker);
-		mBtnMedicineTracker.setOnClickListener(new OnClickListener() {
+		
+		
+		mBtnActivityTracker = (LinearLayout)rootView.findViewById(R.id.btnActivitiesTracker);
+		mBtnActivityTracker.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(getActivity(),
-						MedicineTrackerActivity.class);
+						ActivitiesTrackerActivity.class);
 				startActivity(intent);
 			}
 		});

@@ -37,7 +37,7 @@ public class BloodSugarTrackerActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_bloodsugar_tracker);
-		
+		setTitle("Blood Sugar Tracker");
 		mBloodSugarList = (ListView) findViewById(R.id.listView_bloodsugar);
 				
 		// FAKE DATA
@@ -144,7 +144,7 @@ public class BloodSugarTrackerActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(getApplicationContext(),
-						BloodsugarPostActivity.class);
+						BloodSugarPostActivity.class);
 				startActivity(intent);
 			}
 		});

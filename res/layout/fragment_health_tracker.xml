@@ -10,7 +10,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical" 
-            android:weightSum ="5">
+            android:weightSum ="4">
 
             <LinearLayout
         		android:id="@+id/firstRowHolder"
@@ -138,14 +138,14 @@
                 android:layout_weight="1">
 
                 <LinearLayout
-                    android:id="@+id/btnHeightTracker"
+                    android:id="@+id/btnCalorieTracker"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/container_dropshadow" >
 
                     <ImageView
-                        android:id="@+id/ImageViewHeightTracker"
+                        android:id="@+id/ImageViewCalorieTracker"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:gravity="center"
@@ -153,36 +153,37 @@
                         android:padding="5dp"/>
 
                     <TextView
-                        android:id="@+id/TextViewHeightTracker"
+                        android:id="@+id/TextViewCalorieTracker"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Height" />
+                        android:text="Calorie" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/btnFeelingTracker"
+                    android:id="@+id/btnCheckupTracker"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="@drawable/container_dropshadow" >
+                    android:background="@drawable/container_dropshadow"
+                    android:clickable="true" >
 
                     <ImageView
-                        android:id="@+id/ImageViewFeelingTracker"
+                        android:id="@+id/ImageViewCheckupTracker"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:gravity="center"
-                        android:src="@drawable/icon_emotion"
-                        android:padding="5dp" />
+                        android:padding="5dp"
+                        android:src="@drawable/icon_checkup" />
 
                     <TextView
-                        android:id="@+id/TextViewFeelingTracker"
+                        android:id="@+id/TextViewCheckupTracker"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Feeling" />
+                        android:text="Checkup" />
                 </LinearLayout>
                 
             </LinearLayout>
@@ -219,39 +220,6 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/btnMedicineTracker"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="@drawable/container_dropshadow" >
-
-                    <ImageView
-                        android:id="@+id/ImageViewMedicineTracker"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:gravity="center"
-                        android:src="@drawable/icon_medicine" 
-                        android:padding="5dp"/>
-
-                    <TextView
-                        android:id="@+id/TextViewMedicineTracker"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Medicine" />
-                </LinearLayout>
-                
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/fifthRowHolder"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="2" 
-                android:layout_weight="1">
-
-                <LinearLayout
                     android:id="@+id/btnNotesTracker"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -263,8 +231,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:gravity="center"
-                        android:src="@drawable/icon_note"
-                        android:padding="5dp" />
+                        android:padding="5dp"
+                        android:src="@drawable/icon_note" />
 
                     <TextView
                         android:id="@+id/TextViewNotesTracker"
@@ -274,31 +242,7 @@
                         android:gravity="center"
                         android:text="Notes" />
                 </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/btnCheckupTracker"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:background="@drawable/container_dropshadow" >
-
-                    <ImageView
-                        android:id="@+id/ImageViewCheckupTracker"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:gravity="center"
-                        android:src="@drawable/icon_checkup"
-                        android:padding="5dp" />
-
-                    <TextView
-                        android:id="@+id/TextViewCheckupTracker"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="Checkup" />
-                </LinearLayout>
+                
             </LinearLayout>
             
         </LinearLayout>

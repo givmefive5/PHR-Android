@@ -36,7 +36,7 @@ public class BloodPressureTrackerActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_bloodpressure_tracker);
-		
+		setTitle("Blood Pressure Tracker");
 		mBloodPressureList = (ListView) findViewById(R.id.listView_bloodpressure);
 				
 		// FAKE DATA

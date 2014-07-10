@@ -9,24 +9,43 @@ import com.example.phr.model.Status;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 public class WeightTrackerActivity extends Activity {
 	
 	GroupedStatusAdapter weightAdapter;
 	ListView mWeightList;
+	ImageView mBtnAddWeight;
 	
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_weight_tracker);
+		setTitle("Weight Tracker");
 		mWeightList = (ListView) findViewById(R.id.listViewWeightTracker);
         getActionBar().setDisplayHomeAsUpEnabled(true);
 		weightAdapter = new GroupedStatusAdapter(getApplicationContext(), generateData());
 		mWeightList.setAdapter(weightAdapter);
+		
+		
+		mBtnAddWeight = (ImageView) findViewById(R.id.btnAddWeight);
+		mBtnAddWeight.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(getApplicationContext(),
+						WeightTrackerPostActivity.class);
+				startActivity(intent);
+			}
+		});
 	}
 
 	private List<GroupedStatus> generateData() {

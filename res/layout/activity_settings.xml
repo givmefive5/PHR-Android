@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:id="@+id/WeightPhotoHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" >
+
+	     <TextView
+	         android:id="@+id/textViewSettingWeightTitle"
+	         android:layout_width="fill_parent"
+	         android:layout_height="wrap_content"
+	         android:text="Weight Metric"
+	         android:background="@drawable/textview_style" />
+	
+	     <View
+	         android:id="@+id/SettingWeightDivider"
+	         android:layout_width="match_parent"
+	         android:layout_height="1dp"
+	         android:layout_below="@id/textViewSettingWeightTitle"
+	         android:background="#000000" />
+	
+	     <LinearLayout
+	         android:layout_width="match_parent"
+	         android:layout_height="wrap_content"
+	         android:orientation="vertical"
+	         android:layout_below="@id/SettingWeightDivider"
+	         android:background="@drawable/underline_background"
+	         android:padding="5dp" >
+	         
+		    <RadioGroup
+		        android:id="@+id/radioGroupSettingWeight"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginRight="15dp" >
+		
+		        <RadioButton
+		            android:id="@+id/radioGroupSettingWeightButtonLBS"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:checked="true"
+		            android:text="pounds (lbs)" />
+		
+		        <RadioButton
+		            android:id="@+id/radioGroupSettingWeightButtonKGS"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="kilograms (kgs)" />
+		        
+		    </RadioGroup>
+	
+	     </LinearLayout>
+     
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/HeightPhotoHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" >
+
+	     <TextView
+	         android:id="@+id/textViewSettingHeightTitle"
+	         android:layout_width="fill_parent"
+	         android:layout_height="wrap_content"
+	         android:text="Height Metric"
+	         android:background="@drawable/textview_style" />
+	
+	     <View
+	         android:id="@+id/SettingHeightDivider"
+	         android:layout_width="match_parent"
+	         android:layout_height="1dp"
+	         android:layout_below="@id/textViewSettingHeightTitle"
+	         android:background="#000000" />
+	
+	     <LinearLayout
+	         android:layout_width="match_parent"
+	         android:layout_height="wrap_content"
+	         android:orientation="vertical"
+	         android:layout_below="@id/SettingHeightDivider"
+	         android:background="@drawable/underline_background"
+	         android:padding="5dp" >
+	         
+		    <RadioGroup
+		        android:id="@+id/radioGroupSettingHeight"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginRight="15dp" >
+		
+		        <RadioButton
+		            android:id="@+id/radioGroupSettingHeightButtonFT"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:checked="true"
+		            android:text="Feet Inches (ft in)" />
+		
+		        <RadioButton
+		            android:id="@+id/radioGroupSettingHeightButtonM"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:text="Meters (m)" />
+		        
+		    </RadioGroup>
+	
+	     </LinearLayout>
+     
+    </RelativeLayout>
+
+</LinearLayout>

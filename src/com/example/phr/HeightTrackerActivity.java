@@ -14,11 +14,14 @@ import com.example.phr.adapter.HeightAdapter;
 import com.example.phr.model.Height;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -27,12 +30,13 @@ public class HeightTrackerActivity extends Activity{
 	
 	ListView mHeightList;
 	HeightAdapter heightAdapter;
+	ImageButton mBtnAddHeight;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_height_tracker);
-		
+		setTitle("Height Tracker");
 		mHeightList = (ListView) findViewById(R.id.listView_height);
 				
 		// FAKE DATA
@@ -135,7 +139,16 @@ public class HeightTrackerActivity extends Activity{
 			bloodSugarContainer.addView(heightChart);
 			
 			
-		
+		mBtnAddHeight = (ImageButton) findViewById(R.id.btnAddHeight);
+		mBtnAddHeight.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(getApplicationContext(),
+						HeightTrackerPostActivity.class);
+				startActivity(intent);
+			}
+		});
 	}
 
 }

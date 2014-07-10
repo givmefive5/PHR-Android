@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/scrollView_Food_Tracker"
+    android:id="@+id/scrollView_Activity_Tracker"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -10,25 +10,25 @@
         android:orientation="vertical" >
 
         <RelativeLayout
-            android:id="@+id/foodTimeDateHolder"
+            android:id="@+id/ActivityTimeDateHolder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp" >
 
             <LinearLayout
-                android:id="@+id/btnFoodDate"
+                android:id="@+id/btnActivityDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true" >
 
                 <ImageView
-                    android:id="@+id/imageViewFoodCalendar"
+                    android:id="@+id/imageViewActivityCalendar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/icon_small_calendar" />
 
                 <TextView
-                    android:id="@+id/textViewFoodCalendar"
+                    android:id="@+id/textViewActivityCalendar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="June 10, 2014"
@@ -38,19 +38,19 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/btnFoodTime"
+                android:id="@+id/btnActivityTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true" >
 
                 <ImageView
-                    android:id="@+id/imageViewFoodClock"
+                    android:id="@+id/imageViewActivityClock"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/icon_small_clock" />
 
                 <TextView
-                    android:id="@+id/textViewFoodClock"
+                    android:id="@+id/textViewActivityClock"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="12:55PM"
@@ -61,67 +61,66 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/foodNameHolder"
+            android:id="@+id/ActivityNameHolder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp" >
 
             <TextView
-                android:id="@+id/textViewFoodNameTitle"
+                android:id="@+id/textViewActivityNameTitle"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/textview_style"
-                android:text="Food" />
+                android:text="Activity" />
 
             <View
-                android:id="@+id/foodNameDivider"
+                android:id="@+id/ActivityNameDivider"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_below="@id/textViewFoodNameTitle"
+                android:layout_below="@id/textViewActivityNameTitle"
                 android:background="#000000" />
 
             <TextView
-                android:id="@+id/textViewFoodName"
+                android:id="@+id/textViewActivityName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/foodNameDivider"
+                android:layout_below="@id/ActivityNameDivider"
                 android:background="@drawable/underline_background"
                 android:padding="5dp"
-                android:text="Sinigang"
+                android:text="Jogging"
                 android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/foodNutritionHolder"
+            android:id="@+id/ActivityNutritionHolder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp" >
 
             <TextView
-                android:id="@+id/textViewFoodNutritionTitle"
+                android:id="@+id/textViewActivityInformationTitle"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/textview_style"
-                android:text="Nutritional Information" />
+                android:text="Activity Information" />
 
             <View
-                android:id="@+id/foodNutritionDivider"
+                android:id="@+id/ActivityInformationDivider"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_below="@id/textViewFoodNutritionTitle"
+                android:layout_below="@id/textViewActivityInformationTitle"
                 android:background="#000000" />
 
             <LinearLayout
-                android:id="@+id/foodNutritionInformation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/foodNutritionDivider"
+                android:layout_below="@id/ActivityInformationDivider"
                 android:background="@drawable/underline_background"
                 android:padding="5dp"
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/textViewFoodCalories"
+                    android:id="@+id/textViewActivityCalories"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="1200"
@@ -129,146 +128,51 @@
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
                 <TextView
-                    android:id="@+id/textViewFoodCaloriesTitle"
+                    android:id="@+id/textViewActivityCaloriesTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CALORIES"
+                    android:text="CALORIES BURNED"
                     android:layout_gravity="center"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="2" >
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" >
-
-                        <TextView
-                            android:id="@+id/textViewFoodSugar"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Sugar" />
-
-                        <TextView
-                            android:id="@+id/textViewFoodSugarContent"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="3dp"
-	            			android:textStyle="bold"
-                            android:text="50mg" />
-                        
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" >
-
-                        <TextView
-                            android:id="@+id/textViewFoodCholesterol"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Cholesterol" />
-
-                        <TextView
-                            android:id="@+id/textViewFoodCholesterolContent"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="3dp"
-	            			android:textStyle="bold"
-                            android:text="50mg" />
-                        
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="2" >
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" >
-
-                        <TextView
-                            android:id="@+id/textViewFoodCarbohydrate"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Carbohydrate" />
-
-                        <TextView
-                            android:id="@+id/textViewFoodCarbohydrateContent"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="3dp"
-	            			android:textStyle="bold"
-                            android:text="50mg" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" >
-
-                        <TextView
-                            android:id="@+id/textViewFoodSodium"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Sodium" />
-
-                        <TextView
-                            android:id="@+id/textViewFoodSodiumContent"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="3dp"
-	            			android:textStyle="bold"
-                            android:text="50mg" />
-                    </LinearLayout>
-                </LinearLayout>
                 
             </LinearLayout>
             
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/foodQuantityHolder"
+            android:id="@+id/ActivityDurationHolder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp" >
 
 	        <TextView
-	            android:id="@+id/textViewQuantityTitle"
+	            android:id="@+id/textViewDurationTitle"
 	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
-	            android:text="Quantity"
+	            android:text="Duration"
 	            android:background="@drawable/textview_style" />
 	
 	        <View
-	            android:id="@+id/foodQuantityDivider"
+	            android:id="@+id/ActivityDurationDivider"
 	            android:layout_width="match_parent"
 	            android:layout_height="1dp"
-	            android:layout_below="@id/textViewQuantityTitle"
+	            android:layout_below="@id/textViewDurationTitle"
 	            android:background="#000000" />
 
 	        <TextView
-	            android:id="@+id/textViewFoodQuantity"
+	            android:id="@+id/textViewActivityDuration"
 	            android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
-	            android:layout_below="@id/foodQuantityDivider"
+	            android:layout_below="@id/ActivityDurationDivider"
 	            android:background="@drawable/underline_background"
 	            android:padding="5dp"
-	            android:text="12 servings"
+	            android:text="1 hour and 30 minutes"
 	            android:textStyle="bold" />
 	        
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/foodStatusHolder"
+            android:id="@+id/ActivityStatusHolder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp" >
@@ -281,18 +185,18 @@
 	            android:background="@drawable/textview_style" />
 	
 	        <View
-	            android:id="@+id/foodStatusDivider"
+	            android:id="@+id/ActivityStatusDivider"
 	            android:layout_width="match_parent"
 	            android:layout_height="1dp"
 	            android:layout_below="@id/textViewStatusTitle"
 	            android:background="#000000" />
 
 	        <EditText
-	            android:id="@+id/textViewFoodStatus"
+	            android:id="@+id/textViewActivityStatus"
 	            android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
-	            android:hint="How is the Food?"
-	            android:layout_below="@id/foodStatusDivider"
+	            android:hint="Are you having fun with the Activity?"
+	            android:layout_below="@id/ActivityStatusDivider"
 	            android:background="@drawable/underline_background"
 	            android:padding="5dp"
 	            android:ems="10"
@@ -304,7 +208,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/foodLocationHolder"
+            android:id="@+id/ActivityLocationHolder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp" >
@@ -317,17 +221,17 @@
 	            android:background="@drawable/textview_style" />
 	
 	        <View
-	            android:id="@+id/foodLocationDivider"
+	            android:id="@+id/ActivityLocationDivider"
 	            android:layout_width="match_parent"
 	            android:layout_height="1dp"
 	            android:layout_below="@id/textViewLocationTitle"
 	            android:background="#000000" />
 
 	        <TextView
-	            android:id="@+id/textViewFoodLocation"
+	            android:id="@+id/textViewActivityLocation"
 	            android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
-	            android:layout_below="@id/foodLocationDivider"
+	            android:layout_below="@id/ActivityLocationDivider"
 	            android:background="@drawable/underline_background"
 	            android:padding="5dp"
 	            android:text="Set your Location"
@@ -338,30 +242,30 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/foodPhotoHolder"
+            android:id="@+id/ActivityPhotoHolder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp" >
 
 	        <TextView
-	            android:id="@+id/textViewFoodPhotoTitle"
+	            android:id="@+id/textViewActivityPhotoTitle"
 	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
 	            android:text="Attach a Photo"
 	            android:background="@drawable/textview_style" />
 	
 	        <View
-	            android:id="@+id/foodPhotoDivider"
+	            android:id="@+id/ActivityPhotoDivider"
 	            android:layout_width="match_parent"
 	            android:layout_height="1dp"
-	            android:layout_below="@id/textViewFoodPhotoTitle"
+	            android:layout_below="@id/textViewActivityPhotoTitle"
 	            android:background="#000000" />
 
 	        <LinearLayout
 	            android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
 	            android:orientation="vertical"
-	            android:layout_below="@id/foodPhotoDivider"
+	            android:layout_below="@id/ActivityPhotoDivider"
 	            android:background="@drawable/underline_background"
 	            android:padding="5dp" >
 
@@ -378,35 +282,35 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/FoodSharingHolder"
+            android:id="@+id/ActivitySharingHolder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp" >
 
             <TextView
-                android:id="@+id/textViewFoodSharingTitle"
+                android:id="@+id/textViewActivitySharingTitle"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/textview_style"
                 android:text="Post Sharing Options" />
 
             <View
-                android:id="@+id/FoodSharingDivider"
+                android:id="@+id/ActivitySharingDivider"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_below="@id/textViewFoodSharingTitle"
+                android:layout_below="@id/textViewActivitySharingTitle"
                 android:background="#000000" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/FoodSharingDivider"
+                android:layout_below="@id/ActivitySharingDivider"
                 android:background="@drawable/underline_background"
                 android:orientation="horizontal"
                 android:padding="5dp" >
 
                 <TextView
-                    android:id="@+id/textViewFoodSharing"
+                    android:id="@+id/textViewActivitySharing"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -414,7 +318,7 @@
                     android:text="Share Post on Facebook" />
 	            
                 <ToggleButton 
-				    android:id="@+id/togglebuttonFoodSharing"
+				    android:id="@+id/togglebuttonActivitySharing"
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content"
 				    android:textOn="ON"
@@ -425,7 +329,6 @@
             </RelativeLayout>
 
         </RelativeLayout>
-        
 
     </LinearLayout>
 

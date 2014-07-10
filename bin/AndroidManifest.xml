@@ -17,6 +17,11 @@
        
         <activity
 			android:name="com.example.phr.LoginActivity" >
+        </activity>
+        
+         <activity
+            android:name="com.example.phr.MainActivity"
+            android:label="@string/app_name" >
              
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,11 +29,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             
-        </activity>
-        
-         <activity
-            android:name="com.example.phr.MainActivity"
-            android:label="@string/app_name" >
         </activity>
         
         <activity
@@ -57,8 +57,16 @@
         </activity>
         
         <activity
-            android:name="com.example.phr.FoodTrackerActivity"
-            android:windowSoftInputMode="stateHidden" >
+            android:name="com.example.phr.FoodTrackerActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.FoodTrackerPostActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.FoodTrackerSearchActivity" >
         </activity>
         
         <activity
@@ -67,6 +75,10 @@
         
         <activity
             android:name="com.example.phr.WeightTrackerActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.WeightTrackerPostActivity" >
         </activity>
         
         <activity
@@ -86,16 +98,15 @@
         </activity>
         
         <activity
-            android:name="com.example.phr.FoodTrackerPostActivity" >
-        </activity>
-        
-        <activity
             android:name="com.example.phr.MedicineTrackerActivity" >
         </activity>
         
-          <activity
+        <activity
             android:name="com.example.phr.HeightTrackerActivity">
-
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.HeightTrackerPostActivity">
         </activity>
         
         <activity
@@ -107,7 +118,20 @@
         </activity>
         
         <activity
-            android:name="com.example.phr.BloodsugarPostActivity" >
+            android:name="com.example.phr.BloodSugarPostActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.SettingsActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.ActivitiesTrackerActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.ActivitiesTrackerPostActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" >
         </activity>
     </application>
 
