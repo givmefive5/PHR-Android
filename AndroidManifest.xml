@@ -130,7 +130,7 @@
         </activity>
         
         <activity
-            android:name="com.example.phr.ActivitiesPostTrackerActivity"
+            android:name="com.example.phr.ActivitiesTrackerPostActivity"
             android:windowSoftInputMode="stateAlwaysHidden" >
         </activity>
     </application>
