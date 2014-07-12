@@ -65,7 +65,7 @@ public class CalorieAdapter extends BaseAdapter {
 			viewHolder.foodCal = (TextView) convertView
 					.findViewById(R.id.txtFood);
 			viewHolder.activityCal = (TextView) convertView
-					.findViewById(R.id.txtPlace);
+					.findViewById(R.id.txtAct);
 
 			viewHolder.day = (TextView) convertView
 					.findViewById(R.id.txtDay);
