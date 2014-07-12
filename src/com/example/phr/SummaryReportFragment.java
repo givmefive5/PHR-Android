@@ -35,7 +35,7 @@ public class SummaryReportFragment extends Fragment {
 	ProgressBar mProgress;
 	ProgressBar cProgress;
 	int mProgressStatus = 50;
-	int cProgressStatus = 80;
+	int cProgressStatus = 13;
 	RelativeLayout btnAchievements;
 	
 	
@@ -68,8 +68,8 @@ public class SummaryReportFragment extends Fragment {
 		View dailyChart;
 		
 		int[] x = { 0,1,2 };
-    	int[] income = { 2000,2500,2700};
-    	int[] expense = {2200, 2700, 2900};
+    	double[] intake = { 20.41,24.89,43.07};
+    	double[] recommeded = {41.25, 53.63, 247.5};
     	
     	
     	 String[] mMonth = new String[] {"Protein", "Fats" , "Carbohydrates"};
@@ -81,8 +81,8 @@ public class SummaryReportFragment extends Fragment {
     	XYSeries expenseSeries = new XYSeries("Recommended");
     	// Adding data to Income and Expense Series
     	for(int i=0;i<x.length;i++){    		
-    		incomeSeries.add(i,income[i]);
-    		expenseSeries.add(i,expense[i]);
+    		incomeSeries.add(i,intake[i]);
+    		expenseSeries.add(i,recommeded[i]);
     	}
     	
     	

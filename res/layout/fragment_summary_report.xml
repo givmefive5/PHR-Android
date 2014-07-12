@@ -55,8 +55,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:gravity="right"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                 android:text="750/1500" 
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                 android:text="250/500" 
                 android:background="#00000000"
 		        android:layout_alignLeft="@id/progressBar1"
 		        android:layout_alignTop="@id/progressBar1"
@@ -121,7 +121,7 @@
                     android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1100/1565" 
+                    android:text="213/1565" 
                     android:background="#00000000"
 			        android:layout_alignLeft="@id/progressBar2"
 			        android:layout_alignTop="@id/progressBar2"
@@ -164,7 +164,7 @@
                         android:id="@+id/textView12"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="+1180" 
+                        android:text="+ 459" 
                         android:textSize="25sp"
 		                android:gravity="center"
 		                android:textColor="#2b47b8"
@@ -197,7 +197,7 @@
                         android:id="@+id/textView13"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:text="-80" 
+                        android:text="- 246" 
                         android:textSize="25sp"
 		                android:gravity="center"
 		                android:textColor="#f50c20"
@@ -241,7 +241,7 @@
                     android:id="@+id/textView16"
                     android:layout_width="wrap_content"
                     android:layout_height="fill_parent"
-                    android:text="40"
+                    android:text="26"
                     android:textSize="20sp"
                     android:textColor="#E05C5C"
                     android:textStyle="bold" 
@@ -385,7 +385,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:maxLines="1"
-                    android:text="Jun 20, 2014"
+                    android:text="Jul 12, 2014"
                     android:textColor="#9e9898"
                     android:textSize="15sp" />
 
@@ -397,7 +397,7 @@
                     android:layout_toRightOf="@id/textView4"
                     android:layout_weight="2"
                     android:maxLines="1"
-                    android:text="2:40 pm"
+                    android:text="3:40 pm"
                     android:textColor="#9e9898"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -412,7 +412,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:text="121"
+                    android:text="110"
                     android:textSize="30sp"
                     android:textStyle="bold" />
 
@@ -431,7 +431,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
                     android:layout_toRightOf="@id/textView2"
-                    android:text="81"
+                    android:text="80"
                     android:textSize="30sp"
                     android:textStyle="bold" />
             </RelativeLayout>
@@ -522,7 +522,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:maxLines="1"
-                    android:text="Jun 20, 2014"
+                    android:text="Jul 12, 2014"
                     android:textColor="#9e9898"
                     android:textSize="15sp" />
 
@@ -549,7 +549,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
-                    android:text="11.0"
+                    android:text="7.5"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -568,7 +568,7 @@
                     android:layout_height="18sp"
                     android:layout_marginLeft="3dp"
                     android:layout_toRightOf="@id/textView2"
-                    android:text="after meal"
+                    android:text="Post prandial"
                     android:gravity="center_vertical"
                     android:textSize="10sp" />
             </RelativeLayout>

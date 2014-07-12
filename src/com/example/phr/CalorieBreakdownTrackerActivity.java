@@ -43,11 +43,13 @@ public class CalorieBreakdownTrackerActivity extends Activity{
 		
 		FoodActivityCalorie data3 = new FoodActivityCalorie(getResources().getDrawable(R.drawable.icon_food),"+ 210","1 serving","7:30 pm","Hash brown");
 
-		FoodActivityCalorie data4 = new FoodActivityCalorie(getResources().getDrawable(R.drawable.icon_activity),"- 100","30 mins","9:00 pm","Weight Lifting");
+		FoodActivityCalorie data4 = new FoodActivityCalorie(getResources().getDrawable(R.drawable.icon_activity),"- 246","30 mins","4:55 pm","Stationary cycling");
+		
+		list.add(data4);
 		list.add(data1);
 		list.add(data2);
 		list.add(data3);
-		list.add(data4);
+		
 		
 		
 

@@ -31,7 +31,7 @@
                 android:id="@+id/textViewNoteReadDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="January 29, 2014"
+                android:text="July 12, 2014"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <TextView

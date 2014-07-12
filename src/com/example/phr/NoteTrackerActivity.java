@@ -40,14 +40,17 @@ public class NoteTrackerActivity extends Activity{
 				
 		// FAKE DATA
 		List<Note> list = new ArrayList<Note>();
-		Note data1 = new Note("What a busy day!", "","Jun 18, 2014","11:40 am");
+		Note data1 = new Note("Foods to avoid", "","Jul 10, 2014","11:40 am");
 		
-		Note data2 = new Note("I love it!", "","Jun 16, 2014","10:40 am");
+		Note data2 = new Note("Medicine List", "","Jul 08, 2014","10:40 am");
 
-		Note data3 = new Note("Oh nooooo!", "","Jun 20, 2014","11:40 pm");
+		Note data3 = new Note("Workout plan", "","Jun 06, 2014","11:40 pm");
 		
-		Note data4 = new Note("haaaaah!", "","Jul 05, 2014","5:40 am");
+		Note data4 = new Note("Dengue prevention", "","Jun 05, 2014","5:40 am");
 		
+		Note data5 = new Note("My Medicine Checklist", "","Jul 12, 2014","7:45 am");
+		
+		list.add(data5);
 		list.add(data1);
 		list.add(data2);
 		list.add(data3);

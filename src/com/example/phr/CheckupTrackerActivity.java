@@ -41,7 +41,7 @@ public class CheckupTrackerActivity extends Activity {
 		// FAKE DATA
 		List<Checkup> list = new ArrayList<Checkup>();
 		
-		Checkup data1 = new Checkup("Cold and Cough Checkup","Dr. Maria Jose del Rosario","The Angel's Clinic Place","23","July", null);
+		Checkup data1 = new Checkup("Cold and Cough Checkup","Dr. Maria Rosario","The Angel's Clinic Place","23","July", null);
 		
 		Checkup data2 = new Checkup("General Checkup","Dr. Michael Lee","UST hospital","4","May", null);
 		

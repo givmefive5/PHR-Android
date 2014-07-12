@@ -53,19 +53,53 @@ public class ActivitiesTrackerActivity extends Activity {
 		List<com.example.phr.model.Activity> list = new ArrayList<com.example.phr.model.Activity>();
 		
 		com.example.phr.model.Activity activity1 = new com.example.phr.model.Activity();
-		activity1.setAction("Swimming");
-		activity1.setCalBurned("1200");
-		activity1.setDate("February 4, 2012");
-		activity1.setTime("5:55PM");
-		activity1.setDuration("45 Mins");
+		activity1.setAction("Stationary cycling");
+		activity1.setCalBurned("246");
+		activity1.setDate("Jul 12, 2012");
+		activity1.setTime("4:55 PM");
+		activity1.setDuration("30 Mins");
+		
+		com.example.phr.model.Activity activity2 = new com.example.phr.model.Activity();
+		activity2.setAction("Weight lifting ");
+		activity2.setCalBurned("211");
+		activity2.setDate("Jul 10, 2012");
+		activity2.setTime("5:50 PM");
+		activity2.setDuration("30 Mins");
+		
+		com.example.phr.model.Activity activity3= new com.example.phr.model.Activity();
+		activity3.setAction("Jogging");
+		activity3.setCalBurned("563");
+		activity3.setDate("Jul 19, 2012");
+		activity3.setTime("8:00 AM");
+		activity3.setDuration("1 hr");
+		
+		com.example.phr.model.Activity activity4= new com.example.phr.model.Activity();
+		activity4.setAction("Swimming");
+		activity4.setCalBurned("493");
+		activity4.setDate("Jun 20, 2012");
+		activity4.setTime("5:55PM");
+		activity4.setDuration("1 hr");
+		
+		com.example.phr.model.Activity activity5= new com.example.phr.model.Activity();
+		activity5.setAction("Jogging");
+		activity5.setCalBurned("563");
+		activity5.setDate("Jun 05, 2012");
+		activity5.setTime("6:55 PM");
+		activity5.setDuration("1 hr");
+		
+		com.example.phr.model.Activity activity6= new com.example.phr.model.Activity();
+		activity6.setAction("Jogging");
+		activity6.setCalBurned("563");
+		activity6.setDate("Jun 02, 2012");
+		activity6.setTime("5:55 sPM");
+		activity6.setDuration("1 hr");
+		
 		list.add(activity1);
-		list.add(activity1);
-		list.add(activity1);
-		list.add(activity1);
-		list.add(activity1);
-		list.add(activity1);
-		list.add(activity1);
-		list.add(activity1);
+		list.add(activity2);
+		list.add(activity3);
+		list.add(activity4);
+		list.add(activity5);
+		list.add(activity6);
 		
 		/*		Status activity1 = new Status();
 		activity1.setActionHolder("Doing");

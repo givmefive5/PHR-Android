@@ -73,7 +73,7 @@
 			        android:layout_alignTop="@id/progressBar2"
 			        android:layout_alignRight="@id/progressBar2"
 			        android:layout_alignBottom="@id/progressBar2"
-			        android:textSize="15sp"
+			        android:textSize="12sp"
 		            android:gravity="center"
 		            android:textColor="#FCFBFA"/>
 
