@@ -1,50 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#E8E8E8" >
+    android:layout_height="match_parent" >
 
 <LinearLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="#F2E9F0">
+    android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/BloodPressureTimeDateHolder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp" >
+        android:padding="10dp" >
 
-        <EditText
-            android:id="@+id/editText2"
+        <LinearLayout
+            android:id="@+id/btnBloodPressureDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Date"
-            android:inputType="date"
-            android:text="Jun 23, 2014" />
+            android:background="#ecf0f1"
+        	android:padding="10dp"
+            android:layout_alignParentLeft="true" >
 
-        <EditText
-            android:id="@+id/editText1"
+            <ImageView
+                android:id="@+id/imageViewBloodPressureCalendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_small_calendar" />
+
+            <TextView
+                android:id="@+id/textViewBloodPressureCalendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="June 10, 2014"
+                android:paddingLeft="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnBloodPressureTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Time"
-            android:inputType="time"
-            android:text="10:20 am" >
+            android:background="#ecf0f1"
+        	android:padding="10dp"
+            android:layout_alignParentRight="true" >
 
-            <requestFocus />
-        </EditText>
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/imageViewBloodPressureClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_small_clock" />
+
+            <TextView
+                android:id="@+id/textViewBloodPressureClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:55PM"
+                android:paddingLeft="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+        </LinearLayout>
+
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:padding="10dp" >
 
         <TextView
@@ -188,6 +209,46 @@
 	            android:drawableLeft="@drawable/icon_location_small"
         		android:drawablePadding="5dp"
 	            android:textStyle="bold" />
+	        
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/BloodPressurePhotoHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewBloodPressurePhotoTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Attach a Photo"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/BloodPressurePhotoDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewBloodPressurePhotoTitle"
+	            android:background="#000000" />
+
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical"
+	            android:layout_below="@id/BloodPressurePhotoDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp" >
+
+	            <ImageButton
+	                android:id="@+id/imageButton1"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:src="@drawable/icon_add_photo"
+                    android:layout_gravity="center"
+	                android:background="@null" />
+
+	        </LinearLayout>
 	        
         </RelativeLayout>
 

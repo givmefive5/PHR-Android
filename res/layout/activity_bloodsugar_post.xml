@@ -1,46 +1,277 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView_Height_Tracker"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical" >
-        
-        <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp" >
 
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/BloodSugarTimeDateHolder"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Date"
-            android:inputType="date"
-            android:text="Jun 23, 2014" />
+            android:padding="10dp" >
 
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/btnBloodSugarDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ecf0f1"
+                android:padding="10dp"
+                android:layout_alignParentLeft="true" >
+
+                <ImageView
+                    android:id="@+id/imageViewBloodSugarCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_small_calendar" />
+
+                <TextView
+                    android:id="@+id/textViewBloodSugarCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="June 10, 2014"
+                    android:paddingLeft="5dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnBloodSugarTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ecf0f1"
+                android:padding="10dp"
+                android:layout_alignParentRight="true" >
+
+                <ImageView
+                    android:id="@+id/imageViewBloodSugarClock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_small_clock" />
+
+                <TextView
+                    android:id="@+id/textViewBloodSugarClock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12:55PM"
+                    android:paddingLeft="5dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/BloodSugarHolder"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Time"
-            android:inputType="time"
-            android:text="10:20 am" >
+            android:padding="10dp" >
 
-            <requestFocus />
-        </EditText>
-    </LinearLayout>
-    
+            <TextView
+                android:id="@+id/textViewBloodSugarTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:text="Blood Sugar" />
+
+            <View
+                android:id="@+id/BloodSugarDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textViewBloodSugarTitle"
+                android:background="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/BloodSugarDivider"
+                android:background="@drawable/underline_background"
+                android:orientation="horizontal"
+                android:padding="5dp" >
+                
+                <EditText
+                    android:id="@+id/txtBloodSugarInput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+	            	android:ems="10"
+	            	android:layout_weight="1"
+                    android:inputType="numberDecimal"
+                    android:layout_alignParentLeft="true" >
+                </EditText>
+
+                <TextView
+                    android:id="@+id/textViewBloodSugarInputMetric"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="mmo/L" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/BloodSugarStatusHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewBloodSugarStatusTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Status"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/BloodSugarStatusDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewBloodSugarStatusTitle"
+	            android:background="#000000" />
+
+	        <EditText
+	            android:id="@+id/textViewBloodSugarStatus"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:hint="How are you feeling?"
+	            android:layout_below="@id/BloodSugarStatusDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp"
+	            android:ems="10"
+	            android:isScrollContainer="true"
+	            android:inputType="textMultiLine"
+	            android:textStyle="bold" >
+	        </EditText>
+	        
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/BloodSugarLocationHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewBloodSugarLocationTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Check-in Location"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/BloodSugarLocationDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewBloodSugarLocationTitle"
+	            android:background="#000000" />
+
+	        <TextView
+	            android:id="@+id/textViewBloodSugarLocation"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@id/BloodSugarLocationDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp"
+	            android:text="Set your Location"
+	            android:drawableLeft="@drawable/icon_location_small"
+        		android:drawablePadding="5dp"
+	            android:textStyle="bold" />
+	        
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/BloodSugarPhotoHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewBloodSugarPhotoTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Attach a Photo"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/BloodSugarPhotoDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewBloodSugarPhotoTitle"
+	            android:background="#000000" />
+
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical"
+	            android:layout_below="@id/BloodSugarPhotoDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp" >
+
+	            <ImageButton
+	                android:id="@+id/imageButton1"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:src="@drawable/icon_add_photo"
+                    android:layout_gravity="center"
+	                android:background="@null" />
+
+	        </LinearLayout>
+	        
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/BloodSugarSharingHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/textViewBloodSugarSharingTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:text="Post Sharing Options" />
+
+            <View
+                android:id="@+id/BloodSugarSharingDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textViewBloodSugarSharingTitle"
+                android:background="#000000" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/BloodSugarSharingDivider"
+                android:background="@drawable/underline_background"
+                android:orientation="horizontal"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/textViewBloodSugarSharing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="Share Post on Facebook" />
+	            
+                <ToggleButton 
+				    android:id="@+id/togglebuttonBloodSugarSharing"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:textOn="ON"
+				    android:textOff="OFF"
+				    android:layout_alignParentRight="true"
+				    android:onClick="onToggleClicked"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
         
+
     </LinearLayout>
-    
 
 </ScrollView>

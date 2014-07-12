@@ -1,81 +1,331 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView_Checkup_Tracker"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical" >
-        
-        <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp" >
 
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/CheckupTimeDateHolder"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Date"
-            android:inputType="date"
-            android:text="Jun 23, 2014" />
+            android:padding="10dp" >
 
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/btnCheckupDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ecf0f1"
+                android:padding="10dp"
+                android:layout_alignParentLeft="true" >
+
+                <ImageView
+                    android:id="@+id/imageViewCheckupCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_small_calendar" />
+
+                <TextView
+                    android:id="@+id/textViewCheckupCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="June 10, 2014"
+                    android:paddingLeft="5dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnCheckupTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ecf0f1"
+                android:padding="10dp"
+                android:layout_alignParentRight="true" >
+
+                <ImageView
+                    android:id="@+id/imageViewCheckupClock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_small_clock" />
+
+                <TextView
+                    android:id="@+id/textViewCheckupClock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12:55PM"
+                    android:paddingLeft="5dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/CheckupNameHolder"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="Time"
-            android:inputType="time"
-            android:text="10:20 am" >
+            android:padding="10dp" >
 
-            <requestFocus />
-        </EditText>
-    </LinearLayout>
-    
+            <TextView
+                android:id="@+id/textViewCheckupDoctorNameTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:text="Doctor's Name" />
+
+            <View
+                android:id="@+id/CheckupDoctorNameDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textViewCheckupDoctorNameTitle"
+                android:background="#000000" />
+
+            <TextView
+                android:id="@+id/textViewCheckupDoctorName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/CheckupDoctorNameDivider"
+                android:background="@drawable/underline_background"
+                android:padding="5dp"
+                android:text="Dr. Maria Helica de Los de Ramirez Jr, MD"
+	            android:drawableLeft="@drawable/icon_doctor"
+        		android:drawablePadding="5dp" />
+        </RelativeLayout>
         
-         <RelativeLayout
-            android:id="@+id/noteTitleHolder"
+        <RelativeLayout
+            android:id="@+id/CheckupPurposeHolder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp" >
 
 	        <TextView
-	            android:id="@+id/textViewTitle"
+	            android:id="@+id/textViewPurposeTitle"
 	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
-	            android:text="Title"
+	            android:text="Purpose of Checkup"
 	            android:background="@drawable/textview_style" />
 	
 	        <View
-	            android:id="@+id/noteStatusDivider"
+	            android:id="@+id/CheckupPurposeDivider"
 	            android:layout_width="match_parent"
 	            android:layout_height="1dp"
-	            android:layout_below="@id/textViewTitle"
+	            android:layout_below="@id/textViewPurposeTitle"
 	            android:background="#000000" />
 
 	        <EditText
-	            android:id="@+id/textViewnoteStatus"
+	            android:id="@+id/textViewCheckupPurpose"
 	            android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
-	            android:hint="What is it?"
-	            android:layout_below="@id/noteStatusDivider"
+	            android:hint="ex. Fever"
+	            android:layout_below="@id/CheckupPurposeDivider"
 	            android:background="@drawable/underline_background"
 	            android:padding="5dp"
 	            android:ems="10"
+	            android:isScrollContainer="true"
+	            android:inputType="textMultiLine" >
+	        </EditText>
+	        
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/CheckupStatusHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewStatusTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Status"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/CheckupStatusDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewStatusTitle"
+	            android:background="#000000" />
+
+	        <EditText
+	            android:id="@+id/textViewCheckupStatus"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:hint="How is the Checkup?"
+	            android:layout_below="@id/CheckupStatusDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp"
+	            android:ems="10"
+	            android:isScrollContainer="true"
 	            android:inputType="textMultiLine"
 	            android:textStyle="bold" >
 	        </EditText>
 	        
         </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/CheckupNotesHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewNotesTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Notes"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/CheckupNotesDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewNotesTitle"
+	            android:background="#000000" />
+
+	        <EditText
+	            android:id="@+id/textViewCheckupNotes"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:hint="ex. Medications"
+	            android:layout_below="@id/CheckupNotesDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp"
+	            android:ems="10"
+	            android:isScrollContainer="true"
+	            android:inputType="textMultiLine" >
+	        </EditText>
+	        
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/CheckupLocationHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewLocationTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Check-in Location"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/CheckupLocationDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewLocationTitle"
+	            android:background="#000000" />
+
+	        <TextView
+	            android:id="@+id/textViewCheckupLocation"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@id/CheckupLocationDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp"
+	            android:text="Set your Location"
+	            android:drawableLeft="@drawable/icon_location_small"
+        		android:drawablePadding="5dp"
+	            android:textStyle="bold" />
+	        
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/CheckupPhotoHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewCheckupPhotoTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Attach a Photo"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/CheckupPhotoDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewCheckupPhotoTitle"
+	            android:background="#000000" />
+
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical"
+	            android:layout_below="@id/CheckupPhotoDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp" >
+
+	            <ImageButton
+	                android:id="@+id/imageButton1"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:src="@drawable/icon_add_photo"
+                    android:layout_gravity="center"
+	                android:background="@null" />
+
+	        </LinearLayout>
+	        
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/CheckupSharingHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/textViewCheckupSharingTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:text="Post Sharing Options" />
+
+            <View
+                android:id="@+id/CheckupSharingDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textViewCheckupSharingTitle"
+                android:background="#000000" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/CheckupSharingDivider"
+                android:background="@drawable/underline_background"
+                android:orientation="horizontal"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/textViewCheckupSharing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="Share Post on Facebook" />
+	            
+                <ToggleButton 
+				    android:id="@+id/togglebuttonCheckupSharing"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:textOn="ON"
+				    android:textOff="OFF"
+				    android:layout_alignParentRight="true"
+				    android:onClick="onToggleClicked"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
         
+
     </LinearLayout>
-    
 
 </ScrollView>
