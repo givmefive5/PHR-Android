@@ -13,9 +13,11 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 
 import org.achartengine.ChartFactory;
 import org.achartengine.chart.BarChart.Type;
@@ -34,6 +36,7 @@ public class SummaryReportFragment extends Fragment {
 	ProgressBar cProgress;
 	int mProgressStatus = 50;
 	int cProgressStatus = 80;
+	RelativeLayout btnAchievements;
 	
 	
 	@Override
@@ -154,6 +157,19 @@ public class SummaryReportFragment extends Fragment {
 				.findViewById(R.id.piegraph);
 	    
 	    dailyContainer.addView(dailyChart);
+	    
+
+		
+		btnAchievements = (RelativeLayout) rootView.findViewById(R.id.btnAchievements);
+		btnAchievements.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(getActivity(),
+						AchievementsActivity.class);
+				startActivity(intent);
+			}
+		});
     	
 		return rootView;
 	}

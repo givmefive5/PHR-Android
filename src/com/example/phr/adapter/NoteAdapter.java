@@ -12,8 +12,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.phr.NoteReadModeActivity;
 import com.example.phr.NoteTrackerActivity;
 import com.example.phr.R;
+import com.example.phr.StatusFeedActivity;
 import com.example.phr.model.Note;
 
 public class NoteAdapter extends BaseAdapter{
@@ -82,6 +84,9 @@ public class NoteAdapter extends BaseAdapter{
 			public void onClick(View v) {
 				
 				// FOR STATUS ON CLICK
+				Intent intent = new Intent(mContext,
+						NoteReadModeActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);;
+				v.getContext().startActivity(intent);
 			}
 		});
 		return convertView;

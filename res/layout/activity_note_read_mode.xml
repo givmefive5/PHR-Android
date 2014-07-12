@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/textViewNoteReadTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Medicine Checklist"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textViewNoteReadLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Posted on " />
+
+            <TextView
+                android:id="@+id/textViewNoteReadDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="January 29, 2014"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/textViewNoteReadTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7:45AM"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewNoteReadFullNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="25dp"
+            android:text="Dr. Laura told me to buy the following items:\n
+            -Enervon (500mg)\t8x a day\n
+            -Calpol (2 tbps)\tAfter Meals\n
+            -Digestive Q (3 cuts)\tBefore Meals\n
+            -Biogesic (7 tbps)\tEvery Hour\n
+            -ReadyVon (50mg)\tOnce a wekk\n
+            *refer to image" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageViewNoteReadHolder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sample_image_pills" />
+
+        </LinearLayout>
+        
+    </LinearLayout>
+
+</ScrollView>
