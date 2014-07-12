@@ -137,6 +137,15 @@
             android:name="com.example.phr.CalorieBreakdownTrackerActivity" >
         </activity>
         
+          
+         <activity
+            android:name="com.example.phr.GroupedFoodTrackerActivity" >
+        </activity>
+        
+         <activity
+            android:name="com.example.phr.FoodTrackerDailyActivity" >
+        </activity> 
+         
         <activity
             android:name="com.example.phr.ActivitiesTrackerPostActivity"
             android:windowSoftInputMode="stateAlwaysHidden" >

@@ -34,7 +34,7 @@ public class HealthTrackerFragment extends Fragment {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(getActivity(),
-						FoodTrackerActivity.class);
+						GroupedFoodTrackerActivity.class);
 				startActivity(intent);
 			}
 		});
