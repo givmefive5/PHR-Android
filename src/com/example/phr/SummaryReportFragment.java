@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.example.phr.R;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Paint.Align;
 import android.graphics.drawable.Drawable;
@@ -20,9 +21,11 @@ import org.achartengine.ChartFactory;
 import org.achartengine.chart.BarChart.Type;
 import org.achartengine.model.CategorySeries;
 import org.achartengine.model.XYMultipleSeriesDataset;
+import org.achartengine.model.XYSeries;
 import org.achartengine.renderer.DefaultRenderer;
 import org.achartengine.renderer.SimpleSeriesRenderer;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
+import org.achartengine.renderer.XYSeriesRenderer;
 
 
 public class SummaryReportFragment extends Fragment {
@@ -57,97 +60,101 @@ public class SummaryReportFragment extends Fragment {
 		cProgress.setMax(100);
 		
 		
-		//-----chart
-		/*View categoryChart;
-
 		
-		   String[] code = new String[] {
-		            "Sodium", "Carbohydrate", "Sugar", "Cholesterol"};
-		 
-		        // Pie Chart Section Value
-		        double[] distribution = { 270, 300, 230, 320} ;
-		 
-		        // Color of each Pie Chart Sections
-		        int[] colors = { Color.parseColor("#5C77D1"),Color.parseColor("#C177C9"), Color.parseColor("#E8BB6D"), Color.parseColor("#6D9AE8")};
-		 
-		        // Instantiating CategorySeries to plot Pie Chart
-		        CategorySeries distributionSeries = new CategorySeries(" Calorie Subcategory");
-		        for(int i=0 ;i < distribution.length;i++){
-		            // Adding a slice with its values and name to the Pie Chart
-		            distributionSeries.add(code[i], distribution[i]);
-		        }
-		 
-		        // Instantiating a renderer for the Pie Chart
-		        DefaultRenderer defaultRenderer  = new DefaultRenderer();
-		        for(int i = 0 ;i<distribution.length;i++){
-		            SimpleSeriesRenderer seriesRenderer = new SimpleSeriesRenderer();
-		            seriesRenderer.setColor(colors[i]);
-		            seriesRenderer.setDisplayBoundingPoints(true);
-		            seriesRenderer.setDisplayChartValuesDistance(30);
-		            seriesRenderer.setChartValuesTextSize(40);
-		          
-		            seriesRenderer.setDisplayChartValues(true);
-		            defaultRenderer.addSeriesRenderer(seriesRenderer);
-		        }
-		 
-		        defaultRenderer.setChartTitle("Calorie Subcategory \n\n\n\n");
-		        defaultRenderer.setChartTitleTextSize(40);
-		        defaultRenderer.setLabelsTextSize(50);
-		        defaultRenderer.setLegendTextSize(50);
-		        defaultRenderer.setZoomButtonsVisible(false);
-		        defaultRenderer.setShowLabels(true);  
-		        defaultRenderer.isInScroll();
-		        
-		
-		 
-		        LinearLayout bloodPressureContainer = (LinearLayout) rootView.findViewById(R.id.piegraph);
-
-				categoryChart = ChartFactory.getPieChartView(getActivity().getBaseContext(), distributionSeries , defaultRenderer);
-
-				bloodPressureContainer.addView(categoryChart);
-				*/
 		
 		View dailyChart;
 		
-		String[] kind = new String[] { "Calorie", "Sugar", "Sodium", "Cholesterol", "Carbohydrade"};
-		
-		String[] titles = new String[] { "Max", "Current" };
-	    List<double[]> values = new ArrayList<double[]>();
-	    values.add(new double[] { 14230, 12300, 14240, 15244, 15900});
-	    values.add(new double[] { 5230, 7300, 9240, 10540, 7900});
-	    int[] colors = new int[] { Color.rgb(204, 85, 0), Color.WHITE };
-	    XYMultipleSeriesRenderer renderer = buildBarRenderer(colors);
-	    setChartSettings(renderer, "Daily Consume", "Kind", "Measure", 0.5,
-	        12.5, 0, 24000, Color.WHITE, Color.LTGRAY);
-	    renderer.getSeriesRendererAt(0).setDisplayChartValues(true);
-	    renderer.getSeriesRendererAt(1).setDisplayChartValues(true);
-	    renderer.setXLabelsAlign(Align.LEFT);
-	    renderer.setYLabelsAlign(Align.LEFT);
-	    renderer.setPanEnabled(true, false);
-	    renderer.setZoomEnabled(false);
-	    renderer.setZoomRate(1.1f);
-	    renderer.setBarSpacing(100);
-	    renderer.setBarWidth(30);
-	    renderer.setMargins(new int[] {20, 30, 15, 0});
-        renderer.setXAxisMin(0);
-        renderer.setXAxisMax(5);
-        renderer.setYAxisMin(0);
-        renderer.setChartValuesTextSize(20);
-	    renderer.setApplyBackgroundColor(true);
-		renderer.setBackgroundColor(Color.argb(0x00, 0x01, 0x01, 0x01));
-		renderer.setMarginsColor(Color.argb(0x00, 0x01, 0x01, 0x01));
-		
-		for (int i = 0; i < kind.length; i++) {
-			renderer.addXTextLabel(i + 1, kind[i]);
-		}
-		
-	    dailyChart = ChartFactory.getBarChartView(getActivity().getBaseContext(), buildBarDataset(titles, values), renderer,Type.STACKED);
+		int[] x = { 0,1,2,3 };
+    	int[] income = { 2000,2500,2700,3000};
+    	int[] expense = {2200, 2700, 2900, 2800};
+    	
+    	
+    	 String[] mMonth = new String[] {"Sugar", "Sodium" , "Chrolesterol", "Carbohydrate"};
+    	
+    	// Creating an  XYSeries for Income
+    	//CategorySeries incomeSeries = new CategorySeries("Income");
+    	XYSeries incomeSeries = new XYSeries("Intake");
+    	// Creating an  XYSeries for Income
+    	XYSeries expenseSeries = new XYSeries("Recommended");
+    	// Adding data to Income and Expense Series
+    	for(int i=0;i<x.length;i++){    		
+    		incomeSeries.add(i,income[i]);
+    		expenseSeries.add(i,expense[i]);
+    	}
+    	
+    	
+    	// Creating a dataset to hold each series
+    	XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
+    	// Adding Income Series to the dataset
+    	dataset.addSeries(incomeSeries);
+    	// Adding Expense Series to dataset
+    	dataset.addSeries(expenseSeries);    	
+    	
+    	
+    	// Creating XYSeriesRenderer to customize incomeSeries
+    	XYSeriesRenderer incomeRenderer = new XYSeriesRenderer();
+    	incomeRenderer.setColor(Color.parseColor("#C177C9"));
+    	incomeRenderer.setFillPoints(true);
+    	incomeRenderer.setLineWidth(2);
+    	incomeRenderer.setDisplayChartValues(true);
+    	incomeRenderer.setChartValuesTextSize(20);
+    	
+    	// Creating XYSeriesRenderer to customize expenseSeries
+    	XYSeriesRenderer expenseRenderer = new XYSeriesRenderer();
+    	expenseRenderer.setColor(Color.parseColor("#5C77D1"));
+    	expenseRenderer.setFillPoints(true);
+    	expenseRenderer.setLineWidth(2);
+    	
+    	expenseRenderer.setDisplayChartValues(true); 
+    	expenseRenderer.setChartValuesTextSize(20);
+    	
+    	// Creating a XYMultipleSeriesRenderer to customize the whole chart
+    	XYMultipleSeriesRenderer multiRenderer = new XYMultipleSeriesRenderer();
+    	multiRenderer.setXLabels(0);
+    	multiRenderer.setChartTitle("Nutritional Value Chart Per Day \n\n\n");
+    	multiRenderer.setAxisTitleTextSize(20);
+    	multiRenderer.setXTitle("\n\n\n Year 2012");
+    	multiRenderer.setYTitle("");
+    	multiRenderer.setZoomButtonsVisible(false);
+    	multiRenderer.setZoomEnabled(false);
+    	multiRenderer.setMargins(new int[] {60, 30, 15, 0});
+    	multiRenderer.setXAxisMin(-1);
+    	multiRenderer.setXAxisMax(4);
+    	multiRenderer.setYAxisMin(0);
+    	//multiRenderer.setAxisTitleTextSize(30);
+    	multiRenderer.setChartTitleTextSize(25);
+    	multiRenderer.setLabelsTextSize(15);
+    	multiRenderer.setAxesColor(Color.BLACK);
+    	multiRenderer.setLabelsColor(Color.BLACK);
+    	multiRenderer.setXLabelsColor(Color.BLACK);
+    	multiRenderer.setYLabelsColor(0, Color.BLACK);
+    	//multiRenderer.setLegendTextSize(15);
+        multiRenderer.setLabelsTextSize(20);
+       // multiRenderer.setLegendHeight(20);
+        multiRenderer.setLegendTextSize(20);
+    	multiRenderer.setApplyBackgroundColor(true);
+    	multiRenderer.setBackgroundColor(Color.argb(0x00, 0x01, 0x01, 0x01));
+    	multiRenderer.setMarginsColor(Color.argb(0x00, 0x01, 0x01, 0x01));
+    	
+    	for(int i=0; i< x.length;i++){
+    		multiRenderer.addXTextLabel(i, mMonth[i]);    		
+    	}    	
+    	
+    	
+    	// Adding incomeRenderer and expenseRenderer to multipleRenderer
+    	// Note: The order of adding dataseries to dataset and renderers to multipleRenderer
+    	// should be same
+    	multiRenderer.addSeriesRenderer(incomeRenderer);
+    	multiRenderer.addSeriesRenderer(expenseRenderer);
+    	
+    	// Creating an intent to plot bar chart using dataset and multipleRenderer    	
+    	dailyChart = ChartFactory.getBarChartView(getActivity().getBaseContext(), dataset, multiRenderer, Type.DEFAULT);
 	    
 	    LinearLayout dailyContainer = (LinearLayout) rootView
 				.findViewById(R.id.piegraph);
 	    
 	    dailyContainer.addView(dailyChart);
-		
+    	
 		return rootView;
 	}
 
