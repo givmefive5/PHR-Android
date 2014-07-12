@@ -2,6 +2,7 @@ package com.example.phr.adapter;
 
 import java.util.List;
 
+import com.example.phr.CalorieBreakdownTrackerActivity;
 import com.example.phr.CalorieTrackerActivity;
 import com.example.phr.R;
 import com.example.phr.model.Calorie;
@@ -100,7 +101,7 @@ public class CalorieAdapter extends BaseAdapter {
 				
 				// FOR STATUS ON CLICK
 				Intent intent = new Intent(mContext,
-						CalorieTrackerActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);;
+						CalorieBreakdownTrackerActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);;
 				v.getContext().startActivity(intent);
 			}
 		});

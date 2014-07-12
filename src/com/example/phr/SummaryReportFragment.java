@@ -64,12 +64,12 @@ public class SummaryReportFragment extends Fragment {
 		
 		View dailyChart;
 		
-		int[] x = { 0,1,2,3 };
-    	int[] income = { 2000,2500,2700,3000};
-    	int[] expense = {2200, 2700, 2900, 2800};
+		int[] x = { 0,1,2 };
+    	int[] income = { 2000,2500,2700};
+    	int[] expense = {2200, 2700, 2900};
     	
     	
-    	 String[] mMonth = new String[] {"Sugar", "Sodium" , "Chrolesterol", "Carbohydrate"};
+    	 String[] mMonth = new String[] {"Protein", "Fats" , "Carbohydrates"};
     	
     	// Creating an  XYSeries for Income
     	//CategorySeries incomeSeries = new CategorySeries("Income");
@@ -119,7 +119,7 @@ public class SummaryReportFragment extends Fragment {
     	multiRenderer.setZoomEnabled(false);
     	multiRenderer.setMargins(new int[] {60, 30, 15, 0});
     	multiRenderer.setXAxisMin(-1);
-    	multiRenderer.setXAxisMax(4);
+    	multiRenderer.setXAxisMax(3);
     	multiRenderer.setYAxisMin(0);
     	//multiRenderer.setAxisTitleTextSize(30);
     	multiRenderer.setChartTitleTextSize(25);
