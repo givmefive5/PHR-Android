@@ -145,6 +145,10 @@
          <activity
             android:name="com.example.phr.FoodTrackerDailyActivity" >
         </activity> 
+        
+         <activity
+            android:name="com.example.phr.AchievementsActivity" >
+        </activity> 
          
         <activity
             android:name="com.example.phr.ActivitiesTrackerPostActivity"
