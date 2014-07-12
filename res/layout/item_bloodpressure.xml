@@ -96,7 +96,7 @@
                 android:id="@+id/lblDia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Diatolic : "
+                android:text="Diastolic : "
                 android:textStyle="bold" 
                 android:textColor="#0A090A"/>
 

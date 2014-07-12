@@ -90,8 +90,8 @@ public class FoodTrackerDailyActivity extends Activity{
     	double[] intake = { 20.41,24.89,43.07};
     	double[] recommended = {41.25, 53.63, 247.5};
     	
-    	
     	 String[] mMonth = new String[] {"Protein", "Fats" , "Carbohydrates"};
+
     	
     	// Creating an  XYSeries for Income
     	//CategorySeries incomeSeries = new CategorySeries("Income");

@@ -16,12 +16,13 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.example.phr.adapter.ActivityAdapter;
 import com.example.phr.adapter.StatusAdapter;
 import com.example.phr.model.Status;
 
 public class ActivitiesTrackerActivity extends Activity {
 	
-	StatusAdapter statusAdapter;
+	ActivityAdapter activityAdapter;
 	ListView mActivityList;
 	ImageView mBtnAddActivity;
 	
@@ -33,8 +34,8 @@ public class ActivitiesTrackerActivity extends Activity {
 		setTitle("Activity Tracker");
 		mActivityList = (ListView) findViewById(R.id.listViewActivityTracker);
         getActionBar().setDisplayHomeAsUpEnabled(true);
-		statusAdapter = new StatusAdapter(getApplicationContext(), generateData());
-		mActivityList.setAdapter(statusAdapter);
+		activityAdapter = new ActivityAdapter(getApplicationContext(), generateData());
+		mActivityList.setAdapter(activityAdapter);
 		
 		mBtnAddActivity = (ImageView) findViewById(R.id.btnAddActivity);
 		mBtnAddActivity.setOnClickListener(new OnClickListener() {
@@ -48,10 +49,25 @@ public class ActivitiesTrackerActivity extends Activity {
 		});
 	}
 
-	private List<Status> generateData() {
-		List<Status> list = new ArrayList<Status>();
+	private List<com.example.phr.model.Activity> generateData() {
+		List<com.example.phr.model.Activity> list = new ArrayList<com.example.phr.model.Activity>();
 		
-		Status activity1 = new Status();
+		com.example.phr.model.Activity activity1 = new com.example.phr.model.Activity();
+		activity1.setAction("Swimming");
+		activity1.setCalBurned("1200");
+		activity1.setDate("February 4, 2012");
+		activity1.setTime("5:55PM");
+		activity1.setDuration("45 Mins");
+		list.add(activity1);
+		list.add(activity1);
+		list.add(activity1);
+		list.add(activity1);
+		list.add(activity1);
+		list.add(activity1);
+		list.add(activity1);
+		list.add(activity1);
+		
+		/*		Status activity1 = new Status();
 		activity1.setActionHolder("Doing");
 		activity1.setActionName("swimming");
 		activity1.setDatettime("January 12, 2014 12:34AM");
@@ -107,7 +123,7 @@ public class ActivitiesTrackerActivity extends Activity {
 		list.add(activity1);
 		list.add(activity2);
 		list.add(activity3);
-		list.add(activity4);
+		list.add(activity4);*/
 		
 		return list;
 	}

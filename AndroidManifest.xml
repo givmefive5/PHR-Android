@@ -57,6 +57,14 @@
         </activity>
         
         <activity
+            android:name="com.example.phr.RegisterFBLoginActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.RegisterUserInformationActivity" >
+        </activity>
+        
+        <activity
             android:name="com.example.phr.FoodTrackerActivity" >
         </activity>
         
@@ -94,6 +102,10 @@
         </activity>
         
          <activity
+            android:name="com.example.phr.NoteReadModeActivity" >
+        </activity>
+        
+         <activity
             android:name="com.example.phr.BloodPressurePostActivity">
         </activity>
         
@@ -116,6 +128,11 @@
         <activity
             android:name="com.example.phr.CheckupPostActivity" >
         </activity>
+        
+        <activity
+            android:name="com.example.phr.CheckupTrackerAddDoctorActivity" >
+        </activity>
+        
         
         <activity
             android:name="com.example.phr.BloodSugarPostActivity" >
