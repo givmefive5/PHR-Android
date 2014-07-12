@@ -28,6 +28,7 @@ public class FoodTrackerPostActivity extends Activity {
 				startActivity(intent);
 			}
 		});
+		/*
 		mBtnFoodDate.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -36,5 +37,6 @@ public class FoodTrackerPostActivity extends Activity {
 				startActivity(intent);
 			}
 		});
+		*/
 	}
 }
