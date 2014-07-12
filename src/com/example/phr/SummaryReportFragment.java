@@ -1,10 +1,12 @@
 package com.example.phr;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.phr.R;
 
 import android.graphics.Color;
+import android.graphics.Paint.Align;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import org.achartengine.ChartFactory;
+import org.achartengine.chart.BarChart.Type;
 import org.achartengine.model.CategorySeries;
 import org.achartengine.model.XYMultipleSeriesDataset;
 import org.achartengine.renderer.DefaultRenderer;
@@ -55,7 +58,7 @@ public class SummaryReportFragment extends Fragment {
 		
 		
 		//-----chart
-		View categoryChart;
+		/*View categoryChart;
 
 		
 		   String[] code = new String[] {
@@ -102,6 +105,48 @@ public class SummaryReportFragment extends Fragment {
 				categoryChart = ChartFactory.getPieChartView(getActivity().getBaseContext(), distributionSeries , defaultRenderer);
 
 				bloodPressureContainer.addView(categoryChart);
+				*/
+		
+		View dailyChart;
+		
+		String[] kind = new String[] { "Calorie", "Sugar", "Sodium", "Cholesterol", "Carbohydrade"};
+		
+		String[] titles = new String[] { "Max", "Current" };
+	    List<double[]> values = new ArrayList<double[]>();
+	    values.add(new double[] { 14230, 12300, 14240, 15244, 15900});
+	    values.add(new double[] { 5230, 7300, 9240, 10540, 7900});
+	    int[] colors = new int[] { Color.rgb(204, 85, 0), Color.WHITE };
+	    XYMultipleSeriesRenderer renderer = buildBarRenderer(colors);
+	    setChartSettings(renderer, "Daily Consume", "Kind", "Measure", 0.5,
+	        12.5, 0, 24000, Color.WHITE, Color.LTGRAY);
+	    renderer.getSeriesRendererAt(0).setDisplayChartValues(true);
+	    renderer.getSeriesRendererAt(1).setDisplayChartValues(true);
+	    renderer.setXLabelsAlign(Align.LEFT);
+	    renderer.setYLabelsAlign(Align.LEFT);
+	    renderer.setPanEnabled(true, false);
+	    renderer.setZoomEnabled(false);
+	    renderer.setZoomRate(1.1f);
+	    renderer.setBarSpacing(100);
+	    renderer.setBarWidth(30);
+	    renderer.setMargins(new int[] {20, 30, 15, 0});
+        renderer.setXAxisMin(0);
+        renderer.setXAxisMax(5);
+        renderer.setYAxisMin(0);
+        renderer.setChartValuesTextSize(20);
+	    renderer.setApplyBackgroundColor(true);
+		renderer.setBackgroundColor(Color.argb(0x00, 0x01, 0x01, 0x01));
+		renderer.setMarginsColor(Color.argb(0x00, 0x01, 0x01, 0x01));
+		
+		for (int i = 0; i < kind.length; i++) {
+			renderer.addXTextLabel(i + 1, kind[i]);
+		}
+		
+	    dailyChart = ChartFactory.getBarChartView(getActivity().getBaseContext(), buildBarDataset(titles, values), renderer,Type.STACKED);
+	    
+	    LinearLayout dailyContainer = (LinearLayout) rootView
+				.findViewById(R.id.piegraph);
+	    
+	    dailyContainer.addView(dailyChart);
 		
 		return rootView;
 	}
