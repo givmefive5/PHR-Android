@@ -50,24 +50,24 @@
         android:layout_marginTop="5dp">
 
        <RelativeLayout
-            android:id="@+id/ailmentPlaceholder"
+            android:id="@+id/PurposePlaceholder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/lblAilment"
+                android:id="@+id/lblPurpose"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
-                android:text="Ailment : "
+                android:text="Purpose : "
                 android:textStyle="bold" 
                 android:textColor="#0A090A"/>
 
             <TextView
-                android:id="@+id/txtAilment"
+                android:id="@+id/txtPurpose"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/lblAilment"
+                android:layout_toRightOf="@id/lblPurpose"
                 android:text="Cough" />
 
  

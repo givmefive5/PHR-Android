@@ -26,7 +26,8 @@ public class CheckupTrackerActivity extends Activity {
 
 	ListView mCheckupList;
 	CheckupAdapter checkupAdapter;
-	LinearLayout mBtnCheckupPost;
+	LinearLayout mBtnCheckupPost;;
+	LinearLayout mBtnCheckupDoctor;
 	
 	@SuppressLint("NewApi")
 	@Override
@@ -71,6 +72,16 @@ public class CheckupTrackerActivity extends Activity {
 			public void onClick(View v) {
 				Intent intent = new Intent(getApplicationContext(),
 						CheckupPostActivity.class);
+				startActivity(intent);
+			}
+		});
+		
+		mBtnCheckupDoctor = (LinearLayout) findViewById(R.id.btnAddCheckupDoctor);
+		mBtnCheckupDoctor.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getApplicationContext(),
+						CheckupTrackerAddDoctorActivity.class);
 				startActivity(intent);
 			}
 		});

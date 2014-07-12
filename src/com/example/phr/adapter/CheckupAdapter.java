@@ -61,7 +61,7 @@ public class CheckupAdapter extends BaseAdapter {
 
 			viewHolder = new ViewHolder();
 			viewHolder.ailment = (TextView) convertView
-					.findViewById(R.id.txtAilment);
+					.findViewById(R.id.txtPurpose);
 			viewHolder.doctor = (TextView) convertView
 					.findViewById(R.id.txtDoctor);
 			viewHolder.clinic = (TextView) convertView
