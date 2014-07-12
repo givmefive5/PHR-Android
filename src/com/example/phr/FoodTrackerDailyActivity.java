@@ -96,7 +96,7 @@ public class FoodTrackerDailyActivity extends Activity{
     	int[] expense = {2323,2200, 2700, 2900};
     	
     	
-    	 String[] mMonth = new String[] {"Calorie","Protein", "Fats" , "Carbohydrates"};
+    	 String[] mMonth = new String[] {"Calories","Protein", "Fats" , "Carbohydrates"};
     	
     	// Creating an  XYSeries for Income
     	//CategorySeries incomeSeries = new CategorySeries("Income");
