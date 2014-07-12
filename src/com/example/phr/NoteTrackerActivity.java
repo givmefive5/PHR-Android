@@ -6,10 +6,14 @@ import java.util.List;
 import com.example.phr.adapter.NoteAdapter;
 import com.example.phr.model.Note;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -25,11 +29,13 @@ public class NoteTrackerActivity extends Activity{
 	NoteAdapter noteAdapter;
 	ImageView mBtnNotePost;
 
+	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_note_tracker);
 		setTitle("Notes");
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 		mNoteList = (ListView) findViewById(R.id.listView_notes);
 				
 		// FAKE DATA
@@ -71,5 +77,28 @@ public class NoteTrackerActivity extends Activity{
 			}
 		});
 	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    // Inflate the menu items for use in the action bar
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.menu_tracker_help, menu);
+	    return super.onCreateOptionsMenu(menu);
+	}
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) 
+    {
+        switch (item.getItemId()) 
+        {
+        case android.R.id.home: 
+            onBackPressed();
+            break;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
+        return true;
+    }
+	
 
 }

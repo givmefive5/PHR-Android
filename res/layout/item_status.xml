@@ -79,4 +79,13 @@
         android:layout_below="@+id/statusInformationHolder"
         android:text="I am sooooooooooooooooooooo excited!" />
 
+    <ImageView
+        android:id="@+id/statusPhotoHolder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewStatus"
+		android:padding="10dp"
+		android:visibility="gone"
+        android:src="@drawable/sample_image" />
+
 </RelativeLayout>

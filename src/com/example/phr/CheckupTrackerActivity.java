@@ -2,9 +2,9 @@ package com.example.phr;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import com.example.phr.adapter.CheckupAdapter;
 import com.example.phr.model.Checkup;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,10 +22,12 @@ public class CheckupTrackerActivity extends Activity {
 	CheckupAdapter checkupAdapter;
 	ImageView mBtnCheckupPost;
 	
+	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_checkup_tracker);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 		setTitle("Checkup Tracker");
 		mCheckupList = (ListView) findViewById(R.id.listView_checkup);
 				

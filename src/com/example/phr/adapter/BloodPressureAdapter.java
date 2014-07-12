@@ -92,9 +92,6 @@ public class BloodPressureAdapter extends BaseAdapter{
 			public void onClick(View v) {
 				
 				// FOR STATUS ON CLICK
-				Intent intent = new Intent(mContext,
-						BloodPressureTrackerActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);;
-				v.getContext().startActivity(intent);
 			}
 		});
 		return convertView;

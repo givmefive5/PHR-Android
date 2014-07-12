@@ -22,7 +22,6 @@ public class StatusFeedActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		this.overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
         getActionBar().setDisplayHomeAsUpEnabled(true);
 		setContentView(R.layout.activity_status_feed);
 		statusAdapter = new StatusAdapter(getApplicationContext(), generateData());

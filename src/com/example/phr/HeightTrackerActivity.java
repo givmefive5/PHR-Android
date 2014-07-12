@@ -18,6 +18,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -150,5 +153,28 @@ public class HeightTrackerActivity extends Activity{
 			}
 		});
 	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    // Inflate the menu items for use in the action bar
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.menu_tracker_help, menu);
+	    return super.onCreateOptionsMenu(menu);
+	}
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) 
+    {
+        switch (item.getItemId()) 
+        {
+        case android.R.id.home: 
+            onBackPressed();
+            break;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
+        return true;
+    }
+	
 
 }
