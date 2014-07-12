@@ -1,292 +1,390 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F5F5F5" >
+    android:layout_height="match_parent" >
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="15dp" >
-        
-        
-        <!-- PERSONAL INFORMATION -->
-        
-        <RelativeLayout
-            android:id="@+id/personalInformationPlaceholder"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-            
-            <ImageView
-            android:id="@+id/imgPerson"
+        android:paddingTop="10dp"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/imageView1"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
             android:src="@drawable/picture_placeholder" />
 
-	        <TextView
-	            android:id="@+id/txtName"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:text="Juan Atonio Dela Cruz"
-	            android:layout_alignTop="@id/imgPerson"
-	            android:layout_toRightOf="@id/imgPerson"
-	            android:textAppearance="?android:attr/textAppearanceLarge" />
-	
-	        <RelativeLayout
-	            android:id="@+id/birthdatePlaceholder"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_toRightOf="@id/imgPerson"
-	            android:layout_below="@id/txtName" >
-	
-	            <TextView
-	                android:id="@+id/lblBirthdate"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:textStyle="bold"
-	                android:text="Birthdate: " />
-	
-	            <TextView
-	                android:id="@+id/txtBirthdate"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:layout_toRightOf="@id/lblBirthdate"
-	                android:text="June 10, 1978" />
-	
-	        </RelativeLayout>
-	
-	        <RelativeLayout
-	            android:id="@+id/sexPlaceholder"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_toRightOf="@id/imgPerson"
-	            android:layout_below="@id/birthdatePlaceholder" >
-	
-	            <TextView
-	                android:id="@+id/lblSex"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:textStyle="bold"
-	                android:text="Sex: " />
-	
-	            <TextView
-	                android:id="@+id/txtSex"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:layout_toRightOf="@id/lblSex"
-	                android:text="M" />
-	
-	        </RelativeLayout>
-	
-	        <RelativeLayout
-	            android:id="@+id/contactPlaceholder"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_toRightOf="@id/sexPlaceholder"
-	            android:layout_below="@id/birthdatePlaceholder"
-	            android:paddingLeft="5dp" >
-	
-	            <TextView
-	                android:id="@+id/lblContact"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:textStyle="bold"
-	                android:text="Contact: " />
-	
-	            <TextView
-	                android:id="@+id/txtContact"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:layout_toRightOf="@id/lblContact"
-	                android:text="09175553434" />
-	
-	        </RelativeLayout>
-	
-	        <RelativeLayout
-	            android:id="@+id/addressPlaceholder"
-	            android:layout_width="wrap_content"
-	            android:layout_height="wrap_content"
-	            android:layout_toRightOf="@id/imgPerson"
-	            android:layout_below="@id/sexPlaceholder" >
-	
-	            <TextView
-	                android:id="@+id/lblAddress"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:textStyle="bold"
-	                android:text="Address: " />
-	
-	            <TextView
-	                android:id="@+id/txtAddress"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:layout_toRightOf="@id/lblAddress"
-	                android:text="100 Joy Street, Brgy Maligaya, Quezon City" />
-	
-	        </RelativeLayout>
-
-        </RelativeLayout>
-        
-        
-        <!-- MEDICAL HISTORY -->
-
-        <RelativeLayout
-	        android:id="@+id/medicalInformationPlaceholder"
+        <TextView
+            android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/personalInformationPlaceholder"
-            android:paddingTop="10dp" >
+            android:text="Castilo, Mark"
+            android:layout_gravity="center_horizontal"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <RelativeLayout
+            android:id="@+id/AboutMePersonalInformationHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
 
             <TextView
-                android:id="@+id/txtMedicalInformation"
-                android:layout_width="wrap_content"
+                android:id="@+id/textViewAboutMePersonalInformationTitle"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="Medical Information"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+                android:background="@drawable/textview_style"
+                android:text="Personal Information" />
 
-            <RelativeLayout
-                android:id="@+id/dateRecentExamPlaceholder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txtMedicalInformation" >
-	
-	            <TextView
-	                android:id="@+id/lblDateRecentExam"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:textStyle="bold"
-	                android:text="Last physical exam: " />
-	
-	            <TextView
-	                android:id="@+id/txtDateRecentExam"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:layout_toRightOf="@id/lblDateRecentExam"
-	                android:text="January 23, 2013" />
-                
-            </RelativeLayout>
+            <View
+                android:id="@+id/AboutMePersonalInformationDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textViewAboutMePersonalInformationTitle"
+                android:background="#000000" />
 
-            <RelativeLayout
-                android:id="@+id/healthProblemsPlaceholder"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/dateRecentExamPlaceholder" >
-	
-	            <TextView
-	                android:id="@+id/lblHealthProblems"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:textStyle="bold"
-	                android:text="Known Health Problems: " />
-	
-	            <TextView
-	                android:id="@+id/txtHealthProblems"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:layout_below="@id/lblHealthProblems"
-	                android:paddingLeft="15dp"
-	                android:text="Asthma, Dentures, Fainting, Hypertension" />
-                
-            </RelativeLayout>
+                android:layout_below="@id/AboutMePersonalInformationDivider"
+                android:background="@drawable/underline_background"
+                android:orientation="vertical"
+                android:padding="5dp" >
 
-            <RelativeLayout
-                android:id="@+id/allergiesPlaceholder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/healthProblemsPlaceholder" >
-	
-	            <TextView
-	                android:id="@+id/lblAllergies"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:textStyle="bold"
-	                android:text="Allergies: " />
-	
-	            <TextView
-	                android:id="@+id/txtAllergies"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:layout_below="@id/lblAllergies"
-	                android:paddingLeft="15dp"
-	                android:text="Animals, Food, Plants, Pollen" />
-                
-            </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2" >
 
-            <RelativeLayout
-                android:id="@+id/medicationsPlaceholder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/allergiesPlaceholder" >
-	
-	            <TextView
-	                android:id="@+id/lblMedications"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:textStyle="bold"
-	                android:text="Medications: " />
-	
-	            <TextView
-	                android:id="@+id/txtMedications"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:layout_below="@id/lblMedications"
-	                android:paddingLeft="15dp"
-	                android:text="Enervon, Cherifer, Centrum" />
-                
-            </RelativeLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1" >
 
-            <RelativeLayout
-                android:id="@+id/dietaryNeedsPlaceholder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/medicationsPlaceholder" >
-	
-	            <TextView
-	                android:id="@+id/lblDietaryNeeds"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:textStyle="bold"
-	                android:text="Dietary Needs: " />
-	
-	            <TextView
-	                android:id="@+id/txtDietaryNeeds"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:layout_below="@id/lblDietaryNeeds"
-	                android:paddingLeft="15dp"
-	                android:text="High calcium diet, 1000 Calories /day" />
-                
-            </RelativeLayout>
+                        <TextView
+                            android:id="@+id/TextView01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Birthdate: "
+                            android:textStyle="bold" />
 
-            <RelativeLayout
-                android:id="@+id/restrictedActivitiesPlaceholder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/dietaryNeedsPlaceholder" >
-	
-	            <TextView
-	                android:id="@+id/lblRestrictedActivities"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:textStyle="bold"
-	                android:text="Restricted Activities: " />
-	
-	            <TextView
-	                android:id="@+id/txtRestrictedActivities"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:layout_below="@id/lblRestrictedActivities"
-	                android:paddingLeft="15dp"
-	                android:text="Horror Movies, Rollercoasters" />
-                
-            </RelativeLayout>
-            
+                        <TextView
+                            android:id="@+id/TextView02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="January 2, 1990" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                       	android:layout_weight="1" >
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sex: "
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="M" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2" >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:id="@+id/TextView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Height: "
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/TextView10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5&apos;9" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:id="@+id/TextView08"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Weight: "
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/TextView09"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="180lbs" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2" >
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" >
+
+                        <TextView
+                            android:id="@+id/TextView01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Blood Pressure: "
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/TextView02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="110/80" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                       	android:layout_weight="1" >
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Blood Sugar: "
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7.4" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Contact: " />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0917 4679653" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Email Address: " />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="mark@gmail.com" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
         </RelativeLayout>
-        
-        
-        
-        
 
-    </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/RelativeLayout01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/TextView04"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:text="Medical Information" />
+
+            <View
+                android:id="@+id/View01"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/TextView04"
+                android:background="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/View01"
+                android:background="@drawable/underline_background"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/TextView05"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Last Physical Exam: "
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TextView07"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="July 1, 2013" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                	android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/TextView05"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Known Health Problems: "
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TextView07"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+	                	android:text="Asthma, Hypertension" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/TextView06"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+	                	android:text="Allergies: "
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TextView03"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+	                	android:text="Animals, Seafood" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/TextView14"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:text="Emergency Contact Information" />
+
+            <View
+                android:id="@+id/View02"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/TextView14"
+                android:background="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/View02"
+                android:background="@drawable/underline_background"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/TextView15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name of Contact: "
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TextView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Maria Castilo" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/TextView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contact Number: "
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TextView12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0917 5896775" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
     
+
 </ScrollView>
