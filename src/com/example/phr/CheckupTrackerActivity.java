@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
@@ -25,7 +26,7 @@ public class CheckupTrackerActivity extends Activity {
 
 	ListView mCheckupList;
 	CheckupAdapter checkupAdapter;
-	ImageView mBtnCheckupPost;
+	LinearLayout mBtnCheckupPost;
 	
 	@SuppressLint("NewApi")
 	@Override
@@ -64,7 +65,7 @@ public class CheckupTrackerActivity extends Activity {
 			}
 		});
 		
-		mBtnCheckupPost = (ImageView) findViewById(R.id.checkupBanner);
+		mBtnCheckupPost = (LinearLayout) findViewById(R.id.btnAddCheckupDate);
 		mBtnCheckupPost.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
