@@ -10,11 +10,15 @@ import org.achartengine.model.XYSeries;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -32,11 +36,13 @@ public class BloodPressureTrackerActivity extends Activity{
 	BloodPressureAdapter bloodPressureAdapter;
 	LinearLayout mBtnBloodPressurePost;
 
+	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_bloodpressure_tracker);
 		setTitle("Blood Pressure Tracker");
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 		mBloodPressureList = (ListView) findViewById(R.id.listView_bloodpressure);
 				
 		// FAKE DATA
@@ -164,4 +170,27 @@ public class BloodPressureTrackerActivity extends Activity{
 		
 		
 	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    // Inflate the menu items for use in the action bar
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.menu_tracker_help, menu);
+	    return super.onCreateOptionsMenu(menu);
+	}
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) 
+    {
+        switch (item.getItemId()) 
+        {
+        case android.R.id.home: 
+            onBackPressed();
+            break;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
+        return true;
+    }
+	
 }

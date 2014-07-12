@@ -82,9 +82,6 @@ public class NoteAdapter extends BaseAdapter{
 			public void onClick(View v) {
 				
 				// FOR STATUS ON CLICK
-				Intent intent = new Intent(mContext,
-						NoteTrackerActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);;
-				v.getContext().startActivity(intent);
 			}
 		});
 		return convertView;

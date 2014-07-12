@@ -103,6 +103,7 @@ public class CalorieAdapter extends BaseAdapter {
 				Intent intent = new Intent(mContext,
 						CalorieBreakdownTrackerActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);;
 				v.getContext().startActivity(intent);
+
 			}
 		});
 		return convertView;
