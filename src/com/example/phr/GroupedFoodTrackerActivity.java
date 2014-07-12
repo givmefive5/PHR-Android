@@ -35,20 +35,25 @@ public class GroupedFoodTrackerActivity extends Activity {
 				
 		// FAKE DATA
 		List<GroupedFood> list = new ArrayList<GroupedFood>();
-		GroupedFood data1 = new GroupedFood("Jun","09",1222,883,23,344);
+		GroupedFood data1 = new GroupedFood("Jul","12",459,20.41,24.89,43.07);
 		
-		GroupedFood data2 = new GroupedFood("May","01",9822,883,23,344);
-		GroupedFood data3 = new GroupedFood("Apr","8",152,883,23,344);
+		GroupedFood data2 = new GroupedFood("Jul","11",679,30.3,18,50);
+		GroupedFood data3 = new GroupedFood("Jul","10",152,883,23,344);
 
-		list.add(data3);
-		list.add(data3);
-		list.add(data3);
-		list.add(data2);
-		list.add(data2);
-		list.add(data2);
+		GroupedFood data4 = new GroupedFood("Jul","8",1100,30.3,18,50);
+		GroupedFood data5 = new GroupedFood("Jul","7",400,883,23,344);
+		GroupedFood data6 = new GroupedFood("Jul","6",598,30.3,18,50);
+		GroupedFood data7 = new GroupedFood("Jul","4",152,883,23,344);
+
 		list.add(data1);
-		list.add(data1);
-		list.add(data1);
+		list.add(data2);
+		list.add(data3);
+		list.add(data4);
+		list.add(data5);
+		list.add(data6);
+		list.add(data7);
+
+		
 
 		groupedfoodAdapter = new GroupedFoodAdapter(getApplicationContext(), list);
 		mGroupedFoodList.setAdapter(groupedfoodAdapter);

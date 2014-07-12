@@ -37,15 +37,21 @@ public class CalorieTrackerActivity extends Activity {
 				
 		// FAKE DATA
 		List<Calorie> list = new ArrayList<Calorie>();
-		Calorie data1 = new Calorie("Jun","05",1180.0,80.0,1100,1565,"1100/1565",90);
+		Calorie data1 = new Calorie("Jul","12",459,80,1100,1565,"459/1650",28);
+		Calorie data2 = new Calorie("Jul","11",679,80,1100,1565,"679/1565",33);
+		Calorie data3 = new Calorie("Jul","10",152,80,1100,1565,"152/1565",14);
+		Calorie data4 = new Calorie("Jul","8",1100,80.0,1100,1565,"1100/1565",80);
+		Calorie data5 = new Calorie("Jul","7",400,80,1100,1565,"400/1565",40);
+		Calorie data6 = new Calorie("Jul","6",598,80,1100,1565,"598/1565",50);
+		Calorie data7 = new Calorie("Jul","4",152,80,1100,1565,"152/1565",14);
 		
-		Calorie data2 = new Calorie("Jun","07",1180,80,1100,1565,"900/1565",80);
-
-		Calorie data3 = new Calorie("Jun","08",1180,80,1100,1565,"750/1565",70);
-
-		list.add(data3);
-		list.add(data2);
 		list.add(data1);
+		list.add(data2);
+		list.add(data3);
+		list.add(data4);
+		list.add(data5);
+		list.add(data6);
+		list.add(data7);
 		
 
 		calorieAdapter = new CalorieAdapter(getApplicationContext(), list);

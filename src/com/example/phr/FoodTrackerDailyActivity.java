@@ -51,21 +51,16 @@ public class FoodTrackerDailyActivity extends Activity{
 		
 		// FAKE DATA
 		List<FoodSingle> list = new ArrayList<FoodSingle>();
-		FoodSingle data1 = new FoodSingle("Sinigang","125 g",233,343,544,323,"12:30 pm");
+		FoodSingle data1 = new FoodSingle("Sinigang","1 cup",10.8,222,17,16.56,"7:30 pm");
 		
-		FoodSingle data2 = new FoodSingle("Siopao","125 g",233,343,544,323,"12:30 pm");
+		FoodSingle data2 = new FoodSingle("Bacon","1 slice",2.09,27,0.07,1.85,"7:30 pm");
 
-		FoodSingle data3 = new FoodSingle("Fish","125 g",233,343,544,323,"12:30 pm");
+		FoodSingle data3 = new FoodSingle("Hash browns","1",12,210,26,2,"9:30 pm");
 
 		list.add(data3);
-		list.add(data3);
-		list.add(data3);
-		list.add(data2);
-		list.add(data2);
 		list.add(data2);
 		list.add(data1);
-		list.add(data1);
-		list.add(data1);
+
 
 		foodsingleAdapter = new SingleFoodAdapter(getApplicationContext(), list);
 		mFoodSingleList.setAdapter(foodsingleAdapter);
@@ -91,12 +86,12 @@ public class FoodTrackerDailyActivity extends Activity{
         //--------------------------------
         View dailyChart;
 		
-		int[] x = { 0,1,2,3 };
-    	int[] income = { 3345,2000,2500,2700};
-    	int[] expense = {2323,2200, 2700, 2900};
+		int[] x = { 0,1,2 };
+    	double[] intake = { 20.41,24.89,43.07};
+    	double[] recommended = {41.25, 53.63, 247.5};
     	
     	
-    	 String[] mMonth = new String[] {"Calorie","Protein", "Fats" , "Carbohydrates"};
+    	 String[] mMonth = new String[] {"Protein", "Fats" , "Carbohydrates"};
     	
     	// Creating an  XYSeries for Income
     	//CategorySeries incomeSeries = new CategorySeries("Income");
@@ -105,8 +100,8 @@ public class FoodTrackerDailyActivity extends Activity{
     	XYSeries expenseSeries = new XYSeries("Recommended");
     	// Adding data to Income and Expense Series
     	for(int i=0;i<x.length;i++){    		
-    		incomeSeries.add(i,income[i]);
-    		expenseSeries.add(i,expense[i]);
+    		incomeSeries.add(i,intake[i]);
+    		expenseSeries.add(i,recommended[i]);
     	}
     	
     	
@@ -146,7 +141,7 @@ public class FoodTrackerDailyActivity extends Activity{
     	multiRenderer.setZoomEnabled(false);
     	multiRenderer.setMargins(new int[] {60, 30, 15, 0});
     	multiRenderer.setXAxisMin(-1);
-    	multiRenderer.setXAxisMax(4);
+    	multiRenderer.setXAxisMax(3);
     	multiRenderer.setYAxisMin(0);
     	//multiRenderer.setAxisTitleTextSize(30);
     	multiRenderer.setChartTitleTextSize(25);

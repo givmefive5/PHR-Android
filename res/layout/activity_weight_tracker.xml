@@ -18,6 +18,17 @@
             android:src="@drawable/weight_banner" />
 
     </LinearLayout>
+    
+     <LinearLayout
+        android:id="@+id/weightGraph"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:layout_marginBottom="10dp" 
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+    </LinearLayout>
 
     <ListView
         android:id="@+id/listViewWeightTracker"

@@ -37,17 +37,16 @@ public class CalorieBreakdownTrackerActivity extends Activity{
 				
 		// FAKE DATA
 		List<FoodActivityCalorie> list = new ArrayList<FoodActivityCalorie>();
-		FoodActivityCalorie data1 = new FoodActivityCalorie(getResources().getDrawable(R.drawable.icon_food),"+ 80","125 gram","12:45 pm","Sinigang");
-		
-		FoodActivityCalorie data2 = new FoodActivityCalorie(getResources().getDrawable(R.drawable.icon_activity),"- 100","1 hour","12:45 pm","Swimming");
+		FoodActivityCalorie data1 = new FoodActivityCalorie(getResources().getDrawable(R.drawable.icon_food),"+ 222","1 cup","7:30 pm","Sinigang");
 
-		FoodActivityCalorie data3 = new FoodActivityCalorie(getResources().getDrawable(R.drawable.icon_food),"+ 120","125 gram","12:45 pm","Siopao");
+		FoodActivityCalorie data2 = new FoodActivityCalorie(getResources().getDrawable(R.drawable.icon_food),"+ 27","1 slice","7:30 pm","Bacon");
 		
-		FoodActivityCalorie data4 = new FoodActivityCalorie(getResources().getDrawable(R.drawable.icon_food),"+ 80","125 gram","12:45 pm","Sinigang");
+		FoodActivityCalorie data3 = new FoodActivityCalorie(getResources().getDrawable(R.drawable.icon_food),"+ 210","1 serving","7:30 pm","Hash brown");
 
-		list.add(data3);
-		list.add(data2);
+		FoodActivityCalorie data4 = new FoodActivityCalorie(getResources().getDrawable(R.drawable.icon_activity),"- 100","30 mins","9:00 pm","Weight Lifting");
 		list.add(data1);
+		list.add(data2);
+		list.add(data3);
 		list.add(data4);
 		
 		
