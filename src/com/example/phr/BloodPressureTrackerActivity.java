@@ -47,13 +47,13 @@ public class BloodPressureTrackerActivity extends Activity{
 				
 		// FAKE DATA
 		List<BloodPressure> list = new ArrayList<BloodPressure>();
-		BloodPressure data1 = new BloodPressure(1,170,80,"Jun 18, 2014","3:40pm",null,getResources().getDrawable(R.drawable.heart));
+		BloodPressure data1 = new BloodPressure(1,170,80,"Jun 18, 2014","3:40pm",null,getResources().getDrawable(R.drawable.bloodpressure_normal));
 		
-		BloodPressure data2 = new BloodPressure(2,180,70,"Jun 19, 2014","1:40pm",null,getResources().getDrawable(R.drawable.sick_heart));
+		BloodPressure data2 = new BloodPressure(2,180,70,"Jun 19, 2014","1:40pm",null,getResources().getDrawable(R.drawable.bloodpressure_warning));
 
-		BloodPressure data3 = new BloodPressure(3,160,75,"Jun 20, 2014","2:40pm",null,getResources().getDrawable(R.drawable.heart));
+		BloodPressure data3 = new BloodPressure(3,160,75,"Jun 20, 2014","2:40pm",null,getResources().getDrawable(R.drawable.bloodpressure_normal));
 		
-		BloodPressure data4 = new BloodPressure(4,170,75,"Jun 21, 2014","2:50pm",null,getResources().getDrawable(R.drawable.heart));
+		BloodPressure data4 = new BloodPressure(4,170,75,"Jun 21, 2014","2:50pm",null,getResources().getDrawable(R.drawable.bloodpressure_normal));
 
 		list.add(data3);
 		list.add(data2);
