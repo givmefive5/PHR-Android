@@ -36,4 +36,11 @@ Proin fringilla nulla id vulputate varius. Nam tristique sodales erat. Nunc ulla
 
 Vivamus consequat elit lacus, quis accumsan leo consequat ultricies. Sed cursus ullamcorper auctor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla blandit felis quis purus convallis lacinia. Donec odio ipsum, blandit vel sagittis id, congue posuere purus. Integer vehicula, nibh sed dignissim aliquam, metus purus semper nulla, sit amet iaculis erat nunc id eros. Aliquam bibendum adipiscing dolor quis blandit. Nunc commodo blandit nisi. In tincidunt lacus gravida tortor tempor commodo. Curabitur adipiscing, ipsum nec laoreet congue, ipsum nisl viverra quam, sit amet bibendum sapien sapien a lorem. Phasellus rutrum ultrices sapien eget auctor. Quisque sagittis ipsum a luctus molestie. Morbi vulputate commodo ligula, nec ultricies justo rhoncus id. </string>
 
+    <string name="note_sample">Dr. Laura told me to buy the following items:\n
+            -Enervon (500mg)\t8x a day\n
+            -Calpol (2 tbps)\tAfter Meals\n
+            -Digestive Q (3 cuts)\tBefore Meals\n
+            -Biogesic (7 tbps)\tEvery Hour\n
+            -ReadyVon (50mg)\tOnce a wekk\n
+            *refer to image</string>
 </resources>
