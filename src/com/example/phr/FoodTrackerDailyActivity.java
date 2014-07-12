@@ -20,15 +20,24 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.example.phr.adapter.BloodPressureAdapter;
+import com.example.phr.adapter.SingleFoodAdapter;
 import com.example.phr.model.BloodPressure;
+import com.example.phr.model.FoodSingle;
 
 public class FoodTrackerDailyActivity extends Activity{
+	
+	ListView mFoodSingleList;
+	SingleFoodAdapter foodsingleAdapter;
+	ImageView mBtnFoodSinglePost;
+	
 
+	//--------------------------------------------------------
 	
 	@SuppressLint("NewApi")
 	@Override
@@ -38,6 +47,48 @@ public class FoodTrackerDailyActivity extends Activity{
 		setTitle("Food Daily Tracker");
         getActionBar().setDisplayHomeAsUpEnabled(true);
 		
+    	mFoodSingleList = (ListView) findViewById(R.id.listView_food_single);
+		
+		// FAKE DATA
+		List<FoodSingle> list = new ArrayList<FoodSingle>();
+		FoodSingle data1 = new FoodSingle("Sinigang","125 g",233,343,544,323,"12:30 pm");
+		
+		FoodSingle data2 = new FoodSingle("Siopao","125 g",233,343,544,323,"12:30 pm");
+
+		FoodSingle data3 = new FoodSingle("Fish","125 g",233,343,544,323,"12:30 pm");
+
+		list.add(data3);
+		list.add(data3);
+		list.add(data3);
+		list.add(data2);
+		list.add(data2);
+		list.add(data2);
+		list.add(data1);
+		list.add(data1);
+		list.add(data1);
+
+		foodsingleAdapter = new SingleFoodAdapter(getApplicationContext(), list);
+		mFoodSingleList.setAdapter(foodsingleAdapter);
+		mFoodSingleList.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				Log.e("foodsingle", "CLICKED!");
+			}
+		});
+		
+		mBtnFoodSinglePost = (ImageView) findViewById(R.id.foodBanner);
+		mBtnFoodSinglePost.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getApplicationContext(),
+						FoodTrackerPostActivity.class);
+				startActivity(intent);
+			}
+		});
+	
+        
+        //--------------------------------
         View dailyChart;
 		
 		int[] x = { 0,1,2,3 };

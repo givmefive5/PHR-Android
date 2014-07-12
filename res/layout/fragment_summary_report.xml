@@ -55,6 +55,7 @@
                 android:layout_marginRight="5dp"
                 android:gravity="right"
                 android:textAppearance="?android:attr/textAppearanceMedium"
+                 android:text="750/1500" 
                 android:background="#00000000"
 		        android:layout_alignLeft="@id/progressBar1"
 		        android:layout_alignTop="@id/progressBar1"
