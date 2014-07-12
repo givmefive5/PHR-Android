@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/scrollView_Height_Tracker"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="#FAD394" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,6 +20,8 @@
                 android:id="@+id/btnWeightDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="10dp"
                 android:layout_alignParentLeft="true" >
 
                 <ImageView
@@ -41,6 +44,8 @@
                 android:id="@+id/btnWeightTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="10dp"
                 android:layout_alignParentRight="true" >
 
                 <ImageView
