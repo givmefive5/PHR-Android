@@ -47,18 +47,26 @@ public class BloodPressureTrackerActivity extends Activity{
 				
 		// FAKE DATA
 		List<BloodPressure> list = new ArrayList<BloodPressure>();
-		BloodPressure data1 = new BloodPressure(1,170,80,"Jun 18, 2014","3:40pm",null,getResources().getDrawable(R.drawable.bloodpressure_normal));
+		BloodPressure data7 = new BloodPressure(1,140,90,"May 31, 2014","3:40pm",null,getResources().getDrawable(R.drawable.bloodpressure_warning));
 		
-		BloodPressure data2 = new BloodPressure(2,180,70,"Jun 19, 2014","1:40pm",null,getResources().getDrawable(R.drawable.bloodpressure_warning));
+		BloodPressure data6 = new BloodPressure(2,134,90,"Jun 07, 2014","1:40pm",null,getResources().getDrawable(R.drawable.bloodpressure_warning));
 
-		BloodPressure data3 = new BloodPressure(3,160,75,"Jun 20, 2014","2:40pm",null,getResources().getDrawable(R.drawable.bloodpressure_normal));
+		BloodPressure data5 = new BloodPressure(3,110,80,"Jun 14, 2014","2:40pm",null,getResources().getDrawable(R.drawable.bloodpressure_normal));
 		
-		BloodPressure data4 = new BloodPressure(4,170,75,"Jun 21, 2014","2:50pm",null,getResources().getDrawable(R.drawable.bloodpressure_normal));
+		BloodPressure data4 = new BloodPressure(4,114,80,"Jun 21, 2014","2:50pm",null,getResources().getDrawable(R.drawable.bloodpressure_normal));
 
-		list.add(data3);
-		list.add(data2);
+		BloodPressure data3 = new BloodPressure(5,118,85,"Jun 28, 2014","1:40pm",null,getResources().getDrawable(R.drawable.bloodpressure_warning));
+
+		BloodPressure data2 = new BloodPressure(6,114,80,"Jul 05, 2014","2:40pm",null,getResources().getDrawable(R.drawable.bloodpressure_normal));
+		
+		BloodPressure data1 = new BloodPressure(7,110,80,"Jul 12, 2014","2:50pm",null,getResources().getDrawable(R.drawable.bloodpressure_normal));
 		list.add(data1);
+		list.add(data2);
+		list.add(data3);
 		list.add(data4);
+		list.add(data5);
+		list.add(data6);
+		list.add(data7);
 		
 		
 
@@ -87,11 +95,11 @@ public class BloodPressureTrackerActivity extends Activity{
 	//------------------------------
 		View bloodPressureChart;
 
-		String[] bloodPressureMonth = new String[] { "Jun 1", "Jun 2", "Jun 3", "Jun 4", "Jun 5","Jun 6", "Jun 7", "Jun 8", "Jun 9", "Jun 10"};
+		String[] bloodPressureMonth = new String[] { "May 31", "Jun 7", "Jun 14", "Jun 21", "Jun 28","Jul 5", "Jul 12"};
 
-		int[] bloodPressurex = { 1, 2, 3, 4, 5, 6, 7, 8 ,9 ,10 };
-		int[] systolic = { 100, 90, 110, 120, 100, 90, 100, 110,90,100 };
-		int[] diastolic = { 80, 70, 80, 60, 70, 90, 80, 70,90,80 };
+		int[] bloodPressurex = { 1, 2, 3, 4, 5, 6, 7};
+		int[] systolic = { 140,134, 110, 114, 118, 114, 110};
+		int[] diastolic = { 90, 90, 80, 80, 85, 80, 80 };
 
 		XYSeries systolicSeries = new XYSeries("Systolic");
 		XYSeries diastolicSeries = new XYSeries("Diastolic");

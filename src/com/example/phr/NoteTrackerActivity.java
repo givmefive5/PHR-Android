@@ -48,10 +48,10 @@ public class NoteTrackerActivity extends Activity{
 		
 		Note data4 = new Note("haaaaah!", "","Jul 05, 2014","5:40 am");
 		
-		list.add(data4);
-		list.add(data3);
-		list.add(data2);
 		list.add(data1);
+		list.add(data2);
+		list.add(data3);
+		list.add(data4);
 		
 		
 		

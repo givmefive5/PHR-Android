@@ -192,57 +192,59 @@ public class WeightTrackerActivity extends Activity {
 		day3.setWeightStatusList(sList3);
 		
 		GroupedStatus day4 = new GroupedStatus();
-		day3.setMonth("May");
-		day3.setDay("20");
-		day3.setAverage("176 lbs");
+		day4.setMonth("May");
+		day4.setDay("20");
+		day4.setAverage("176 lbs");
 		
 		ArrayList<Status> sList4 = new ArrayList<Status>();
 		Status gain41 = new Status();
-		gain31.setActionHolder("weighting");
-		gain31.setActionName("176 lbs");
-		gain31.setDatettime("12:30 pm");
-		sList3.add(gain41);
+		gain41.setActionHolder("weighting");
+		gain41.setActionName("176 lbs");
+		gain41.setDatettime("12:30 pm");
+		sList4.add(gain41);
 		
-		day3.setWeightStatusList(sList3);
+		day4.setWeightStatusList(sList4);
+		
 		GroupedStatus day5 = new GroupedStatus();
-		day3.setMonth("May");
-		day3.setDay("15");
-		day3.setAverage("172 lbs");
+		day5.setMonth("May");
+		day5.setDay("15");
+		day5.setAverage("172 lbs");
 		
 		ArrayList<Status> sList5 = new ArrayList<Status>();
 		Status gain51 = new Status();
-		gain31.setActionHolder("weighting");
-		gain31.setActionName("172 lbs");
-		gain31.setDatettime("12:30 pm");
-		sList3.add(gain51);
+		gain51.setActionHolder("weighting");
+		gain51.setActionName("172 lbs");
+		gain51.setDatettime("12:30 pm");
+		sList5.add(gain51);
 		
-		day3.setWeightStatusList(sList3);
+		day5.setWeightStatusList(sList5);
+		
 		GroupedStatus day6 = new GroupedStatus();
-		day3.setMonth("May");
-		day3.setDay("08");
-		day3.setAverage("178 lbs");
+		day6.setMonth("May");
+		day6.setDay("08");
+		day6.setAverage("178 lbs");
 		
 		ArrayList<Status> sList6 = new ArrayList<Status>();
 		Status gain61 = new Status();
-		gain31.setActionHolder("weighting");
-		gain31.setActionName("178 lbs");
-		gain31.setDatettime("1:30 pm");
-		sList3.add(gain61);
+		gain61.setActionHolder("weighting");
+		gain61.setActionName("178 lbs");
+		gain61.setDatettime("1:30 pm");
+		sList6.add(gain61);
 		
-		day3.setWeightStatusList(sList3);
+		day6.setWeightStatusList(sList6);
 		GroupedStatus day7 = new GroupedStatus();
-		day3.setMonth("May");
-		day3.setDay("01");
-		day3.setAverage("180 lbs");
+		day7.setMonth("May");
+		day7.setDay("01");
+		day7.setAverage("180 lbs");
 		
 		ArrayList<Status> sList7 = new ArrayList<Status>();
 		Status gain71 = new Status();
-		gain31.setActionHolder("weighting");
-		gain31.setActionName("180 lbs");
-		gain31.setDatettime("12:30 pm");
-		sList3.add(gain31);
+		gain71.setActionHolder("weighting");
+		gain71.setActionName("180 lbs");
+		gain71.setDatettime("12:30 pm");
+		sList7.add(gain71);
 		
-		day3.setWeightStatusList(sList7);
+		day7.setWeightStatusList(sList7);
 		
 		list.add(day1);
 		list.add(day2);

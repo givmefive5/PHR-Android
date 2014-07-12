@@ -38,21 +38,20 @@ public class CheckupTrackerActivity extends Activity {
 				
 		// FAKE DATA
 		List<Checkup> list = new ArrayList<Checkup>();
-		Checkup data1 = new Checkup("Cought","Dr. Mark Castilo","Metropolitan","5","June", null);
 		
-		Checkup data2 = new Checkup("Fever","Dr. Matthew Go","Metropolitan","5","May", null);
+		Checkup data1 = new Checkup("Cold and Cough Checkup","Dr. Maria Jose del Rosario","The Angel's Clinic Place","23","July", null);
+		
+		Checkup data2 = new Checkup("General Checkup","Dr. Michael Lee","UST hospital","4","May", null);
+		
+		Checkup data3 = new Checkup("Braces","Dra. Maria Anton","Ortigas","5","Aug", null);
 
-		Checkup data3 = new Checkup("Dengue","Dr. Mark Castilo","Metropolitan","6","April",null);
+		Checkup data4 = new Checkup("Nutrition check","Dr. Michael Lee","UST hospital","15","Mar",null);
 
-		list.add(data3);
-		list.add(data3);
-		list.add(data3);
-		list.add(data2);
-		list.add(data2);
-		list.add(data2);
 		list.add(data1);
-		list.add(data1);
-		list.add(data1);
+		list.add(data2);
+		list.add(data3);
+		list.add(data4);
+		
 
 		checkupAdapter = new CheckupAdapter(getApplicationContext(), list);
 		mCheckupList.setAdapter(checkupAdapter);

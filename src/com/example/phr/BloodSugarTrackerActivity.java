@@ -48,18 +48,27 @@ public class BloodSugarTrackerActivity extends Activity{
 				
 		// FAKE DATA
 		List<BloodSugar> list = new ArrayList<BloodSugar>();
-		BloodSugar data1 = new BloodSugar(1, 4.5, "after meal" ,"" ,"Jun 10, 2014", "3:40pm", getResources().getDrawable(R.drawable.bloodsugar_normal));
+		BloodSugar data1 = new BloodSugar(1, 7.5, "Post prandial" ,"" ,"Jul 12, 2014", "3:40pm", getResources().getDrawable(R.drawable.bloodsugar_normal));
 		
-		BloodSugar data2 = new BloodSugar(2, 9.5, "before meal" ,"" ,"Jun 09, 2014", "5:40pm", getResources().getDrawable(R.drawable.bloodsugar_warning));
+		BloodSugar data2 = new BloodSugar(2, 9, "Post prandial" ,"" ,"Jul 05, 2014", "5:40pm", getResources().getDrawable(R.drawable.bloodsugar_warning));
 
-		BloodSugar data3 = new BloodSugar(3, 11, "after meal" ,"" ,"Jun 08, 2014", "8:40pm", getResources().getDrawable(R.drawable.bloodsugar_warning));
+		BloodSugar data3 = new BloodSugar(3, 7.4, "Post prandial" ,"" ,"Jun 28, 2014", "8:40pm", getResources().getDrawable(R.drawable.bloodsugar_normal));
 		
-		BloodSugar data4 = new BloodSugar(4, 12.3, "before meal" ,"" ,"Jun 07, 2014", "3:40pm", getResources().getDrawable(R.drawable.bloodsugar_warning));
+		BloodSugar data4 = new BloodSugar(4, 9, "Post prandial" ,"" ,"Jun 21, 2014", "3:40pm", getResources().getDrawable(R.drawable.bloodsugar_warning));
+		
+		BloodSugar data5 = new BloodSugar(2, 9, "Post prandial" ,"" ,"Jun 14, 2014", "5:40pm", getResources().getDrawable(R.drawable.bloodsugar_warning));
 
-		list.add(data3);
-		list.add(data2);
+		BloodSugar data6 = new BloodSugar(3, 7.4, "Post prandial" ,"" ,"Jun 07, 2014", "8:40pm", getResources().getDrawable(R.drawable.bloodsugar_normal));
+		
+		BloodSugar data7 = new BloodSugar(4, 9, "Post prandial" ,"" ,"May 31, 2014", "3:40pm", getResources().getDrawable(R.drawable.bloodsugar_warning));
+
 		list.add(data1);
+		list.add(data2);
+		list.add(data3);
 		list.add(data4);
+		list.add(data5);
+		list.add(data6);
+		list.add(data7);
 		
 		
 
@@ -77,10 +86,10 @@ public class BloodSugarTrackerActivity extends Activity{
 	//------------------------------
 		View bloodSugarChart;
 
-		String[] bloodSugarMonth = new String[] { "Jun 1", "Jun 2", "Jun 3", "Jun 4", "Jun 5","Jun 6", "Jun 7", "Jun 8", "Jun 9", "Jun 10"};
+		String[] bloodSugarMonth = new String[] { "May 31", "Jun 07", "Jun 14", "Jun 21", "Jun 28","Jul 05", "Jul 12"};
 
-		int[] bloodSugarx = { 1, 2, 3, 4, 5, 6, 7, 8 ,9 ,10 };
-		int[] bloodsugar = { 100, 90, 110, 120, 100, 90, 100, 110,90,100 };
+		int[] bloodSugarx = { 1, 2, 3, 4, 5, 6, 7 };
+		double[] bloodsugar = { 9, 7.4, 9, 9, 7.4, 9, 7.5 };
 
 		XYSeries bloodSugarSeries = new XYSeries("Glucose Level");
 
