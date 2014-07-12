@@ -3,6 +3,8 @@ package com.example.phr.adapter;
 import java.util.List;
 
 import com.example.phr.CheckupTrackerActivity;
+import com.example.phr.CheckupTrackerReadModeActivity;
+import com.example.phr.NoteReadModeActivity;
 import com.example.phr.R;
 import com.example.phr.model.Checkup;
 
@@ -94,6 +96,9 @@ public class CheckupAdapter extends BaseAdapter {
 			public void onClick(View v) {
 				
 				// FOR STATUS ON CLICK
+				Intent intent = new Intent(mContext,
+						CheckupTrackerReadModeActivity.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);;
+				v.getContext().startActivity(intent);
 			}
 		});
 		return convertView;

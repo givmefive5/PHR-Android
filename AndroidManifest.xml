@@ -149,6 +149,10 @@
          <activity
             android:name="com.example.phr.AchievementsActivity" >
         </activity> 
+        
+         <activity
+            android:name="com.example.phr.CheckupTrackerReadModeActivity" >
+        </activity> 
          
         <activity
             android:name="com.example.phr.ActivitiesTrackerPostActivity"
