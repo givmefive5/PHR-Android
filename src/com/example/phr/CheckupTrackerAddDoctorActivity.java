@@ -15,6 +15,7 @@ public class CheckupTrackerAddDoctorActivity  extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_checkup_tracker_add_doctor);
         getActionBar().setDisplayHomeAsUpEnabled(true);
+		setTitle("Add a Health Professional");
 	}
 	
 	@Override

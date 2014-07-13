@@ -10,6 +10,7 @@ public class NotePostActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_note_post);
+		setTitle("Note");
 		
 	}
 

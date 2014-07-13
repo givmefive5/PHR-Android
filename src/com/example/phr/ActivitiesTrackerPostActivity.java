@@ -19,6 +19,7 @@ public class ActivitiesTrackerPostActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_activities_tracker_post);
+		setTitle("Activities");
 		toggleSharing = (ToggleButton) findViewById(R.id.togglebuttonActivitySharing);
 	}
 	

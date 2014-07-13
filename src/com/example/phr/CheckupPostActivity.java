@@ -10,6 +10,7 @@ public class CheckupPostActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_checkup_post);
+		setTitle("Checkup");
 		
 	}
 

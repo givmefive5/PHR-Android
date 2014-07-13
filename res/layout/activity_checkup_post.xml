@@ -223,16 +223,19 @@
 	            android:layout_below="@id/textViewLocationTitle"
 	            android:background="#000000" />
 
-	        <TextView
+	        <EditText
 	            android:id="@+id/textViewCheckupLocation"
 	            android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
 	            android:layout_below="@id/CheckupLocationDivider"
 	            android:background="@drawable/underline_background"
 	            android:padding="5dp"
-	            android:text="Set your Location"
+	            android:hint="Set your Location"
 	            android:drawableLeft="@drawable/icon_location_small"
         		android:drawablePadding="5dp"
+	            android:ems="10"
+	            android:isScrollContainer="true"
+	            android:inputType="textMultiLine"
 	            android:textStyle="bold" />
 	        
         </RelativeLayout>

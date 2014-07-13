@@ -13,6 +13,7 @@ public class BloodPressurePostActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_bloodpressure_post);
+		setTitle("Blood Pressure");
 		
 	}
 

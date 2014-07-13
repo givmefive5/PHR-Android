@@ -14,7 +14,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/picture_placeholder" />
+            android:src="@drawable/mark" />
 
         <TextView
             android:id="@+id/textView1"
@@ -55,13 +55,13 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:weightSum="2" >
+                    android:weightSum="3" >
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_weight="1" >
+                        android:orientation="horizontal"
+                        android:layout_weight="1.9" >
 
                         <TextView
                             android:id="@+id/TextView01"
@@ -80,7 +80,7 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                       	android:layout_weight="1" >
+                       	android:layout_weight="1.1" >
 
                         <TextView
                             android:id="@+id/textView2"
@@ -101,12 +101,12 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:weightSum="2" >
+                    android:weightSum="3" >
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1" >
+                        android:layout_weight="1.9" >
 
                         <TextView
                             android:id="@+id/TextView11"
@@ -119,13 +119,13 @@
                             android:id="@+id/TextView10"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="5&apos;9" />
+                            android:text="5&apos;9 feet" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1" >
+                        android:layout_weight="1.1" >
 
                         <TextView
                             android:id="@+id/TextView08"
@@ -142,50 +142,7 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="2" >
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" >
-
-                        <TextView
-                            android:id="@+id/TextView01"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Blood Pressure: "
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/TextView02"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="110/80" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                       	android:layout_weight="1" >
-
-                        <TextView
-                            android:id="@+id/textView2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Blood Sugar: "
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/textView3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="7.4" />
-                    </LinearLayout>
-
-                </LinearLayout>
+                
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -216,6 +173,25 @@
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:text="Email Address: " />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="mark@gmail.com" />
+
+                </LinearLayout>
+                
+                 <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Facebook Account: " />
 
                     <TextView
                         android:id="@+id/textView5"
@@ -257,6 +233,46 @@
                 android:orientation="vertical"
                 android:padding="5dp" >
 
+                
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                      >
+
+                        <TextView
+                            android:id="@+id/TextView01"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Blood Pressure: "
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/TextView02"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="110/80" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                       	>
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Blood Sugar: "
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7.4 mmol/L" />
+                    </LinearLayout>
+
+                
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" >

@@ -53,6 +53,9 @@ public class StatusFeedActivity extends ListActivity {
 		feeling.setStatus("Feeling good!");
 		feeling.setActionImgUrl(getResources().getDrawable(R.drawable.icon_weight));
 		feeling.setPostViaImgUrl(getResources().getDrawable(R.drawable.icon_small_facebook));
+		feeling.setStatusImgUrl(null
+				);
+		//feeling.setImage("");
 		list.add(feeling);
 		
 		Status eat = new Status();
@@ -61,7 +64,9 @@ public class StatusFeedActivity extends ListActivity {
 		eat.setDatettime("Jul 12, 2014 7:30 pm");
 		eat.setStatus("YUM YUM YUM :)))");
 		eat.setActionImgUrl(getResources().getDrawable(R.drawable.icon_food));
-		eat.setPostViaImgUrl(getResources().getDrawable(R.drawable.icon_small_facebook));
+		eat.setPostViaImgUrl(getResources().getDrawable(R.drawable.heart_gem_supersmall));
+		eat.setStatusImgUrl(getResources().getDrawable(R.drawable.food_sinigang));
+		//eat.setImage("food_sinigang");
 		list.add(eat);
 	
 		Status eat2 = new Status();
@@ -70,7 +75,9 @@ public class StatusFeedActivity extends ListActivity {
 		eat2.setDatettime("Jul 12, 2014 5:30 pm");
 		eat2.setStatus("Bacon. Love bacon. #bacon");
 		eat2.setActionImgUrl(getResources().getDrawable(R.drawable.icon_food));
-		eat2.setPostViaImgUrl(getResources().getDrawable(R.drawable.icon_small_facebook));
+		eat2.setPostViaImgUrl(getResources().getDrawable(R.drawable.heart_gem_supersmall));
+		eat2.setStatusImgUrl(null);
+		//eat2.setImage("");
 		list.add(eat2);
 		
 		Status eat3 = new Status();
@@ -79,7 +86,9 @@ public class StatusFeedActivity extends ListActivity {
 		eat3.setDatettime("Jul 12, 2014 10:30 pm");
 		eat3.setStatus("Breakfast at Mcdonalds");
 		eat3.setActionImgUrl(getResources().getDrawable(R.drawable.icon_food));
-		eat3.setPostViaImgUrl(getResources().getDrawable(R.drawable.icon_small_facebook));
+		eat3.setPostViaImgUrl(getResources().getDrawable(R.drawable.heart_gem_supersmall));
+		eat3.setStatusImgUrl(getResources().getDrawable(R.drawable.food_hashbrown));
+		//eat3.setImage("");
 		list.add(eat3);
 		
 		Status doing = new Status();
@@ -89,6 +98,8 @@ public class StatusFeedActivity extends ListActivity {
 		doing.setStatus("day 1 of 365. wish me luck!");
 		doing.setActionImgUrl(getResources().getDrawable(R.drawable.icon_activity));
 		doing.setPostViaImgUrl(getResources().getDrawable(R.drawable.icon_small_facebook));
+		doing.setStatusImgUrl(null);
+		//doing.setImage("");
 		list.add(doing);
 		
 		
@@ -99,6 +110,8 @@ public class StatusFeedActivity extends ListActivity {
 		eat4.setStatus("Yehey! Normal");
 		eat4.setActionImgUrl(getResources().getDrawable(R.drawable.icon_blood_pressure));
 		eat4.setPostViaImgUrl(getResources().getDrawable(R.drawable.icon_small_facebook));
+		eat4.setStatusImgUrl(null);
+		//eat4.setImage("");
 		list.add(eat4);
 		
 		Status eat5 = new Status();
@@ -107,7 +120,9 @@ public class StatusFeedActivity extends ListActivity {
 		eat5.setDatettime("July 12, 2014 7:45 am");
 		eat5.setStatus("Many medicine ><");
 		eat5.setActionImgUrl(getResources().getDrawable(R.drawable.icon_note));
-		eat5.setPostViaImgUrl(getResources().getDrawable(R.drawable.icon_small_facebook));
+		eat5.setPostViaImgUrl(getResources().getDrawable(R.drawable.heart_gem_supersmall));
+		eat5.setStatusImgUrl(getResources().getDrawable(R.drawable.sample_image_pills));
+		//eat5.setImage("");
 		list.add(eat5);
 		
 		Status drink2 = new Status();
@@ -116,7 +131,9 @@ public class StatusFeedActivity extends ListActivity {
 		drink2.setDatettime("July 12, 2014 8:00 am");
 		drink2.setStatus("good morning!");
 		drink2.setActionImgUrl(getResources().getDrawable(R.drawable.icon_blood_sugar));
-		drink2.setPostViaImgUrl(getResources().getDrawable(R.drawable.icon_small_facebook));
+		drink2.setPostViaImgUrl(getResources().getDrawable(R.drawable.heart_gem_supersmall));
+		drink2.setStatusImgUrl(null);
+		//drink2.setImage("");
 		list.add(drink2);
 		
 		

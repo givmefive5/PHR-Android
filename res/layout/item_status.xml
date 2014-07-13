@@ -81,7 +81,7 @@
 
     <ImageView
         android:id="@+id/statusPhotoHolder"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewStatus"
 		android:padding="10dp"

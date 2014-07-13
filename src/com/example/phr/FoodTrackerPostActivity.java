@@ -19,6 +19,7 @@ public class FoodTrackerPostActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_food_tracker_post);
+		setTitle("Food");
 		
 		mTextViewFoodName = (TextView) findViewById(R.id.textViewFoodName);
 		

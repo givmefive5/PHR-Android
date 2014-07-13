@@ -1,11 +1,15 @@
 package com.example.phr.adapter;
 
+import java.lang.reflect.Field;
 import java.util.List;
 
 import com.example.phr.R;
 import com.example.phr.model.Status;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +31,7 @@ public class StatusAdapter extends BaseAdapter {
 		TextView status;
 		ImageView imgAction;
 		ImageView imgPostVia;
+		ImageView statusImg;
 	}
 
 	public StatusAdapter(Context aContext, List<Status> aListOfStatus) {
@@ -67,6 +72,8 @@ public class StatusAdapter extends BaseAdapter {
 					.findViewById(R.id.imageViewViaPosted);
 			viewHolder.imgAction = (ImageView) convertView
 					.findViewById(R.id.imageViewStatusAction);
+			viewHolder.statusImg = (ImageView) convertView
+					.findViewById(R.id.statusPhotoHolder);
 
 			convertView.setTag(viewHolder);
 		}
@@ -84,6 +91,21 @@ public class StatusAdapter extends BaseAdapter {
 				.getPostViaImgUrl());
 		viewHolder.imgAction.setImageDrawable(mListOfStatus.get(position)
 				.getActionImgUrl());
+		if(mListOfStatus.get(position).getStatusImgUrl() != null){
+			viewHolder.statusImg.setImageDrawable(mListOfStatus.get(position)
+					.getStatusImgUrl());
+			viewHolder.statusImg.setVisibility(View.VISIBLE);
+			
+		}
+		else{
+			viewHolder.statusImg.setVisibility(View.GONE);
+			//Log.e("HAHAHA", mListOfStatus.get(position).getStatusImgUrl().toString());
+			
+			
+		}
+	
+		
+		
 
 		convertView.setOnClickListener(new OnClickListener() {
 

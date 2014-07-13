@@ -10,7 +10,21 @@ public class Status {
 	private String status;
 	private Drawable actionImgUrl;
 	private Drawable postViaImgUrl;
+	private Drawable statusImgUrl;
+	//private String image;
 	
+	/*public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}*/
+	public Drawable getStatusImgUrl() {
+		return statusImgUrl;
+	}
+	public void setStatusImgUrl(Drawable statusImgUrl) {
+		this.statusImgUrl = statusImgUrl;
+	}
 	public String getActionHolder() {
 		return actionHolder;
 	}
