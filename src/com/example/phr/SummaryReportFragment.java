@@ -114,7 +114,7 @@ public class SummaryReportFragment extends Fragment {
     	// Creating a XYMultipleSeriesRenderer to customize the whole chart
     	XYMultipleSeriesRenderer multiRenderer = new XYMultipleSeriesRenderer();
     	multiRenderer.setXLabels(0);
-    	multiRenderer.setChartTitle("Nutritional Value Chart Per Day \n\n\n");
+    	multiRenderer.setChartTitle("My Daily Nutritional Value Chart \n\n\n");
     	multiRenderer.setAxisTitleTextSize(20);
     	multiRenderer.setXTitle("\n\n\n Year 2012");
     	multiRenderer.setYTitle("");

@@ -86,11 +86,11 @@
                 android:id="@+id/textView8"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="MY CALORIE GOAL IS" 
-                android:textSize="20sp"
+                android:layout_marginTop="3dp"
                 android:gravity="center"
-                android:textStyle="bold"
-                android:layout_marginTop="8dp"/>
+                android:text="My Daily Calorie Requirement"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textView9"
@@ -345,7 +345,7 @@
                 android:id="@+id/imageView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/icon_blood_pressure" />
+                android:src="@drawable/icon_bloodpressure_label" />
         </LinearLayout>
 
         <LinearLayout
@@ -369,7 +369,7 @@
             android:id="@+id/recordHolder"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2.5"
+            android:layout_weight="3"
             android:orientation="vertical" >
 
             <LinearLayout
@@ -383,9 +383,9 @@
                     android:id="@+id/textView4"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="3"
+                    android:layout_weight="3.5"
                     android:maxLines="1"
-                    android:text="Jul 12, 2014"
+                    android:text="As of Jul 12, 2014"
                     android:textColor="#9e9898"
                     android:textSize="15sp" />
 
@@ -395,7 +395,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@id/textView4"
-                    android:layout_weight="2"
+                    android:layout_weight="1.5"
                     android:maxLines="1"
                     android:text="3:40 pm"
                     android:textColor="#9e9898"
@@ -443,7 +443,7 @@
             android:layout_marginLeft="2dp"
             android:layout_marginRight="5dp"
             android:layout_marginTop="10dp"
-            android:layout_weight="1.5"
+            android:layout_weight="1"
             android:orientation="vertical" >
 
             <ImageView
@@ -482,7 +482,7 @@
                 android:id="@+id/imageView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/icon_blood_sugar" />
+                android:src="@drawable/icon_bloodsugar_label" />
         </LinearLayout>
 
         <LinearLayout
@@ -506,7 +506,7 @@
             android:id="@+id/recordHolder"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2.5"
+            android:layout_weight="3"
             android:orientation="vertical" >
 
             <LinearLayout
@@ -520,9 +520,9 @@
                     android:id="@+id/textView4"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="3"
+                    android:layout_weight="3.5"
                     android:maxLines="1"
-                    android:text="Jul 12, 2014"
+                    android:text="As of Jul 12, 2014"
                     android:textColor="#9e9898"
                     android:textSize="15sp" />
 
@@ -532,7 +532,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_toRightOf="@id/textView4"
-                    android:layout_weight="2"
+                    android:layout_weight="1.5"
                     android:maxLines="1"
                     android:text="2:40 pm"
                     android:textColor="#9e9898"
@@ -567,10 +567,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="18sp"
                     android:layout_marginLeft="3dp"
+                    android:layout_marginTop="3dp"
                     android:layout_toRightOf="@id/textView2"
                     android:text="Post prandial"
                     android:gravity="center_vertical"
-                    android:textSize="10sp" />
+                    android:textSize="15sp" />
             </RelativeLayout>
         </LinearLayout>
 
@@ -580,7 +581,7 @@
             android:layout_marginLeft="2dp"
             android:layout_marginRight="5dp"
             android:layout_marginTop="10dp"
-            android:layout_weight="1.5"
+            android:layout_weight="1"
             android:orientation="vertical" >
 
             <ImageView
