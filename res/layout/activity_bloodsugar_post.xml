@@ -213,7 +213,7 @@
 	            android:padding="5dp" >
 
 	            <ImageButton
-	                android:id="@+id/imageButton1"
+	                android:id="@+id/btnAddImageBloodSugar"
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
 	                android:src="@drawable/icon_add_photo"

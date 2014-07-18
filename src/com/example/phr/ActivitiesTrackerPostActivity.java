@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
@@ -14,6 +15,7 @@ import android.widget.ToggleButton;
 public class ActivitiesTrackerPostActivity extends Activity { 
 	
 	private ToggleButton toggleSharing;
+	private ImageButton mBtnAddPhoto;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,17 @@ public class ActivitiesTrackerPostActivity extends Activity {
 		setContentView(R.layout.activity_activities_tracker_post);
 		setTitle("Activities");
 		toggleSharing = (ToggleButton) findViewById(R.id.togglebuttonActivitySharing);
+		
+
+		
+		mBtnAddPhoto = (ImageButton)findViewById(R.id.btnAddImageActivity);
+		mBtnAddPhoto.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+				startActivity(intent);
+			}
+		});
 	}
 	
 	public Boolean getSharingOption() {

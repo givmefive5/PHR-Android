@@ -17,6 +17,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -44,7 +45,7 @@ public class FoodTrackerDailyActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_food_tracker_daily);
-		setTitle("Food Daily Tracker");
+		setTitle("Daily Food Tracker");
         getActionBar().setDisplayHomeAsUpEnabled(true);
 		
     	mFoodSingleList = (ListView) findViewById(R.id.listView_food_single);
@@ -176,5 +177,19 @@ public class FoodTrackerDailyActivity extends Activity{
 	    
 	    dailyContainer.addView(dailyChart);
 	}
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) 
+    {
+        switch (item.getItemId()) 
+        {
+        case android.R.id.home: 
+            onBackPressed();
+            break;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
+        return true;
+    }
 
 }

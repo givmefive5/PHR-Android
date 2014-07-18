@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -14,6 +15,8 @@ public class FoodTrackerPostActivity extends Activity {
 	
 	TextView mTextViewFoodName;
 	LinearLayout mBtnFoodDate;
+	private ImageButton mBtnAddPhoto;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,20 @@ public class FoodTrackerPostActivity extends Activity {
 				startActivity(intent);
 			}
 		});
+		
+		
+
+
+		
+		mBtnAddPhoto = (ImageButton)findViewById(R.id.btnAddImageFood);
+		mBtnAddPhoto.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+				startActivity(intent);
+			}
+		});
+		
 		/*
 		mBtnFoodDate.setOnClickListener(new OnClickListener() {
 			@Override
