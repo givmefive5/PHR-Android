@@ -76,9 +76,9 @@ public class SummaryReportFragment extends Fragment {
     	
     	// Creating an  XYSeries for Income
     	//CategorySeries incomeSeries = new CategorySeries("Income");
-    	XYSeries incomeSeries = new XYSeries("Intake");
+    	XYSeries incomeSeries = new XYSeries("Current Intake");
     	// Creating an  XYSeries for Income
-    	XYSeries expenseSeries = new XYSeries("Recommended");
+    	XYSeries expenseSeries = new XYSeries("Recommended Intake");
     	// Adding data to Income and Expense Series
     	for(int i=0;i<x.length;i++){    		
     		incomeSeries.add(i,intake[i]);

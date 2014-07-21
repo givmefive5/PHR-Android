@@ -149,12 +149,18 @@
             
         </LinearLayout>
     </RelativeLayout>
-
+	<Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Profile" 
+        android:layout_marginTop="15dp"/>
+    
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btnLogout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Log Out" 
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="30dp"/>
 
 </LinearLayout>
