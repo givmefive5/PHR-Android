@@ -15,6 +15,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -32,12 +34,13 @@ import org.achartengine.renderer.XYSeriesRenderer;
 
 public class SummaryReportFragment extends Fragment {
 
-	ProgressBar mProgress;
-	ProgressBar cProgress;
-	int mProgressStatus = 50;
-	int cProgressStatus = 13;
-	RelativeLayout btnAchievements;
 	
+	ProgressBar cProgress;
+
+	int cProgressStatus = 13;
+	Button mBtnRetrieve;
+	Button mBtnWrite;
+
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,25 +48,37 @@ public class SummaryReportFragment extends Fragment {
 
 		View rootView = inflater.inflate(R.layout.fragment_summary_report,
 				container, false);
-
-		mProgress = (ProgressBar) rootView.findViewById(R.id.progressBar1);
-		Drawable draw = getResources()
-				.getDrawable(R.drawable.customprogressbar);
-		mProgress.setProgressDrawable(draw);
-		mProgress.setProgress(mProgressStatus);
-		mProgress.setMax(100);
-
-		// -------------------------------------------------------------------
-
+		
+		
 		cProgress = (ProgressBar) rootView.findViewById(R.id.progressBar2);
-		draw = getResources()
+		Drawable draw = getResources()
 				.getDrawable(R.drawable.customprogressbar);
 		cProgress.setProgressDrawable(draw);
 		cProgress.setProgress(cProgressStatus);
 		cProgress.setMax(100);
 		
+		mBtnRetrieve = (Button) rootView.findViewById(R.id.btnSync);
+		mBtnRetrieve.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(getActivity().getApplicationContext(),
+						RetrieveActivity.class);
+				startActivity(intent);
+			}
+		});
 		
 		
+		mBtnWrite = (Button) rootView.findViewById(R.id.btnWrite);
+		mBtnWrite.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(getActivity().getApplicationContext(),
+						NewStatusActivity.class);
+				startActivity(intent);
+			}
+		});
 		
 		View dailyChart;
 		
@@ -160,17 +175,6 @@ public class SummaryReportFragment extends Fragment {
 	    
 
 		
-		btnAchievements = (RelativeLayout) rootView.findViewById(R.id.btnAchievements);
-		btnAchievements.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				Intent intent = new Intent(getActivity(),
-						AchievementsActivity.class);
-				startActivity(intent);
-			}
-		});
-    	
 		return rootView;
 	}
 
