@@ -15,6 +15,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.widget.AbsListView;
+import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
@@ -39,8 +41,7 @@ public class JournalFragment extends Fragment {
 				.findViewById(R.id.listView_daily_journal);
 		mJournalTabsPlaceholder = (LinearLayout) rootView
 				.findViewById(R.id.journalTabsPlaceholder);
-
-		/*-----------------------OLD POST STATUS BUTTONS------------------
+		
 		mDailyJournalList.setOnScrollListener(new OnScrollListener() {
 			int prevVisibleItem = 0;
 
@@ -60,14 +61,13 @@ public class JournalFragment extends Fragment {
 			@Override
 			public void onScrollStateChanged(AbsListView arg0, int scrollState) {
 				// TODO Auto-generated method stub
-				/*
-				 * if(scrollState == OnScrollListener.SCROLL_STATE_IDLE)
-				 * mJournalTabsPlaceholder.setVisibility(View.VISIBLE); else
-				 * mJournalTabsPlaceholder.setVisibility(View.GONE);
-				 /
+				
+				 if(scrollState == OnScrollListener.SCROLL_STATE_IDLE)
+				  mJournalTabsPlaceholder.setVisibility(View.VISIBLE); else
+				  mJournalTabsPlaceholder.setVisibility(View.GONE);
+				 
 			}
 		});
-		*/
 
 		// FAKE DATA
 		List<DailyJournal> list = new ArrayList<DailyJournal>();

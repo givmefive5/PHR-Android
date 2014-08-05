@@ -131,6 +131,11 @@ public class MainActivity extends FragmentActivity implements
 						SettingsActivity.class);
 				startActivity(intent);
 	            return true;
+	        case R.id.action_notifications:
+	        	Intent intent2 = new Intent(getApplicationContext(),
+						RetrieveActivity.class);
+				startActivity(intent2);
+	            return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }

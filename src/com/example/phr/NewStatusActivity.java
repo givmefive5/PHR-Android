@@ -23,7 +23,7 @@ public class NewStatusActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setTitle("Post a Status");
 		setContentView(R.layout.activity_new_status);
-		
+		/*
 		mBtnTagFriend = (ImageButton)findViewById(R.id.btnTagFriend);
 		mBtnTagFriend.setOnClickListener(new OnClickListener() {
 			@Override
@@ -43,6 +43,7 @@ public class NewStatusActivity extends Activity {
 				startActivity(intent);
 			}
 		});
+		*/
 		
 		mBtnAddPhoto = (ImageButton)findViewById(R.id.btnAddPhoto);
 		mBtnAddPhoto.setOnClickListener(new OnClickListener() {
@@ -62,7 +63,6 @@ public class NewStatusActivity extends Activity {
 				startActivity(intent);
 			}
 		});
-		
 	}
 
 	@Override

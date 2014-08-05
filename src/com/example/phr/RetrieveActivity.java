@@ -78,8 +78,6 @@ public class RetrieveActivity extends Activity{
 		RetrieveActivityAdapter = new RetrieveFoodAdapter(getApplicationContext(), activityList);
 		mRetrieveActivityList.setAdapter(RetrieveActivityAdapter);
 		
-		mRetrieveOtherList = (ListView) findViewById(R.id.listViewOther);
-		
 		// FAKE DATA
 		List<Retrieve_Other> otherList = new ArrayList<Retrieve_Other>();
 		Retrieve_Other data6 = new Retrieve_Other("July 20,2014","10:05 am","I feel sick! :(");

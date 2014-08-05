@@ -42,21 +42,6 @@
         android:layout_height="wrap_content" >
     </ListView>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Facebook Other Post"
-        android:gravity="center"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <ListView
-        android:id="@+id/listViewOther"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ListView>
-
 </LinearLayout>
     
 </ScrollView>

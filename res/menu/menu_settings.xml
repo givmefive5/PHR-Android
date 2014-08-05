@@ -4,4 +4,9 @@
          android:icon="@drawable/icon_settings"
          android:title="Settings"
          android:showAsAction="ifRoom" />
+    
+    <item android:id="@+id/action_notifications"
+         android:icon="@drawable/icon_notif"
+         android:title="Notifications"
+         android:showAsAction="ifRoom" />
 </menu>
