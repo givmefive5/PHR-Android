@@ -172,7 +172,9 @@
         </activity> 
         
          <activity
-            android:name="com.example.phr.RetrieveActivity" >
+            android:name="com.example.phr.RetrieveActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"  >
+            
         </activity> 
          
         <activity
