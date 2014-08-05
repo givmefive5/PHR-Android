@@ -29,25 +29,36 @@ public class AddActionActivity extends ListActivity {
 	private List<StatusAction> generateData() {
 		List<StatusAction> list = new ArrayList<StatusAction>();
 		
-		StatusAction feeling = new StatusAction();
-		feeling.setActionName("Feeling");
-		feeling.setImgUrl(getResources().getDrawable(R.drawable.icon_emotion));
-		list.add(feeling);
 		
 		StatusAction eat = new StatusAction();
-		eat.setActionName("Eating");
+		eat.setActionName("Eating a Food");
 		eat.setImgUrl(getResources().getDrawable(R.drawable.icon_food));
 		list.add(eat);
-		
-		StatusAction drink = new StatusAction();
-		drink.setActionName("Drinking");
-		drink.setImgUrl(getResources().getDrawable(R.drawable.icon_drink));
-		list.add(drink);
 		
 		StatusAction doing = new StatusAction();
 		doing.setActionName("Doing an Activity");
 		doing.setImgUrl(getResources().getDrawable(R.drawable.icon_activity));
 		list.add(doing);
+		
+		StatusAction bloodpressure = new StatusAction();
+		bloodpressure.setActionName("Measuring Blood Pressure");
+		bloodpressure.setImgUrl(getResources().getDrawable(R.drawable.icon_blood_pressure));
+		list.add(bloodpressure);
+		
+		StatusAction bloodsugar = new StatusAction();
+		bloodsugar.setActionName("Measuring Blood Sugar");
+		bloodsugar.setImgUrl(getResources().getDrawable(R.drawable.icon_blood_sugar));
+		list.add(bloodsugar);
+		
+		StatusAction weight = new StatusAction();
+		weight.setActionName("Measuring Weight");
+		weight.setImgUrl(getResources().getDrawable(R.drawable.icon_weight));
+		list.add(weight);
+		
+		StatusAction checkup = new StatusAction();
+		checkup.setActionName("Record a Checkup");
+		checkup.setImgUrl(getResources().getDrawable(R.drawable.icon_checkup));
+		list.add(checkup);
 		
 		return list;
 	}
