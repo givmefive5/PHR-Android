@@ -159,7 +159,7 @@ public class BloodSugarTrackerActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(getApplicationContext(),
-						BloodSugarPostActivity.class);
+						BloodsugarPostActivity.class);
 				startActivity(intent);
 			}
 		});

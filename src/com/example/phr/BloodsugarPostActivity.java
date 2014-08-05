@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 
-public class BloodSugarPostActivity extends Activity{
+public class BloodsugarPostActivity extends Activity{
 	
 	private ImageButton mBtnAddPhoto;
 	
