@@ -16,7 +16,7 @@
         android:id="@+id/textView1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Facebook Food Post"
+        android:text="Food Posts from Facebook"
         android:layout_marginTop="7dp"
         android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -223,7 +223,7 @@
                         android:id="@+id/TextView05"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="It so delicious here!"
+                        android:text="It so delicious here! - at Mang Inasal"
                         android:textColor="#050505" />
                 </LinearLayout>
 
@@ -473,7 +473,7 @@
         android:id="@+id/textView2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Facebook Activity Post"
+        android:text="Activity Posts from Facebook"
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceMedium" />

@@ -46,7 +46,7 @@ public class RetrieveActivity extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_retrieve_post);
-		setTitle("Retrieve Post");
+		setTitle("Retrieved Posts");
         getActionBar().setDisplayHomeAsUpEnabled(true);
 		mRetrieveFoodList = (ListView) findViewById(R.id.listViewFood);
 				
