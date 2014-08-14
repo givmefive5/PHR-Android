@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView_Activity_Tracker"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B4C5D7" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/ActivityTimeDateHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <LinearLayout
+                android:id="@+id/btnActivityDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="10dp"
+                android:layout_alignParentLeft="true" >
+
+                <ImageView
+                    android:id="@+id/imageViewActivityCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_small_calendar" />
+
+                <TextView
+                    android:id="@+id/textViewActivityCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="June 10, 2014"
+                    android:paddingLeft="5dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnActivityTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="10dp"
+                android:layout_alignParentRight="true" >
+
+                <ImageView
+                    android:id="@+id/imageViewActivityClock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_small_clock" />
+
+                <TextView
+                    android:id="@+id/textViewActivityClock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12:55PM"
+                    android:paddingLeft="5dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ActivityNameHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/textViewActivityNameTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:text="Activity" />
+
+            <View
+                android:id="@+id/ActivityNameDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textViewActivityNameTitle"
+                android:background="#000000" />
+
+            <TextView
+                android:id="@+id/textViewActivityName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ActivityNameDivider"
+                android:background="@drawable/underline_background"
+                android:padding="5dp"
+                android:text="Jogging"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ActivityNutritionHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/textViewActivityInformationTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:text="Activity Information" />
+
+            <View
+                android:id="@+id/ActivityInformationDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textViewActivityInformationTitle"
+                android:background="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ActivityInformationDivider"
+                android:background="@drawable/underline_background"
+                android:padding="5dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/textViewActivityCalories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1200"
+                    android:layout_gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+                <TextView
+                    android:id="@+id/textViewActivityCaloriesTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CALORIES BURNED"
+                    android:layout_gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                
+            </LinearLayout>
+            
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ActivityDurationHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewDurationTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Duration"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/ActivityDurationDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewDurationTitle"
+	            android:background="#000000" />
+
+	        <TextView
+	            android:id="@+id/textViewActivityDuration"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@id/ActivityDurationDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp"
+	            android:text="1 hour and 30 minutes"
+	            android:textStyle="bold" />
+	        
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ActivityStatusHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewStatusTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Status"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/ActivityStatusDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewStatusTitle"
+	            android:background="#000000" />
+
+	        <EditText
+	            android:id="@+id/textViewActivityStatus"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:hint="Are you having fun with the Activity?"
+	            android:layout_below="@id/ActivityStatusDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp"
+	            android:ems="10"
+	            android:isScrollContainer="true"
+	            android:inputType="textMultiLine"
+	            android:textStyle="bold" >
+	        </EditText>
+	        
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ActivityLocationHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewLocationTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Check-in Location"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/ActivityLocationDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewLocationTitle"
+	            android:background="#000000" />
+
+	        <TextView
+	            android:id="@+id/textViewActivityLocation"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@id/ActivityLocationDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp"
+	            android:text="Set your Location"
+	            android:drawableLeft="@drawable/icon_location_small"
+        		android:drawablePadding="5dp"
+	            android:textStyle="bold" />
+	        
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ActivityPhotoHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewActivityPhotoTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Attach a Photo"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/ActivityPhotoDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewActivityPhotoTitle"
+	            android:background="#000000" />
+
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical"
+	            android:layout_below="@id/ActivityPhotoDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp" >
+
+	            <ImageButton
+	                android:id="@+id/btnAddImageActivity"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:src="@drawable/icon_add_photo"
+                    android:layout_gravity="center"
+	                android:background="@null" />
+
+	        </LinearLayout>
+	        
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/ActivitySharingHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/textViewActivitySharingTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:text="Post Sharing Options" />
+
+            <View
+                android:id="@+id/ActivitySharingDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textViewActivitySharingTitle"
+                android:background="#000000" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ActivitySharingDivider"
+                android:background="@drawable/underline_background"
+                android:orientation="horizontal"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/textViewActivitySharing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="Share Post on Facebook" />
+	            
+                <ToggleButton 
+				    android:id="@+id/togglebuttonActivitySharing"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:textOn="ON"
+				    android:textOff="OFF"
+				    android:layout_alignParentRight="true"
+				    android:onClick="onToggleClicked"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -10,6 +10,7 @@ import com.example.phr.R;
 public class LoginActivity extends Activity {
 	
 	private ImageButton mBtnLogin;
+	private ImageButton mBtnRegister;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,16 @@ public class LoginActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+				startActivity(intent);
+			}
+		});
+		
+		mBtnRegister = (ImageButton) findViewById(R.id.btnRegister);
+		
+		mBtnRegister.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
 				startActivity(intent);
 			}
 		});

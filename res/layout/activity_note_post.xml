@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView_Note_Tracker"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D8BFE2" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/NoteTimeDateHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <LinearLayout
+                android:id="@+id/btnNoteDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="10dp"
+                android:layout_alignParentLeft="true" >
+
+                <ImageView
+                    android:id="@+id/imageViewNoteCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_small_calendar" />
+
+                <TextView
+                    android:id="@+id/textViewNoteCalendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="June 10, 2014"
+                    android:paddingLeft="5dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnNoteTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="10dp"
+                android:layout_alignParentRight="true" >
+
+                <ImageView
+                    android:id="@+id/imageViewNoteClock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_small_clock" />
+
+                <TextView
+                    android:id="@+id/textViewNoteClock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12:55PM"
+                    android:paddingLeft="5dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/NoteTitleHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/textViewNoteTitleLabel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:text="Title of the Note" />
+
+            <View
+                android:id="@+id/NoteTitleDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textViewNoteTitleLabel"
+                android:background="#000000" />
+
+            <EditText
+                android:id="@+id/textViewNoteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/NoteTitleDivider"
+                android:background="@drawable/underline_background"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:isScrollContainer="true"
+                android:padding="5dp" />
+            
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/NotesHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/textViewNotesTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:text="Notes" />
+
+            <View
+                android:id="@+id/NotesDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textViewNotesTitle"
+                android:background="#000000" />
+
+            <EditText
+                android:id="@+id/textViewNoteNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/NotesDivider"
+                android:background="@drawable/underline_background"
+                android:ems="10"
+                android:inputType="textMultiLine"
+                android:isScrollContainer="true"
+                android:padding="5dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/NoteStatusHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewStatusTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Status"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/NoteStatusDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewStatusTitle"
+	            android:background="#000000" />
+
+	        <EditText
+	            android:id="@+id/textViewNoteStatus"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:hint="What is your note about?"
+	            android:layout_below="@id/NoteStatusDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp"
+	            android:ems="10"
+	            android:isScrollContainer="true"
+	            android:inputType="textMultiLine"
+	            android:textStyle="bold" >
+	        </EditText>
+	        
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/NoteLocationHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewLocationTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Check-in Location"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/NoteLocationDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewLocationTitle"
+	            android:background="#000000" />
+
+	        <TextView
+	            android:id="@+id/textViewNoteLocation"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_below="@id/NoteLocationDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp"
+	            android:text="Set your Location"
+	            android:drawableLeft="@drawable/icon_location_small"
+        		android:drawablePadding="5dp"
+	            android:textStyle="bold" />
+	        
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/NotePhotoHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+	        <TextView
+	            android:id="@+id/textViewNotePhotoTitle"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:text="Attach a Photo"
+	            android:background="@drawable/textview_style" />
+	
+	        <View
+	            android:id="@+id/NotePhotoDivider"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dp"
+	            android:layout_below="@id/textViewNotePhotoTitle"
+	            android:background="#000000" />
+
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical"
+	            android:layout_below="@id/NotePhotoDivider"
+	            android:background="@drawable/underline_background"
+	            android:padding="5dp" >
+
+	            <ImageButton
+	                android:id="@+id/btnAddImageNote"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:src="@drawable/icon_add_photo"
+                    android:layout_gravity="center"
+	                android:background="@null" />
+
+	        </LinearLayout>
+	        
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/NoteSharingHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/textViewNoteSharingTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:text="Post Sharing Options" />
+
+            <View
+                android:id="@+id/NoteSharingDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textViewNoteSharingTitle"
+                android:background="#000000" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/NoteSharingDivider"
+                android:background="@drawable/underline_background"
+                android:orientation="horizontal"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/textViewNoteSharing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:text="Share Post on Facebook" />
+	            
+                <ToggleButton 
+				    android:id="@+id/togglebuttonNoteSharing"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:textOn="ON"
+				    android:textOff="OFF"
+				    android:layout_alignParentRight="true"
+				    android:onClick="onToggleClicked"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+        
+
+    </LinearLayout>
+
+</ScrollView>

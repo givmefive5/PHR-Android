@@ -2,18 +2,73 @@ package com.example.phr.model;
 
 import java.math.BigDecimal;
 
-public class BloodSugar {
-	// in mg/dL
-	long id;
-	BigDecimal glucoseLevel;
-	String description;
+import android.graphics.drawable.Drawable;
 
-	public BloodSugar(long id, BigDecimal glucoseLevel, String description) {
+public class BloodSugar {
+	
+	long id;
+	double glucoseLevel;
+	String type;
+	String description;
+	String date;
+	String time;
+	Drawable image;
+	
+
+	public BloodSugar(long id, double mmol, String type, String description,
+			String date, String time, Drawable image) {
 		super();
 		this.id = id;
-		this.glucoseLevel = glucoseLevel;
+		this.glucoseLevel = mmol;
+		this.type = type;
 		this.description = description;
+		this.date = date;
+		this.time = time;
+		this.image = image;
 	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public double getGlucoseLevel() {
+		return glucoseLevel;
+	}
+
+	public void setGlucoseLevel(double glucoseLevel) {
+		this.glucoseLevel = glucoseLevel;
+	}
+	
+	public Drawable getImage() {
+		return image;
+	}
+
+	public void setImage(Drawable image) {
+		this.image = image;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+	
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	
+
 
 	public long getId() {
 		return id;
@@ -23,13 +78,7 @@ public class BloodSugar {
 		this.id = id;
 	}
 
-	public BigDecimal getGlucoseLevel() {
-		return glucoseLevel;
-	}
-
-	public void setGlucoseLevel(BigDecimal glucoseLevel) {
-		this.glucoseLevel = glucoseLevel;
-	}
+	
 
 	public String getDescription() {
 		return description;

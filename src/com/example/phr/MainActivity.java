@@ -7,9 +7,13 @@ import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 @SuppressLint("NewApi")
 public class MainActivity extends FragmentActivity implements
@@ -19,7 +23,7 @@ public class MainActivity extends FragmentActivity implements
 	private TabsPagerAdapter mAdapter;
 	private ActionBar actionBar;
 	// Tab titles
-	private String[] tabs = { "Summary Report", "Journal", "Medicine",
+	private String[] tabs = { "Summary Report", "Timeline", "Tracker",
 			"About Me" };
 
 	@Override
@@ -35,8 +39,8 @@ public class MainActivity extends FragmentActivity implements
 		viewPager.setAdapter(mAdapter);
 		actionBar.setHomeButtonEnabled(false);
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		actionBar.setDisplayShowTitleEnabled(false);
-		actionBar.setDisplayShowHomeEnabled(false);
+		//actionBar.setDisplayShowTitleEnabled(false);
+		//actionBar.setDisplayShowHomeEnabled(false);
 		// Adding Tabs
 		/*
 		 * for (String tab_name : tabs) {
@@ -57,7 +61,7 @@ public class MainActivity extends FragmentActivity implements
 				break;
 			case 2:
 				actionBar.addTab(actionBar.newTab()
-						.setIcon(R.drawable.selector_medicine)
+						.setIcon(R.drawable.selector_health_tracker)
 						.setTabListener(this));
 				break;
 			case 3:
@@ -108,6 +112,33 @@ public class MainActivity extends FragmentActivity implements
 
 	@Override
 	public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    // Inflate the menu items for use in the action bar
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.menu_settings, menu);
+	    return super.onCreateOptionsMenu(menu);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle presses on the action bar items
+	    switch (item.getItemId()) {
+	        case R.id.action_settings:
+	        	Intent intent = new Intent(getApplicationContext(),
+						SettingsActivity.class);
+				startActivity(intent);
+	            return true;
+	        case R.id.action_notifications:
+	        	Intent intent2 = new Intent(getApplicationContext(),
+						RetrieveActivity.class);
+				startActivity(intent2);
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
 	}
 
 }

@@ -8,12 +8,25 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
 	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.CAMERA" />
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/heart_gem"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+       
         <activity
+			android:name="com.example.phr.LoginActivity" >
+             
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            
+        </activity>
+        
+         <activity
             android:name="com.example.phr.MainActivity"
             android:label="@string/app_name" >
         </activity>
@@ -24,12 +37,149 @@
         </activity>
         
         <activity
-            android:name="com.example.phr.LoginActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:name="com.example.phr.TagFriendActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.CheckinLocationActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.AddActionActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.StatusFeedActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.RegisterActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.RegisterFBLoginActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.RegisterUserInformationActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.FoodTrackerActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.FoodTrackerPostActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.FoodTrackerSearchActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.CheckupTrackerActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.WeightTrackerActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.WeightTrackerPostActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.BloodPressureTrackerActivity" >
+        </activity>
+        
+         <activity
+            android:name="com.example.phr.BloodSugarTrackerActivity" >
+        </activity>
+        
+         <activity
+            android:name="com.example.phr.NoteTrackerActivity" >
+        </activity>
+        
+         <activity
+            android:name="com.example.phr.NoteReadModeActivity" >
+        </activity>
+        
+         <activity
+            android:name="com.example.phr.BloodPressurePostActivity">
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.MedicineTrackerActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.HeightTrackerActivity">
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.HeightTrackerPostActivity">
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.NotePostActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.CheckupPostActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.CheckupTrackerAddDoctorActivity" >
+        </activity>
+        
+        
+        <activity
+            android:name="com.example.phr.BloodSugarPostActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.SettingsActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.ActivitiesTrackerActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.phr.CalorieTrackerActivity" >
+        </activity>
+        
+         <activity
+            android:name="com.example.phr.CalorieBreakdownTrackerActivity" >
+        </activity>
+        
+          
+         <activity
+            android:name="com.example.phr.GroupedFoodTrackerActivity" >
+        </activity>
+        
+         <activity
+            android:name="com.example.phr.FoodTrackerDailyActivity" >
+        </activity> 
+        
+         <activity
+            android:name="com.example.phr.AchievementsActivity" >
+        </activity> 
+        
+         <activity
+            android:name="com.example.phr.CheckupTrackerReadModeActivity" >
+        </activity> 
+        
+         <activity
+            android:name="com.example.phr.RetrieveActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"  >
+            
+        </activity> 
+         
+        <activity
+            android:name="com.example.phr.ActivitiesTrackerPostActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" >
         </activity>
     </application>
 

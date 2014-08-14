@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" 
+    android:background="@drawable/container_dropshadow"
+    android:weightSum="5" 
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginBottom="3dp" 
+        android:background="@drawable/container_date">
+
+        <TextView
+            android:id="@+id/txtHeightMonth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="June" 
+            android:textSize="15sp"
+            android:textStyle="bold" 
+            android:gravity="center"
+            android:background="#6BAFD1"
+            android:textColor="#0A090A"/>
+
+        <TextView
+            android:id="@+id/txtHeightDay"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="20"
+            android:layout_marginTop="3dp"
+            android:textSize="20sp"
+            android:textStyle="bold"  
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:orientation="vertical"
+        android:layout_marginLeft="5dp" 
+        android:layout_marginTop="5dp">
+
+       <RelativeLayout
+            android:id="@+id/timePlaceholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            
+            <TextView
+                android:id="@+id/txtTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:30 am" />
+
+ 
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/inchPlaceholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/lblInch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Height in inches : "
+                android:textStyle="bold" 
+                android:textColor="#0A090A"/>
+
+            <TextView
+                android:id="@+id/txtInch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/lblInch"
+                android:text="5'5" />
+            
+            <TextView
+                android:id="@+id/txtInchUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp" 
+                android:layout_toRightOf="@id/txtInch"
+                android:text="in" />
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/cmPlaceholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/lblCm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Height in cm : "
+                android:textStyle="bold" 
+                android:textColor="#0A090A"/>
+
+            <TextView
+                android:id="@+id/txtCm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/lblCm"
+                android:text="160" />
+            
+            <TextView
+                android:id="@+id/txtCmUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/txtCm"
+                android:layout_marginLeft="3dp" 
+                android:text="cm" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

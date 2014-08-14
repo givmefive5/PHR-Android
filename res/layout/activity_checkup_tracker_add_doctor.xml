@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView_CheckupAddDoctor_Tracker"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/CheckupAddDoctorNameHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/textViewCheckupAddDoctorNameTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/textview_style"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="List of Doctors allowed to access your Health Information" />
+
+            <View
+                android:id="@+id/CheckupAddDoctorNameDivider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/textViewCheckupAddDoctorNameTitle"
+                android:background="#000000" />
+
+            <LinearLayout
+                android:id="@+id/CheckupTrackerAddDoctorList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+	            android:padding="5dp"
+	            android:background="#FFFFFF"
+                android:layout_below="@id/CheckupAddDoctorNameDivider" >
+	
+	            <TextView
+	                android:id="@+id/textViewCheckupAddDoctorName"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+                	android:textAppearance="?android:attr/textAppearanceMedium"
+	                android:text="Dr. Abby Soluta" />
+	
+	            <TextView
+	                android:id="@+id/textViewCheckupAddDoctorName"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+                	android:textAppearance="?android:attr/textAppearanceMedium"
+	                android:text="Dr. Mara Belmento" />
+	
+	            <TextView
+	                android:id="@+id/textViewCheckupAddDoctorName"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+                	android:textAppearance="?android:attr/textAppearanceMedium"
+	                android:text="Dr. Arca Pana" />
+	            
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/CheckupTrackerAddDoctorList"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:paddingTop="10dp"
+                android:text="Grant access to a Doctor" />
+
+        </RelativeLayout>
+        
+
+    </LinearLayout>
+
+</ScrollView>

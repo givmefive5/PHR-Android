@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.phr.R;
+
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Paint.Align;
 import android.graphics.drawable.Drawable;
@@ -11,15 +13,20 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
+
 import org.achartengine.ChartFactory;
-import org.achartengine.chart.PointStyle;
 import org.achartengine.chart.BarChart.Type;
 import org.achartengine.model.CategorySeries;
 import org.achartengine.model.XYMultipleSeriesDataset;
 import org.achartengine.model.XYSeries;
+import org.achartengine.renderer.DefaultRenderer;
 import org.achartengine.renderer.SimpleSeriesRenderer;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
@@ -27,11 +34,13 @@ import org.achartengine.renderer.XYSeriesRenderer;
 
 public class SummaryReportFragment extends Fragment {
 
-	ProgressBar mProgress;
+	
 	ProgressBar cProgress;
-	int mProgressStatus = 70;
-	
-	
+
+	int cProgressStatus = 13;
+	Button mBtnRetrieve;
+	Button mBtnWrite;
+
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,189 +48,131 @@ public class SummaryReportFragment extends Fragment {
 
 		View rootView = inflater.inflate(R.layout.fragment_summary_report,
 				container, false);
-
-		mProgress = (ProgressBar) rootView.findViewById(R.id.progressBar1);
+		
+		
+		cProgress = (ProgressBar) rootView.findViewById(R.id.progressBar2);
 		Drawable draw = getResources()
 				.getDrawable(R.drawable.customprogressbar);
-		mProgress.setProgressDrawable(draw);
-		mProgress.setProgress(mProgressStatus);
-		mProgress.setMax(100);
-
-		// -------------------------------------------------------------------
-
+		cProgress.setProgressDrawable(draw);
+		cProgress.setProgress(cProgressStatus);
+		cProgress.setMax(100);
+		
+		mBtnRetrieve = (Button) rootView.findViewById(R.id.btnSync);
+		mBtnRetrieve.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(getActivity().getApplicationContext(),
+						RetrieveActivity.class);
+				startActivity(intent);
+			}
+		});
+		
+		
+		mBtnWrite = (Button) rootView.findViewById(R.id.btnWrite);
+		mBtnWrite.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				Intent intent = new Intent(getActivity().getApplicationContext(),
+						NewStatusActivity.class);
+				startActivity(intent);
+			}
+		});
+		
 		View dailyChart;
 		
-		String[] kind = new String[] { "Calorie", "Sugar", "Sodium", "Cholesterol", "Carbohydrade"};
-		
-		String[] titles = new String[] { "Max", "Current" };
-	    List<double[]> values = new ArrayList<double[]>();
-	    values.add(new double[] { 14230, 12300, 14240, 15244, 15900});
-	    values.add(new double[] { 5230, 7300, 9240, 10540, 7900});
-	    int[] colors = new int[] { Color.rgb(204, 85, 0), Color.WHITE };
-	    XYMultipleSeriesRenderer renderer = buildBarRenderer(colors);
-	    setChartSettings(renderer, "Daily Consume", "Kind", "Measure", 0.5,
-	        12.5, 0, 24000, Color.WHITE, Color.LTGRAY);
-	    renderer.getSeriesRendererAt(0).setDisplayChartValues(true);
-	    renderer.getSeriesRendererAt(1).setDisplayChartValues(true);
-	    renderer.setXLabelsAlign(Align.LEFT);
-	    renderer.setYLabelsAlign(Align.LEFT);
-	    renderer.setPanEnabled(true, false);
-	    renderer.setZoomEnabled(false);
-	    renderer.setZoomRate(1.1f);
-	    renderer.setBarSpacing(100);
-	    renderer.setBarWidth(30);
-	    renderer.setMargins(new int[] {20, 30, 15, 0});
-        renderer.setXAxisMin(0);
-        renderer.setXAxisMax(5);
-        renderer.setYAxisMin(0);
-        renderer.setChartValuesTextSize(20);
-	    renderer.setApplyBackgroundColor(true);
-		renderer.setBackgroundColor(Color.argb(0x00, 0x01, 0x01, 0x01));
-		renderer.setMarginsColor(Color.argb(0x00, 0x01, 0x01, 0x01));
-		
-		for (int i = 0; i < kind.length; i++) {
-			renderer.addXTextLabel(i + 1, kind[i]);
-		}
-		
-	    dailyChart = ChartFactory.getBarChartView(getActivity().getBaseContext(), buildBarDataset(titles, values), renderer,
-	            Type.STACKED);
+		int[] x = { 0,1,2 };
+    	double[] intake = { 20.41,24.89,43.07};
+    	double[] recommeded = {41.25, 53.63, 247.5};
+    	
+    	
+    	 String[] mMonth = new String[] {"Protein", "Fats" , "Carbohydrates"};
+    	
+    	// Creating an  XYSeries for Income
+    	//CategorySeries incomeSeries = new CategorySeries("Income");
+    	XYSeries incomeSeries = new XYSeries("Current Intake");
+    	// Creating an  XYSeries for Income
+    	XYSeries expenseSeries = new XYSeries("Recommended Intake");
+    	// Adding data to Income and Expense Series
+    	for(int i=0;i<x.length;i++){    		
+    		incomeSeries.add(i,intake[i]);
+    		expenseSeries.add(i,recommeded[i]);
+    	}
+    	
+    	
+    	// Creating a dataset to hold each series
+    	XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
+    	// Adding Income Series to the dataset
+    	dataset.addSeries(incomeSeries);
+    	// Adding Expense Series to dataset
+    	dataset.addSeries(expenseSeries);    	
+    	
+    	
+    	// Creating XYSeriesRenderer to customize incomeSeries
+    	XYSeriesRenderer incomeRenderer = new XYSeriesRenderer();
+    	incomeRenderer.setColor(Color.parseColor("#C177C9"));
+    	incomeRenderer.setFillPoints(true);
+    	incomeRenderer.setLineWidth(2);
+    	incomeRenderer.setDisplayChartValues(true);
+    	incomeRenderer.setChartValuesTextSize(20);
+    	
+    	// Creating XYSeriesRenderer to customize expenseSeries
+    	XYSeriesRenderer expenseRenderer = new XYSeriesRenderer();
+    	expenseRenderer.setColor(Color.parseColor("#5C77D1"));
+    	expenseRenderer.setFillPoints(true);
+    	expenseRenderer.setLineWidth(2);
+    	
+    	expenseRenderer.setDisplayChartValues(true); 
+    	expenseRenderer.setChartValuesTextSize(20);
+    	
+    	// Creating a XYMultipleSeriesRenderer to customize the whole chart
+    	XYMultipleSeriesRenderer multiRenderer = new XYMultipleSeriesRenderer();
+    	multiRenderer.setXLabels(0);
+    	multiRenderer.setChartTitle("My Daily Nutritional Value Chart \n\n\n");
+    	multiRenderer.setAxisTitleTextSize(20);
+    	multiRenderer.setXTitle("\n\n\n Year 2012");
+    	multiRenderer.setYTitle("");
+    	multiRenderer.setZoomButtonsVisible(false);
+    	multiRenderer.setZoomEnabled(false);
+    	multiRenderer.setMargins(new int[] {60, 30, 15, 0});
+    	multiRenderer.setXAxisMin(-1);
+    	multiRenderer.setXAxisMax(3);
+    	multiRenderer.setYAxisMin(0);
+    	//multiRenderer.setAxisTitleTextSize(30);
+    	multiRenderer.setChartTitleTextSize(25);
+    	multiRenderer.setLabelsTextSize(15);
+    	multiRenderer.setAxesColor(Color.BLACK);
+    	multiRenderer.setLabelsColor(Color.BLACK);
+    	multiRenderer.setXLabelsColor(Color.BLACK);
+    	multiRenderer.setYLabelsColor(0, Color.BLACK);
+    	//multiRenderer.setLegendTextSize(15);
+        multiRenderer.setLabelsTextSize(20);
+       // multiRenderer.setLegendHeight(20);
+        multiRenderer.setLegendTextSize(20);
+    	multiRenderer.setApplyBackgroundColor(true);
+    	multiRenderer.setBackgroundColor(Color.argb(0x00, 0x01, 0x01, 0x01));
+    	multiRenderer.setMarginsColor(Color.argb(0x00, 0x01, 0x01, 0x01));
+    	
+    	for(int i=0; i< x.length;i++){
+    		multiRenderer.addXTextLabel(i, mMonth[i]);    		
+    	}    	
+    	
+    	
+    	// Adding incomeRenderer and expenseRenderer to multipleRenderer
+    	// Note: The order of adding dataseries to dataset and renderers to multipleRenderer
+    	// should be same
+    	multiRenderer.addSeriesRenderer(incomeRenderer);
+    	multiRenderer.addSeriesRenderer(expenseRenderer);
+    	
+    	// Creating an intent to plot bar chart using dataset and multipleRenderer    	
+    	dailyChart = ChartFactory.getBarChartView(getActivity().getBaseContext(), dataset, multiRenderer, Type.DEFAULT);
 	    
 	    LinearLayout dailyContainer = (LinearLayout) rootView
-				.findViewById(R.id.linearLayoutWeight);
+				.findViewById(R.id.piegraph);
 	    
 	    dailyContainer.addView(dailyChart);
 	    
-		//-------------------------------------------------------------------
-		View mChart;
-
-		String[] mMonth = new String[] { "Jan", "Feb", "Mar", "Apr", "May",
-				"Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
-
-		int[] x = { 1, 2, 3, 4, 5, 6, 7, 8 };
-		int[] pound = { 80, 100, 90, 110, 130, 120, 110, 120 };
-
-		XYSeries poundSeries = new XYSeries("Weight");
-
-		for (int i = 0; i < x.length; i++) {
-			poundSeries.add(x[i], pound[i]);
-		}
-
-		XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
-
-		dataset.addSeries(poundSeries);
-
-		XYSeriesRenderer weightRenderer = new XYSeriesRenderer();
-		weightRenderer.setColor(Color.BLUE);
-		weightRenderer.setPointStyle(PointStyle.CIRCLE);
-		weightRenderer.setFillPoints(true);
-		weightRenderer.setLineWidth(4);
-		weightRenderer.setDisplayChartValues(true);
-
-		XYMultipleSeriesRenderer multiRenderer = new XYMultipleSeriesRenderer();
-		multiRenderer.setXLabels(0);
-		multiRenderer.setChartTitle("Weight Graph");
-		multiRenderer.setXTitle("Year 2014");
-		multiRenderer.setYTitle("Pound");
-		multiRenderer.setZoomButtonsVisible(false);
-
-		for (int i = 0; i < x.length; i++) {
-			multiRenderer.addXTextLabel(i + 1, mMonth[i]);
-		}
-
-		multiRenderer.setApplyBackgroundColor(true);
-		multiRenderer.setBackgroundColor(Color.argb(0x00, 0x01, 0x01, 0x01));
-		multiRenderer.setMarginsColor(Color.argb(0x00, 0x01, 0x01, 0x01));
-		multiRenderer.setAxesColor(Color.WHITE);
-		multiRenderer.setLabelsColor(Color.WHITE);
-		multiRenderer.setXLabelsColor(Color.WHITE);
-		multiRenderer.setYLabelsColor(0, Color.WHITE);
-		multiRenderer.setAxisTitleTextSize(16);
-		multiRenderer.setLabelsTextSize(15);
-		multiRenderer.setChartValuesTextSize(20);
-
-		multiRenderer.addSeriesRenderer(weightRenderer);
-
-		LinearLayout weightContainer = (LinearLayout) rootView
-				.findViewById(R.id.graph1);
-
-		mChart = ChartFactory.getLineChartView(getActivity().getBaseContext(),
-				dataset, multiRenderer);
-
-		weightContainer.addView(mChart);
-
-		
-		//--------------------------------------------------------------------
-		View bloodPressureChart;
-
-		String[] bloodPressureMonth = new String[] { "Jan", "Feb", "Mar", "Apr", "May","Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
-
-		int[] bloodPressurex = { 1, 2, 3, 4, 5, 6, 7, 8 };
-		int[] systolic = { 100, 90, 110, 120, 100, 90, 100, 110 };
-		int[] diastolic = { 80, 70, 80, 60, 70, 90, 80, 70 };
-
-		XYSeries systolicSeries = new XYSeries("Systolic");
-		XYSeries diastolicSeries = new XYSeries("Diastolic");
-
-		for (int i = 0; i < bloodPressurex.length; i++) {
-			systolicSeries.add(bloodPressurex[i], systolic[i]);
-			diastolicSeries.add(bloodPressurex[i], diastolic[i]);
-		}
-
-		XYMultipleSeriesDataset systolicDataset = new XYMultipleSeriesDataset();
-		
-		systolicDataset.addSeries(systolicSeries);
-		systolicDataset.addSeries(diastolicSeries);
-		
-		XYSeriesRenderer systolicRenderer = new XYSeriesRenderer();
-		systolicRenderer.setColor(Color.BLUE);
-		systolicRenderer.setPointStyle(PointStyle.CIRCLE);
-		systolicRenderer.setFillPoints(true);
-		systolicRenderer.setLineWidth(4);
-		systolicRenderer.setDisplayChartValues(true);
-		
-		XYSeriesRenderer diastolicRenderer = new XYSeriesRenderer();
-		diastolicRenderer.setColor(Color.RED);
-		diastolicRenderer.setPointStyle(PointStyle.CIRCLE);
-		diastolicRenderer.setFillPoints(true);
-		diastolicRenderer.setLineWidth(4);
-		diastolicRenderer.setDisplayChartValues(true);
-
-		XYMultipleSeriesRenderer bloodPressureMultiRenderer = new 
-
-		XYMultipleSeriesRenderer();
-		bloodPressureMultiRenderer.setXLabels(0);
-		bloodPressureMultiRenderer.setChartTitle("Blood Pressure Graph");
-		bloodPressureMultiRenderer.setXTitle("Year 2014");
-		bloodPressureMultiRenderer.setYTitle("Systolic/Diastolic Pressure (mm hg)");
-		bloodPressureMultiRenderer.setZoomButtonsVisible(false);
-		
-		
-
-		for (int i = 0; i < bloodPressurex.length; i++) {
-			bloodPressureMultiRenderer.addXTextLabel(i + 1, bloodPressureMonth[i]);
-		}
-
-		bloodPressureMultiRenderer.setApplyBackgroundColor(true);
-		bloodPressureMultiRenderer.setBackgroundColor(Color.argb(0x00, 0x01, 0x01, 0x01));
-		bloodPressureMultiRenderer.setMarginsColor(Color.argb(0x00, 0x01, 0x01, 0x01));
-		bloodPressureMultiRenderer.setAxesColor(Color.WHITE);
-		bloodPressureMultiRenderer.setLabelsColor(Color.WHITE);
-		bloodPressureMultiRenderer.setXLabelsColor(Color.WHITE);
-		bloodPressureMultiRenderer.setYLabelsColor(0, Color.WHITE);
-		bloodPressureMultiRenderer.setAxisTitleTextSize(16);
-		bloodPressureMultiRenderer.setLabelsTextSize(15);
-
-		bloodPressureMultiRenderer.addSeriesRenderer(systolicRenderer);
-		bloodPressureMultiRenderer.addSeriesRenderer(diastolicRenderer);
-
-		LinearLayout bloodPressureContainer = (LinearLayout) rootView
-				.findViewById(R.id.graph2);
-
-		bloodPressureChart = ChartFactory.getLineChartView(getActivity().getBaseContext(),
-				systolicDataset, bloodPressureMultiRenderer);
-
-		bloodPressureContainer.addView(bloodPressureChart);
-		
 
 		
 		return rootView;
