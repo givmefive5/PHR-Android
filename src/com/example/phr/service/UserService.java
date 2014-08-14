@@ -10,8 +10,7 @@ public interface UserService {
 	public void registerUser(User user) throws DuplicateUserException,
 			ServiceException, UserAlreadyExistsException;
 
-	public boolean validateUser(String username, String password)
-			throws ServiceException;
+	public boolean validateUserLogin(User user) throws ServiceException;
 
 	public User getUserGivenUsername(String username) throws ServiceException;
 }
