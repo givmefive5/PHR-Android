@@ -21,36 +21,33 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 			if (response.get("status").equals("error"))
 				throw new UserAlreadyExistsException(
 						"User already exists in the database");
-			else {
-				throw new UserAlreadyExistsException(
-						"HHHHHHHHHHHHHHHHHHsadasasasas");
-			}
 		} catch (JSONException e) {
 			throw new DatabaseErrorException("Error in parsing JSON", e);
 		}
 	}
 
 	@Override
-	public boolean validateUserLogin(User user) throws DatabaseErrorException {
+	public boolean validateUser(String username, String password)
+			throws DatabaseErrorException {
 
-		try {
-			String command = "user/validate";
-			String jsonParams = GSONConverter.convertObjectToJSON(user);
-			JSONObject response = performHttpRequest_JSON(command, jsonParams);
-			System.out.println(response);
-			System.out.println(response.getString("status"));
-			if (response.getString("status").equals("success")) {
-				boolean isValid = response.getJSONObject("data").getBoolean(
-						"isValid");
-				System.out.println(isValid);
-				return isValid;
-			}
-			throw new DatabaseErrorException("Something went wrong.");
-		} catch (JSONException e) {
-			e.printStackTrace();
-			throw new DatabaseErrorException(
-					"Cannot perform action, json was not parsed correctly", e);
-		}
+		// try {
+		// String command = "user/validate";
+		// JSONObject jsonObj = new JSONObject();
+		// jsonObj.put("username", username);
+		// jsonObj.put("password", password);
+		// JSONObject response = performHttpRequest_JSON(command,
+		// jsonObj.toString());
+		//
+		// if (response.getString("isValid").equals("true"))
+		// return true;
+		// else if (response.getString("isValid").equals("false"))
+		// return false;
+		// else
+		// throw new DatabaseErrorException("Cannot perform action");
+		// } catch (JSONException e) {
+		// throw new DatabaseErrorException("Cannot perform action", e);
+		// }
+		return false;
 	}
 
 	@Override

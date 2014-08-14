@@ -51,13 +51,6 @@
 
 	</EditText>
 
-     <TextView
-         android:id="@+id/txtLoginError"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:visibility="gone"
-         android:textAppearance="?android:attr/textAppearanceSmall" />
-
      <ImageButton
          android:id="@+id/btnLogin"
          android:layout_width="110dp"

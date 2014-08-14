@@ -1,5 +1,8 @@
 package com.example.phr;
 
+import com.example.phr.R;
+import com.example.phr.adapter.TabsPagerAdapter;
+
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
@@ -7,8 +10,6 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-
-import com.example.phr.adapter.TabsPagerAdapter;
 
 @SuppressLint("NewApi")
 public class MainActivity extends FragmentActivity implements
@@ -80,7 +81,7 @@ public class MainActivity extends FragmentActivity implements
 				// make respected tab selected
 				actionBar.setSelectedNavigationItem(position);
 				setTitle(tabs[position]);
-
+				
 			}
 
 			@Override

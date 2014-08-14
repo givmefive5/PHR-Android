@@ -6,7 +6,8 @@ import com.example.phr.model.User;
 
 public interface UserDao {
 
-	public boolean validateUserLogin(User user) throws DatabaseErrorException;
+	public boolean validateUser(String username, String password)
+			throws DatabaseErrorException;
 
 	public User getUserGivenUsername(String username)
 			throws DatabaseErrorException;

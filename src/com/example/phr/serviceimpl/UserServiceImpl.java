@@ -24,9 +24,10 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public boolean validateUserLogin(User user) throws ServiceException {
+	public boolean validateUser(String username, String password)
+			throws ServiceException {
 		try {
-			return userDao.validateUserLogin(user);
+			return userDao.validateUser(username, password);
 		} catch (DatabaseErrorException e) {
 			throw new ServiceException("An error occured in the user service",
 					e);
