@@ -395,10 +395,18 @@ public final class R {
         public static final int cmPlaceholder=0x7f09022b;
         public static final int confirmPassword=0x7f09013e;
         public static final int container=0x7f090106;
+<<<<<<< HEAD
         public static final int dateholder=0x7f0901f1;
         public static final int decrement=0x7f09025c;
         public static final int diaPlaceholder=0x7f0901f7;
         public static final int doctorPlaceholder=0x7f090216;
+=======
+        public static final int dateholder=0x7f0901ed;
+        public static final int decrement=0x7f090258;
+        public static final int diaPlaceholder=0x7f0901f3;
+        public static final int diastolicPicker=0x7f090044;
+        public static final int doctorPlaceholder=0x7f090212;
+>>>>>>> origin/master
         public static final int dropdownHeight=0x7f0900f5;
         public static final int dropdownRegistrationHeight=0x7f090153;
         public static final int dropdownRegistrationWeight=0x7f090158;
@@ -508,6 +516,7 @@ public final class R {
         public static final int listView_height=0x7f0900e9;
         public static final int listView_notes=0x7f09013b;
         public static final int listview_calorie=0x7f090079;
+<<<<<<< HEAD
         public static final int menu_item_next=0x7f09025f;
         public static final int menu_item_status_post=0x7f090261;
         public static final int noteBanner=0x7f09013a;
@@ -517,6 +526,15 @@ public final class R {
         public static final int piegraph=0x7f0901e2;
         public static final int placePlaceholder=0x7f090219;
         public static final int pref_num_picker=0x7f09025d;
+=======
+        public static final int menu_item_next=0x7f09025b;
+        public static final int menu_item_status_post=0x7f09025d;
+        public static final int noteBanner=0x7f090139;
+        public static final int pager=0x7f09010b;
+        public static final int piegraph=0x7f0901de;
+        public static final int placePlaceholder=0x7f090215;
+        public static final int pref_num_picker=0x7f090259;
+>>>>>>> origin/master
         public static final int progressBar1=0x7f090004;
         public static final int progressBar2=0x7f0901d8;
         public static final int progressHolder=0x7f090003;
@@ -533,6 +551,7 @@ public final class R {
         public static final int scrollView_Checkup_Tracker=0x7f09007c;
         public static final int scrollView_Food_Tracker=0x7f0900b7;
         public static final int scrollView_Height_Tracker=0x7f090058;
+<<<<<<< HEAD
         public static final int scrollView_Note_Tracker=0x7f090114;
         public static final int secondRowHolder=0x7f0901bb;
         public static final int serving=0x7f090222;
@@ -540,6 +559,16 @@ public final class R {
         public static final int statusPhotoHolder=0x7f090253;
         public static final int statusTabsPlaceholder=0x7f090110;
         public static final int sysholder=0x7f0901f4;
+=======
+        public static final int scrollView_Note_Tracker=0x7f090113;
+        public static final int secondRowHolder=0x7f0901b7;
+        public static final int serving=0x7f09021e;
+        public static final int statusInformationHolder=0x7f090248;
+        public static final int statusPhotoHolder=0x7f09024f;
+        public static final int statusTabsPlaceholder=0x7f09010f;
+        public static final int sysholder=0x7f0901f0;
+        public static final int systolicPicker=0x7f090043;
+>>>>>>> origin/master
         public static final int textView1=0x7f090005;
         public static final int textView10=0x7f0901d9;
         public static final int textView12=0x7f0901db;

@@ -13,14 +13,14 @@ import org.apache.http.protocol.HTTP;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.example.phr.exceptions.DatabaseErrorException;
+import com.example.phr.exceptions.WebServerException;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
 public abstract class BasicDaoImpl {
 
 	protected String performHttpRequest_String(String command,
-			String jsonStringParams) throws DatabaseErrorException {
+			String jsonStringParams) throws WebServerException {
 		String address = "http://10.0.2.2:8080/PHR-WebServer/" + command;
 		try {
 			HttpClient client = new DefaultHttpClient();
@@ -35,28 +35,28 @@ public abstract class BasicDaoImpl {
 			response.getEntity().writeTo(out);
 			return out.toString();
 		} catch (IOException e) {
-			throw new DatabaseErrorException("Error in HTTP", e);
+			throw new WebServerException("Error in HTTP", e);
 		}
 	}
 
 	protected JSONObject performHttpRequest_JSON(String command,
-			String jsonStringParams) throws DatabaseErrorException {
+			String jsonStringParams) throws WebServerException {
 		try {
 			JSONObject response = new JSONObject(performHttpRequest_String(
 					command, jsonStringParams));
 			return response;
 		} catch (JSONException e) {
-			throw new DatabaseErrorException("Cannot convert JSON object", e);
+			throw new WebServerException("Cannot convert JSON object", e);
 		}
 	}
 
 	protected <T> T getGSONObject(String response, Class<T> cls)
-			throws DatabaseErrorException {
+			throws WebServerException {
 		try {
 			Gson gson = new Gson();
 			return gson.fromJson(response, cls);
 		} catch (JsonSyntaxException e) {
-			throw new DatabaseErrorException("Error in GSON", e);
+			throw new WebServerException("Error in GSON", e);
 		}
 	}
 

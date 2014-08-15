@@ -6,15 +6,20 @@ import android.graphics.drawable.Drawable;
 
 public class BloodPressure {
 	// in millimeters of mercury
-	long id;
+	int id;
 	int systolic;
 	int diastolic;
 	String date;
 	String time;
 	Drawable image;
 	String description;
+	
+	public BloodPressure()
+	{
+		
+	}
 
-	public BloodPressure(long id, int systolic, int diastolic, String date,String time,
+	public BloodPressure(int id, int systolic, int diastolic, String date,String time,
 			String description,  Drawable image) {
 		super();
 		this.id = id;
@@ -24,6 +29,16 @@ public class BloodPressure {
 		this.description = description;
 		this.time = time;
 		this.image = image;
+	}
+
+	public BloodPressure(int systolic, int diastolic, String date,String time,
+			String description) {
+		super();
+		this.systolic = systolic;
+		this.diastolic = diastolic;
+		this.date = date;
+		this.description = description;
+		this.time = time;
 	}
 
 	public Drawable getImage() {
@@ -46,7 +61,7 @@ public class BloodPressure {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

@@ -2,7 +2,7 @@ package com.example.phr.serviceimpl;
 
 import com.example.phr.dao.UserDao;
 import com.example.phr.daoimpl.UserDaoImpl;
-import com.example.phr.exceptions.DatabaseErrorException;
+import com.example.phr.exceptions.WebServerException;
 import com.example.phr.exceptions.DuplicateUserException;
 import com.example.phr.exceptions.ServiceException;
 import com.example.phr.exceptions.UserAlreadyExistsException;
@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserService {
 			ServiceException, UserAlreadyExistsException {
 		try {
 			userDao.registerUser(user);
-		} catch (DatabaseErrorException e) {
+		} catch (WebServerException e) {
 			throw new ServiceException("Error in registration", e);
 		}
 	}
@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService {
 			throws ServiceException {
 		try {
 			return userDao.validateUser(username, password);
-		} catch (DatabaseErrorException e) {
+		} catch (WebServerException e) {
 			throw new ServiceException("An error occured in the user service",
 					e);
 		}
@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
 	public User getUserGivenUsername(String username) throws ServiceException {
 		try {
 			return userDao.getUserGivenUsername(username);
-		} catch (DatabaseErrorException e) {
+		} catch (WebServerException e) {
 			throw new ServiceException("An error occured in the user service",
 					e);
 		}
