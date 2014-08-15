@@ -30,6 +30,7 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public boolean validateUser(String username, String hashedPassword)
 			throws WebServerException {
@@ -37,7 +38,7 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 		try {
 			String command = "/user/validateLogin";
 
-			Map map = new HashMap();
+			Map<String, String> map = new HashMap<String, String>();
 			map.put("username", username);
 			map.put("hashedPassword", hashedPassword);
 			JSONObject json = JSONRequestCreator.createJSONRequest(map, null);
