@@ -125,7 +125,7 @@
             android:background="@drawable/underline_background">
 
             <com.example.phr.NumberPicker
-                android:id="@+id/numberPicker1"
+                android:id="@+id/systolicPicker"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
@@ -134,7 +134,7 @@
             </com.example.phr.NumberPicker>
 
             <com.example.phr.NumberPicker
-                android:id="@+id/numberPicker2"
+                android:id="@+id/diastolicPicker"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
@@ -216,6 +216,7 @@
 
         <RelativeLayout
             android:id="@+id/BloodPressurePhotoHolder"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp" >
@@ -255,6 +256,7 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:visibility="gone"
             android:id="@+id/BloodPressureSharingHolder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

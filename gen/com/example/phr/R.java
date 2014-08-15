@@ -397,6 +397,7 @@ public final class R {
         public static final int dateholder=0x7f0901ed;
         public static final int decrement=0x7f090258;
         public static final int diaPlaceholder=0x7f0901f3;
+        public static final int diastolicPicker=0x7f090044;
         public static final int doctorPlaceholder=0x7f090212;
         public static final int dropdownHeight=0x7f0900f5;
         public static final int dropdownRegistrationHeight=0x7f09014f;
@@ -510,8 +511,6 @@ public final class R {
         public static final int menu_item_next=0x7f09025b;
         public static final int menu_item_status_post=0x7f09025d;
         public static final int noteBanner=0x7f090139;
-        public static final int numberPicker1=0x7f090043;
-        public static final int numberPicker2=0x7f090044;
         public static final int pager=0x7f09010b;
         public static final int piegraph=0x7f0901de;
         public static final int placePlaceholder=0x7f090215;
@@ -539,6 +538,7 @@ public final class R {
         public static final int statusPhotoHolder=0x7f09024f;
         public static final int statusTabsPlaceholder=0x7f09010f;
         public static final int sysholder=0x7f0901f0;
+        public static final int systolicPicker=0x7f090043;
         public static final int textView1=0x7f090005;
         public static final int textView10=0x7f0901d5;
         public static final int textView12=0x7f0901d7;

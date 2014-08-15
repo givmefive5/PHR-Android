@@ -27,6 +27,7 @@ import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
 import com.example.phr.adapter.BloodPressureAdapter;
+import com.example.phr.local_db.DatabaseHandler;
 import com.example.phr.model.BloodPressure;
 
 public class BloodPressureTrackerActivity extends Activity{
@@ -47,7 +48,7 @@ public class BloodPressureTrackerActivity extends Activity{
 				
 		// FAKE DATA
 		List<BloodPressure> list = new ArrayList<BloodPressure>();
-		BloodPressure data7 = new BloodPressure(1,140,90,"May 31, 2014","3:40pm",null,getResources().getDrawable(R.drawable.bloodpressure_warning));
+/*		BloodPressure data7 = new BloodPressure(1,140,90,"May 31, 2014","3:40pm",null,getResources().getDrawable(R.drawable.bloodpressure_warning));
 		
 		BloodPressure data6 = new BloodPressure(2,134,90,"Jun 07, 2014","1:40pm",null,getResources().getDrawable(R.drawable.bloodpressure_warning));
 
@@ -66,8 +67,10 @@ public class BloodPressureTrackerActivity extends Activity{
 		list.add(data4);
 		list.add(data5);
 		list.add(data6);
-		list.add(data7);
-		
+		list.add(data7);*/
+
+		DatabaseHandler db = new DatabaseHandler(this);
+		list = db.getAllBloodPressure();
 		
 
 		bloodPressureAdapter = new BloodPressureAdapter(getApplicationContext(), list);
