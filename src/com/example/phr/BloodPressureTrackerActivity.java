@@ -37,6 +37,7 @@ public class BloodPressureTrackerActivity extends Activity{
 	ListView mBloodPressureList;
 	BloodPressureAdapter bloodPressureAdapter;
 	LinearLayout mBtnBloodPressurePost;
+	List<BloodPressure> list;
 
 	@SuppressLint("NewApi")
 	@Override
@@ -48,7 +49,7 @@ public class BloodPressureTrackerActivity extends Activity{
 		mBloodPressureList = (ListView) findViewById(R.id.listView_bloodpressure);
 				
 		// FAKE DATA
-		List<BloodPressure> list = new ArrayList<BloodPressure>();
+		list = new ArrayList<BloodPressure>();
 /*		BloodPressure data7 = new BloodPressure(1,140,90,"May 31, 2014","3:40pm",null,getResources().getDrawable(R.drawable.bloodpressure_warning));
 		
 		BloodPressure data6 = new BloodPressure(2,134,90,"Jun 07, 2014","1:40pm",null,getResources().getDrawable(R.drawable.bloodpressure_warning));
@@ -72,6 +73,9 @@ public class BloodPressureTrackerActivity extends Activity{
 
 		DatabaseHandler db = new DatabaseHandler(this);
 		list = db.getAllBloodPressure();
+		for(BloodPressure bp:list){
+			bp.setImage(getResources().getDrawable(R.drawable.bloodpressure_warning));
+		}
 		
 
 		bloodPressureAdapter = new BloodPressureAdapter(getApplicationContext(), list);
@@ -189,6 +193,26 @@ public class BloodPressureTrackerActivity extends Activity{
 	    MenuInflater inflater = getMenuInflater();
 	    inflater.inflate(R.menu.menu_tracker_help, menu);
 	    return super.onCreateOptionsMenu(menu);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		DatabaseHandler db = new DatabaseHandler(this);
+		list = db.getAllBloodPressure();
+		for(BloodPressure bp:list){
+			bp.setImage(getResources().getDrawable(R.drawable.bloodpressure_warning));
+		}
+		bloodPressureAdapter = new BloodPressureAdapter(getApplicationContext(), list);
+		mBloodPressureList.setAdapter(bloodPressureAdapter);
+		
+		/*
+		DatabaseHandler db = new DatabaseHandler(this);
+		list = db.getAllBloodPressure();
+		bloodPressureAdapter
+		mBloodPressureList.removeAllViews();
+		mBloodPressureList.invalidateViews();
+		bloodPressureAdapter.notifyDataSetChanged();*/
 	}
 	
 	@Override
