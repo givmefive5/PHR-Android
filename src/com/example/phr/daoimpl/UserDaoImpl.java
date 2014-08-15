@@ -29,10 +29,16 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 
 			JSONObject response = performHttpRequest_JSON(command, jsonToSend);
 
-			if (response.get("status") == null
-					|| response.get("status").equals("error"))
+			if (response.get("status").equals("fail"))
+				throw new WebServerException(
+						"An error has occurred while communicating"
+								+ "with the web server.");
+
+			else if (!response.getJSONObject("data").get("registered")
+					.equals("true")) {
 				throw new UserAlreadyExistsException(
 						"User already exists in the database");
+			}
 		} catch (JSONException e) {
 			throw new WebServerException("Error in parsing JSON", e);
 		}
@@ -55,22 +61,23 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 			String jsonToSend = JSONRequestCreator.createJSONRequest(map, null);
 			JSONObject response = performHttpRequest_JSON(command, jsonToSend);
 
+			if (response.get("status").equals("fail"))
+				throw new WebServerException(
+						"An error has occurred while communicating"
+								+ "with the web server.");
+
 			if (response.getJSONObject("data").get("isValid").equals("true")) {
 				return true;
 			} else if (response.getJSONObject("data").get("isValid")
 					.equals("false")) {
 				return false;
-			} else {
-				throw new WebServerException(
-						"An error has occurred while communicating"
-								+ "with the web server.");
 			}
+			throw new WebServerException(
+					"An error has occurred while communicating"
+							+ "with the web server.");
 		} catch (JSONException e) {
 			throw new WebServerException("An error has occurred while parsing"
 					+ "the web server response.");
-
-		} catch (WebServerException e) {
-			throw e;
 		}
 	}
 
