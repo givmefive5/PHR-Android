@@ -34,7 +34,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_BLOODPRESSURE_TABLE = "CREATE TABLE " + TABLE_BLOODPRESSURE + "("
                 + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_DATE + " TEXT,"
-                + KEY_TIME + " TEXT" + KEY_SYSTOLIC + " TEXT" + KEY_DIASTOLIC + " TEXT" + KEY_STATUS + " TEXT" + ")";
+                + KEY_TIME + " TEXT," + KEY_SYSTOLIC + " TEXT," + KEY_DIASTOLIC + " TEXT," + KEY_STATUS + " TEXT" + ")";
         db.execSQL(CREATE_BLOODPRESSURE_TABLE);
     }
  
