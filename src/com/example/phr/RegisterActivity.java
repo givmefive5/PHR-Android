@@ -11,10 +11,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.phr.R;
-
 public class RegisterActivity extends Activity {
-	
+
 	private ImageButton mBtnRegister;
 	private String password;
 	private String confirmPassword;
@@ -31,9 +29,9 @@ public class RegisterActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_register);
 		mBtnRegister = (ImageButton) findViewById(R.id.btnRegister);
-		mTextValid =(TextView) findViewById(R.id.valid);
-		textViewPasswordStrength =(TextView) findViewById(R.id.textViewPasswordStrength);
-		
+		mTextValid = (TextView) findViewById(R.id.valid);
+		textViewPasswordStrength = (TextView) findViewById(R.id.textViewPasswordStrength);
+
 		formUsername = (EditText) findViewById(R.id.txtUsernameReg);
 		formPassword = (EditText) findViewById(R.id.txtPasswordReg);
 		formConfirmPassword = (EditText) findViewById(R.id.confirmPasswordReg);
@@ -42,58 +40,54 @@ public class RegisterActivity extends Activity {
 
 			@Override
 			public void afterTextChanged(Editable arg0) {
-				boolean valid = passwordValidator.validate(formPassword.getText().toString());
-				if(valid)
-					textViewPasswordStrength.setText("Password Strength: Strong");
+				boolean valid = passwordValidator.validate(formPassword
+						.getText().toString());
+				if (valid)
+					textViewPasswordStrength
+							.setText("Password Strength: Strong");
 				else
 					textViewPasswordStrength.setText("Password Strength: Weak");
-				
+
 			}
 
 			@Override
 			public void beforeTextChanged(CharSequence arg0, int arg1,
 					int arg2, int arg3) {
 				// TODO Auto-generated method stub
-				
+
 			}
 
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before,
 					int count) {
 			}
-			
+
 		});
-		
-		
+
 		mBtnRegister.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				
+
 				username = formUsername.getText().toString();
 				password = formPassword.getText().toString();
 				confirmPassword = formConfirmPassword.getText().toString();
-				
-				
-				
+
 				boolean valid = passwordValidator.validate(password);
-				
-				if(password.equals(confirmPassword))
-				{
+
+				if (password.equals(confirmPassword)) {
 					Log.e("tama1", "tama2");
-					if(password.length()>7)
-					{
-						Intent intent = new Intent(getApplicationContext(), RegisterUserInformationActivity.class);
+					if (password.length() > 7) {
+						Intent intent = new Intent(getApplicationContext(),
+								RegisterUserInformationActivity.class);
 						startActivity(intent);
-					}
-					else
-						mTextValid.setText("password length is not greater than 7");
-				}
-				else
-				{
-					mTextValid.setText("not same with confirm password");
+					} else
+						mTextValid
+								.setText("password length must be at least 8 characters");
+				} else {
+					mTextValid.setText("passwords does not match");
 					Log.e("mali1", "mali2");
 				}
-				
+
 			}
 		});
 	}

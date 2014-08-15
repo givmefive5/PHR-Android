@@ -11,6 +11,7 @@ import com.example.phr.exceptions.UserAlreadyExistsException;
 import com.example.phr.exceptions.WebServerException;
 import com.example.phr.model.User;
 import com.example.tools.GSONConverter;
+import com.example.tools.Hasher;
 import com.example.tools.JSONRequestCreator;
 
 public class UserDaoImpl extends BasicDaoImpl implements UserDao {
@@ -18,11 +19,18 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 	@Override
 	public void registerUser(User user) throws WebServerException,
 			UserAlreadyExistsException {
-		String command = "user/register";
-		String jsonParams = GSONConverter.convertObjectToJSON(user);
-		JSONObject response = performHttpRequest_JSON(command, jsonParams);
+
 		try {
-			if (response.get("status").equals("error"))
+			String command = "user/register";
+			String userJSON = GSONConverter.convertObjectToJSON(user);
+
+			String jsonToSend = JSONRequestCreator.createJSONRequest(userJSON,
+					null);
+
+			JSONObject response = performHttpRequest_JSON(command, jsonToSend);
+
+			if (response.get("status") == null
+					|| response.get("status").equals("error"))
 				throw new UserAlreadyExistsException(
 						"User already exists in the database");
 		} catch (JSONException e) {
@@ -32,7 +40,7 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public boolean validateUser(String username, String hashedPassword)
+	public boolean validateUser(String username, String password)
 			throws WebServerException {
 
 		try {
@@ -40,10 +48,13 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 
 			Map<String, String> map = new HashMap<String, String>();
 			map.put("username", username);
+
+			String hashedPassword = Hasher.hash(password);
 			map.put("hashedPassword", hashedPassword);
-			JSONObject json = JSONRequestCreator.createJSONRequest(map, null);
-			JSONObject response = performHttpRequest_JSON(command,
-					json.toString());
+
+			String jsonToSend = JSONRequestCreator.createJSONRequest(map, null);
+			JSONObject response = performHttpRequest_JSON(command, jsonToSend);
+
 			if (response.getJSONObject("data").get("isValid").equals("true")) {
 				return true;
 			} else if (response.getJSONObject("data").get("isValid")

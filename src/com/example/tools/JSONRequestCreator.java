@@ -7,7 +7,7 @@ import android.util.Log;
 
 public class JSONRequestCreator {
 
-	public static JSONObject createJSONRequest(Object object, String message)
+	public static String createJSONRequest(Object object, String message)
 			throws JSONException {
 		JSONObject json = new JSONObject();
 		Log.e("gson", GSONConverter.convertObjectToJSON(object).toString());
@@ -20,6 +20,6 @@ public class JSONRequestCreator {
 
 		json.put("auth", auth);
 
-		return json;
+		return json.toString();
 	}
 }
