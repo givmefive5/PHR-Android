@@ -15,10 +15,12 @@ public class RegisterActivity extends Activity {
 	
 	private ImageButton mBtnRegister;
 	private String password;
+	private String confirmPassword;
 	private String username;
 	private PasswordValidator passwordValidator;
 	private EditText formUsername;
 	private EditText formPassword;
+	private EditText formConfirmPassword;
 	private TextView mTextValid;
 
 	@Override
@@ -35,9 +37,11 @@ public class RegisterActivity extends Activity {
 				
 				formUsername = (EditText) findViewById(R.id.txtUsernameReg);
 				formPassword = (EditText) findViewById(R.id.txtPasswordReg);
+				formConfirmPassword = (EditText) findViewById(R.id.confirmPasswordReg);
 				
 				username = formUsername.getText().toString();
 				password = formPassword.getText().toString();
+				confirmPassword = formConfirmPassword.getText().toString();
 				
 				passwordValidator = new PasswordValidator();
 				
@@ -46,12 +50,17 @@ public class RegisterActivity extends Activity {
 				if(valid)
 				{
 					Log.e("tama1", "tama2");
-					Intent intent = new Intent(getApplicationContext(), RegisterUserInformationActivity.class);
-					startActivity(intent);
+					if(password.equals(confirmPassword))
+					{
+						Intent intent = new Intent(getApplicationContext(), RegisterUserInformationActivity.class);
+						startActivity(intent);
+					}
+					else
+						mTextValid.setText("not same with confirm password");
 				}
 				else
 				{
-					mTextValid.setText("mali daw");
+					mTextValid.setText("mali daw password");
 					Log.e("mali1", "mali2");
 				}
 				

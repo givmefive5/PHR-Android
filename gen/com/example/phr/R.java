@@ -393,7 +393,7 @@ public final class R {
         public static final int checkLogin=0x7f09010b;
         public static final int checkupBanner=0x7f09009f;
         public static final int cmPlaceholder=0x7f09022b;
-        public static final int confirmPassword=0x7f09013e;
+        public static final int confirmPasswordReg=0x7f09013e;
         public static final int container=0x7f090106;
         public static final int dateholder=0x7f0901f1;
         public static final int decrement=0x7f09025c;
