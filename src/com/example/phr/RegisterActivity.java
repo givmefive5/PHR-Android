@@ -51,7 +51,7 @@ public class RegisterActivity extends Activity {
 				}
 				else
 				{
-					mTextValid.setText("mali");
+					mTextValid.setText("mali daw");
 					Log.e("mali1", "mali2");
 				}
 				
