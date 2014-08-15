@@ -17,11 +17,11 @@ import com.example.phr.exceptions.WebServerException;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
-public abstract class BasicDaoImpl {	
+public abstract class BasicDaoImpl {
 
 	protected String performHttpRequest_String(String command,
 			String jsonStringParams) throws WebServerException {
-		String address = "http://10.100.217.13:8080/PHR-WebServer/" + command;
+		String address = "http://10.0.2.2:8080/PHR-WebServer/" + command;
 		try {
 			HttpClient client = new DefaultHttpClient();
 			HttpPost post = new HttpPost(address);

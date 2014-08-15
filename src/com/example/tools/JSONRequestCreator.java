@@ -3,11 +3,14 @@ package com.example.tools;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.util.Log;
+
 public class JSONRequestCreator {
 
 	public static JSONObject createJSONRequest(Object object, String message)
 			throws JSONException {
 		JSONObject json = new JSONObject();
+		Log.e("gson", GSONConverter.convertObjectToJSON(object).toString());
 		json.put("data", GSONConverter.convertObjectToJSON(object));
 		json.put("message", message);
 

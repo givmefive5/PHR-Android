@@ -36,27 +36,30 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 			throws WebServerException {
 
 		try {
-			String command = "/user/validateLogin";
+			String command = "user/validateLogin";
 
 			Map<String, String> map = new HashMap<String, String>();
 			map.put("username", username);
 			map.put("hashedPassword", hashedPassword);
 			JSONObject json = JSONRequestCreator.createJSONRequest(map, null);
-
 			JSONObject response = performHttpRequest_JSON(command,
 					json.toString());
-			if (response.getJSONObject("data").get("isValid").equals("true"))
+			if (response.getJSONObject("data").get("isValid").equals("true")) {
 				return true;
-			else if (response.getJSONObject("data").get("isValid")
-					.equals("true"))
+			} else if (response.getJSONObject("data").get("isValid")
+					.equals("false")) {
 				return false;
-			else
+			} else {
 				throw new WebServerException(
 						"An error has occurred while communicating"
 								+ "with the web server.");
+			}
 		} catch (JSONException e) {
 			throw new WebServerException("An error has occurred while parsing"
 					+ "the web server response.");
+
+		} catch (WebServerException e) {
+			throw e;
 		}
 	}
 
