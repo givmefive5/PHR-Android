@@ -83,8 +83,8 @@ public class BloodPressureAdapter extends BaseAdapter{
 		viewHolder.time.setText(String.valueOf(mListOfBloodPressure.get(
 				position).getTime()));
 		
-		viewHolder.image.setImageDrawable(mListOfBloodPressure.get(position)
-				.getImage());
+		/*viewHolder.image.setImageDrawable(mListOfBloodPressure.get(position)
+				.getImage());*/
 		
 		convertView.setOnClickListener(new OnClickListener() {
 
