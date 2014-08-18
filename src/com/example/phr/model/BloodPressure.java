@@ -1,8 +1,5 @@
 package com.example.phr.model;
 
-import java.sql.Date;
-
-import android.graphics.drawable.Drawable;
 
 public class BloodPressure {
 	// in millimeters of mercury
@@ -11,58 +8,16 @@ public class BloodPressure {
 	int diastolic;
 	String date;
 	String time;
-	Drawable image;
-	String description;
-	
-	public BloodPressure()
-	{
-		
-	}
+	String status;
 
-	public BloodPressure(int id, int systolic, int diastolic, String date,String time,
-			String description,  Drawable image) {
-		super();
-		this.id = id;
-		this.systolic = systolic;
-		this.diastolic = diastolic;
-		this.date = date;
-		this.description = description;
-		this.time = time;
-		this.image = image;
-	}
-
-	public BloodPressure(int systolic, int diastolic, String date,String time,
-			String description) {
+	public BloodPressure(int systolic, int diastolic, String date, String time,
+			String status) {
 		super();
 		this.systolic = systolic;
 		this.diastolic = diastolic;
 		this.date = date;
-		this.description = description;
 		this.time = time;
-	}
-
-	public Drawable getImage() {
-		return image;
-	}
-
-	public void setImage(Drawable image) {
-		this.image = image;
-	}
-	
-	public String getTime() {
-		return time;
-	}
-
-	public void setTime(String time) {
-		this.time = time;
-	}
-	
-	public long getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
+		this.status = status;
 	}
 
 	public int getSystolic() {
@@ -89,12 +44,20 @@ public class BloodPressure {
 		this.date = date;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getTime() {
+		return time;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 }
