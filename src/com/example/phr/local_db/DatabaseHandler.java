@@ -53,18 +53,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
     
-    public void setAccessToken(String t){
-        SQLiteDatabase db = this.getWritableDatabase();
-        
-        db.delete(TABLE_ACCESSTOKEN, null, null);
- 
-        ContentValues values = new ContentValues();
-        values.put(KEY_ACCESSTOKEN, t); 
- 
-        db.insert(TABLE_ACCESSTOKEN, null, values);
-        db.close(); 
-    }
-    
     public String getAccessToken() {
        String accesstoken = "";
        String selectQuery = "SELECT  * FROM " + TABLE_ACCESSTOKEN;
@@ -123,4 +111,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
        // return contact list
        return bpList;
     }
+
+	public void setAccessToken(String accessToken) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        
+        db.delete(TABLE_ACCESSTOKEN, null, null);
+ 
+        ContentValues values = new ContentValues();
+        values.put(KEY_ACCESSTOKEN, accessToken); 
+ 
+        db.insert(TABLE_ACCESSTOKEN, null, values);
+        db.close(); 
+	}
 }
