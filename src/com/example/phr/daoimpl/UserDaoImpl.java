@@ -78,6 +78,10 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 								+ "with the web server.");
 
 			if (response.getJSONObject("data").get("isValid").equals("true")) {
+				String userAccessToken = response.getJSONObject("data")
+						.getString("userAccessToken");
+				System.out.println(userAccessToken);
+				setAccessToken(username, userAccessToken);
 				return true;
 			} else if (response.getJSONObject("data").get("isValid")
 					.equals("false")) {
