@@ -49,10 +49,10 @@ public class LoginActivity extends Activity {
 
 		formUsername = (EditText) findViewById(R.id.txtUsername);
 		formPassword = (EditText) findViewById(R.id.txtPassword);
-		final SPreference sp = new SPreference(HealthGem.getContext());
-		
-		formUsername.setText(sp.loadPreferences("id"));
+/*		final SPreference sp = new SPreference(HealthGem.getContext());
 
+		sp.savePreferences("id", "check");
+		formUsername.setText(sp.loadPreferences("id"));*/
 		mBtnLogin.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -60,7 +60,7 @@ public class LoginActivity extends Activity {
 				username = formUsername.getText().toString();
 				password = formPassword.getText().toString();
 				
-				sp.savePreferences("id", username);
+				//sp.savePreferences("id", username);
 /*
 				if (password.length() > 0 && username.length() > 0) {
 					try {
