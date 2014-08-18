@@ -2,10 +2,9 @@ package com.example.phr.serviceimpl;
 
 import com.example.phr.dao.UserDao;
 import com.example.phr.daoimpl.UserDaoImpl;
-import com.example.phr.exceptions.WebServerException;
-import com.example.phr.exceptions.DuplicateUserException;
 import com.example.phr.exceptions.ServiceException;
 import com.example.phr.exceptions.UserAlreadyExistsException;
+import com.example.phr.exceptions.WebServerException;
 import com.example.phr.model.User;
 import com.example.phr.service.UserService;
 
@@ -14,8 +13,8 @@ public class UserServiceImpl implements UserService {
 	UserDao userDao = new UserDaoImpl();
 
 	@Override
-	public void registerUser(User user) throws DuplicateUserException,
-			ServiceException, UserAlreadyExistsException {
+	public void registerUser(User user) throws ServiceException,
+			UserAlreadyExistsException {
 		try {
 			userDao.registerUser(user);
 		} catch (WebServerException e) {

@@ -1,5 +1,6 @@
 package com.example.tools;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
@@ -19,10 +20,12 @@ public class GSONConverter {
 		return gson.fromJson(jsonString, classTypeToGenerate);
 	}
 
-	public static String convertObjectToJSON(Object objectToBeConverted) {
+	public static JSONObject convertObjectToJSON(Object objectToBeConverted)
+			throws JSONException {
 		if (objectToBeConverted.getClass().equals(JSONObject.class))
-			return objectToBeConverted.toString();
+			return (JSONObject) objectToBeConverted;
 		Gson gson = new Gson();
-		return gson.toJson(objectToBeConverted);
+		String jsonString = gson.toJson(objectToBeConverted);
+		return new JSONObject(jsonString);
 	}
 }

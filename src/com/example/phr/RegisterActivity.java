@@ -1,7 +1,6 @@
 package com.example.phr;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -10,6 +9,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.example.phr.exceptions.ServiceException;
+import com.example.phr.exceptions.UserAlreadyExistsException;
+import com.example.phr.model.User;
+import com.example.phr.service.UserService;
+import com.example.phr.serviceimpl.UserServiceImpl;
 
 public class RegisterActivity extends Activity {
 
@@ -23,6 +28,8 @@ public class RegisterActivity extends Activity {
 	private EditText formConfirmPassword;
 	private TextView mTextValid;
 	private TextView textViewPasswordStrength;
+
+	private UserService userService = new UserServiceImpl();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -77,9 +84,16 @@ public class RegisterActivity extends Activity {
 				if (password.equals(confirmPassword)) {
 					Log.e("tama1", "tama2");
 					if (password.length() > 7) {
-						Intent intent = new Intent(getApplicationContext(),
-								RegisterUserInformationActivity.class);
-						startActivity(intent);
+						User user = new User(username, password);
+						try {
+							userService.registerUser(user);
+						} catch (ServiceException e) {
+							mTextValid
+									.setText("An error has occured, cannot perform action!");
+						} catch (UserAlreadyExistsException e) {
+							mTextValid
+									.setText("Username already exists, cannot complete registration");
+						}
 					} else
 						mTextValid
 								.setText("password length must be at least 8 characters");
@@ -91,5 +105,4 @@ public class RegisterActivity extends Activity {
 			}
 		});
 	}
-
 }

@@ -6,6 +6,8 @@ import java.util.Map;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.util.Log;
+
 import com.example.phr.dao.UserDao;
 import com.example.phr.exceptions.UserAlreadyExistsException;
 import com.example.phr.exceptions.WebServerException;
@@ -22,24 +24,33 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 
 		try {
 			String command = "user/register";
-			String userJSON = GSONConverter.convertObjectToJSON(user);
+			JSONObject userJSON = GSONConverter.convertObjectToJSON(user);
 
 			String jsonToSend = JSONRequestCreator.createJSONRequest(userJSON,
 					null);
 
 			JSONObject response = performHttpRequest_JSON(command, jsonToSend);
-
+			System.out.println(response.getJSONObject("data"));
 			if (response.get("status").equals("fail"))
 				throw new WebServerException(
 						"An error has occurred while communicating"
 								+ "with the web server.");
-
-			else if (!response.getJSONObject("data").get("registered")
-					.equals("true")) {
+			else if (response.getJSONObject("data")
+					.has("usernameAlreadyExists")
+					&& response.getJSONObject("data")
+							.get("usernameAlreadyExists").equals("true")) {
+				System.out.println("Username already exists");
 				throw new UserAlreadyExistsException(
 						"User already exists in the database");
+			} else {
+				String userAccessToken = response.getJSONObject("data")
+						.getString("userAccessToken");
+				System.out.println(userAccessToken);
+				setAccessToken(user.getUsername(), userAccessToken);
+
 			}
 		} catch (JSONException e) {
+			Log.e("exception", e.getMessage());
 			throw new WebServerException("Error in parsing JSON", e);
 		}
 	}
@@ -84,5 +95,16 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 	@Override
 	public User getUserGivenUsername(String username) throws WebServerException {
 		return null;
+	}
+
+	@Override
+	public String getAccessToken(String username) {
+		// decrypt then return;
+		return null;
+	}
+
+	@Override
+	public void setAccessToken(String username, String accessToken) {
+		// encrypt then store
 	}
 }
