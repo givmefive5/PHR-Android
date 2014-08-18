@@ -9,6 +9,10 @@ public class BloodPressure {
 	String date;
 	String time;
 	String status;
+	
+	public BloodPressure(){
+		
+	}
 
 	public BloodPressure(int systolic, int diastolic, String date, String time,
 			String status) {

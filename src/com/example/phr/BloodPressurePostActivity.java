@@ -1,5 +1,6 @@
 package com.example.phr;
 
+import com.example.phr.application.HealthGem;
 import com.example.phr.local_db.DatabaseHandler;
 import com.example.phr.model.BloodPressure;
 
@@ -72,8 +73,8 @@ public class BloodPressurePostActivity extends Activity{
 	}
 
 	private void addBloodPressureToDatabase() {
-		DatabaseHandler db = new DatabaseHandler(this);
-		Log.d("Insert: ", "Inserting ..");
+		DatabaseHandler db = new DatabaseHandler(this.getApplicationContext());
+		Log.e("Insert: ", "Inserting ..");
         db.addBloodPressure(new BloodPressure(systolicPicker.getCurrent(), diastolicPicker.getCurrent(), textViewBloodPressureCalendar.getText().toString(), textViewBloodPressureClock.getText().toString(), textViewbloodpressureStatus.getText().toString()));  
 	}
 

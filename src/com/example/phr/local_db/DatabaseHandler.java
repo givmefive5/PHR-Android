@@ -10,6 +10,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
  
 public class DatabaseHandler extends SQLiteOpenHelper {
  
@@ -71,13 +72,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Adding new bp
     public void addBloodPressure(BloodPressure bp) {
         SQLiteDatabase db = this.getWritableDatabase();
- 
+
+		Log.e("bp: ", "insert db ..");
         ContentValues values = new ContentValues();
         values.put(KEY_DATE, bp.getDate()); 
         values.put(KEY_TIME, bp.getTime()); 
         values.put(KEY_SYSTOLIC, bp.getSystolic()); 
         values.put(KEY_DIASTOLIC, bp.getDiastolic()); 
-        //values.put(KEY_STATUS, bp.getDescription()); 
+        values.put(KEY_STATUS, bp.getStatus()); 
  
         // Inserting Row
         db.insert(TABLE_BLOODPRESSURE, null, values);
@@ -90,21 +92,23 @@ public class DatabaseHandler extends SQLiteOpenHelper {
        // Select All Query
        String selectQuery = "SELECT  * FROM " + TABLE_BLOODPRESSURE;
 
+		Log.e("bp: ", "load db ..");
        SQLiteDatabase db = this.getWritableDatabase();
        Cursor cursor = db.rawQuery(selectQuery, null);
 
        // looping through all rows and adding to list
        if (cursor.moveToFirst()) {
            do {
-/*        	   BloodPressure bp = new BloodPressure();
-               bp.setId(Integer.parseInt(cursor.getString(0)));
+        	   BloodPressure bp = new BloodPressure();
+              // bp.setId(Integer.parseInt(cursor.getString(0)));
+        	   Log.e("data", cursor.getString(1));
                bp.setDate(cursor.getString(1));
                bp.setTime(cursor.getString(2));
                bp.setSystolic(Integer.parseInt(cursor.getString(3)));
                bp.setDiastolic(Integer.parseInt(cursor.getString(4)));
-               bp.setDescription(cursor.getString(5));*/
+               bp.setStatus(cursor.getString(5));
                // Adding contact to list
-               //bpList.add(bp);
+               bpList.add(bp);
            } while (cursor.moveToNext());
        }
 

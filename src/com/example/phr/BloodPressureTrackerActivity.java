@@ -211,6 +211,7 @@ public class BloodPressureTrackerActivity extends Activity{
 	    // Inflate the menu items for use in the action bar
 	    MenuInflater inflater = getMenuInflater();
 	    inflater.inflate(R.menu.menu_tracker_help, menu);
+		Log.e("bp: ", "start ..");
 	    return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -218,20 +219,13 @@ public class BloodPressureTrackerActivity extends Activity{
 	protected void onResume() {
 		super.onResume();
 		DatabaseHandler db = new DatabaseHandler(this);
+		Log.e("bp: ", "resume ..");
 		list = db.getAllBloodPressure();
 		for(BloodPressure bp:list){
 			//bp.setImage(getResources().getDrawable(R.drawable.bloodpressure_warning));
 		}
 		bloodPressureAdapter = new BloodPressureAdapter(getApplicationContext(), list);
 		mBloodPressureList.setAdapter(bloodPressureAdapter);
-		
-		/*
-		DatabaseHandler db = new DatabaseHandler(this);
-		list = db.getAllBloodPressure();
-		bloodPressureAdapter
-		mBloodPressureList.removeAllViews();
-		mBloodPressureList.invalidateViews();
-		bloodPressureAdapter.notifyDataSetChanged();*/
 		
 		
 		//Graph	

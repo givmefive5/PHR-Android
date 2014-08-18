@@ -66,11 +66,11 @@ public class LoginActivity extends Activity {
 					try {
 						boolean isValid = userService.validateUser(username,
 								password);
-						if (isValid) {
+						if (isValid) {*/
 							Intent intent = new Intent(getApplicationContext(),
 									MainActivity.class);
 							startActivity(intent);
-						} else {
+						/*} else {
 							mTextValid.setText("Invalid Username/Password");
 						}
 					} catch (ServiceException e) {

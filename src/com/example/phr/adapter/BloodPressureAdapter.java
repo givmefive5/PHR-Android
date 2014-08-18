@@ -28,7 +28,7 @@ public class BloodPressureAdapter extends BaseAdapter{
 		TextView dia;
 		TextView date;
 		TextView time;
-		ImageView image;
+		//ImageView image;
 	}
 	
 	
@@ -68,8 +68,8 @@ public class BloodPressureAdapter extends BaseAdapter{
 			viewHolder.time = (TextView) convertView
 					.findViewById(R.id.txttime);
 			
-			viewHolder.image = (ImageView) convertView
-					.findViewById(R.id.image);
+			//viewHolder.image = (ImageView) convertView
+			//		.findViewById(R.id.image);
 			
 			convertView.setTag(viewHolder);
 		}
