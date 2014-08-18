@@ -108,7 +108,7 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void setAccessToken(String username, String accessToken) {
+	public void setAccessToken(String accessToken) {
 		// encrypt then store
 	}
 }
