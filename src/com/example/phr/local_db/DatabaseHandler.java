@@ -77,7 +77,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_TIME, bp.getTime()); 
         values.put(KEY_SYSTOLIC, bp.getSystolic()); 
         values.put(KEY_DIASTOLIC, bp.getDiastolic()); 
-        values.put(KEY_STATUS, bp.getDescription()); 
+        //values.put(KEY_STATUS, bp.getDescription()); 
  
         // Inserting Row
         db.insert(TABLE_BLOODPRESSURE, null, values);
@@ -96,15 +96,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
        // looping through all rows and adding to list
        if (cursor.moveToFirst()) {
            do {
-        	   BloodPressure bp = new BloodPressure();
+/*        	   BloodPressure bp = new BloodPressure();
                bp.setId(Integer.parseInt(cursor.getString(0)));
                bp.setDate(cursor.getString(1));
                bp.setTime(cursor.getString(2));
                bp.setSystolic(Integer.parseInt(cursor.getString(3)));
                bp.setDiastolic(Integer.parseInt(cursor.getString(4)));
-               bp.setDescription(cursor.getString(5));
+               bp.setDescription(cursor.getString(5));*/
                // Adding contact to list
-               bpList.add(bp);
+               //bpList.add(bp);
            } while (cursor.moveToNext());
        }
 
