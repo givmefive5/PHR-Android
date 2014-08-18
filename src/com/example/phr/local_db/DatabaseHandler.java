@@ -16,6 +16,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "HealthGem";
     private static final String TABLE_BLOODPRESSURE = "bloodpressure";
+    private static final String TABLE_ACCESSTOKEN = "accesstoken";
  
     // Contacts Table Columns names
     private static final String KEY_ID = "id";
@@ -24,6 +25,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_SYSTOLIC= "systolic";
     private static final String KEY_DIASTOLIC= "diastolic";
     private static final String KEY_STATUS = "status";
+    private static final String KEY_ACCESSTOKEN = "token";
  
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -35,7 +37,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         String CREATE_BLOODPRESSURE_TABLE = "CREATE TABLE " + TABLE_BLOODPRESSURE + "("
                 + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_DATE + " TEXT,"
                 + KEY_TIME + " TEXT," + KEY_SYSTOLIC + " TEXT," + KEY_DIASTOLIC + " TEXT," + KEY_STATUS + " TEXT" + ")";
+        String CREATE_ACCESSTOKEN_TABLE = "CREATE TABLE " + TABLE_ACCESSTOKEN + "(" + KEY_TIME + " TEXT" + ")";
         db.execSQL(CREATE_BLOODPRESSURE_TABLE);
+        db.execSQL(CREATE_ACCESSTOKEN_TABLE);
     }
  
     // Upgrading database
@@ -43,9 +47,37 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Drop older table if existed
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_BLOODPRESSURE);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_ACCESSTOKEN);
  
         // Create tables again
         onCreate(db);
+    }
+    
+    public void setAccessToken(String t){
+        SQLiteDatabase db = this.getWritableDatabase();
+        
+        db.delete(TABLE_ACCESSTOKEN, null, null);
+ 
+        ContentValues values = new ContentValues();
+        values.put(KEY_ACCESSTOKEN, t); 
+ 
+        db.insert(TABLE_ACCESSTOKEN, null, values);
+        db.close(); 
+    }
+    
+    public String getAccessToken() {
+       String accesstoken = "";
+       String selectQuery = "SELECT  * FROM " + TABLE_ACCESSTOKEN;
+
+       SQLiteDatabase db = this.getWritableDatabase();
+       Cursor cursor = db.rawQuery(selectQuery, null);
+       if (cursor.moveToFirst()) {
+           do {
+        	   accesstoken = cursor.getString(0);
+           } while (cursor.moveToNext());
+       }
+
+       return accesstoken;
     }
     
     // Adding new bp
