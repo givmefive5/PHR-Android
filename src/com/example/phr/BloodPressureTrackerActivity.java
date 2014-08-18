@@ -74,7 +74,7 @@ public class BloodPressureTrackerActivity extends Activity{
 		DatabaseHandler db = new DatabaseHandler(this);
 		list = db.getAllBloodPressure();
 		for(BloodPressure bp:list){
-			bp.setImage(getResources().getDrawable(R.drawable.bloodpressure_warning));
+			//bp.setImage(getResources().getDrawable(R.drawable.bloodpressure_warning));
 		}
 		
 
@@ -220,7 +220,7 @@ public class BloodPressureTrackerActivity extends Activity{
 		DatabaseHandler db = new DatabaseHandler(this);
 		list = db.getAllBloodPressure();
 		for(BloodPressure bp:list){
-			bp.setImage(getResources().getDrawable(R.drawable.bloodpressure_warning));
+			//bp.setImage(getResources().getDrawable(R.drawable.bloodpressure_warning));
 		}
 		bloodPressureAdapter = new BloodPressureAdapter(getApplicationContext(), list);
 		mBloodPressureList.setAdapter(bloodPressureAdapter);
