@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.phr.application.HealthGem;
 import com.example.phr.exceptions.ServiceException;
 import com.example.phr.local_db.SPreference;
 import com.example.phr.service.UserService;
@@ -48,7 +49,7 @@ public class LoginActivity extends Activity {
 
 		formUsername = (EditText) findViewById(R.id.txtUsername);
 		formPassword = (EditText) findViewById(R.id.txtPassword);
-		final SPreference sp = new SPreference(this.getApplicationContext());
+		final SPreference sp = new SPreference(HealthGem.getContext());
 		
 		formUsername.setText(sp.loadPreferences("id"));
 

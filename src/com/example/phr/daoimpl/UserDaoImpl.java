@@ -8,6 +8,7 @@ import org.json.JSONObject;
 
 import android.util.Log;
 
+import com.example.phr.application.HealthGem;
 import com.example.phr.dao.UserDao;
 import com.example.phr.exceptions.UserAlreadyExistsException;
 import com.example.phr.exceptions.WebServerException;
@@ -47,7 +48,7 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 				String userAccessToken = response.getJSONObject("data")
 						.getString("userAccessToken");
 				System.out.println(userAccessToken);
-				//setAccessToken(userAccessToken);
+				setAccessToken(userAccessToken);
 
 			}
 		} catch (JSONException e) {
@@ -82,7 +83,7 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 				String userAccessToken = response.getJSONObject("data")
 						.getString("userAccessToken");
 				System.out.println(userAccessToken);
-				//setAccessToken(userAccessToken);
+				setAccessToken(userAccessToken);
 				return true;
 			} else if (response.getJSONObject("data").get("isValid")
 					.equals("false")) {
@@ -104,27 +105,14 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 
 	@Override
 	public String getAccessToken() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setAccessToken(String accessToken) {
-		// TODO Auto-generated method stub
-		
-	}
-
-/*	@Override
-	public String getAccessToken() {
 		DatabaseHandler db = new DatabaseHandler(HealthGem.getContext());
 		return db.getAccessToken();
-		return null;
 	}
 
 	@Override
 	public void setAccessToken(String accessToken) {
 		DatabaseHandler db = new DatabaseHandler(HealthGem.getContext());
 		db.setAccessToken(accessToken);
-		return null;
-	}*/
+		
+	}
 }
