@@ -9,7 +9,6 @@ import org.json.JSONObject;
 import android.content.Context;
 import android.util.Log;
 
-import com.example.phr.application.HealthGem;
 import com.example.phr.dao.UserDao;
 import com.example.phr.exceptions.UserAlreadyExistsException;
 import com.example.phr.exceptions.WebServerException;

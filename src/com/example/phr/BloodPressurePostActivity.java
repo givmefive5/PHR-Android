@@ -1,6 +1,5 @@
 package com.example.phr;
 
-import com.example.phr.application.HealthGem;
 import com.example.phr.local_db.DatabaseHandler;
 import com.example.phr.model.BloodPressure;
 
