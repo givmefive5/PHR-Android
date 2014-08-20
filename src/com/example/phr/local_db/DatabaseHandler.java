@@ -124,8 +124,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	public void setAccessToken(String accessToken) {
 		SQLiteDatabase db = this.getWritableDatabase();
 
-		// db.delete(TABLE_ACCESSTOKEN, null, null);
-		db.execSQL("delete * from " + TABLE_ACCESSTOKEN);
+		db.delete(TABLE_ACCESSTOKEN, null, null);
+		// db.execSQL("delete * from " + TABLE_ACCESSTOKEN);
 
 		ContentValues values = new ContentValues();
 		values.put(KEY_ACCESSTOKEN, accessToken);

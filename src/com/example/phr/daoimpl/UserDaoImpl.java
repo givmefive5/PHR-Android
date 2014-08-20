@@ -19,7 +19,7 @@ import com.example.tools.Hasher;
 import com.example.tools.JSONRequestCreator;
 
 public class UserDaoImpl extends BasicDaoImpl implements UserDao {
-	
+
 	private Context context;
 
 	public UserDaoImpl(Context applicationContext) {
@@ -90,6 +90,7 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 						.getString("userAccessToken");
 				System.out.println(userAccessToken);
 				setAccessToken(userAccessToken);
+				System.out.println(getAccessToken());
 				return true;
 			} else if (response.getJSONObject("data").get("isValid")
 					.equals("false")) {
