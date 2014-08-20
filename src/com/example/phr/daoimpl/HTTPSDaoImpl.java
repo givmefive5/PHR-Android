@@ -20,23 +20,31 @@ import com.example.phr.exceptions.WebServerException;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
-public abstract class BasicDaoImpl {
+public abstract class HTTPSDaoImpl {
 
 	protected String performHttpRequest_String(String command,
 			String jsonStringParams) throws WebServerException {
 		String address = "http://10.0.2.2:8080/PHR-WebServer/" + command;
 		try {
-			HttpClient client = new DefaultHttpClient();
-			HttpPost post = new HttpPost(address);
+			//Create the HTTP request
+			HttpParams httpParameters = new BasicHttpParams();
+
+			//Setup timeouts
+			HttpConnectionParams.setConnectionTimeout(httpParameters, 15000);
+			HttpConnectionParams.setSoTimeout(httpParameters, 15000);			
+
+			HttpClient httpclient = new DefaultHttpClient(httpParameters);
+			HttpPost httppost = new HttpPost(address);
 			StringEntity se = new StringEntity(jsonStringParams);
-			se.setContentType(new BasicHeader(HTTP.CONTENT_TYPE,
-					"application/json"));
-			post.setEntity(se);
-			HttpResponse response = client.execute(post);
+			se.setContentType(new BasicHeader(HTTP.CONTENT_TYPE,"application/json"));
+			httppost.setEntity(se);
+			HttpResponse response = httpclient.execute(httppost);
 			ByteArrayOutputStream out = new ByteArrayOutputStream();
 			out.close();
 			response.getEntity().writeTo(out);
 			return out.toString();
+
+			
 			
 		} catch (IOException e) {
 			throw new WebServerException("Error in HTTP", e);
