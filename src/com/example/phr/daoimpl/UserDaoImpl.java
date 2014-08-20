@@ -105,14 +105,16 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 
 	@Override
 	public String getAccessToken() {
+		// decrypt
 		DatabaseHandler db = new DatabaseHandler(HealthGem.getContext());
 		return db.getAccessToken();
 	}
 
 	@Override
 	public void setAccessToken(String accessToken) {
+		// encrypt
 		DatabaseHandler db = new DatabaseHandler(HealthGem.getContext());
 		db.setAccessToken(accessToken);
-		
+
 	}
 }
