@@ -22,9 +22,9 @@ import com.example.tools.JSONRequestCreator;
 public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 	
 	private Context context;
-	
-	public UserDaoImpl(Context context){
-		this.context = context;
+
+	public UserDaoImpl(Context applicationContext) {
+		context = applicationContext;
 	}
 
 	@Override

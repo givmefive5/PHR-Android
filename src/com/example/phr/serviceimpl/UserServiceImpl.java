@@ -14,10 +14,10 @@ public class UserServiceImpl implements UserService {
 
 	UserDao userDao;
 	Context context;
-	
-	public UserServiceImpl(Context context){
-		this.context = context;
-		userDao = new UserDaoImpl(context);
+
+	public UserServiceImpl(Context applicationContext) {
+		context = applicationContext;
+		userDao = new UserDaoImpl(applicationContext);
 	}
 
 	@Override

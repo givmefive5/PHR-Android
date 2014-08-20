@@ -49,10 +49,10 @@ public class LoginActivity extends Activity {
 
 		formUsername = (EditText) findViewById(R.id.txtUsername);
 		formPassword = (EditText) findViewById(R.id.txtPassword);
-/*		final SPreference sp = new SPreference(HealthGem.getContext());
-
-		sp.savePreferences("id", "check");
-		formUsername.setText(sp.loadPreferences("id"));*/
+		
+		final SPreference sp = new SPreference(this.getApplicationContext());
+		formUsername.setText(sp.loadPreferences("id"));
+		
 		mBtnLogin.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -61,16 +61,16 @@ public class LoginActivity extends Activity {
 				password = formPassword.getText().toString();
 				
 				//sp.savePreferences("id", username);
-/*
+
 				if (password.length() > 0 && username.length() > 0) {
 					try {
 						boolean isValid = userService.validateUser(username,
 								password);
-						if (isValid) {*/
+						if (isValid) {
 							Intent intent = new Intent(getApplicationContext(),
 									MainActivity.class);
 							startActivity(intent);
-						/*} else {
+						} else {
 							mTextValid.setText("Invalid Username/Password");
 						}
 					} catch (ServiceException e) {
@@ -81,7 +81,7 @@ public class LoginActivity extends Activity {
 
 				else {
 					mTextValid.setText("Please Input Password & Username");
-				}*/
+				}
 
 			}
 		});
