@@ -50,8 +50,8 @@ public class LoginActivity extends Activity {
 		formUsername = (EditText) findViewById(R.id.txtUsername);
 		formPassword = (EditText) findViewById(R.id.txtPassword);
 		
-		final SPreference sp = new SPreference(this.getApplicationContext());
-		formUsername.setText(sp.loadPreferences("id"));
+/*		final SPreference sp = new SPreference(this.getApplicationContext());
+		formUsername.setText(sp.loadPreferences("id"));*/
 		
 		mBtnLogin.setOnClickListener(new View.OnClickListener() {
 			@Override
