@@ -29,7 +29,7 @@ public class RegisterActivity extends Activity {
 	private TextView mTextValid;
 	private TextView textViewPasswordStrength;
 
-	private UserService userService = new UserServiceImpl();
+	private UserService userService = new UserServiceImpl(this.getApplicationContext());
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

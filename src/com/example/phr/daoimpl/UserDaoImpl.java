@@ -6,6 +6,7 @@ import java.util.Map;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.example.phr.application.HealthGem;
@@ -19,6 +20,12 @@ import com.example.tools.Hasher;
 import com.example.tools.JSONRequestCreator;
 
 public class UserDaoImpl extends BasicDaoImpl implements UserDao {
+	
+	private Context context;
+	
+	public UserDaoImpl(Context context){
+		this.context = context;
+	}
 
 	@Override
 	public void registerUser(User user) throws WebServerException,
@@ -106,14 +113,14 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 	@Override
 	public String getAccessToken() {
 		// decrypt
-		DatabaseHandler db = new DatabaseHandler(HealthGem.getContext());
+		DatabaseHandler db = new DatabaseHandler(context);
 		return db.getAccessToken();
 	}
 
 	@Override
 	public void setAccessToken(String accessToken) {
 		// encrypt
-		DatabaseHandler db = new DatabaseHandler(HealthGem.getContext());
+		DatabaseHandler db = new DatabaseHandler(context);
 		db.setAccessToken(accessToken);
 
 	}

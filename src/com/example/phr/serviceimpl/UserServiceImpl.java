@@ -1,5 +1,7 @@
 package com.example.phr.serviceimpl;
 
+import android.content.Context;
+
 import com.example.phr.dao.UserDao;
 import com.example.phr.daoimpl.UserDaoImpl;
 import com.example.phr.exceptions.ServiceException;
@@ -10,7 +12,13 @@ import com.example.phr.service.UserService;
 
 public class UserServiceImpl implements UserService {
 
-	UserDao userDao = new UserDaoImpl();
+	UserDao userDao;
+	Context context;
+	
+	public UserServiceImpl(Context context){
+		this.context = context;
+		userDao = new UserDaoImpl(context);
+	}
 
 	@Override
 	public void registerUser(User user) throws ServiceException,

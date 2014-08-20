@@ -31,7 +31,7 @@ public class LoginActivity extends Activity {
 	private PasswordValidator passwordValidator;
 	private TextView mTextValid;
 
-	private UserService userService = new UserServiceImpl();
+	private UserService userService = new UserServiceImpl(this.getApplicationContext());
 
 	@SuppressLint("NewApi")
 	@Override
