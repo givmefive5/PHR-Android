@@ -29,13 +29,12 @@ public class LoginActivity extends Activity {
 	private PasswordValidator passwordValidator;
 	private TextView mTextValid;
 
-	private UserService userService = new UserServiceImpl(this.getApplicationContext());
+	private UserService userService;
 
 	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
 				.permitAll().build();
 
@@ -47,6 +46,8 @@ public class LoginActivity extends Activity {
 
 		formUsername = (EditText) findViewById(R.id.txtUsername);
 		formPassword = (EditText) findViewById(R.id.txtPassword);
+		userService = new UserServiceImpl(this.getApplicationContext());
+
 		
 /*		final SPreference sp = new SPreference(this.getApplicationContext());
 		formUsername.setText(sp.loadPreferences("id"));*/
