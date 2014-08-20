@@ -38,7 +38,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         String CREATE_BLOODPRESSURE_TABLE = "CREATE TABLE " + TABLE_BLOODPRESSURE + "("
                 + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_DATE + " TEXT,"
                 + KEY_TIME + " TEXT," + KEY_SYSTOLIC + " TEXT," + KEY_DIASTOLIC + " TEXT," + KEY_STATUS + " TEXT" + ")";
-        String CREATE_ACCESSTOKEN_TABLE = "CREATE TABLE " + TABLE_ACCESSTOKEN + "(" + KEY_TIME + " TEXT" + ")";
+        String CREATE_ACCESSTOKEN_TABLE = "CREATE TABLE " + TABLE_ACCESSTOKEN + "(" + KEY_ACCESSTOKEN + " TEXT" + ")";
         db.execSQL(CREATE_BLOODPRESSURE_TABLE);
         db.execSQL(CREATE_ACCESSTOKEN_TABLE);
     }
