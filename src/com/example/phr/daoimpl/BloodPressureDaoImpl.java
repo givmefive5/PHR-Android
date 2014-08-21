@@ -17,8 +17,8 @@ public class BloodPressureDaoImpl extends BasicDaoImpl implements
 
 	UserDao userDao;
 	Context context;
-	
-	public BloodPressureDaoImpl(Context context){
+
+	public BloodPressureDaoImpl(Context context) {
 		this.context = context;
 		userDao = new UserDaoImpl(context);
 	}
@@ -39,8 +39,10 @@ public class BloodPressureDaoImpl extends BasicDaoImpl implements
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} catch (Exception e) {
+			throw new WebServerException(
+					"An error has occurred while processing the request.", e);
 		}
 
 	}
-
 }
