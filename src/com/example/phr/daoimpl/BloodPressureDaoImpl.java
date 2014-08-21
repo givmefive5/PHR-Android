@@ -18,10 +18,12 @@ public class BloodPressureDaoImpl extends HTTPSDaoImpl implements
 
 	UserDao userDao;
 	Context context;
+	JSONRequestCreator jsonRequestCreator;
 
 	public BloodPressureDaoImpl(Context context) {
 		this.context = context;
 		userDao = new UserDaoImpl(context);
+		jsonRequestCreator = new JSONRequestCreator(context);
 	}
 
 	@Override
@@ -35,7 +37,7 @@ public class BloodPressureDaoImpl extends HTTPSDaoImpl implements
 			data.put("username", userDao.getAccessToken().getUserName());
 			data.put("bloodPressure",
 					GSONConverter.convertObjectToJSON(bloodPressure));
-			String jsonToSend = JSONRequestCreator
+			String jsonToSend = jsonRequestCreator
 					.createJSONRequest(data, null);
 			JSONObject response = performHttpRequest_JSON(command, jsonToSend);
 			if (response.get("status").equals("fail"))

@@ -3,11 +3,19 @@ package com.example.tools;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.Context;
+
 import com.example.phr.model.Client;
 
 public class JSONRequestCreator {
 
-	public static String createJSONRequest(Object object, String message)
+	Context context;
+
+	public JSONRequestCreator(Context context) {
+		this.context = context;
+	}
+
+	public String createJSONRequest(Object object, String message)
 			throws JSONException {
 		JSONObject json = new JSONObject();
 

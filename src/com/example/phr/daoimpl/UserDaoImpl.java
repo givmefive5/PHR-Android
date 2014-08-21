@@ -25,8 +25,11 @@ public class UserDaoImpl extends HTTPSDaoImpl implements UserDao {
 
 	private Context context;
 
-	public UserDaoImpl(Context applicationContext) {
-		context = applicationContext;
+	private JSONRequestCreator jsonRequestCreator;
+
+	public UserDaoImpl(Context context) {
+		this.context = context;
+		jsonRequestCreator = new JSONRequestCreator(context);
 	}
 
 	@Override
@@ -37,7 +40,7 @@ public class UserDaoImpl extends HTTPSDaoImpl implements UserDao {
 			String command = "user/register";
 			JSONObject userJSON = GSONConverter.convertObjectToJSON(user);
 
-			String jsonToSend = JSONRequestCreator.createJSONRequest(userJSON,
+			String jsonToSend = jsonRequestCreator.createJSONRequest(userJSON,
 					null);
 
 			JSONObject response = performHttpRequest_JSON(command, jsonToSend);
@@ -81,7 +84,7 @@ public class UserDaoImpl extends HTTPSDaoImpl implements UserDao {
 			String hashedPassword = Hasher.hash(password);
 			map.put("hashedPassword", hashedPassword);
 
-			String jsonToSend = JSONRequestCreator.createJSONRequest(map, null);
+			String jsonToSend = jsonRequestCreator.createJSONRequest(map, null);
 			JSONObject response = performHttpRequest_JSON(command, jsonToSend);
 
 			if (response.get("status").equals("fail")
