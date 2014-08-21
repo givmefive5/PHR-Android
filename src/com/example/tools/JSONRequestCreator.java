@@ -3,6 +3,8 @@ package com.example.tools;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.example.phr.model.Client;
+
 public class JSONRequestCreator {
 
 	public static String createJSONRequest(Object object, String message)
@@ -16,11 +18,16 @@ public class JSONRequestCreator {
 		json.put("message", message);
 
 		JSONObject auth = new JSONObject();
-		auth.put("clientID", "9543ED1349084DA816F103234217FED7A8627621");
-		auth.put("clientPassword", "Y9xSazM4fHrkNd8tMKPkbjeqKAl4YE8QXGiJ");
+		Client clientAuth = getClientAuthentication();
+		auth.put("clientID", clientAuth.getClientID());
+		auth.put("clientPassword", clientAuth.getClientPassword());
 
 		json.put("auth", auth);
 
 		return json.toString();
+	}
+
+	private static Client getClientAuthentication() {
+		return null;
 	}
 }

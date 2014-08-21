@@ -85,16 +85,19 @@ public class BloodPressurePostActivity extends Activity {
 
 	private void addBloodPressureToDatabase() throws ServiceException,
 			OutdatedAccessTokenException {
-		DatabaseHandler db = new DatabaseHandler(this.getApplicationContext());
-		Log.e("Insert: ", "Inserting ..");
 		BloodPressure bp = new BloodPressure(systolicPicker.getCurrent(),
 				diastolicPicker.getCurrent(), textViewBloodPressureCalendar
 						.getText().toString(), textViewBloodPressureClock
 						.getText().toString(), textViewbloodpressureStatus
 						.getText().toString());
-		db.addBloodPressure(bp);
+
 		BloodPressureService bpService = new BloodPressureServiceImpl(
 				this.getApplicationContext());
 		bpService.addBloodPressure(bp);
+
+		DatabaseHandler db = new DatabaseHandler(this.getApplicationContext());
+		Log.e("Insert: ", "Inserting ..");
+		db.addBloodPressure(bp);
+
 	}
 }
