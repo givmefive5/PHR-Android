@@ -2,6 +2,7 @@ package com.example.phr.dao;
 
 import com.example.phr.exceptions.UserAlreadyExistsException;
 import com.example.phr.exceptions.WebServerException;
+import com.example.phr.model.AccessToken;
 import com.example.phr.model.User;
 
 public interface UserDao {
@@ -14,7 +15,7 @@ public interface UserDao {
 	public void registerUser(User user) throws WebServerException,
 			UserAlreadyExistsException;
 
-	public String getAccessToken() throws Exception;
+	public AccessToken getAccessToken() throws Exception;
 
-	public void setAccessToken(String accessToken, String username) throws Exception;
+	public void setAccessToken(AccessToken accessToken) throws Exception;
 }

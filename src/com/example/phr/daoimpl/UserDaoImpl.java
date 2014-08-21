@@ -13,9 +13,8 @@ import com.example.phr.dao.UserDao;
 import com.example.phr.exceptions.UserAlreadyExistsException;
 import com.example.phr.exceptions.WebServerException;
 import com.example.phr.local_db.DatabaseHandler;
-import com.example.phr.model.AccessTokenObject;
+import com.example.phr.model.AccessToken;
 import com.example.phr.model.User;
-import com.example.tools.EncryptionHandler;
 import com.example.tools.GSONConverter;
 import com.example.tools.Hasher;
 import com.example.tools.JSONRequestCreator;
@@ -56,7 +55,8 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 				String userAccessToken = response.getJSONObject("data")
 						.getString("userAccessToken");
 				System.out.println(userAccessToken);
-				setAccessToken(userAccessToken, user.getUsername());
+				setAccessToken(new AccessToken(userAccessToken,
+						user.getUsername()));
 
 			}
 		} catch (JSONException e) {
@@ -88,13 +88,14 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 				throw new WebServerException(
 						"An error has occurred while communicating"
 								+ "with the web server.");
-
+			System.out.println(response);
 			if (response.getJSONObject("data").get("isValid").equals("true")) {
 				String userAccessToken = response.getJSONObject("data")
 						.getString("userAccessToken");
 				System.out.println(userAccessToken);
-				setAccessToken(userAccessToken, username);
-				System.out.println(getAccessToken());
+				setAccessToken(new AccessToken(userAccessToken, username));
+				System.out.println(getAccessToken().getAccessToken()
+						+ getAccessToken().getUserName());
 				return true;
 			} else if (response.getJSONObject("data").get("isValid")
 					.equals("false")) {
@@ -107,6 +108,7 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 			throw new WebServerException("An error has occurred while parsing"
 					+ "the web server response.");
 		} catch (Exception e) {
+			System.out.println(e.getMessage());
 			throw new WebServerException(
 					"An error has occurred while processing the request.");
 		}
@@ -118,18 +120,22 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 	}
 
 	@Override
-	public String getAccessToken() throws Exception {
+	public AccessToken getAccessToken() throws Exception {
 		DatabaseHandler db = new DatabaseHandler(context);
-		AccessTokenObject token = db.getAccessToken();
-		String encryptedToken = token.getAccessToken();
-		return EncryptionHandler.decrypt(encryptedToken);
+		AccessToken token = db.getAccessToken();
+		// String decryptedToken = EncryptionHandler.decrypt(token
+		// .getAccessToken());
+		// token.setAccessToken(decryptedToken);
+		return token;
 	}
 
 	@Override
-	public void setAccessToken(String accessToken, String username) throws Exception {
+	public void setAccessToken(AccessToken accessToken) throws Exception {
 		DatabaseHandler db = new DatabaseHandler(context);
-		String encryptedToken = EncryptionHandler.encrypt(accessToken);
-		db.setAccessToken(encryptedToken, username);
+		// String encryptedToken = EncryptionHandler.encrypt(accessToken
+		// .getAccessToken());
+		// accessToken.setAccessToken(encryptedToken);
+		db.setAccessToken(accessToken);
 
 	}
 }
