@@ -54,13 +54,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		db.execSQL(CREATE_BLOODPRESSURE_TABLE);
 		db.execSQL(CREATE_ACCESSTOKEN_TABLE);
 		db.execSQL(CREATE_CLIENT_TABLE);
-		
-		
-		// set client
-		ContentValues values = new ContentValues();
-		values.put(KEY_CLIENTID, "9543ED1349084DA816F103234217FED7A8627621");
-		values.put(KEY_CLIENTPASSWORD, "Y9xSazM4fHrkNd8tMKPkbjeqKAl4YE8QXGiJ");
-		db.insert(TABLE_CLIENT, null, values);
+
+		initClient(db);
 	}
 
 	// Upgrading database
@@ -179,5 +174,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		System.out.println("Have set client id and password");
 		db.insert(TABLE_CLIENT, null, values);
 		db.close();
+	}
+	
+	public void initClient(SQLiteDatabase db){
+		ContentValues values = new ContentValues();
+		values.put(KEY_CLIENTID, "9543ED1349084DA816F103234217FED7A8627621");
+		values.put(KEY_CLIENTPASSWORD, "Y9xSazM4fHrkNd8tMKPkbjeqKAl4YE8QXGiJ");
+		System.out.println("Have set client id and password");
+		db.insert(TABLE_CLIENT, null, values);
 	}
 }
