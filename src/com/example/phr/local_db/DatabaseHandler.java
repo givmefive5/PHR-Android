@@ -56,10 +56,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		db.execSQL(CREATE_ACCESSTOKEN_TABLE);
 		db.execSQL(CREATE_CLIENT_TABLE);
 		
-		Client c = new Client();
-		c.setClientID("9543ED1349084DA816F103234217FED7A8627621");
-		c.setClientPassword("Y9xSazM4fHrkNd8tMKPkbjeqKAl4YE8QXGiJ");
-		setClient(c);
+		
+		// set client
+		ContentValues values = new ContentValues();
+		values.put(KEY_CLIENTID, "9543ED1349084DA816F103234217FED7A8627621");
+		values.put(KEY_CLIENTPASSWORD, "Y9xSazM4fHrkNd8tMKPkbjeqKAl4YE8QXGiJ");
+		db.insert(TABLE_CLIENT, null, values);
 	}
 
 	// Upgrading database
