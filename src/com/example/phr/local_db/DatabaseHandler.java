@@ -49,13 +49,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		String CREATE_ACCESSTOKEN_TABLE = "CREATE TABLE " + TABLE_ACCESSTOKEN
 				+ "(" + KEY_ACCESSTOKEN + " TEXT, " + KEY_USERNAME + " TEXT"
 				+ ")";
-		String CREATE_CLIENT_TABLE = "CREATE TABLE " + TABLE_CLIENT
-				+ "(" + KEY_CLIENTID + " TEXT, " + KEY_CLIENTPASSWORD + " TEXT"
-				+ ")";
+		String CREATE_CLIENT_TABLE = "CREATE TABLE " + TABLE_CLIENT + "("
+				+ KEY_CLIENTID + " TEXT, " + KEY_CLIENTPASSWORD + " TEXT" + ")";
 		db.execSQL(CREATE_BLOODPRESSURE_TABLE);
 		db.execSQL(CREATE_ACCESSTOKEN_TABLE);
 		db.execSQL(CREATE_CLIENT_TABLE);
-		
+
 		Client c = new Client();
 		c.setClientID("9543ED1349084DA816F103234217FED7A8627621");
 		c.setClientPassword("Y9xSazM4fHrkNd8tMKPkbjeqKAl4YE8QXGiJ");
@@ -102,7 +101,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				c.setClientPassword(cursor.getString(1));
 			} while (cursor.moveToNext());
 		}
-
+		System.out.println("In get client : " + c.getClientID() + "  "
+				+ c.getClientPassword());
 		return c;
 	}
 
@@ -174,7 +174,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		ContentValues values = new ContentValues();
 		values.put(KEY_CLIENTID, c.getClientID());
 		values.put(KEY_CLIENTPASSWORD, c.getClientPassword());
-
+		System.out.println("Have set client id and password");
 		db.insert(TABLE_CLIENT, null, values);
 		db.close();
 	}
