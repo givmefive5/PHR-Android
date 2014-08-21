@@ -10,6 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.example.phr.model.AccessTokenObject;
 import com.example.phr.model.BloodPressure;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
@@ -27,6 +28,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	private static final String KEY_DIASTOLIC = "diastolic";
 	private static final String KEY_STATUS = "status";
 	private static final String KEY_ACCESSTOKEN = "token";
+	private static final String KEY_USERNAME = "username";
 
 	public DatabaseHandler(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -41,7 +43,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				+ KEY_TIME + " TEXT," + KEY_SYSTOLIC + " TEXT," + KEY_DIASTOLIC
 				+ " TEXT," + KEY_STATUS + " TEXT" + ")";
 		String CREATE_ACCESSTOKEN_TABLE = "CREATE TABLE " + TABLE_ACCESSTOKEN
-				+ "(" + KEY_ACCESSTOKEN + " TEXT" + ")";
+				+ "(" + KEY_ACCESSTOKEN + " TEXT, "
+				+ KEY_USERNAME + " TEXT" + ")";
 		System.out.println(CREATE_BLOODPRESSURE_TABLE);
 		System.out.println(CREATE_ACCESSTOKEN_TABLE);
 		db.execSQL(CREATE_BLOODPRESSURE_TABLE);
@@ -59,19 +62,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		onCreate(db);
 	}
 
-	public String getAccessToken() {
-		String accesstoken = "";
+	public AccessTokenObject getAccessToken() {
+		AccessTokenObject token = new AccessTokenObject();
 		String selectQuery = "SELECT  * FROM " + TABLE_ACCESSTOKEN;
 
 		SQLiteDatabase db = this.getWritableDatabase();
 		Cursor cursor = db.rawQuery(selectQuery, null);
 		if (cursor.moveToFirst()) {
 			do {
-				accesstoken = cursor.getString(0);
+				token.setAccessToken(cursor.getString(0));
+				token.setUserName(cursor.getString(1));
 			} while (cursor.moveToNext());
 		}
 
-		return accesstoken;
+		return token;
 	}
 
 	// Adding new bp
@@ -121,7 +125,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		return bpList;
 	}
 
-	public void setAccessToken(String accessToken) {
+	public void setAccessToken(String accessToken, String username) {
 		SQLiteDatabase db = this.getWritableDatabase();
 
 		db.delete(TABLE_ACCESSTOKEN, null, null);
@@ -129,6 +133,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 		ContentValues values = new ContentValues();
 		values.put(KEY_ACCESSTOKEN, accessToken);
+		values.put(KEY_USERNAME, username);
 
 		db.insert(TABLE_ACCESSTOKEN, null, values);
 		db.close();

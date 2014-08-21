@@ -13,6 +13,7 @@ import com.example.phr.dao.UserDao;
 import com.example.phr.exceptions.UserAlreadyExistsException;
 import com.example.phr.exceptions.WebServerException;
 import com.example.phr.local_db.DatabaseHandler;
+import com.example.phr.model.AccessTokenObject;
 import com.example.phr.model.User;
 import com.example.tools.EncryptionHandler;
 import com.example.tools.GSONConverter;
@@ -55,7 +56,7 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 				String userAccessToken = response.getJSONObject("data")
 						.getString("userAccessToken");
 				System.out.println(userAccessToken);
-				setAccessToken(userAccessToken);
+				setAccessToken(userAccessToken, user.getUsername());
 
 			}
 		} catch (JSONException e) {
@@ -92,7 +93,7 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 				String userAccessToken = response.getJSONObject("data")
 						.getString("userAccessToken");
 				System.out.println(userAccessToken);
-				setAccessToken(userAccessToken);
+				setAccessToken(userAccessToken, username);
 				System.out.println(getAccessToken());
 				return true;
 			} else if (response.getJSONObject("data").get("isValid")
@@ -119,15 +120,16 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 	@Override
 	public String getAccessToken() throws Exception {
 		DatabaseHandler db = new DatabaseHandler(context);
-		String encryptedToken = db.getAccessToken();
+		AccessTokenObject token = db.getAccessToken();
+		String encryptedToken = token.getAccessToken();
 		return EncryptionHandler.decrypt(encryptedToken);
 	}
 
 	@Override
-	public void setAccessToken(String accessToken) throws Exception {
+	public void setAccessToken(String accessToken, String username) throws Exception {
 		DatabaseHandler db = new DatabaseHandler(context);
 		String encryptedToken = EncryptionHandler.encrypt(accessToken);
-		db.setAccessToken(encryptedToken);
+		db.setAccessToken(encryptedToken, username);
 
 	}
 }

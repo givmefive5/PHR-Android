@@ -16,5 +16,5 @@ public interface UserDao {
 
 	public String getAccessToken() throws Exception;
 
-	public void setAccessToken(String accessToken) throws Exception;
+	public void setAccessToken(String accessToken, String username) throws Exception;
 }
