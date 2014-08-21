@@ -30,7 +30,8 @@ public class BloodPressureDaoImpl extends BasicDaoImpl implements
 
 		try {
 			JSONObject data = new JSONObject();
-			data.put("accessToken", userDao.getAccessToken());
+			data.put("accessToken", userDao.getAccessToken().getAccessToken());
+			data.put("username", userDao.getAccessToken().getUserName());
 			data.put("bloodPressure",
 					GSONConverter.convertObjectToJSON(bloodPressure));
 			String jsonToSend = JSONRequestCreator

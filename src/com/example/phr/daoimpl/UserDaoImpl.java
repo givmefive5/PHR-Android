@@ -15,6 +15,7 @@ import com.example.phr.exceptions.WebServerException;
 import com.example.phr.local_db.DatabaseHandler;
 import com.example.phr.model.AccessToken;
 import com.example.phr.model.User;
+import com.example.tools.EncryptionHandler;
 import com.example.tools.GSONConverter;
 import com.example.tools.Hasher;
 import com.example.tools.JSONRequestCreator;
@@ -123,18 +124,18 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 	public AccessToken getAccessToken() throws Exception {
 		DatabaseHandler db = new DatabaseHandler(context);
 		AccessToken token = db.getAccessToken();
-		// String decryptedToken = EncryptionHandler.decrypt(token
-		// .getAccessToken());
-		// token.setAccessToken(decryptedToken);
+		String decryptedToken = EncryptionHandler.decrypt(token
+				.getAccessToken());
+		token.setAccessToken(decryptedToken);
 		return token;
 	}
 
 	@Override
 	public void setAccessToken(AccessToken accessToken) throws Exception {
 		DatabaseHandler db = new DatabaseHandler(context);
-		// String encryptedToken = EncryptionHandler.encrypt(accessToken
-		// .getAccessToken());
-		// accessToken.setAccessToken(encryptedToken);
+		String encryptedToken = EncryptionHandler.encrypt(accessToken
+				.getAccessToken());
+		accessToken.setAccessToken(encryptedToken);
 		db.setAccessToken(accessToken);
 
 	}
