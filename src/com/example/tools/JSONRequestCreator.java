@@ -5,11 +5,13 @@ import org.json.JSONObject;
 
 import android.content.Context;
 
+import com.example.phr.local_db.DatabaseHandler;
+import com.example.phr.model.AccessToken;
 import com.example.phr.model.Client;
 
 public class JSONRequestCreator {
 
-	Context context;
+	static Context context;
 
 	public JSONRequestCreator(Context context) {
 		this.context = context;
@@ -36,6 +38,7 @@ public class JSONRequestCreator {
 	}
 
 	private static Client getClientAuthentication() {
-		return null;
+		DatabaseHandler db = new DatabaseHandler(context);
+		return db.getClient();
 	}
 }
