@@ -12,6 +12,7 @@ import android.util.Log;
 
 import com.example.phr.model.AccessToken;
 import com.example.phr.model.BloodPressure;
+import com.example.phr.model.Client;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
@@ -19,6 +20,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	private static final String DATABASE_NAME = "HealthGem";
 	private static final String TABLE_BLOODPRESSURE = "bloodpressure";
 	private static final String TABLE_ACCESSTOKEN = "accesstoken";
+	private static final String TABLE_CLIENT = "client";
 
 	// Contacts Table Columns names
 	private static final String KEY_ID = "id";
@@ -29,6 +31,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	private static final String KEY_STATUS = "status";
 	private static final String KEY_ACCESSTOKEN = "token";
 	private static final String KEY_USERNAME = "username";
+	private static final String KEY_CLIENTID = "clientID";
+	private static final String KEY_CLIENTPASSWORD = "clientPassword";
 
 	public DatabaseHandler(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -45,10 +49,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		String CREATE_ACCESSTOKEN_TABLE = "CREATE TABLE " + TABLE_ACCESSTOKEN
 				+ "(" + KEY_ACCESSTOKEN + " TEXT, " + KEY_USERNAME + " TEXT"
 				+ ")";
-		System.out.println(CREATE_BLOODPRESSURE_TABLE);
-		System.out.println(CREATE_ACCESSTOKEN_TABLE);
+		String CREATE_CLIENT_TABLE = "CREATE TABLE " + TABLE_CLIENT
+				+ "(" + KEY_CLIENTID + " TEXT, " + KEY_CLIENTPASSWORD + " TEXT"
+				+ ")";
 		db.execSQL(CREATE_BLOODPRESSURE_TABLE);
 		db.execSQL(CREATE_ACCESSTOKEN_TABLE);
+		db.execSQL(CREATE_CLIENT_TABLE);
 	}
 
 	// Upgrading database
@@ -57,6 +63,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		// Drop older table if existed
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_BLOODPRESSURE);
 		db.execSQL("DROP TABLE IF EXISTS " + TABLE_ACCESSTOKEN);
+		db.execSQL("DROP TABLE IF EXISTS " + TABLE_CLIENT);
 
 		// Create tables again
 		onCreate(db);
@@ -78,11 +85,26 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		return token;
 	}
 
+	public Client getClient() {
+		Client c = new Client();
+		String selectQuery = "SELECT  * FROM " + TABLE_CLIENT;
+
+		SQLiteDatabase db = this.getWritableDatabase();
+		Cursor cursor = db.rawQuery(selectQuery, null);
+		if (cursor.moveToFirst()) {
+			do {
+				c.setClientID(cursor.getString(0));
+				c.setClientPassword(cursor.getString(1));
+			} while (cursor.moveToNext());
+		}
+
+		return c;
+	}
+
 	// Adding new bp
 	public void addBloodPressure(BloodPressure bp) {
 		SQLiteDatabase db = this.getWritableDatabase();
 
-		Log.e("bp: ", "insert db ..");
 		ContentValues values = new ContentValues();
 		values.put(KEY_DATE, bp.getDate());
 		values.put(KEY_TIME, bp.getTime());
@@ -101,7 +123,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		// Select All Query
 		String selectQuery = "SELECT  * FROM " + TABLE_BLOODPRESSURE;
 
-		Log.e("bp: ", "load db ..");
 		SQLiteDatabase db = this.getWritableDatabase();
 		Cursor cursor = db.rawQuery(selectQuery, null);
 
@@ -136,6 +157,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		values.put(KEY_USERNAME, accessToken.getUserName());
 
 		db.insert(TABLE_ACCESSTOKEN, null, values);
+		db.close();
+	}
+
+	public void setClient(Client c) {
+		SQLiteDatabase db = this.getWritableDatabase();
+
+		db.delete(TABLE_CLIENT, null, null);
+		// db.execSQL("delete * from " + TABLE_ACCESSTOKEN);
+
+		ContentValues values = new ContentValues();
+		values.put(KEY_CLIENTID, c.getClientID());
+		values.put(KEY_CLIENTPASSWORD, c.getClientPassword());
+
+		db.insert(TABLE_CLIENT, null, values);
 		db.close();
 	}
 }
