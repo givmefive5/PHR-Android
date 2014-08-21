@@ -11,8 +11,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.example.phr.exceptions.IPBlockedException;
 import com.example.phr.exceptions.ServiceException;
-import com.example.phr.local_db.SPreference;
 import com.example.phr.service.UserService;
 import com.example.phr.serviceimpl.UserServiceImpl;
 
@@ -48,18 +49,19 @@ public class LoginActivity extends Activity {
 		formPassword = (EditText) findViewById(R.id.txtPassword);
 		userService = new UserServiceImpl(this.getApplicationContext());
 
-		
-/*		final SPreference sp = new SPreference(this.getApplicationContext());
-		formUsername.setText(sp.loadPreferences("id"));*/
-		
+		/*
+		 * final SPreference sp = new SPreference(this.getApplicationContext());
+		 * formUsername.setText(sp.loadPreferences("id"));
+		 */
+
 		mBtnLogin.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 
 				username = formUsername.getText().toString();
 				password = formPassword.getText().toString();
-				
-				//sp.savePreferences("id", username);
+
+				// sp.savePreferences("id", username);
 
 				if (password.length() > 0 && username.length() > 0) {
 					try {
@@ -74,6 +76,9 @@ public class LoginActivity extends Activity {
 						}
 					} catch (ServiceException e) {
 						mTextValid.setText("Error in Internet Connection");
+					} catch (IPBlockedException e) {
+						mTextValid
+								.setText("IP is currently blocked, try again after 5 minutes");
 					}
 
 				}
@@ -96,47 +101,46 @@ public class LoginActivity extends Activity {
 			}
 		});
 	}
-	
-	
-	
-	
-	/**
-	 *   Method used to get Shared Preferences */
 
-	public SharedPreferences getPreferences() 
-	{
-	    return getSharedPreferences("HealthGemPreferences", MODE_PRIVATE);
-	}
 	/**
-	 *  Method used to save Preferences */
-	public void savePreferences(String key, String value) 
-	{
-	    SharedPreferences sharedPreferences = getPreferences();
-	    SharedPreferences.Editor editor = sharedPreferences.edit();
-	    editor.putString(key, value);
-	    editor.commit();
+	 * Method used to get Shared Preferences
+	 */
+
+	public SharedPreferences getPreferences() {
+		return getSharedPreferences("HealthGemPreferences", MODE_PRIVATE);
 	}
+
 	/**
-	 *  Method used to load Preferences */
-	public String loadPreferences(String key) 
-	{
-	    try {
-	        SharedPreferences sharedPreferences = getPreferences();
-	        String strSavedMemo = sharedPreferences.getString(key, "");
-	        return strSavedMemo;
-	    } catch (NullPointerException nullPointerException) 
-	    {
-	        Log.e("Error caused at  TelaSketchUtin loadPreferences method",
-	                ">======>" + nullPointerException);
-	        return null;
-	    }
+	 * Method used to save Preferences
+	 */
+	public void savePreferences(String key, String value) {
+		SharedPreferences sharedPreferences = getPreferences();
+		SharedPreferences.Editor editor = sharedPreferences.edit();
+		editor.putString(key, value);
+		editor.commit();
 	}
+
 	/**
-	 *  Method used to delete Preferences */
-	public boolean deletePreferences(String key)
-	{
-	    SharedPreferences.Editor editor=getPreferences().edit();
-	    editor.remove(key).commit();
-	    return false;
+	 * Method used to load Preferences
+	 */
+	public String loadPreferences(String key) {
+		try {
+			SharedPreferences sharedPreferences = getPreferences();
+			String strSavedMemo = sharedPreferences.getString(key, "");
+			return strSavedMemo;
+		} catch (NullPointerException nullPointerException) {
+			Log.e("Error caused at  TelaSketchUtin loadPreferences method",
+					">======>" + nullPointerException);
+			return null;
+		}
+	}
+
+	/**
+	 * Method used to delete Preferences
+	 */
+	public boolean deletePreferences(String key) {
+		SharedPreferences.Editor editor = getPreferences().edit();
+		editor.remove(key).commit();
+		return false;
 	}
 }

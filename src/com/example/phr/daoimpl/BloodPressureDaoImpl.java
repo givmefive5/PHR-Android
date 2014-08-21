@@ -13,7 +13,7 @@ import com.example.phr.model.BloodPressure;
 import com.example.tools.GSONConverter;
 import com.example.tools.JSONRequestCreator;
 
-public class BloodPressureDaoImpl extends BasicDaoImpl implements
+public class BloodPressureDaoImpl extends HTTPSDaoImpl implements
 		BloodPressureDao {
 
 	UserDao userDao;

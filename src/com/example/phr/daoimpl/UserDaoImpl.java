@@ -10,6 +10,7 @@ import android.content.Context;
 import android.util.Log;
 
 import com.example.phr.dao.UserDao;
+import com.example.phr.exceptions.IPBlockedException;
 import com.example.phr.exceptions.UserAlreadyExistsException;
 import com.example.phr.exceptions.WebServerException;
 import com.example.phr.local_db.DatabaseHandler;
@@ -20,7 +21,7 @@ import com.example.tools.GSONConverter;
 import com.example.tools.Hasher;
 import com.example.tools.JSONRequestCreator;
 
-public class UserDaoImpl extends BasicDaoImpl implements UserDao {
+public class UserDaoImpl extends HTTPSDaoImpl implements UserDao {
 
 	private Context context;
 
@@ -69,7 +70,7 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public boolean validateUser(String username, String password)
-			throws WebServerException {
+			throws WebServerException, IPBlockedException {
 
 		try {
 			String command = "user/validateLogin";
@@ -83,10 +84,17 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 			String jsonToSend = JSONRequestCreator.createJSONRequest(map, null);
 			JSONObject response = performHttpRequest_JSON(command, jsonToSend);
 
-			if (response.get("status").equals("fail"))
+			if (response.get("status").equals("fail")
+					&& response.getJSONObject("data").has("isBlocked")
+					&& response.getJSONObject("data").getString("isBlocked")
+							.equals("true"))
+				throw new IPBlockedException(
+						"Due to multiple logins, IP is currently blocked");
+			else if (response.get("status").equals("fail")) {
 				throw new WebServerException(
 						"An error has occurred while communicating"
 								+ "with the web server.");
+			}
 			System.out.println(response);
 			if (response.getJSONObject("data").get("isValid").equals("true")) {
 				String userAccessToken = response.getJSONObject("data")

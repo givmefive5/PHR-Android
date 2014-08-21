@@ -1,5 +1,6 @@
 package com.example.phr.dao;
 
+import com.example.phr.exceptions.IPBlockedException;
 import com.example.phr.exceptions.UserAlreadyExistsException;
 import com.example.phr.exceptions.WebServerException;
 import com.example.phr.model.AccessToken;
@@ -8,7 +9,7 @@ import com.example.phr.model.User;
 public interface UserDao {
 
 	public boolean validateUser(String username, String password)
-			throws WebServerException;
+			throws WebServerException, IPBlockedException;
 
 	public User getUserGivenUsername(String username) throws WebServerException;
 

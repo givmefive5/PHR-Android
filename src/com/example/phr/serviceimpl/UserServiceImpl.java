@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.example.phr.dao.UserDao;
 import com.example.phr.daoimpl.UserDaoImpl;
+import com.example.phr.exceptions.IPBlockedException;
 import com.example.phr.exceptions.ServiceException;
 import com.example.phr.exceptions.UserAlreadyExistsException;
 import com.example.phr.exceptions.WebServerException;
@@ -32,7 +33,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public boolean validateUser(String username, String password)
-			throws ServiceException {
+			throws ServiceException, IPBlockedException {
 		try {
 			return userDao.validateUser(username, password);
 		} catch (WebServerException e) {
