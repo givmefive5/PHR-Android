@@ -15,7 +15,7 @@ public interface UserDao {
 	public void registerUser(User user) throws WebServerException,
 			UserAlreadyExistsException;
 
-	public AccessToken getAccessToken() throws Exception;
+	public AccessToken getAccessToken();
 
-	public void setAccessToken(AccessToken accessToken) throws Exception;
+	public void setAccessToken(AccessToken accessToken);
 }

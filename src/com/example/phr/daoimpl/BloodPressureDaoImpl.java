@@ -7,6 +7,7 @@ import android.content.Context;
 
 import com.example.phr.dao.BloodPressureDao;
 import com.example.phr.dao.UserDao;
+import com.example.phr.exceptions.OutdatedAccessTokenException;
 import com.example.phr.exceptions.WebServerException;
 import com.example.phr.model.BloodPressure;
 import com.example.tools.GSONConverter;
@@ -25,7 +26,7 @@ public class BloodPressureDaoImpl extends BasicDaoImpl implements
 
 	@Override
 	public void addBloodPressure(BloodPressure bloodPressure)
-			throws WebServerException {
+			throws WebServerException, OutdatedAccessTokenException {
 		String command = "tracker/addBloodPressure";
 
 		try {
@@ -37,12 +38,24 @@ public class BloodPressureDaoImpl extends BasicDaoImpl implements
 			String jsonToSend = JSONRequestCreator
 					.createJSONRequest(data, null);
 			JSONObject response = performHttpRequest_JSON(command, jsonToSend);
+			if (response.get("status").equals("fail"))
+				throw new WebServerException(
+						"An error has occurred while communicating"
+								+ "with the web server.");
+			else if (response.getJSONObject("data").has("isValidAccessToken")
+					&& response.getJSONObject("data")
+							.getString("isValidAccessToken").equals("false")) {
+				throw new OutdatedAccessTokenException(
+						"The access token used in the request is outdated, please ask the user to log in again.");
+			} else if (response.getString("status").equals("success")) {
+				System.out
+						.println("Adding of blood pressure successfully done!!");
+			} else {
+				System.out.println(response);
+			}
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (Exception e) {
-			throw new WebServerException(
-					"An error has occurred while processing the request.", e);
 		}
 
 	}

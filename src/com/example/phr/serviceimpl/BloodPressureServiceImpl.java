@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.example.phr.dao.BloodPressureDao;
 import com.example.phr.daoimpl.BloodPressureDaoImpl;
+import com.example.phr.exceptions.OutdatedAccessTokenException;
 import com.example.phr.exceptions.ServiceException;
 import com.example.phr.exceptions.WebServerException;
 import com.example.phr.model.BloodPressure;
@@ -13,15 +14,15 @@ public class BloodPressureServiceImpl implements BloodPressureService {
 
 	BloodPressureDao bloodPressureDao;
 	Context context;
-	
-	public BloodPressureServiceImpl(Context context){
+
+	public BloodPressureServiceImpl(Context context) {
 		this.context = context;
 		bloodPressureDao = new BloodPressureDaoImpl(context);
 	}
 
 	@Override
 	public void addBloodPressure(BloodPressure bloodPressure)
-			throws ServiceException {
+			throws ServiceException, OutdatedAccessTokenException {
 		try {
 			bloodPressureDao.addBloodPressure(bloodPressure);
 		} catch (WebServerException e) {

@@ -63,8 +63,6 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 		} catch (JSONException e) {
 			Log.e("exception", e.getMessage());
 			throw new WebServerException("Error in parsing JSON", e);
-		} catch (Exception e) {
-			throw new WebServerException("Error in processing the request", e);
 		}
 	}
 
@@ -108,10 +106,6 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 		} catch (JSONException e) {
 			throw new WebServerException("An error has occurred while parsing"
 					+ "the web server response.");
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-			throw new WebServerException(
-					"An error has occurred while processing the request.");
 		}
 	}
 
@@ -121,7 +115,7 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 	}
 
 	@Override
-	public AccessToken getAccessToken() throws Exception {
+	public AccessToken getAccessToken() {
 		DatabaseHandler db = new DatabaseHandler(context);
 		AccessToken token = db.getAccessToken();
 		String decryptedToken = EncryptionHandler.decrypt(token
@@ -131,7 +125,7 @@ public class UserDaoImpl extends BasicDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void setAccessToken(AccessToken accessToken) throws Exception {
+	public void setAccessToken(AccessToken accessToken) {
 		DatabaseHandler db = new DatabaseHandler(context);
 		String encryptedToken = EncryptionHandler.encrypt(accessToken
 				.getAccessToken());
