@@ -39,7 +39,9 @@ public class BloodPressureDaoImpl extends HTTPSDaoImpl implements
 					GSONConverter.convertObjectToJSON(bloodPressure));
 			String jsonToSend = jsonRequestCreator
 					.createJSONRequest(data, null);
+			System.out.println("JSON Request Sent: " + jsonToSend);
 			JSONObject response = performHttpRequest_JSON(command, jsonToSend);
+			System.out.println("JSON Response Received: " + response);
 			if (response.get("status").equals("fail"))
 				throw new WebServerException(
 						"An error has occurred while communicating"

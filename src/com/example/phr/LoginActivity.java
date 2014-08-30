@@ -14,8 +14,11 @@ import android.widget.TextView;
 
 import com.example.phr.exceptions.IPBlockedException;
 import com.example.phr.exceptions.ServiceException;
+import com.example.phr.local_db.DatabaseHandler;
+import com.example.phr.model.Client;
 import com.example.phr.service.UserService;
 import com.example.phr.serviceimpl.UserServiceImpl;
+import com.example.tools.PasswordValidator;
 
 public class LoginActivity extends Activity {
 
@@ -95,11 +98,17 @@ public class LoginActivity extends Activity {
 		mBtnRegister.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				System.out.println(getApplicationContext());
 				Intent intent = new Intent(getApplicationContext(),
 						RegisterActivity.class);
 				startActivity(intent);
 			}
 		});
+		DatabaseHandler dbHandler = new DatabaseHandler(getApplicationContext());
+		Client c = new Client();
+		c.setClientID("9543ED1349084DA816F103234217FED7A8627621");
+		c.setClientPassword("Y9xSazM4fHrkNd8tMKPkbjeqKAl4YE8QXGiJ");
+		dbHandler.setClient(c);
 	}
 
 	/**

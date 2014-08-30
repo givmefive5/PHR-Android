@@ -8,11 +8,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import com.example.phr.model.AccessToken;
 import com.example.phr.model.BloodPressure;
 import com.example.phr.model.Client;
+import com.example.tools.EncryptionHandler;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 
@@ -82,7 +82,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				token.setUserName(cursor.getString(1));
 			} while (cursor.moveToNext());
 		}
-
+		db.close();
 		return token;
 	}
 
@@ -94,12 +94,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		Cursor cursor = db.rawQuery(selectQuery, null);
 		if (cursor.moveToFirst()) {
 			do {
-				c.setClientID(cursor.getString(0));
-				c.setClientPassword(cursor.getString(1));
+				c.setClientID(EncryptionHandler.decrypt(cursor.getString(0)));
+				c.setClientPassword(EncryptionHandler.decrypt(cursor
+						.getString(1)));
 			} while (cursor.moveToNext());
 		}
-		System.out.println("In get client : " + c.getClientID() + "  "
-				+ c.getClientPassword());
+		db.close();
 		return c;
 	}
 
@@ -133,7 +133,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 			do {
 				BloodPressure bp = new BloodPressure();
 				// bp.setId(Integer.parseInt(cursor.getString(0)));
-				Log.e("data", cursor.getString(1));
 				bp.setDate(cursor.getString(1));
 				bp.setTime(cursor.getString(2));
 				bp.setSystolic(Integer.parseInt(cursor.getString(3)));
@@ -145,6 +144,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		}
 
 		// return contact list
+		db.close();
 		return bpList;
 	}
 
@@ -169,18 +169,24 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		// db.execSQL("delete * from " + TABLE_ACCESSTOKEN);
 
 		ContentValues values = new ContentValues();
-		values.put(KEY_CLIENTID, c.getClientID());
-		values.put(KEY_CLIENTPASSWORD, c.getClientPassword());
+		values.put(KEY_CLIENTID, EncryptionHandler.encrypt(c.getClientID()));
+		values.put(KEY_CLIENTPASSWORD,
+				EncryptionHandler.encrypt(c.getClientPassword()));
 		System.out.println("Have set client id and password");
 		db.insert(TABLE_CLIENT, null, values);
 		db.close();
 	}
-	
-	public void initClient(SQLiteDatabase db){
+
+	public void initClient(SQLiteDatabase db) {
 		ContentValues values = new ContentValues();
-		values.put(KEY_CLIENTID, "9543ED1349084DA816F103234217FED7A8627621");
-		values.put(KEY_CLIENTPASSWORD, "Y9xSazM4fHrkNd8tMKPkbjeqKAl4YE8QXGiJ");
+		Client c = new Client();
+		c.setClientID("9543ED1349084DA816F103234217FED7A8627621");
+		c.setClientPassword("Y9xSazM4fHrkNd8tMKPkbjeqKAl4YE8QXGiJ");
+		values.put(KEY_CLIENTID, EncryptionHandler.encrypt(c.getClientID()));
+		values.put(KEY_CLIENTPASSWORD,
+				EncryptionHandler.encrypt(c.getClientPassword()));
 		System.out.println("Have set client id and password");
 		db.insert(TABLE_CLIENT, null, values);
+		db.close();
 	}
 }

@@ -1,6 +1,7 @@
 package com.example.phr;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,6 +16,7 @@ import com.example.phr.exceptions.UserAlreadyExistsException;
 import com.example.phr.model.User;
 import com.example.phr.service.UserService;
 import com.example.phr.serviceimpl.UserServiceImpl;
+import com.example.tools.PasswordValidator;
 
 public class RegisterActivity extends Activity {
 
@@ -28,8 +30,7 @@ public class RegisterActivity extends Activity {
 	private EditText formConfirmPassword;
 	private TextView mTextValid;
 	private TextView textViewPasswordStrength;
-
-	private UserService userService = new UserServiceImpl(this.getApplicationContext());
+	private UserService userService;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -86,7 +87,12 @@ public class RegisterActivity extends Activity {
 					if (password.length() > 7) {
 						User user = new User(username, password);
 						try {
+							userService = new UserServiceImpl(
+									getApplicationContext());
 							userService.registerUser(user);
+							Intent intent = new Intent(getApplicationContext(),
+									MainActivity.class);
+							startActivity(intent);
 						} catch (ServiceException e) {
 							mTextValid
 									.setText("An error has occured, cannot perform action!");

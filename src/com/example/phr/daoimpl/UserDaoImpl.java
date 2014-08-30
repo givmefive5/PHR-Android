@@ -7,7 +7,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.example.phr.dao.UserDao;
 import com.example.phr.exceptions.IPBlockedException;
@@ -42,9 +41,9 @@ public class UserDaoImpl extends HTTPSDaoImpl implements UserDao {
 
 			String jsonToSend = jsonRequestCreator.createJSONRequest(userJSON,
 					null);
-
+			System.out.println("JSON Request Sent: " + jsonToSend);
 			JSONObject response = performHttpRequest_JSON(command, jsonToSend);
-			System.out.println(response.getJSONObject("data"));
+			System.out.println("JSON Response Received: " + response);
 			if (response.get("status").equals("fail"))
 				throw new WebServerException(
 						"An error has occurred while communicating"
@@ -59,13 +58,15 @@ public class UserDaoImpl extends HTTPSDaoImpl implements UserDao {
 			} else {
 				String userAccessToken = response.getJSONObject("data")
 						.getString("userAccessToken");
-				System.out.println(userAccessToken);
+				System.out.println("User Access Token Received "
+						+ userAccessToken);
 				setAccessToken(new AccessToken(userAccessToken,
 						user.getUsername()));
-
+				System.out.println("Stored Access Token: "
+						+ getAccessToken().getAccessToken() + " and Username: "
+						+ getAccessToken().getUserName());
 			}
 		} catch (JSONException e) {
-			Log.e("exception", e.getMessage());
 			throw new WebServerException("Error in parsing JSON", e);
 		}
 	}
@@ -85,8 +86,9 @@ public class UserDaoImpl extends HTTPSDaoImpl implements UserDao {
 			map.put("hashedPassword", hashedPassword);
 
 			String jsonToSend = jsonRequestCreator.createJSONRequest(map, null);
+			System.out.println("JSON Request Sent: " + jsonToSend);
 			JSONObject response = performHttpRequest_JSON(command, jsonToSend);
-
+			System.out.println("JSON Response Received: " + response);
 			if (response.get("status").equals("fail")
 					&& response.getJSONObject("data").has("isBlocked")
 					&& response.getJSONObject("data").getString("isBlocked")
@@ -98,13 +100,14 @@ public class UserDaoImpl extends HTTPSDaoImpl implements UserDao {
 						"An error has occurred while communicating"
 								+ "with the web server.");
 			}
-			System.out.println(response);
 			if (response.getJSONObject("data").get("isValid").equals("true")) {
 				String userAccessToken = response.getJSONObject("data")
 						.getString("userAccessToken");
-				System.out.println(userAccessToken);
+				System.out.println("User Access Token Received: "
+						+ userAccessToken);
 				setAccessToken(new AccessToken(userAccessToken, username));
-				System.out.println(getAccessToken().getAccessToken()
+				System.out.println("Stored Access Token: "
+						+ getAccessToken().getAccessToken() + " and Username: "
 						+ getAccessToken().getUserName());
 				return true;
 			} else if (response.getJSONObject("data").get("isValid")
