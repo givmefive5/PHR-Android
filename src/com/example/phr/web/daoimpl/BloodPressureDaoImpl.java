@@ -1,15 +1,15 @@
-package com.example.phr.daoimpl;
+package com.example.phr.web.daoimpl;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
 
-import com.example.phr.dao.BloodPressureDao;
-import com.example.phr.dao.UserDao;
 import com.example.phr.exceptions.OutdatedAccessTokenException;
 import com.example.phr.exceptions.WebServerException;
 import com.example.phr.model.BloodPressure;
+import com.example.phr.web.dao.BloodPressureDao;
+import com.example.phr.web.dao.UserDao;
 import com.example.tools.GSONConverter;
 import com.example.tools.JSONRequestCreator;
 

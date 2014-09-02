@@ -1,4 +1,4 @@
-package com.example.phr.daoimpl;
+package com.example.phr.web.daoimpl;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,13 +8,13 @@ import org.json.JSONObject;
 
 import android.content.Context;
 
-import com.example.phr.dao.UserDao;
 import com.example.phr.exceptions.IPBlockedException;
 import com.example.phr.exceptions.UserAlreadyExistsException;
 import com.example.phr.exceptions.WebServerException;
 import com.example.phr.local_db.DatabaseHandler;
 import com.example.phr.model.AccessToken;
 import com.example.phr.model.User;
+import com.example.phr.web.dao.UserDao;
 import com.example.tools.EncryptionHandler;
 import com.example.tools.GSONConverter;
 import com.example.tools.Hasher;

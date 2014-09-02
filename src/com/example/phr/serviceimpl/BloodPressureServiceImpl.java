@@ -2,13 +2,13 @@ package com.example.phr.serviceimpl;
 
 import android.content.Context;
 
-import com.example.phr.dao.BloodPressureDao;
-import com.example.phr.daoimpl.BloodPressureDaoImpl;
 import com.example.phr.exceptions.OutdatedAccessTokenException;
 import com.example.phr.exceptions.ServiceException;
 import com.example.phr.exceptions.WebServerException;
 import com.example.phr.model.BloodPressure;
 import com.example.phr.service.BloodPressureService;
+import com.example.phr.web.dao.BloodPressureDao;
+import com.example.phr.web.daoimpl.BloodPressureDaoImpl;
 
 public class BloodPressureServiceImpl implements BloodPressureService {
 

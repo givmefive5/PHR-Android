@@ -1,4 +1,4 @@
-package com.example.phr.dao;
+package com.example.phr.web.dao;
 
 import com.example.phr.exceptions.IPBlockedException;
 import com.example.phr.exceptions.UserAlreadyExistsException;
